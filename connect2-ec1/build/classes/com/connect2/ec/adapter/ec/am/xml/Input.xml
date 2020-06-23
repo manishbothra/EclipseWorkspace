@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+  <Header>
+    <DocumentVersion>1.01</DocumentVersion>
+    <MerchantIdentifier>A1ZRT2O38J6EA0</MerchantIdentifier>
+  </Header>
+  <MessageType>Product</MessageType>
+  <PurgeAndReplace>false</PurgeAndReplace>
+  <Message>
+    <MessageID>1</MessageID>
+    <OperationType>Update</OperationType>
+    <Product>
+      <SKU>3</SKU>
+      <StandardProductID>
+        <Type>ASIN</Type>
+        <Value>3</Value>
+      </StandardProductID>
+      <ProductTaxCode>A_GEN_NOTAX</ProductTaxCode>
+      <!-- <Condition>
+      	<ConditionType>New</ConditionType>
+	  </Condition> -->
+      <!-- <ItemPackageQuantity>1</ItemPackageQuantity> -->
+      <!-- <NumberOfItems>6</NumberOfItems> -->
+      <DescriptionData>
+        <Title>3</Title>
+        <Brand>Amul</Brand>
+        <Description> </Description>
+        <BulletPoint>Good Book</BulletPoint>
+        <Manufacturer>3</Manufacturer>
+        <SearchTerms> </SearchTerms>
+        <!-- <ItemType>Book</ItemType> -->
+        <RecommendedBrowseNode>1318082031</RecommendedBrowseNode>
+      </DescriptionData>
+      <ProductData>
+        <Health>
+          <ProductType>
+            <HealthMisc>
+              <!-- <Ingredients>Knowledge</Ingredients>
+              <Directions>Read with peaceful mind.</Directions> -->
+            </HealthMisc>
+          </ProductType>
+        </Health>
+      </ProductData>
+    </Product>
+  </Message>
+</AmazonEnvelope>

@@ -1,0 +1,5 @@
+package com.connect2.ec.controller;
+
+public class SubmitInquiryDetails {
+
+}

@@ -1,0 +1,150 @@
+<div class="right_col" role="main" style="overflow-x: hidden;">
+	<div class="row">
+		<div class="col-lg-12 col-sm-12 col-md-12">
+			<h1 class="page-header"><i class="fa fa-cogs"></i>&nbsp;Manage your products</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<div class="row">
+				<div class="x_panel" data-ng-cloak>
+
+					<div class="x_title">
+						<h2 ng-if="selectedStep=='step1'">Your products</h2>
+						<h2 ng-if="showIt==false">Basic Details</h2>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content">
+						<steps current-step="selectedStep">
+						<step name="step1">
+						<a class="btn btn-primary" style="margin-bottom:20px;float:left;" ng-if="!disableProductAdd" href="#marketplaces/add-product">
+							<i class="fa fa-plus-circle"></i> &nbsp; Add a new product
+						</a>
+						<a class="btn btn-success" style="float:left;" ng-if="ecommProducts && ecommProducts.length>0" ng-click="refreshProducts()">
+							<i class="fa fa-refresh"></i> &nbsp; Refresh Products
+						</a>
+						<div class="clearfix"></div>
+						<div ng-if="!ecommProducts && ecommProducts.length == 0" class="col-md-6 ">
+							<p>You don't have any product added.</p>
+						</div>
+						
+						<div  class="col-md-10 ecom">
+							<table class="table table-bordered table-responsive table-hover dataTable" >
+								<thead style="background-color:#3E3F41;color: white;">
+									<tr >
+										<td>Sr No.</td>
+										<td></td>
+										<td>Category</td>
+										<td>Product Name</td>
+										<td>Brand</td>
+										<td>MRP(INR)</td>
+										<td>Stores</td>
+									</tr>
+								</thead>
+								<tbody id="accordion" class="panel-group">
+									<tr ng-repeat="product in ecommProducts" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index+1}}" ng-click="showBasicInfo($event)" style="cursor: pointer;">
+										<td>{{$index+1}}</td>
+										<td><img style="width:70px;" ng-if="product.imageSources && product.imageSources.length > 0" ng-src="{{product.imageSources[0]}}"></td>
+										<td>{{product[0].mainCategory }}-> {{ product[0].category1 }}-> {{product[0].category2}}</td>
+										<td>{{product[0].category2}}</td>
+										<td>{{product[0].brand}}</td>
+										<td>{{product[0].sellingInfo.mrp}}</td>
+										<td><img style="height: 25px;width: 25px;"src="https://seeklogo.com/images/F/flipkart-logo-3F33927DAA-seeklogo.com.png" ng-if="product[0].ecStoreTypes.includes('FLIPKART')||product[1].ecStoreTypes.includes('FLIPKART')"><img style="height: 25px; width: 25px;margin-left: 15px;" src="https://image.shutterstock.com/image-photo/image-260nw-276929006.jpg" ng-if="product[0].ecStoreTypes.includes('AMAZON') || product[1].ecStoreTypes.includes('AMAZON')"></td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+						</step>
+						<step name="step2">
+							<div class="ecom">
+								<div class="alert alert-success" ng-show="stockPriceShow">{{updateStockPriceMsg }} updated Successfully!!</div>
+								<div><button class="btn btn-dark" ng-click="goBack()">Back to Product Listings</button></div>
+								<div ng-repeat="product in ecommProducts" id="collapse{{$index+1}}" class="panel-collapse collapse">
+							       <div class="panel-body">
+							          <div class="basic-det-outer row">
+							          	<div class="col-md-6 col-sm-12 col-xs-12 flipkart-outer" >
+							          		<div class="basic-det-outer-title">
+							          			<h4>{{product[0].ecStoreTypes[0]}}</h4>
+							          		</div>
+							          		<div class="basic-det-outer-body">
+							          			<div class="basic-det-inner-each"><span>SKU Id: </span><span class="det-val-span">{{product[0].sku}}</span></div>
+							          			<div class="basic-det-inner-each"><span>HSN:</span><span class="det-val-span">{{product[0].hsn}}</span></div>
+							          			<div class="basic-det-inner-each"><span>Stock</span><span class="det-val-span">{{product[0].stock}}
+							          				<span class="edit-pencil" ng-click="showDialog[0] = !showDialog[0]"><i class="fa fa-pencil"></i></span>
+				                                        <div ng-show="showDialog[0]" class="edit-dialog">
+				                                            <div>Update Stock</div>
+				                                            <div><input type="text" ng-model="product[0].stock"></div>
+				                                            <div class="edit-dialog-btn-wrapper">
+				                                                <a class="edit-dialog-btn" ng-click="showDialog[0]=!showDialog[0]" style="margin-left: 10px;">Cancel</a>
+				                                                <a class="edit-dialog-btn" ng-click="updateInventory(product[0],0)">Update</a>
+				                                            </div>
+				                                        </div>
+							          			</span></div>
+							          			<div class="basic-det-inner-each"><span>Luxury Cess</span><span class="det-val-span">{{}}</span></div>
+							          			<div class="basic-det-inner-each"><span>Selling Price:</span>
+							          				<span class="det-val-span">{{product[0].sellingInfo.sellingPrice}}
+							          					<span class="edit-pencil" ng-click="showDialog[1] = !showDialog[1]"><i class="fa fa-pencil"></i></span>
+				                                        <div ng-show="showDialog[1]" class="edit-dialog">
+				                                            <div>Update Price</div>
+				                                            <div><input type="text" ng-model="product[0].sellingInfo.sellingPrice"></div>
+				                                            <div class="edit-dialog-btn-wrapper">
+				                                                <a class="edit-dialog-btn" ng-click="showDialog[1]=!showDialog[1]" style="margin-left: 10px;">Cancel</a>
+				                                                <a class="edit-dialog-btn" ng-click="updatePrice(product[0],1)">Update</a>
+				                                            </div>
+				                                        </div>
+							          				</span>
+							          			</div>
+							          			<div class="basic-det-inner-each"><span>SKU Id:</span><span class="det-val-span">{{}}</span></div>
+							          			<div class="view-more"><a ng-click="viewProduct(product[0].sellingInfo.ecProdSiId,product[0].mainCategory,product[0].category1,product[0].category2)">View More..</a><div class="clearfix"></div></div>
+
+							          		</div>
+							          	</div>
+							          	<div class="col-md-6 col-sm-12 col-xs-12 amazon-outer" ng-if="product.length > 1" >
+							          		<div class="basic-det-outer-title">
+							          			<h4>{{product[1].ecStoreTypes[0]}}</h4>
+							          		</div>
+							          		<div class="basic-det-outer-body">
+							          			<div class="basic-det-inner-each"><span>SKU Id:</span><span class="det-val-span">{{product[1].sku}}</span></div>
+							          			<div class="basic-det-inner-each"><span>HSN:</span><span class="det-val-span">{{product[1].hsn}}</span></div>
+							          			<div class="basic-det-inner-each"><span>Stock</span><span class="det-val-span">{{product[1].stock}}
+							          				<span class="edit-pencil" ng-click="showDialog[2] = !showDialog[2]"><i class="fa fa-pencil"></i></span>
+				                                        <div ng-show="showDialog[2]" class="edit-dialog">
+				                                            <div>Update Stock</div>
+				                                            <div><input type="text" ng-model="product[1].stock"></div>
+				                                            <div class="edit-dialog-btn-wrapper">
+				                                                <a class="edit-dialog-btn" ng-click="showDialog[2]=!showDialog[2]" style="margin-left: 10px;">Cancel</a>
+				                                                <a class="edit-dialog-btn" ng-click="updateInventory(product[1],2)">Update</a>
+				                                            </div>
+				                                        </div>
+							          			</span></div>
+							          			<div class="basic-det-inner-each"><span>Luxury Cess</span><span class="det-val-span"></span></div>
+							          			<div class="basic-det-inner-each"><span>Selling Price:</span>
+							          				<span class="det-val-span">{{product[1].sellingInfo.sellingPrice}}
+							          					<span class="edit-pencil" ng-click="showDialog[3] = !showDialog[3]"><i class="fa fa-pencil"></i></span>
+				                                        <div ng-show="showDialog[3]" class="edit-dialog">
+				                                            <div>Update Price</div>
+				                                            <div><input type="text" ng-model="product[1].sellingInfo.sellingPrice"></div>
+				                                            <div class="edit-dialog-btn-wrapper">
+				                                                <a class="edit-dialog-btn" ng-click="showDialog[3]=!showDialog[3]" style="margin-left: 10px;">Cancel</a>
+				                                                <a class="edit-dialog-btn" ng-click="updatePrice(product[1],3)">Update</a>
+				                                            </div>
+				                                        </div>
+							          				</span>
+							          			</div>
+							          			<div class="basic-det-inner-each"><span>SKU Id:</span><span class="det-val-span"></span></div>
+							          			<div class="view-more"><a ng-click="viewProduct(product[1].sellingInfo.ecProdSiId,product[0].mainCategory,product[0].category1,product[0].category2)">View More..</a><div class="clearfix"></div></div>
+							          		</div>
+							          	</div>
+							          </div>
+							       </div> 
+							   	</div>
+						   	</div>
+						</step>
+						</steps>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

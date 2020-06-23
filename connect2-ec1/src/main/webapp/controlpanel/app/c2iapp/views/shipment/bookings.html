@@ -1,0 +1,77 @@
+<div class="right_col" role="main">
+<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Your Bookings</h1>
+		</div>
+	</div>            
+	
+	<div class="row">
+		
+		<div class="tool x_panel col-md-6 col-xs-12" data-ng-cloak>
+			<div class= "company-results">
+				<div class="row searchList" ng-repeat="shipment in shipments">
+				
+					<div class="col-md-12 details">
+						<div class="col-md-4 col-sm-4 col-xs-12 first_column">
+							<div><h3><img ng-src="{{shipment.freightRate.shippingLine.logoUrl}}" alt="LOGO">{{shipment.freightRate.shippingLine.name}}</h3></div>
+								
+							<div class="container">
+								<div class="col-md-2 icon">
+									<i class="fa fa-ship"></i>
+									<i style="padding: 6px;" class="fa fa-ellipsis-v"></i>
+									<i class="fa fa-anchor"></i>
+								</div>
+								<div class="col-md-10 text">
+									{{shipment.freightRate.originPort}} - {{shipment.freightRate.originPlace}}
+									<div style="padding: 14px;"></div>
+									{{shipment.freightRate.destinationPort}} - {{shipment.freightRate.destinationPlace}}
+								</div>
+								<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+								<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							</div>
+							
+						</div>	
+
+						<div class="col-md-4 col-sm-4 col-xs-12 first_column">
+								
+							<span class="text"><label>Booking Details</label> </span>
+							
+								<div style="padding: 16px 10px 0px 10px;font-size: 16px;color:#6f6f6f;"> <label> Booking Date:</label>
+									&nbsp;&nbsp; <span>{{shipment.bookingDate}}</span>
+								</div>
+								<div style="padding-left:10px;font-size: 16px;color:#6f6f6f;"> <label> Sailing Date:</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{shipment.freightRate.sailingDate}}</span>
+								</div>	
+								<div style="padding-left:10px;font-size: 16px;color:#6f6f6f;"> <label> Commodity:</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{shipment.freightRate.commodity}}</span>
+								</div>	
+								<div style="padding-left:10px;font-size: 16px;color:#6f6f6f;"> <label> Container Size:</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{shipment.freightRate.loadType}}</span>
+								</div>	
+								<div style="padding-left:10px;font-size: 16px;color:#6f6f6f;"> <label> Number of Containers:</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{shipment.freightRate.quantity}}</span>
+								</div>	
+								
+							
+						</div>
+							<div class="col-md-4 col-sm-4 col-xs-12 third_column">
+
+								<label style="margin-left: 25px;">FREIGHT RATE</label>
+								
+
+									<div class="container sp">
+										<label>TOTAL LANDED COST</label>
+										<div>
+											<span class="currency">{{shipment.freightRate.totalLandedCostCurrency}} </span>&nbsp;<span class="pricing">{{shipment.freightRate.totalLandedCost}}&nbsp;</span>
+
+										</div>
+									</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+		
+	</div>  
+		
+</div>

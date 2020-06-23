@@ -1,0 +1,213 @@
+<div class="right_col" role="main">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-cog"></i> &nbsp;Apply For Export Finance</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div data-ng-cloak>
+				<div class="x_panel" data-ng-cloak>
+					<div class="x_title">
+						<div class="clearfix"></div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<br/>
+						<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+							<strong>Success! </strong> {{successMsg}}
+						</div>
+						<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+							<strong>Error! </strong> {{errorMessage}}
+						</div>
+
+						<div id="wizard" class="form_wizard wizard_horizontal" ng-show="!showResults">
+							  <ul class="wizard_steps">
+								<li ng-repeat="step in stepMaps[tradeType]">
+								  <a href="" ng-click="setSelectedStep(step.step);" ng-class="{done: isStepDone(step.step), disabled: selectedStep != step.step && !isStepDone(step.step),selected:selectedStep == step.step}">
+									<span class="step_no">{{step.id}}</span>
+									<span class="step_descr"><small>{{step.name}}</small></span>
+								  </a>
+								</li>
+							  </ul>
+
+							<steps current-step="selectedStep" class="col-md-6 col-sm-12 trade-finance">
+								<step name="step1">
+									<!-- <h3>{{stepMaps[tradeType][0].name}}</h3> -->
+									<div class="clearfix"></div>
+									<form name="financeForm" >
+										<div class="col-md-12 col-sm-12 col-xs-12" >
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Company Name</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter company name" ng-model="finForm.companyName" required >
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >IEC</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter IE Code" ng-model="finForm.iec" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Trade Type</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<select class="form-control" name="tradeType" ng-model="selectedDropdownValues.selectedTradeType"
+													ng-options="ot as ot.label for ot in tradeTypes" required>
+														<option value="">Select Trade Type</option>
+													</select>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Finance Type</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<select class="form-control" name="financeType" ng-model="selectedDropdownValues.selectedFinanceType"
+													ng-options="ot as ot.label for ot in financeTypes" required>
+														<option value="">Select Finance Type</option>
+													</select>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Product</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter products you export" ng-model="finForm.product" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12" >Trade History</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter number of shipments in last 6 months." ng-model="finForm.shipmentHistory" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Export Turnover</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter export turnover in last 12 months" ng-model="finForm.exportTurnover" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group concent">
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<label for="chkConcent">
+														<input type="checkbox" ng-model="finForm.concent" id="chkConcent" required></input>
+														I agree to be contacted by Connect2India and its partner representatives for more information about this product.</label>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</form>
+									<div class="form-group action">
+										<div class="col-md-8 col-sm-8 col-xs-12">
+											<button class="btn btn-primary" ng-click="validateAndSubmitProduct(categoryProductForm.$valid)">&nbsp;&nbsp;Next&nbsp;&nbsp;</button>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+
+									<div class="clearfix"></div>
+								</step>
+								<step name="step2">
+									<h3>{{stepMaps[tradeType][1].name}}</h3>
+
+                                    <div class= "company-results">
+
+                                    </div>
+									<button class="btn btn-primary" step-previous>Previous</button>
+									<button class="btn btn-primary" ng-click="validateAndSubmitTargetMarket()">Next</button>
+									<div class="clearfix"></div>
+
+								</step>
+								<step name="step3">
+									<h3>{{stepMaps[tradeType][2].name}}</h3>
+
+                                    <div class="active-trade">
+									</div>
+									<button class="btn btn-primary" step-previous>Previous</button>
+									<button class="btn btn-primary" ng-click="validateAndSubmitPrice()">Proceed</button>
+									<div class="clearfix"></div>
+								</step>
+								<step name="step4">
+									<h3>{{stepMaps[tradeType][3].name}}</h3>
+
+                                    <div class= "company-results">
+                                    </div>
+
+									<button class="btn btn-primary" step-previous>Previous</button>
+									<button class="btn btn-primary" ng-click="validateAndSubmitCounterparts()">Next</button>
+									<div class="clearfix"></div>
+								</step>
+								<step name="step5">
+									<h3>{{stepMaps[tradeType][4].name}}</h3>
+
+                                    <div >
+                                    </div>
+									<div class="clearfix"></div>
+
+									<div class="clearfix"></div>
+									<button class="btn btn-primary" step-previous>Previous</button>
+									<!-- <button class="btn btn-primary" ng-click="validateAndSubmitContacts()">Next</button> -->
+									<div class="clearfix"></div>
+								</step>
+							</steps>
+							<div class="col-md-6 col-sm-12">
+									<section class="finFeatures text-center cp">
+						   <div class="container">
+						      <div class="row text-left boxStart">
+								  <div class="col-md-12 boxes" style="margin-top: -30px;">
+									 <div class="indBox">
+										<div class="icon2"><i class="material-icons">receipt</i></div>
+										<div class="content">
+										   <h4>No Collateral required</h4>
+										   <p class="text-muted">Get collateral free post shipment financing.</p>
+										</div>
+									 </div>
+								  </div>
+ 						         <div class="col-md-12 boxes">
+ 						            <div class="indBox">
+ 						               <div class="icon2"><i class="material-icons">account_balance</i></div>
+ 						               <div class="content">
+ 						                  <h4>Credit limit up to $5 million</h4>
+ 						                  <p class="text-muted">Get post-shipment credit up to $5 million.</p>
+ 						               </div>
+ 						            </div>
+ 						         </div>
+						         <div class="col-md-12 boxes">
+						            <div class="indBox">
+						               <div class="icon2"><i class="material-icons">stars</i></div>
+						               <div class="content">
+						                  <h4>Fast, End-to-End and Paperless</h4>
+						                  <p class="text-muted">End-to-end and 100% paperless approval makes it easier and hassle-free.</p>
+						               </div>
+						            </div>
+						         </div>
+						         <div class="col-md-12 boxes">
+						            <div class="indBox">
+						               <div class="icon2"><i class="material-icons">payment</i></div>
+						               <div class="content">
+						                  <h4>Transparent</h4>
+						                  <p class="text-muted">No hidden fees. Flat fee with 100% transparent pricing.</p>
+						               </div>
+						            </div>
+						         </div>
+						      </div>
+						   </div>
+						</section>
+
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<hr/>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,258 @@
+<div class="right_col">
+<div class="row">
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Create Seller account</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="wizard" class="form_wizard wizard_horizontal">
+                <ul class="wizard_steps">
+                    <li>
+                      <a ng-class="{selected:selectedStep == 'step1', done1: currentStepDone('step1')}" ng-click="goTo('step1')">
+                        <span class="step_no">1</span>
+                        <span class="step_descr"><small>Seller Information</small></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a ng-class="{selected:selectedStep == 'step2', done1: currentStepDone('step2')}" ng-click="goTo('step2')">
+                        <span class="step_no">2</span>
+                        <span class="step_descr"><small>Pick Up address</small>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a ng-class="{selected:selectedStep == 'step3', done1: currentStepDone('step3')}" ng-click="goTo('step3')">
+                        <span class="step_no">3</span>
+                        <span class="step_descr"><small>Business Information</small>
+                         </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a ng-class="{selected:selectedStep == 'step4', done1: currentStepDone('step4')}" ng-click="goTo('step4')">
+                        <span class="step_no">4</span>
+                        <span class="step_descr"><small>Payment Information</small>
+                         </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a ng-class="{selected:selectedStep == 'step5', done1: currentStepDone('step5')}" ng-click="goTo('step5')">
+                        <span class="step_no">5</span>
+                        <span class="step_descr"><small>Upload Documents</small>
+                         </span>
+                      </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+                <steps current-step="selectedStep">
+                    <step name="step1">
+                        <div class="ecom">
+                        <div class="seller-form-info col-md-5 col-sm-12 col-xs-12">
+                            <h3 style="text-align :center; margin-bottom: 20px;">Create Your Seller Account</h3>
+                            <form  name = "sellerForm1">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="email" name="sellerEmail" ng-model="sellerStoreData.sellerEmail" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Email" required>
+                                    <span ng-show="sellerForm1.sellerEmail.$dirty && sellerForm1.sellerEmail.$invalid" class="form-error">
+                                        <span ng-show="sellerForm1.sellerEmail.$error.required">Email is required!!</span>
+                                        <span ng-show="sellerForm1.sellerEmail.$error.email">Invalid Email Address!!</span>
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="tel" name="sellerContact" class="form-input col-md-8 col-sm-8 col-xs-8" placeholder="Mobile No." pattern="[0-9]{10}" ng-model="sellerStoreData.sellerContact" required>
+                                    <div style="margin-top:5px;float:right;"><a class="otp-btn">Send OTP</a></div>
+                                    <div class="clearfix"></div>
+                                    <span ng-show="sellerForm1.sellerContact.$dirty && sellerForm1.sellerContact.$invalid" class="form-error">
+                                        <span ng-show="sellerForm1.sellerContact.$error.required">Phone number required!!</span>
+                                        <span ng-hide="sellerForm1.sellerContact.$invalid && sellerForm1.sellerContact.$error.required">Invalid Phone number</span>
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="sellerName" ng-model="sellerStoreData.sellerName" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Full Name:-" required>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="password" name="sellerPassword"  class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Set Password" required ng-model="sellerStoreData.sellerPassword" ng-minlength = "4">
+                                </div>
+                                <p class="col-md-12 col-sm-12 col-xs-12">Minimum 4 characters</p>
+                                <button class="btn btn-primary col-md-12 col-sm-12"  ng-click="goToNextStep('step1')" ng-disabled = "sellerForm1.$invalid">
+                                    SIGN UP
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                    </step>
+                    <step name="step2">
+                        
+                        <div class="ecom">
+                        <div class="seller-form-info col-md-5 col-sm-12 col-xs-12">
+                            <h3 style="text-align :center; margin-bottom: 20px;">Give Your Pickup Address</h3>
+                            <form  name = "sellerForm2">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="pickUpPincode" ng-model="sellerStoreData.pickUpPincode" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Pincode" ng-minlength = "6" required>
+                                </div>
+                                <p ng-show="pincodeVerified==true" ng-init="pincodeVerified=true"></p>
+                                <div ng-show="pincodeVerified">
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <textarea name="pickUpAddress" ng-model="sellerStoreData.pickUpAddress" class="col-md-12 col-sm-12 col-xs-12" placeholder="Enter PickUp Address" style="resize:vertical;border:none;" required></textarea>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary col-md-12 "  ng-click=" goToNextStep('step2')" ng-disabled ="sellerForm2.$invalid">
+                                    Continue
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="ecom">
+                            <div class="prevStepBtn-wrapper"><a ng-click="goBack('step1')" class="prevStepBtn">Previous</a>
+                            </div>
+                        </div>
+                    </step>
+                    <step name="step3">
+                        <div class="ecom">
+                        <div class="seller-form-info col-md-5">
+                            <h3 style="text-align :center; margin-bottom: 20px;">Give Your Business Details</h3>
+                            <form name = "sellerForm3">
+                                <div>
+                                    <div class="row">
+                                        <input type="radio" ng-model="sellerStoreData.gst" value="already" class="col-md-1 col-sm-1 col-xs-1">
+                                        <p class="col-md-11 col-sm-11 col-xs-11">I have GSTIN</p>
+                                    </div>
+                                    <div class="row">
+                                        <input type="radio" ng-model="sellerStoreData.gst" value="exempted" class="col-md-1 col-sm-1 col-xs-1">
+                                        <p class="col-md-11 col-sm-11 col-xs-11">I will only sell in GSTIN exempt categories like books</p>
+                                    </div>
+                                </div>
+                                <div ng-if ="sellerStoreData.gst == 'already'">
+                                    <input type="text" name="gstinNumber" placeholder="Enter GSTIN Number" ng-model="sellerStoreData.gstinNumber" class="col-md-12 form-input" style="margin-bottom: 10px;" required>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12" ng-if="sellerStoreData.gst=='exempted'">
+                                    <p><strong>Your Information</strong></p>
+                                    <div class="form-group col-md-12">
+                                        <input type="text" name="businessName" ng-model="sellerStoreData.businessName" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Enter Your Business Name" required>
+                                        <span ng-show="sellerForm3.businessName.$dirty && sellerForm3.businessName.$invalid" class="form-error">
+                                            <span ng-show="sellerForm3.businessName.$error.required">BusinessName is required!!</span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="text" name="panNumber" ng-model="sellerStoreData.panNumber" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Enter Your PAN No." required>
+                    
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <select class="form-input" ng-model="sellerStoreData.businessType" ng-options="x as x for x in businessTypeList">
+                                            <option value="" selected style="font-style: italic;">Select Category</option>
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <p><strong>Your Business Address</strong></p>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" name="addressLine1" ng-model="sellerStoreData.addressLine1" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Room/Floor/Building" required>
+                                        <span ng-show="sellerForm3.addressLine1.$dirty && sellerForm3.addressLine1.$invalid" class="form-error">
+                                            <span ng-show="sellerForm3.addressLine1.$error.required">This field is required!!</span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" name="addressLine2" ng-model="sellerStoreData.addressLine2" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="Street/landmark" >
+                                        <span ng-show="sellerForm3.addressLine2.$dirty && sellerForm3.addressLine2.$invalid" class="form-error">
+                                            <span ng-show="sellerForm3.addressLine2.$error.required">This field is required!!</span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <input class="col-md-6 form-input" placeholder="Pincode" style="border-right: 1px solid lavender;" ng-model="sellerStoreData.pincode" name="pincode" required>
+                                        <input class="col-md-6 form-input" placeholder="City" ng-model="sellerStoreData.city" name="city" required>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" name="state" ng-model="sellerStoreData.state" class="form-input col-md-12 col-sm-12 col-xs-12" placeholder="State" required>
+                                        <span ng-show="sellerForm3.state.$dirty && sellerForm3.state.$invalid" class="form-error">
+                                            <span ng-show="sellerForm3.state.$error.required">This field is required!!</span>
+                                        </span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <button class="btn btn-primary col-md-12"  ng-click="validate()">
+                                    Continue
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="ecom">
+                            <div class="prevStepBtn-wrapper"><a ng-click="goBack('step2')" class="prevStepBtn">Previous</a>
+                            </div>
+                        </div>
+                    </step>
+                    <step name="step4">
+                    <div><a ng-click="goBack('step3')" href="">Go Back</a></div>
+                    <div class="ecom">
+                    <div class="seller-form-info col-md-5">
+                        <h3 style="text-align :center; margin-bottom: 20px;">Give Your Bank Details</h3>
+                        <form name="sellerForm4">
+                            <div class="form-group col-md-12">
+                                <input type="text" name="bankName" ng-model="sellerStoreData.bankName" class="form-input col-md-12" placeholder="Bank Name" required>
+                                <span ng-show="sellerForm4.bankName.$dirty && sellerForm4.bankName.$invalid" class="form-error">
+                                    <span ng-show="sellerForm4.bankName.$error.required">This field is required!!</span>
+                                </span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" name="bankAccountNumber" ng-model="sellerStoreData.bankAccountNumber" class="form-input col-md-12" placeholder="Bank A/c No." required>
+                                <span ng-show="sellerForm4.bankAccountNumber.$dirty && sellerForm4.bankAccountNumber.$invalid" class="form-error">
+                                    <span ng-show="sellerForm4.bankAccountNumber.$error.required">This field is required!!</span>
+                                </span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" name="ifsc" ng-model="sellerStoreData.ifsc" class="form-input col-md-12" placeholder="Ifsc Code" required>
+                                <span ng-show="sellerForm4.ifsc.$dirty && sellerForm4.ifsc.$invalid" class="form-error">
+                                    <span ng-show="sellerForm4.ifsc.$error.required">This field is required!!</span>
+                                </span>
+                            </div>
+                            <button class="btn btn-primary col-md-12" ng-click="goToNextStep('step4')" ng-disabled = "sellerForm4.$invalid">
+                                Save Details
+                            </button>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                        <div class="ecom">
+                            <div class="prevStepBtn-wrapper"><a ng-click="goBack('step3')" class="prevStepBtn">Previous</a>
+                            </div>
+                        </div>
+                    </step>
+                    <step name="step5">
+                        <div class="ecom">
+                            <h4>Upload Documents</h4><hr>
+                            <div class="alert alert-success" ng-show="uploadSuccessMsg">
+                            <i class="fa fa-check"></i>Document Uploaded Successfully!!
+                            </div>
+                            <div class="seller-form-info col-md-5">
+                            <p><strong>Address Proof</strong></p>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-7 col-sm-7 col-xs-7"><input type="file" style="margin-top: 4px;" file-model="filedata.attachedFile"></div>
+                                <div style="margin-top: 5px;float:right;"><a class="otp-btn" ng-click="uploadDocFiles(filedata.attachedFile,'addressProof')">Upload</a></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <p><strong>Signature</strong></p>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-7 col-sm-7 col-xs-7"><input type="file" style="margin-top: 4px;" file-model="filedata.attachedFile"></div>
+                                <div style="margin-top: 5px;float:right;"><a ng-click="uploadDocFiles(filedata.attachedFile,'signature')"class="otp-btn">Upload</a></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <p><strong>Cancelled Cheque</strong></p>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-7 col-sm-7 col-xs-7"><input type="file" style="margin-top: 4px;" file-model="filedata.attachedFile"></div>
+                                <div style="margin-top: 5px;float:right;"><a ng-click="uploadDocFiles(filedata.attachedFile,'cheque')"class="otp-btn">Upload</a></div>
+                            </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="button" ng-click="finalStoreCreated()" ng-disabled = "uploadCount==0">Continue</button>
+                        </div>
+                    </step>
+                </steps>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>

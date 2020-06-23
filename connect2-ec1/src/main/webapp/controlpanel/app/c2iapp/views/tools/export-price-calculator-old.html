@@ -1,0 +1,146 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Export Price Calculator</h1>
+		</div>
+	</div>	
+		
+
+
+
+
+	<div class="row x_panel">
+			<p>This calculation sheet helps you calculate an export price. Fill in the cells on the spreadsheet and you can calculate your selling prices based on the Incoterm chosen. You can also build estimates of your distributors' margins and determine the approximate export selling price of your products.</p>
+		<div class="col-md-12">
+			<form name="exportPriceForm">
+				<table class=" table table-bordered table-striped">
+					<tr>
+							<th style="width:40%">Type of expenses</th>
+							<th colspan="2" style="width:40%">Values</th>
+							<th>Currency</th>
+							<th style="width:20%">Incoterm</th>
+							</tr>
+							<tr>
+							<td>Value of the goods (loaded on leaving the factory)</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.terma"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td>From the factory (EXW)</td>
+							</tr>
+							
+							<tr>
+							<td>Cost of handling carriage before (from the factory to the port or to the airport)</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termb"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+							<tr>
+							<td>Fixed cost of export Customs formalities</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termc"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Handling costs (loading onto the airplane, the vessel or the truck in the case of groupage) in originating terminal</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termd"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Free on board / Free Carrier</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control disabled" type="text" name="terma" value="{{path.fob}}"  style="border-radius: 0px;" disabled></td>
+							<td>INR</td>
+							<td>FOB / FCA</td>
+							</tr>
+							
+								<tr>
+							<td>Total cost of the main transport (by air, sea or land)</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.terme"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Cost of insurance for the main transport*</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termf"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Cost of the Insurance and Freight</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control disabled" type="text" name="terma" value="{{path.coi}}"  style="border-radius: 0px;" disabled></td>
+							<td>INR</td>
+							<td>CIF</td>
+							</tr>
+							
+								<tr>
+							<td>Cost of handling on arrival at the (air)port or bulk-breaking platform</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termg"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Customs duties</td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termh"  style="border-radius: 0px;" required> % of CIF</td>
+							<td><input class="form-control disabled" type="text" name="terma" value="{{path.cd}}"   style="border-radius: 0px;" disabled></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Import taxes</td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termi"  style="border-radius: 0px;" required> % of CIF </td>
+							<td><input class="form-control disabled" type="text" name="terma" value="{{path.id}}"  style="border-radius: 0px;" disabled></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Cost of import Customs formalities (flat rate)</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termj"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Cost of carriage after (from the port (airport) to the buyer)</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control" type="text" name="terma" ng-model="expFormData.termk"  style="border-radius: 0px;" required></td>
+							<td>INR</td>
+							<td></td>
+							</tr>
+							
+								<tr>
+							<td>Delivered Duty Paid</td>
+							<td><input style="visibility:hidden"></td>
+							<td><input class="form-control disabled" type="text" name="terma" value="{{path.total}}"  style="border-radius: 0px;" disabled></td>
+							<td>INR</td>
+							<td>DDP</td>
+							</tr>
+							
+							<tr>
+							<td colspan="2">* based on the CIF value</td>
+							<td colspan="3"><button  style="padding: 5px;width:30%;" class="btn btn-primary" type="submit"  ng-click="calculateExportPrice(exportPriceForm.$valid, expFormData);">Calculate</button></td>
+							</tr>
+							
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,123 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-bar-chart"></i>&nbsp;Global Trade Analysis</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Custom Tabs -->
+			<div class="nav-tabs-custom">
+				<div class="tab-content">
+
+					<div class="tab-pane active" id="tab_gallery">
+						<div class="row x_panel">
+							<div class="col-md-12">
+								<div class="col-md-4 productAutoComplete1">
+									
+									<h4><input type="radio" id="rdoYp" ng-model="reportForm.productType" value="yourProducts"> <label for="rdoYp">Your Products</label></h4>
+									<select ng-disabled="reportForm.productType != 'yourProducts'" ng-model="reportForm.selectedProduct" ng-options="product as product.name for product in comppro">
+									<option value="">---Select Product---</option>
+									</select>
+								</div>
+								<div class="col-md-7 productAutoComplete1">
+									<h4><input type="radio" id="rdoNp" ng-model="reportForm.productType" value="newProduct"> 
+									 <label for="rdoNp">Search for new product </label></h4>
+									<input ng-disabled="reportForm.productType != 'newProduct'" class="form-control" type="text" placeholder="Enter product name or HS code" name="term" ng-model="selectedProductName" ui-autocomplete="myOption" data-ng-cloak>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="clearfix"></div>
+								<div class="col-md-4 productAutoComplete">
+									<h4> Trade type </h4>
+									<select ng-model="tradeType" ng-change="tradeTypeChanged(tradeType)">
+										<option value="export">Export</option>
+										<option value="import">Import</option>
+									</select>
+								</div>
+								<div class="col-md-2 productAutoComplete">
+									<h4> Frequency </h4>
+									<select ng-model="reportForm.frequency">
+										<option value="annual">Annual</option>
+										<option value="monthly">Monthly</option>
+									</select>
+								</div>
+								<div class="col-md-2 productAutoComplete">
+									<h4> Period </h4>
+									<select ng-model="reportForm.period" ng-change="loadReport()">
+										<option value="{{year}}" ng-repeat="year in [2018,2017,2016]">{{year}}</option>
+									</select>
+								</div>
+								
+								
+								<div class="col-md-2 productAutoComplete">
+									<h4> Origin </h4>
+									<select ng-model="reportForm.sourceLocation">
+										<!-- <option value="all">All</option> -->
+										<option value="{{sloc}}" ng-repeat="sloc in sourceLocations">{{sloc}}</option>
+									</select>
+								</div>
+								<div class="col-md-2 productAutoComplete">
+									<h4> Destination </h4>
+									<select ng-model="reportForm.targetLocation">
+										<!-- <option value="all">All</option> -->
+										<option value="{{tloc}}" ng-repeat="tloc in targetLocations">{{tloc}}</option>
+									</select>
+								</div>
+								
+								<div class="col-md-2 productAutoComplete">									
+									<input class="btn btn-primary" type="button" ng-click="loadReport()" value="SUBMIT">
+								</div>
+							</div>
+						</div>
+							
+							<div class="col-sm-12 realTimeDemad  x_panel" data-ng-if="resultLoaded">
+								<h2 class="reportHeader">Worldwide {{tradeType}} demand for {{productReportTitle}}</h2>
+								<table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+									<thead>
+									<tr role="row" class="table-header">
+										<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">S. No</th>
+										<th ng-click="sortBy('sourceLocation')" class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" aria-sort="descending">Origin</th>
+										<th ng-click="sortBy('targetLocation')" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Destination</th>
+										<th ng-click="sortBy('tradeValue')" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Trade Value(USD million)</th>
+										<th ng-if="showQty" class="sorting">Quantity</th>
+										<th ng-if="showQty" class="sorting">Quantity Unit</th>
+										<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Period</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr role="row" class="odd" ng-repeat="pro in productReport">
+										<td class="count">{{$index+1}}</td>
+										<td><a href="#">{{pro.sourceLocation}}</a></td>
+										<td><a href="#">{{pro.targetLocation}}</a></td>
+										<td>{{pro.value}}</td>
+										<td ng-if="showQty">{{pro.qty | number}}</td>
+										<td ng-if="showQty">{{pro.qtyUnit}}</td>
+										<td>{{pro.periodDescription}}</td>
+									</tr>
+									</tbody>
+								</table>
+							   <!--  <button class="btn bg-maroon btn-flat margin" data-ng-click="detailedAnalysis()">View detailed analysis</button> -->
+							</div>
+
+							<div class="col-md-12" data-ng-if="noProductAdded">
+								<p>You haven't added any products yet</p>
+							</div>
+							<div class="col-md-12" data-ng-if="noDailyData">
+								<div>
+									<p>No data found in last 30 days for this product</p>
+									<a target="_blank" href="https://connect2india.com/global/market-analysis.html">View detailed analysis</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

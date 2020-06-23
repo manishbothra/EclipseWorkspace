@@ -1,0 +1,434 @@
+[
+{
+	"name":"Gorakhpur",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Udaipur",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur"]
+},
+{
+	"name":"Gandhidham",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Indore",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","metal ores","building materials","jute fibers","procurement agencies","cotton fibers"]
+},
+{
+	"name":"Belgaum",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Calicut",
+	"products":["pharmaceutical goods","medical goods","precious metals","stones","jewellery","building materials"]
+},
+{
+	"name":"Thane",
+	"products":["food","household goods","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","plastic materials","industrial chemicals"]
+},
+{
+	"name":"Chennai",
+	"products":["agricultural","agricultural raw material","food","beverages","household goods","waste products","scrap","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","fruits","vegetables","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","hardware","sanitary fittings","flat glass","textile fibres","plastic materials","industrial chemicals","lottery tickets"]
+},
+{
+	"name":"Jaipur",
+	"products":["agricultural","agricultural raw material","food","beverages","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","building materials"]
+},
+{
+	"name":"Rourkela",
+	"products":["pharmaceutical goods","medical goods","metal ores"]
+},
+{
+	"name":"Mysore",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Hooghly",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Kottayam",
+	"products":["agricultural","agricultural raw material","pharmaceutical goods","medical goods","precious metals","stones","jewellery","building materials"]
+},
+{
+	"name":"Liluah",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Siliguri",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Nashik",
+	"products":["food","textiles","intoxicants","metal ores"]
+},
+{
+	"name":"Hyderabad",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials"]
+},
+{
+	"name":"Panipat",
+	"products":["food","textiles","intoxicants","textile fibres"]
+},
+{
+	"name":"Ranchi",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","pharmaceutical goods","medical goods","metal ores"]
+},
+{
+	"name":"Malappuram",
+	"products":["household linen","clothing","floor coverings","tapestry","pharmaceutical goods","medical goods","precious metals","stones","jewellery","building materials"]
+},
+{
+	"name":"Muzaffarpur",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Ajmer",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Secunderabad",
+	"products":["agricultural","agricultural raw material","food","textiles","intoxicants"]
+},
+{
+	"name":"Cuttack",
+	"products":["perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","metal ores"]
+},
+{
+	"name":"Nagpur",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods","solid fuels","gaseous fuels","liquid fuels","metal ores"]
+},
+{
+	"name":"Gandhinagar",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Faridabad",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Guntur",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Ahmedabad",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","raw milk","dairy products","sugar","spices","fats","edible oils","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","jute fibers","procurement agencies","cotton fibers","textile fibres","plastic materials","industrial chemicals","lottery tickets"]
+},
+{
+	"name":"Tirupur",
+	"products":["household linen","clothing","floor coverings","tapestry"]
+},
+{
+	"name":"Erode",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Morbi",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Andhra Pradesh",
+	"products":["agricultural","agricultural raw material","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Amritsar",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Cochin",
+	"products":["eggs","fish","furniture","pharmaceutical goods","medical goods","building materials"]
+},
+{
+	"name":"Mohali",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Srinagar",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Mumbai",
+	"products":["agricultural","agricultural raw material","food","beverages","household goods","waste products","scrap","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","fruits","vegetables","raw milk","dairy products","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","watches","clocks","optical goods","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","hardware","sanitary fittings","flat glass","paints","varnishes","lacquers","jute fibers","procurement agencies","cotton fibers","textile fibres","plastic materials","industrial chemicals","pesticides","fertilizers","electrical machinery","electrical equipment","lottery tickets"]
+},
+{
+	"name":"Bangalore",
+	"products":["agricultural","agricultural raw material","food","beverages","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","oilseed","fruits","vegetables","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","paints","varnishes","lacquers","textile fibres","plastic materials","industrial chemicals"]
+},
+{
+	"name":"Bareilly",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Coimbatore",
+	"products":["food","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","jute fibers","procurement agencies","cotton fibers"]
+},
+{
+	"name":"Goa",
+	"products":["household goods","household linen","clothing","floor coverings","tapestry","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Noida",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Karnal",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Akola",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Jammu",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Moradabad",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Mathura",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Chandigarh",
+	"products":["food","household goods","textiles","intoxicants","fruits","vegetables","sugar","spices","fats","edible oils","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials","textile fibres"]
+},
+{
+	"name":"Bhubaneswar",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","fruits","vegetables","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials","hardware","sanitary fittings","flat glass"]
+},
+{
+	"name":"Jalandhar",
+	"products":["household goods","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Jodhpur",
+	"products":["food","textiles","intoxicants","household linen","clothing","floor coverings","tapestry"]
+},
+{
+	"name":"Haryana",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Kalyan",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Dehradun",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Varanasi",
+	"products":["food","household goods","textiles","intoxicants","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Kollam",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Bhilai",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur"]
+},
+{
+	"name":"Alwar",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Bharuch",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Aurangabad",
+	"products":["food","household goods","textiles","intoxicants","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Jamnagar",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Balasore",
+	"products":["eggs","fish"]
+},
+{
+	"name":"Allahabad",
+	"products":["food","household goods","textiles","intoxicants","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Muzaffarnagar",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Bilaspur",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Kozhikode",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Gwalior",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Trichy",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Jamshedpur",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","metal ores"]
+},
+{
+	"name":"Trivandrum",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Visakhapatnam",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Thiruvananthapuram",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Ludhiana",
+	"products":["food","household goods","textiles","intoxicants","sugar","spices","fats","edible oils","household linen","clothing","floor coverings","tapestry","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","textile fibres"]
+},
+{
+	"name":"Jalgaon",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Gaya",
+	"products":["pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Gurgaon",
+	"products":["food","household goods","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","textile fibres"]
+},
+{
+	"name":"Raipur",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","metal ores"]
+},
+{
+	"name":"Vijayawada",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Kolkata",
+	"products":["agricultural","agricultural raw material","food","beverages","tobacco","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","oilseed","fruits","vegetables","raw milk","dairy products","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","watches","clocks","optical goods","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","hardware","sanitary fittings","flat glass","paints","varnishes","lacquers","jute fibers","procurement agencies","cotton fibers","raw wool","raw silk","textile fibres","plastic materials","industrial chemicals","pesticides","fertilizers","computer","computer peripheral equipments","lottery tickets"]
+},
+{
+	"name":"Punjab",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials","hardware","sanitary fittings","flat glass","textile fibres","pesticides","fertilizers"]
+},
+{
+	"name":"Surat",
+	"products":["food","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","precious metals","stones","jewellery","textile fibres"]
+},
+{
+	"name":"Mangalore",
+	"products":["perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur"]
+},
+{
+	"name":"Saharanpur",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"New Delhi",
+	"products":["agricultural","agricultural raw material","food","beverages","tobacco","household goods","waste products","scrap","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","oilseed","fruits","vegetables","raw milk","dairy products","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","watches","clocks","optical goods","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","metal ores","building materials","hardware","sanitary fittings","flat glass","paints","varnishes","lacquers","jute fibers","procurement agencies","cotton fibers","raw silk","textile fibres","plastic materials","industrial chemicals","pesticides","fertilizers","lottery tickets"]
+},
+{
+	"name":"Aligarh",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Thrissur",
+	"products":["household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","precious metals","stones","jewellery","building materials"]
+},
+{
+	"name":"Pune",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","fruits","vegetables","household linen","clothing","floor coverings","tapestry","toiletry","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials","textile fibres","industrial chemicals"]
+},
+{
+	"name":"Bhopal",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Lucknow",
+	"products":["food","household goods","textiles","intoxicants","radio","television","consumer electronics","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Delhi",
+	"products":["agricultural","agricultural raw material","food","beverages","household goods","waste products","scrap","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","cereals","pulses","fruits","vegetables","eggs","fish","confectionery","bakery products","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores","building materials","hardware","sanitary fittings","flat glass","paints","varnishes","lacquers","textile fibres","plastic materials","industrial chemicals","lottery tickets"]
+},
+{
+	"name":"Guwahati",
+	"products":["food","textiles","intoxicants","cereals","pulses","tea","coffee","cocoa","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Rajkot",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur"]
+},
+{
+	"name":"Madurai",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Kota",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Kanpur",
+	"products":["food","household goods","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","tea","coffee","cocoa","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","metal ores"]
+},
+{
+	"name":"Vadodara",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Howrah",
+	"products":["food","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","metal ores","jute fibers","procurement agencies","cotton fibers"]
+},
+{
+	"name":"Meerut",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Patna",
+	"products":["food","textiles","intoxicants","perfumery","cosmetics","paper","chemicals","wood","fuel","petroleum","glass","minerals","ores","metals","skin","leather","fur","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","pharmaceutical goods","medical goods","metal ores"]
+},
+{
+	"name":"Ghaziabad",
+	"products":["food","textiles","intoxicants"]
+},
+{
+	"name":"Ernakulam",
+	"products":["agricultural","agricultural raw material","food","household goods","textiles","intoxicants","eggs","fish","sugar","spices","fats","edible oils","tea","coffee","cocoa","household linen","clothing","floor coverings","tapestry","toiletry","crockery","chinaware","rubber household products","plastic household products","metal utensils","furniture","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","precious metals","stones","jewellery","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","solid fuels","gaseous fuels","liquid fuels","building materials","hardware","sanitary fittings","flat glass","industrial chemicals"]
+},
+{
+	"name":"Bhilwara",
+	"products":["food","textiles","intoxicants","household linen","clothing","floor coverings","tapestry"]
+},
+{
+	"name":"Agra",
+	"products":["food","household goods","textiles","intoxicants","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys"]
+},
+{
+	"name":"Jabalpur",
+	"products":["food","textiles","intoxicants","pharmaceutical goods","medical goods"]
+},
+{
+	"name":"Uttar Pradesh",
+	"products":["food","household goods","textiles","intoxicants","household linen","clothing","floor coverings","tapestry","radio","television","consumer electronics","books","magazines","newspapers","stationery items","pharmaceutical goods","medical goods","bicycles","rickshaws","sports goods","non mechanized vehicles","household equipment","household appliances","cleaning materials","photographic equipments","leather goods","travel accessories","games","toys","building materials","pesticides","fertilizers"]
+},
+{
+	"name":"Kochi",
+	"products":["pharmaceutical goods","medical goods","building materials"]
+},
+{
+	"name":"Bhiwandi",
+	"products":["food","textiles","intoxicants"]
+}
+]

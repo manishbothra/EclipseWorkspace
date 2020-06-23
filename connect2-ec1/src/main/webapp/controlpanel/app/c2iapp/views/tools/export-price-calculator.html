@@ -1,0 +1,171 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Export Price Calculator</h1>
+			<p>The Export price automated tool allows you to calculate the prices of products when you export it from India. Fees are calculated based on the product's classification number.</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<form class="x_panel" name="exportPriceForm">
+				<table class=" table table-bordered table-striped">
+					
+					<tr>
+					<td>Incoterm</td>
+					<td><select class="form-control" type="text" name="terma" ng-model="tools.exportPriceCalc.formData.incoterm" ng-change="changeTab();" style="border-radius: 0px;" required>
+					<option value="">select</option>
+					<option value="FOB">FOB</option>
+					<option value="CIF">CIF</option>
+					</select>
+					</td>
+					</tr>
+					
+					<tr>
+					<td>Value of Goods</td>
+					<td><input class="form-control" type="text" name="terma" ng-model="tools.exportPriceCalc.formData.value" required>
+					</td>
+					</tr>
+					
+					<tr ng-if="isCIF">
+					<td>Insurance Charges</td>
+					<td><input class="form-control" type="text" name="terma" ng-model="tools.exportPriceCalc.formData.insuranceValue" style="border-radius: 0px;"></td>
+					</tr>
+					
+					<tr ng-if="isCIF">
+					<td>Freight Charges</td>
+					<td><input class="form-control" type="text" name="terma" ng-model="tools.exportPriceCalc.formData.freightValue" style="border-radius: 0px;"></td>
+					</tr>
+				
+					<tr>
+					<td>Product classification number</td>
+					<td><input class="form-control" type="text" name="terma" ng-model="tools.exportPriceCalc.formData.productCode" ui-autocomplete="productAutoComplete" required>
+					<a href="javascipt:void(0)" data-toggle="modal" data-target="#hscode" target="_self">Search Product</a>
+					</td>
+					</tr>
+								
+					<tr>
+					<td colspan="4"><button type="submit" class="btn btn-primary"  ng-click="tools.exportPriceCalc.getExportsPrice(exportPriceForm.$valid);">FIND</button></td>
+					</tr>
+								
+				</table>
+					<p style="color:red;">{{errMessage}}</p>
+			</form>
+			<div class="tool x_panel" data-ng-cloak>
+				<!--<h3 style="text-align:center"><b>CUSTOM DUTIES</b></h3>
+					<div style="font-size:20px;">Product Code : {{tools.exportPriceCalc.formData.code}}</div>
+					<div style="font-size:20px;">Product Description : {{tools.exportPriceCalc.formData.productName}}</div><br/>
+					-->
+					 <div ng-if="hide">Export price for this product is not found in our Database.</div>
+					<table border="1" class=" table table-bordered table-striped" ng-if="exportCost">
+			            <tr>
+			                <th>Export Price</th>
+			                <th>{{exportCost}}</th>
+			            </tr>
+			        </table>
+					<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in DutiesData">
+	
+	                    <tr>
+	                        <td>HS Code</td>
+	                        <td>{{pro.productCode}}</td>
+	                    </tr>
+	
+	                    <tr>
+	                        <td>Description</td>
+	                        <td>{{pro.productName}}</td>
+	                    </tr>
+	
+	                    <tr>
+	                        <td>IGST</td>
+	                        <td>{{pro.igst}}</td>
+	                    </tr>
+	
+	                </table>
+	
+
+				</div>
+		</div>
+	</div>
+	
+	<div class="modal fade popupform" id="hscode" role="dialog" data-ng-cloak>
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="border-radius: 0; background: #eeeeee;width: 800px;margin-left: -120px;    padding-bottom: 50px;">
+            <button type="button" class="close" ng-click="closeHSModal();" data-dismiss="modal" style="margin-right: 20px; margin-top: 20px; color: black">&times;</button>
+            <!-- <h3 class="modal-title" id="myModalLabel" style="font-size: 1.17em;font-family: 'open_sansregular'">HS Classification</h3> -->
+			<div class="container">
+			<div class="col-md-8">
+			<div class="tool" style="padding: 5px 20px 1px 21px;">
+			<h1>HS CLASSIFICATION</h1>
+				<div class="row">
+				
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by code:</h3>
+							<p>Enter the first 2 or 4 digits of H.S code</p>
+							<select ng-model="exportPriceFormData.sector" ng-change="getSectorProducts(exportPriceFormData.sector);" style="width: 90%;">
+							<option value="">Select Sector</option>
+							<option ng-repeat="sec in sectrosData" value="{{sec.name}}">{{sec.name}}</option>
+							</select>
+							<select ng-model="exportPriceFormData.chapter" ng-change="getChapterProducts(exportPriceFormData.chapter);" style="width: 90%;">
+							<option value="">Select Chapter</option>
+							<option ng-repeat="sec in sectorProducts" value="{{sec.value}}">{{sec.name}}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by keyword:</h3>
+							<p>Describe your product:</p>
+							<input placeholder="Enter product name" class="form-control" type="text" name="terma" ng-model="exportPriceFormData.name"  style="border-radius: 0px;"> 
+							<a style="background: #f00;" href="javascript:void(0)" ng-click="getProductsByNameCode('name');">Search</a>
+						</div>
+					</div>
+					
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by code:</h3>
+							<p>Enter the first 2 or 4 digits of H.S code</p>
+							<input placeholder="Enter product Code" class="form-control" type="text" name="terma" ng-model="exportPriceFormData.code"  style="border-radius: 0px;"> 
+							<a style="background: #f00;" href="javascript:void(0)" ng-click="getProductsByNameCode('code');">Search</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+			</div>
+			
+			<div class="outputTable" ng-if="exportPriceResult==1">
+
+		        <p>Results :</p>
+		
+		        <table width="100%" border="1" class=" table table-bordered table-striped" style=" font-family: 'open_sansregular';">
+		            <tr>
+		
+		                <th>Product Code</th>
+		                <th>Product Name</th>
+		                <th></th>
+		            </tr>
+		
+		            <tr ng-repeat="pro in exportPriceResultProducts" ng-if="pro.id>1000000">
+		                <td>{{pro.id}}</td>
+		                <td>{{pro.value}}</td>
+		                <td><button class="btn btn-primary" ng-click="selectCode(pro.id)">Select</button></td>
+		            </tr>
+		
+		        </table>
+		
+		
+		
+		    </div>
+			
+        </div>
+    </div>
+</div>
+	
+</div>

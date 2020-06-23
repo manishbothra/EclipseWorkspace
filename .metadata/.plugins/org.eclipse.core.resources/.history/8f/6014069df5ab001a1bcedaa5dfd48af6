@@ -1,0 +1,111 @@
+package com.connect2.ec.BoxnbizDemo;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.RestController;
+
+
+public class Demo {
+	
+	static void login() throws Exception{
+		JSONObject json=new JSONObject();
+		json.put("email_id","yogesh.garg@connect2india.com");
+		json.put("password","yogesh@123");
+		json.put("api_key","57c50e-27f0d2-b00e8f-9ed0e5-19c6e8");
+		
+		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
+		String url="https://demo.api.boxnbiz.com/v1/login/get-token";
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Content-Type", "application/json");
+		httppost.setEntity(entity);
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpResponse response = httpClient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+		
+	}
+	static void inquiry_submitinquiry() throws Exception {
+		JSONObject json=new JSONObject();
+		json.put("company_id", "string");
+		json.put("shipper_person_id", "string");
+		json.put("trade_type", "Import/Export");
+		json.put("mode", "LCL/FCL/Air");
+		json.put("incoterms", "EXW/FOB/CIF");
+		json.put("pickup", "Pickup Address");
+		json.put("pol", "Port of Loading (Code)");
+		json.put("pod", "Port of Loading (Code)");
+		json.put("delivery", "Delivery Address");
+		json.put("pickup_service", "Y/N");
+		json.put("origin_handling", "Y/N");
+		json.put("origin_cha", "Y/N");
+		json.put("delivery_service", "Y/N");
+		json.put("destination_handling", "Y/N");
+		json.put("destination_cha", "Y/N");
+		json.put("gross_weight", "Total Gross Weight");
+		json.put("gross_weight_unit", "KG/MT/LBS");
+		json.put("commodity", "Machine/Banana");
+		json.put("expected_pickup_Date", "dd/mm/yyyy");
+		json.put("lcl_package_quantity", "(LCL) Number of Package");
+		json.put("lcl_package_type", "(LCL) Box/Drum");
+		json.put("fcl_container_quantity", "(FCL) Number of container");
+		json.put("fcl_container_type", "(FCL) Dry/Reefer");
+		json.put("fcl_container_size", "(FCL) 20/40/40HC");
+		json.put("fcl_container_stuffing", "(FCL) Factory Stuffing/CFS Stuffing");
+		String s1="[\n" + 
+				"    {\n" + 
+				"      \"length\": 0,\n" + 
+				"      \"width\": 0,\n" + 
+				"      \"height\": 0,\n" + 
+				"      \"quantity\": 0,\n" + 
+				"      \"unit\": \"cm,mm,m,inch,ft (case sensitive)\",\n" + 
+				"      \"air_load_type\": \"string\"\n" + 
+				"    }\n" + 
+				"  ]";
+		json.put("dimensionDtos",s1);
+		JSONObject dim=new JSONObject();
+		dim.put("length", 0);
+		dim.put("width", 0);
+		dim.put("height", 0);
+		dim.put("quantity", 0);
+		dim.put("unit", "cm,mm,m,inch,ft (case sensitive)");
+		dim.put("air_load_type", "string");
+		json.put("dimensionDtos",dim);
+		json.put("special_instruction", "Any special instruction regarding inquiry");
+		//System.out.println(json);
+		StringEntity entity=new StringEntity(json.toString(),"UTF-8");
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/submit-inquiry";
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Content-Type","aplication/json");
+		httppost.setEntity(entity);
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+		
+		
+	}
+	public static void main(String [] args) throws Exception {
+		//login();
+		inquiry_submitinquiry() ;
+		
+        
+
+	}
+	
+}

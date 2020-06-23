@@ -1,0 +1,42 @@
+<div class="right_col" role="main">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-cogs"></i>&nbsp;Trade Documents for trade #{{activeTradeId}}</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="x_panel" data-ng-cloak>
+					<div class="x_title">
+						<h2>Documents</h2>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content">
+
+						<div ng-if="!tradeDocuments || tradeDocuments.length == 0" class="col-md-8 productAutoComplete">
+							<p>No document is found for this trade.</p>
+						</div>
+						<div class="clearfix"></div>
+						<div ng-if="tradeDocuments && tradeDocuments.length > 0" class="col-md-12 productAutoComplete">
+							<div ng-repeat="tdoc in tradeDocuments" class="col-md-3 cold-sm-6 cold-xs-12 document-card">
+								<span class="doc-icon"><i class="fa" ng-class="tdoc.iconClass"></i></span>
+								<h2>{{tdoc.documentType}}</h2>
+								<p>{{tdoc.documentName}}</p>
+								<hr/>
+								<div>
+									<p> Date: <span>{{tdoc.date|formatDate}}</span></p>
+									<p> Size: <span>{{tdoc.displaySize}}</span></p>
+								</div>
+								<a class="btn btn-primary download" ng-click="downloadDocument(tdoc);">Download</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

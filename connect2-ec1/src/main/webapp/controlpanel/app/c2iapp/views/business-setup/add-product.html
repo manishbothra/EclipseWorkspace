@@ -1,0 +1,480 @@
+<div class="right_col">
+    <div class="row">
+        <div class="col-md-12">
+            <div data-ng-cloak>
+                <div class="x_panel" data-ng-cloak>
+                    <div class="x_title">
+                        <h2>Add your product details</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        
+                        <div id="wizard" class="form_wizard wizard_horizontal">
+                              <ul class="wizard_steps">
+                                <li>
+                                  <a ng-class="{selected:selectedStep == 'step1', done1: currentStepDone('step1')}" href="" ng-click="goTo('step1')">
+                                    <span class="step_no">1</span>
+                                    <span class="step_descr"><small>Select Category</small></span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a ng-class="{selected:selectedStep == 'step2', done1: currentStepDone('step2')}" href="" ng-click="goTo('step2')">
+                                    <span class="step_no">2</span>
+                                    <span class="step_descr"><small>Select Brand</small>
+                                                  </span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a ng-class="{selected:selectedStep == 'step3', done1: currentStepDone('step3')}" href="" ng-click="goTo('step3')">
+                                    <span class="step_no">3</span>
+                                    <span class="step_descr"><small>Brand Approval Form</small>
+                                                  </span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a ng-class="{selected:selectedStep == 'step4', done1: currentStepDone('step4')}">
+                                    <span class="step_no">4</span>
+                                    <span class="step_descr"><small>Fill Detailed Form</small>
+                                    </span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a ng-class="{selected:selectedStep == 'step5', done1: currentStepDone('step5')}">
+                                    <span class="step_no">5</span>
+                                    <span class="step_descr"><small>Add images</small>
+                                    </span>
+                                  </a>
+                                </li>
+                              </ul>
+                              <div class="clearfix"></div>
+                            <steps current-step="selectedStep">
+                             <step name="step1">
+                                <div><a ng-click="goBack(null)" href="" ng-show="backButton">Back</a></div> 
+                                <input type="radio" ng-model= "productselectopt" value="selected">
+                        <label>{{ecommerce_label}}</label>
+                        <div class="form-group" ng-if="productselectopt == 'selected'" >
+                             <div class="col-md-3 col-sm-4 col-xs-12" style="display: inline-block;">
+                                <select size=18 class="form-control" ng-model="ecommerceproducts.category1" ng-options="x1 as x1.name for x1 in allProducts|orderBy:'name'" >
+                                    <option value="" selected="selected" style="font-style: italic;">{{categ1}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12" ng-if="ecommerceproducts.category1.name && ecommerceproducts.category1.child.length > 0" style="display: inline-block;">
+                                <select size=18 class="form-control" data-ng-model="ecommerceproducts.category2" ng-options="x2 as x2.name for x2
+                                in ecommerceproducts.category1.child|orderBy:'name'" >
+                                <option value="" selected="selected" style="font-style: italic;">{{categ2}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-12" ng-if="ecommerceproducts.category2.name && ecommerceproducts.category2.child.length > 0" style="display: inline-block;">
+                                <select size=18 class="form-control" data-ng-model="ecommerceproducts.category3" ng-options="x3 as x3.name for x3 in ecommerceproducts.category2.child|orderBy:'name'" >
+                                    <option value="" selected="selected" style="font-style: italic;">{{categ3}}</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-4 col-sm-3 col-xs-12" ng-if = "ecommerceproducts.category3.child.length==0 || ecommerceproducts.category1.child.length ==0|| ecommerceproducts.category2.child.length == 0" style="display: inline-block;
+                            ">
+                                <div class="Next" style="width: auto;margin-top: 35px; text-transform: capitalize;">
+                                    {{selectbrand_label}}<br>
+                                    <a href="" ng-click="goToNextStep('step1')" class="brandbtn btn btn-primary" style="margin-top: 10px;">Select Brand</a>
+                                </div>
+                            </div>
+                        </div>
+                                    
+                                </step> 
+                               <step name="step2">
+                                <div class="ecom ">
+                                    <div><a ng-click="goBack('step1')" href="" >Change Category</a></div>
+                                    <div style="color: black;">Category:-&nbsp;&nbsp;{{selectedProductCategoryText}}</div>
+                                    <div class="select-brand-outer col-md-7 col-sm-12 col-xs-12" style="height: 100%; border: 2px solid lavender;">
+                                        <div class="container outer">
+                                            <div class="brand-container">
+                                                <span class="brandmsg">Check for the Brand you want to sell</span>
+                                                <div class="inputouter">
+                                                    <div class="brandinputdiv"><input class="brandinput" placeholder="Enter Brand Name" value="" ng-model="brandDetails.brandName"></div>
+                                                    <button class="checkbrandbtn checkbtn" ng-click="goToNextStep('step2',brandDetails.brandName)"type="button"><span>Check Brand</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="recent-outer">
+                                                <div class="circle">OR</div>
+                                                <div class="approved-brand-label">Select one of your recently used brands from below</div>
+                                                <div class="approved-brand-list">
+                                                    <div class="">
+                                                        <div>
+                                                            <span class="approved-text"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                </step>
+                                <step name="step3">
+                                <div class="ecom">
+                                    <h4>Brand Approval form</h4>
+                                    <div class="col-md-7 col-sm-12 col-xs-12 formapproval">
+                                        <div class="form-group">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Brand Name</label>
+                                                <div class="col-sm-8 col-md-8 col-xs-12 form-row">
+                                                <input type="text" class="col-md-12 col-sm-12 col-xs-12" ng-model="brandDetails.brandName">  </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Brand Logo</label>
+                                                <div class="form-row col-sm-8 col-md-8 col-xs-12">
+                                                   <label for="brandLogoDoc" class="brandDocUpload">
+                                                        <div style="border: 1px solid grey;padding: 3px 5px;">
+                                                        <span style="font-size:11px; font-weight: normal;color: grey;cursor: pointer;">Choose File..</span>
+                                                         </div>
+                                                   </label>
+                                                   <span>{{brandDocs.logoName}}</span>
+                                                   <input type="file" file-model="brandDocs.brandLogo" id="brandLogoDoc" val="logoPreview" style="display: none;">
+                                                   
+                                                </div>
+                                        </div>
+                                         <div class="form-group ">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Brand Website link</label>
+                                                <div class="col-sm-8 col-md-8 col-xs-12 form-row">
+                                                <input type="text" class="col-md-12 col-sm-12 col-xs-12" ng-model="brandDetails.brandWebsiteLink"
+                                                >  </div>
+                                        </div>                                                         
+                                        <div class="form-group ">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Where do you sell the products of this brand currently</label>
+                                                <div class="col-sm-8 col-md-8 col-xs-12 form-row">
+                                                    <select ng-model="brandDetails.currentMarketplace">
+                                                        <option value="">--Select--</option>
+                                                        <option ng-repeat="item in sellingPlace">{{item}}</option>
+                                                    </select>
+                                                </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group ">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Sample MRP Tag Images</label>
+                                                <div class="form-row col-sm-8 col-md-8 col-xs-12">
+                                                   <label for="brandTagImage" class="brandDocUpload">
+                                                    <div style="border: 1px solid grey;padding: 3px 5px;">
+                                                        <span style="font-size:11px; font-weight: normal;color: grey;cursor: pointer;">Choose File..</span>
+                                                    </div>
+                                                   </label>
+                                                   <span>{{brandDocs.tagImageName}}</span>
+                                                   <input type="file" file-model="brandDocs.sampleMrpTagImage" id="brandTagImage" val="tagImagePreview" style="display: none;">
+                                                   
+                                                </div>
+                                        </div>  
+                                        <div class="form-group ">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Are you the Brand Owner</label>
+                                                <div class="col-sm-8 form-row col-md-8 col-xs-12">
+                                                    <select ng-model="brandDetails.sellerIsBrandOwner">
+                                                        <option value="">--Select--</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="Yes">No</option>
+                                                    </select>
+                                                </div>
+                                        </div>    
+                                        <hr>
+                                        <div class="clearfix"></div> 
+                                        <div class="form-group">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Select Document Type</label>
+                                                <div class="col-sm-8 col-md-8 col-xs-12 form-row">
+                                                <select data-ng-model="brandDetails.documentType">
+                                                        <option value="">--Select--</option>
+                                                        <option ng-repeat="item in documentType">{{item}}</option>
+                                                    </select>
+                                                </div>
+                                        </div> 
+                                         <div class="form-group ">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Document to Upload</label>
+                                                <div class="form-row col-sm-8 col-md-8 col-xs-12">
+                                                   <label for="brandCertificate" class="brandDocUpload">
+                                                    <div style="border: 1px solid grey;padding: 3px 5px;">
+                                                        <span style="font-size:11px; font-weight: normal;color: grey;cursor:pointer;">Choose File..</span>
+                                                    </div>
+                                                   </label>
+                                                   <span>{{brandDocs.brandCertiName}}</span>
+                                                   <input type="file" file-model="brandDocs.documentData" id="brandCertificate" val="brandCertiPreview" style="display: none;">
+                                                   
+                                                </div>
+                                        </div>  
+                                        <div class="form-group">
+                                                <label class="control-label col-sm-4 col-md-4 col-xs-12 form-row">Minimum Warranty Tenure</label>
+                                                <div class="col-sm-8 col-md-8 col-xs-12 form-row">
+                                                <select ng-model="brandDetails.warrantyTenure">
+                                                        <option value="">--Select--</option>
+                                                        <option ng-repeat="item in warrantyTenure">{{item}}</option>
+                                                    </select>
+                                                </div>
+                                        </div>                                                        
+                                        <p style="text-align: center;"><button type="button" class="btn btn-primary" ng-click="goToNextStep('step3')">Continue</button></p>                               
+                                    </div>
+                                </div>
+                                </step>
+                                <step name="step4">  
+                                <div class="ecom">
+                                <div class="places">
+                                    <p class="">Select the platform you want to sell your product</p>
+                                    <span ng-repeat="ec in ecomLists"><input type="checkbox" ng-model="ec.listed" style="margin-right: 3px;"><label for="marketplacesName" style="margin-right: 5px;">{{ec.name}}</label>
+                                    </span>
+                                </div>
+                                <div class="panel-group" id="accordion">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                             <h4 class="panel-title">
+                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="text-decoration: underline;    ">General Details</a>
+                                                 <span><i class="fa fa-angle-down pull-right"></i></span>
+                                                 
+                                             </h4>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse ">
+                                            <div class="panel-body">
+                                               <form class="form-horizontal col-md-12" id="form1">
+                                                <div class="clearfix"></div>
+                                                        <div ng-repeat="obj in data1 track by $index" >
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store=='flipkart' && ecomLists[1].listed">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store=='amazon' && ecomLists[0].listed">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store =='all'">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                                <div class="col-sm-8 col-md-6 col-xs-12">
+                                                                     <input type="text" class="form-control" id="email"  
+                                                                     ng-model="formObject[obj.key]" ng-if="obj.child.length==0 && obj.store =='flipkart' && ecomLists[1].listed" placeholder="{{obj.infoMsg}}" required>
+                                                                     <input ng-if="obj.child.length==0 && obj.store == 'amazon' && ecomLists[0].listed" type="text" class="form-control" ng-model="formObject[obj.key]" required>
+                                                                     <input ng-if="obj.child.length==0 && obj.store == 'all'" type="text" class="form-control" ng-model="formObject[obj.key]" required>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='flipkart' && ecomLists[1].listed" ng-model="formObject[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='amazon' && ecomLists[0].listed" ng-model="formObject[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='all' " ng-model="formObject[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     </div>
+                                                                 </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div ng-repeat="obj in temp track by $index" >
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store=='flipkart' && ecomLists[1].listed">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store=='amazon' && ecomLists[0].listed">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12" ng-if="obj.store =='all'">{{obj.attributeDisplayName}}
+                                                            <info-msg></info-msg>
+                                                            </label>
+                                                                <div class="col-sm-8 col-md-6 col-xs-12">
+                                                                     <input type="text" class="form-control" id="email"  
+                                                                     ng-model="formObject.sellingInfo[obj.key]" ng-if="obj.child.length==0 && obj.store =='flipkart' && ecomLists[1].listed" placeholder="{{obj.infoMsg}}" required>
+                                                                     <input ng-if="obj.child.length==0 && obj.store == 'amazon' && ecomLists[0].listed" type="text" class="form-control" ng-model="formObject.sellingInfo[obj.key]" required>
+                                                                     <input ng-if="obj.child.length==0 && obj.store == 'all'" type="text" class="form-control" ng-model="formObject.sellingInfo[obj.key]" required>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='flipkart' && ecomLists[1].listed" ng-model="formObject.sellingInfo[obj.key]" ng-change="shippingWarningMsgPrint(formObject.sellingInfo[obj.key])">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     <div class="alert alert-warning" ng-if="formObject.sellingInfo[obj.key]=='Self ship' || formObject.sellingInfo[obj.key]=='Self ship preferred to Flipkart' " ng-hide="shippingWarningMsg">{{shippingWarningMsgVal}}</div>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='amazon' && ecomLists[0].listed" ng-model="formObject.sellingInfo[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     <select ng-if="obj.child.length>0 && obj.store=='all'" ng-model="formObject.sellingInfo[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     </div>
+                                                                 </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                 <h4 class="panel-title">
+                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="text-decoration: underline;">Specific Details</a>
+                                                     <span><i class="fa fa-angle-down pull-right"></i></span>
+                                                 </h4>
+                                            </div>
+
+                                            <div id="collapse2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <form class="form-horizontal col-md-12" id="form2">
+                                                        <div ng-repeat="obj in data2 track by $index" >
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12">{{obj.attributeDisplayName}}</label>
+                                                                <div class="col-sm-8 col-md-6 col-xs-12">
+                                                                     <input type="text" class="form-control" id="email"  ng-model="formObject.productSpecifications[obj.key]" ng-if="obj.child.length==0" placeholder="">
+                                                                     <select ng-if="obj.child.length>0" ng-model="formObject.productSpecifications[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     </div>
+                                                                 </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                <!-- Third Panel -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                 <h4 class="panel-title">
+                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="text-decoration: underline;">Additional Details</a>
+                                                     <span><i class="fa fa-angle-down pull-right"></i></span>
+                                                 </h4>
+                                            </div>
+                                            <div id="collapse3" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <form class="form-horizontal col-md-12" id="form3">
+                                                        <div ng-repeat="obj in data3 track by $index" >
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-4 col-md-4 col-xs-12">{{obj.attributeDisplayName}}</label>
+                                                                <div class="col-sm-8 col-md-6 col-xs-12">
+                                                                     <input type="text" class="form-control" id="email"  ng-model="formObject.additionalDetails[obj.key]" ng-if="obj.child.length==0" placeholder="">
+                                                                     <select ng-if="obj.child.length>0" ng-model="formObject.additionalDetails[obj.key]">
+                                                                        <option value="">--Select--</option>
+                                                                        <option ng-repeat="item in obj.child track by $index" value="{{item}}">{{item}}</option>
+                                                                     </select>
+                                                                     </div>
+                                                                 </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-success" ng-show="productSuccessMsg" style="margin-top: 8px;">Your Product has been added successfully!!&nbsp;&nbsp;&nbsp;Click on Upload Image Button to upload Images</div>
+                                        <p style="text-align: center;margin-top: 15px;"><button type="button" class="btn btn-info" ng-click="goBack('step3')">Previous </button><button type="button" class="btn btn-info" ng-click="submitForm()">Save Details</button><button type="button" class="btn btn-info" ng-show="productSuccessMsg" ng-click="goToNextStep('step4')">Upload Image</button></p>
+                                        <hr style="color: black;">
+                                    </div>
+                                </div>
+                                </step>
+                                <step name="step5">
+                                    <div class="ecom">
+                                        <div class="wrappers">
+                                        <h4 class="wrapper-title">Add Images-</h4>
+                                        <div class="guidelines">
+                                            <h5><i>Instructions for image upload:</i></h5>
+                                            <ul>
+                                                <li>Images must be having a minimum resolution of 1000x1000 pixel</li>
+                                                <li>Product photos must be taken in the bright lightning</li>
+                                                <li>Click on the Image Icon to add image</li>
+                                            </ul>
+                                        </div>
+                                        <div class="alert alert-success" ng-show="uploadSuccessMsg">Success! {{imageCount}} Image has been uploaded successfullly</div>
+                                        <div class="image-wrapper">
+    
+                                         <div ng-class="{'image-outer':true,shadow:fileObject.preview1}">
+                                            <div class="selected-wrapper" ng-if="fileObject.preview1"> 
+                                                <i class="fa fa-check-circle" ></i>
+                                            </div>
+                                            
+                                            <img ng-src={{fileObject.preview1}} ng-if="fileObject.preview1">
+                                            <label for="file-upload1" ng-class="{'custom-file-upload':!fileObject.preview1,'top':fileObject.preview1}" >
+                                            <div class="btn-wrapper">
+                                                <i class="fa" ng-class="{'fa-image':!fileObject.preview1,'fa-edit':fileObject.preview1}" style="font-size: 20px;"></i>
+                                                <i class="fa fa-plus" ng-if="!fileObject.preview1"></i>
+                                            </div>
+                                            </label>
+                                            <i class="fa fa-trash del" ng-if="fileObject.preview1" ng-click="deleteProductImage()"></i>
+                                            <a class="img-upload-btn" ng-click="uploadProductImage(fileObject.image1)" ng-if="fileObject.preview1">Upload</a>
+                                            <input id="file-upload1" type="file" file-model="fileObject.image1" key="preview1">
+                                         </div> 
+                                          <div ng-class="{'image-outer':true,shadow:fileObject.preview2}">
+                                            <div class="selected-wrapper" ng-if="fileObject.preview2"> 
+                                                <i class="fa fa-check-circle" ></i>
+                                            </div>
+                                            
+                                            <img ng-src={{fileObject.preview2}} ng-if="fileObject.preview2">
+                                            <label for="file-upload2" ng-class="{'custom-file-upload':!fileObject.preview2,'top':fileObject.preview2}" >
+                                            <div class="btn-wrapper">
+                                                <i class="fa" ng-class="{'fa-image':!fileObject.preview2,'fa-edit':fileObject.preview2}" style="font-size: 20px;"></i>
+                                                <i class="fa fa-plus" ng-if="!fileObject.preview2"></i>
+                                            </div>
+                                            </label>
+                                            <i class="fa fa-trash del" ng-if="fileObject.preview2" ng-click="deleteProductImage()"></i>
+                                            <a class="img-upload-btn" ng-click="uploadProductImage(fileObject.image2)" ng-if="fileObject.preview2">Upload</a>
+                                            <input id="file-upload2" type="file" file-model="fileObject.image2" key="preview2">
+                                         </div> 
+                                         <div ng-class="{'image-outer':true,shadow:fileObject.preview3}">
+                                            <div class="selected-wrapper" ng-if="fileObject.preview3"> 
+                                                <i class="fa fa-check-circle" ></i>
+                                            </div>
+                                            
+                                            <img ng-src={{fileObject.preview3}} ng-if="fileObject.preview3">
+                                            <label for="file-upload3" ng-class="{'custom-file-upload':!fileObject.preview3,'top':fileObject.preview3}" >
+                                            <div class="btn-wrapper">
+                                                <i class="fa" ng-class="{'fa-image':!fileObject.preview3,'fa-edit':fileObject.preview3}" style="font-size: 20px;"></i>
+                                                <i class="fa fa-plus" ng-if="!fileObject.preview3"></i>
+                                            </div>
+                                            </label>
+                                            <i class="fa fa-trash del" ng-if="fileObject.preview3" ng-click="deleteProductImage()"></i>
+                                            <a class="img-upload-btn" ng-click="uploadProductImage(fileObject.image3)" ng-if="fileObject.preview3">Upload</a>
+                                            <input id="file-upload3" type="file" file-model="fileObject.image3" key="preview3">
+                                         </div> 
+                                         <div ng-class="{'image-outer':true,shadow:fileObject.preview4}">
+                                            <div class="selected-wrapper" ng-if="fileObject.preview4"> 
+                                                <i class="fa fa-check-circle" ></i>
+                                            </div>
+                                            
+                                            <img ng-src={{fileObject.preview4}} ng-if="fileObject.preview4">
+                                            <label for="file-upload4" ng-class="{'custom-file-upload':!fileObject.preview4,'top':fileObject.preview4}" >
+                                            <div class="btn-wrapper">
+                                                <i class="fa" ng-class="{'fa-image':!fileObject.preview4,'fa-edit':fileObject.preview4}" style="font-size: 20px;"></i>
+                                                <i class="fa fa-plus" ng-if="!fileObject.preview4"></i>
+                                            </div>
+                                            </label>
+                                            <i class="fa fa-trash del" ng-if="fileObject.preview4" ng-click="deleteProductImage()"></i>
+                                            <a class="img-upload-btn" ng-click="uploadProductImage(fileObject.image4)" ng-if="fileObject.preview4">Upload</a>
+                                            <input id="file-upload4" type="file" file-model="fileObject.image4" key="preview4">
+                                         </div> 
+                                         <div ng-class="{'image-outer':true,shadow:fileObject.preview5}">
+                                            <div class="selected-wrapper" ng-if="fileObject.preview5"> 
+                                                <i class="fa fa-check-circle"></i>
+                                            </div>
+                                            
+                                            <img ng-src={{fileObject.preview5}} ng-if="fileObject.preview5">
+                                            <label for="file-upload5" ng-class="{'custom-file-upload':!fileObject.preview5,'top':fileObject.preview5}" >
+                                            <div class="btn-wrapper">
+                                                <i class="fa" ng-class="{'fa-image':!fileObject.preview5,'fa-edit':fileObject.preview5}" style="font-size: 20px;"></i>
+                                                <i class="fa fa-plus" ng-if="!fileObject.preview5"></i>
+                                            </div>
+                                            </label>
+                                            <i class="fa fa-trash del" ng-if="fileObject.preview5" ng-click="deleteProductImage()"></i>
+                                            <a class="img-upload-btn" ng-click="uploadProductImage(fileObject.image5)" ng-if="fileObject.preview5">Upload</a>
+                                            <input id="file-upload5" type="file" file-model="fileObject.image5" key="preview5">
+                                         </div>
+                                        </div>
+                                        <div class="alert alert-danger col-md-6" ng-show="imageError" style="margin-top: 5px;">Please upload atleast 2 Images
+                                        </div><div class="clearfix"></div>
+                                        <div class="upload-btn-wrapper">
+                                            <a class="upload-btn"  ng-click="finalProductAdded()">Continue</a>
+                                        </div>
+                                        </div>
+                                        <div style="height: 100px;"></div>
+                                    </div>
+                                </step>
+                            </steps>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p" xmlns:security="http://www.springframework.org/schema/security"
+ xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd">
+ <context:component-scan base-package="com.connect2" />
+ <mvc:annotation-driven />
+ <mvc:default-servlet-handler/>
+ 
+ <security:global-method-security
+		pre-post-annotations="enabled" secured-annotations="enabled">
+		<security:expression-handler ref="expressionHandler" />
+	</security:global-method-security>
+
+
+	<bean id="expressionHandler"
+		class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+		<property name="permissionEvaluator" ref="permissionEvaluator" />
+	</bean>
+
+	<bean id="permissionEvaluator" class="com.connect2.security.CustomPermissionEvaluator" />
+	
+	<bean id="cacheInitializer" class="com.connect2.cache.ServerInitializer" init-method="init">
+		<property name="cacheController" ref="c2ICacheController">
+		</property>
+	</bean>
+
+	<bean name="memcachedClient"
+		class="net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean">
+		<property name="servers">
+			<value>127.0.0.1:11211</value>
+		</property>
+	</bean>
+
+	<!-- 
+	<bean name="memcachedSearchClient"
+		class="net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean">
+		<property name="servers">
+			<value>52.42.22.184:11211</value>
+		</property>
+	</bean>
+ 	-->
+ 
+  </beans>

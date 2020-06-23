@@ -1,0 +1,62 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-search"></i>&nbsp;NIC Code Finder</h1>
+		</div>
+	</div>	
+		
+	
+
+	<div class="row x_panel">
+			<p>The National Industrial Classification (NIC) is a Statistical Standard used for development and maintenance of comparable database related to economic activities. Such
+			classifications are used in classifying the economically active population, statistics
+			of industrial production and distribution, labour statistics and other
+			economic data such as national income. The NIC Classification Number consists of 5 digits. To help identify the NIC Code, we suggest three search modes:</p>
+		<div class="col-md-4 toolBoxes">
+		<div class="innerBox">
+		<h3>Search by keyword:</h3>
+		<p>Describe your Service:</p>
+		<input placeholder="Enter service name" class="form-control" type="text" name="terma" ng-model="formData.name"  style="border-radius: 0px;"> 
+		<a href="javascript:void(0)" class="btn btn-primary" ng-click="searchNICByName(formData);">Search</a>
+		</div>
+		</div>
+
+		<div class="col-md-4 toolBoxes">
+		<div class="innerBox">
+		<h3>Search by code:</h3>
+		<p>Enter NIC code</p>
+		<input placeholder="Enter NIC Code" class="form-control" type="text" name="terma" ng-model="formData.code"  style="border-radius: 0px;"> 
+		<a href="javascript:void(0)" class="btn btn-primary" ng-click="searchNICByCode(formData);">Search</a>
+		</div>
+		</div>
+
+		<div class="col-md-4 toolBoxes">
+		<div class="innerBox">
+		<h3>Browse the NIC Classification</h3>
+		<p>Explore our NIC code directory:</p>
+		<input class="form-control" type="text" style="border-radius: 0px;visibility:hidden">
+		<a href="#/local/nic-classification.html" class="btn btn-primary" target="_blank">Browse</a>
+		</div>
+		</div>
+	</div>
+
+	<div class="outputTable x_panel" ng-hide="result==1">
+			<p>Results :</p>
+			<table width="100%" border="1" class=" table table-bordered table-striped">
+					<tr>
+					
+					<th>Code</th>
+					<th>Name</th>
+					</tr>
+					
+					<tr ng-repeat="pro in path">
+					
+					<td>{{pro.id}}</td>
+					<td>{{pro.name}}</td>
+					</tr>
+					
+			</table>
+	</div>
+</div>
+		

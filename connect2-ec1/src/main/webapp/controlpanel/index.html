@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="https://cdn.connect2india.com/global/images/favicon.png" />
+    <title>Global Trade Panel | Connect2India</title>
+
+    <link href="https://cdn.connect2india.com/controlpanel/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.connect2india.com/controlpanel/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.connect2india.com/controlpanel/assets/css/custom.min.css" rel="stylesheet">
+	<link href="/controlpanel/assets/css/style-ec.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://cdn.connect2india.com/controlpanel/assets/css/AdminLTE.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MHT6T5W');</script>
+	<!-- End Google Tag Manager -->
+
+  </head>
+
+  <body class="nav-md footer_fixed">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHT6T5W"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+  <div id="initLoadingDiv"><div class="progressDialog"><div>Loading your customized global trade panel...</div></div></div>
+    <div class="container body">
+      <div class="main_container" ng-controller="mainController" ng-cloak>
+
+        <div id="navDiv" ng-if="showNavBar" ng-controller="navController" ng-cloak>
+			<nav-bar></nav-bar>
+        </div>
+
+		<busy ng-show="loadingData"></busy>
+
+		<div data-ng-view="" class="right-panel" autoscroll=""></div>
+
+        <!-- footer content -->
+        <footer ng-show="loggedInUser && loggedInUser.loggedIn" >
+          <div class="pull-right">
+            <a class="footerC2iLink" href="https://connect2india.com"><img src="https://cdn.connect2india.com/controlpanel/assets/images/logo.png" width="20px;"/> Connect2India</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/jquery.min.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/jquery-ui.min-auto.js"></script>
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/bootstrap.min.js"></script>
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/Chart.min.js"></script>
+
+	<script type="application/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/angular-libs.js"></script>
+
+	<!--
+	<script  type="application/javascript" src="Scripts/angular.min.js"></script>
+    <script  type="application/javascript" src="Scripts/angular-route.min.js"></script>
+    <script  type="application/javascript" src="Scripts/angular-animate.min.js"></script>
+	<script  type="application/javascript" src="Scripts/angular-sanitize.min.js"></script>
+	-->
+	<!-- TEXT ANGULAR SCRIPTS -->
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/textAngular-rangy.min.js"></script>
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/textAngular-sanitize.min.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/textAngular.min.js"></script>
+    <script type="application/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <script type="application/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/ang-accordion.js"></script>
+    <script type="application/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/autocomplete.js"></script>
+	<script type="application/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/moment.min.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/google-chart.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/rzslider.min.js"></script>
+	<script type="text/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/d3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdn.connect2india.com/controlpanel/assets/js/angular-nvd3.min.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/ng-tags-input.min.js"></script>
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/fastclick.js"></script>
+
+    <!-- bootstrap-daterangepicker -->
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/daterangepicker.min.js"></script>
+
+	<script src="https://cdn.connect2india.com/controlpanel/assets/js/underscore.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/custom.min.js"></script>
+
+
+	<script defer type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1605_RC01/embed_loader.js"></script>
+
+    <!-- Load custom scripts via RequireJS -->
+    <script src="https://cdn.connect2india.com/controlpanel/assets/js/require.js" data-main="assets/js/main"></script>
+
+    <link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/ang-accordion.css" type="text/css">
+	<link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/nv.d3.css"/>
+	<link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/rzslider.min.css"/>
+	<link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/ng-tags-input.min.css" type="text/css">
+	<link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/daterangepicker.css">
+	<link async defer rel="stylesheet" href="https://cdn.connect2india.com/controlpanel/assets/css/textAngular.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.connect2india.com/finance/js/OwlCarousel/owl.carousel.min.js"></script>
+  <link async defer rel="stylesheet" href="https://cdn.connect2india.com/finance/js/OwlCarousel/owl.carousel.min.css"/>
+  <link async defer rel="stylesheet" href="https://cdn.connect2india.com/finance/js/OwlCarousel/owl.theme.default.css"/>
+
+
+   </body>
+</html>

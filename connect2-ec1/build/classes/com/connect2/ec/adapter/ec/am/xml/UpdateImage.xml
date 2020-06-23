@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+    <Header>
+        <DocumentVersion>1.01</DocumentVersion>
+        <MerchantIdentifier>A1ZRT2O38J6EA0</MerchantIdentifier>
+    </Header>
+    <MessageType>ProductImage</MessageType>
+    <Message>
+    	<MessageID>1</MessageID>
+    	<OperationType>PartialUpdate</OperationType>
+    	<ProductImage>
+            <SKU>1155448866</SKU>
+            <ImageType>PT2</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/1053227/images/products/product-hms1-scrap.jpg</ImageLocation>
+            <!-- <ImageType>PT1</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/3275822/images/products/product-hot-crane.jpg</ImageLocation>
+            <ImageType>PT2</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/1000090/images/products/product-drawing-and-designing-service.jpg</ImageLocation>
+            <ImageType>PT3</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/3279559/images/products/product-industrial-shed-maintenance.jpg</ImageLocation>
+            <ImageType>PT4</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/3279726/images/products/product-contemporary-metal.jpg</ImageLocation>
+            <ImageType>PT5</ImageType>
+            <ImageLocation>https://static.connect2india.com/c2icd/company_resources/1053227/images/products/product-hms1-scrap.jpg</ImageLocation> -->
+    	</ProductImage>
+    </Message>
+</AmazonEnvelope>

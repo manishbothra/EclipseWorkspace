@@ -1,0 +1,235 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-cog"></i> &nbsp;Update Product</h1>
+		</div>
+	</div>	
+				
+	<div class="row">
+		<div class="col-md-12">
+			<div data-ng-cloak>
+				<div class="x_panel" data-ng-cloak>
+					<div class="x_title">
+						<h2>Update product: {{originalCompanyProduct.productName}}</h2>
+						<a style="margin-left:1em" ng-href="/{{companyProductPublicProfileUrl}}" target="_blank">View public profile </a>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<br/>
+						
+						<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+							<strong>Success! </strong> {{successMsg}}
+						</div>
+						<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+							<strong>Error! </strong> {{errorMessage}}
+						</div>
+						<div ng-if="showUpgradeBtn" style="margin-bottom: 4em;">
+							<a class="btn btn-primary" href="/subscription/export-packages.html">Upgrade your subscription</a>
+						</div>
+						
+						<div id="wizard" class="form_wizard wizard_horizontal" ng-show="!showResults">
+							  <ul class="wizard_steps">
+								<li>
+								  <a href="" ng-click="setSelectedStep('step1');" ng-class="{selected:selectedStep == 'step1', done: isStepDone('step1'), disabled: selectedStep != 'step1' && !isStepDone('step1')}">
+									<span class="step_no">1</span>
+									<span class="step_descr"><small>Select Category</small></span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step2');" ng-class="{selected:selectedStep == 'step2', done: isStepDone('step2'), disabled: selectedStep != 'step2' && !isStepDone('step2')}">
+									<span class="step_no">2</span>
+									<span class="step_descr"><small>Add basic product Info </small>
+												  </span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step3');" ng-class="{selected:selectedStep == 'step3', done: isStepDone('step3'), disabled: selectedStep != 'step3' && !isStepDone('step3')}">
+									<span class="step_no">3</span>
+									<span class="step_descr"><small>Add detailed product Info </small>
+												  </span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step4');" ng-class="{selected:selectedStep == 'step4', done: isStepDone('step4'), disabled: selectedStep != 'step4' && !isStepDone('step4')}">
+									<span class="step_no">4</span>
+									<span class="step_descr"><small>Image Gallery </small>
+												  </span>
+								  </a>
+								</li>
+							  </ul>
+								
+							<steps current-step="selectedStep">
+								<step name="step1">
+									<h2>Select Category: </h2>
+									<div class="clearfix"></div>
+									<form name="categoryProductFormSearch" >
+										<div class="col-md-12 col-sm-12 col-xs-12 selectProductCategories" >
+											<input id="rdCatSearchPr" type="radio" name="categorySelectionOption" ng-model= "categorySelectionOption" value="searchCategory" required/>
+											<label for="rdCatSearchPr" class="control-label">Search by name</label>
+											<div class="form-group"  ng-if="categorySelectionOption == 'searchCategory'">
+												  <div class="col-sm-8 col-sm-8 col-xs-12" style="margin-bottom:10px;">
+													  <input type="text" class="form-control" name="category" data-ng-model="productForm.category" data-ng-maxlength=80 placeholder="Enter category name" ui-autocomplete="productAutoOptions">
+												  </div>
+												  <div class="clearfix"></div>
+												<div class="productCategorySelectionText" ng-show="selectedCategoryText">
+													<span class="title">Selected:</span> <span>{{selectedCategoryText}}</span>
+												</div>
+												
+												<button class="btn btn-primary" ng-click="validateAndSubmitCategories(true)">Next</button>
+											</div>
+										</div>
+									</form>
+									<form name="categoryProductForm" >
+										<div class="col-md-12 col-sm-12 col-xs-12 selectProductCategories" >
+											<input id="rdCatSelPr" type="radio" name="categorySelectionOption" ng-model= "categorySelectionOption" value="selectCategory"/>
+											<label for="rdCatSelPr" class="control-label">Select Category</label>
+											<div class="form-group" ng-if="categorySelectionOption == 'selectCategory'">
+												<!-- <label class="control-label col-md-4 col-sm-4 col-xs-12">Sector</label> ng-change="productSelectionChanged('sector')" -->
+												<div class="col-md-3 col-sm-4 col-xs-12">
+													<select size=10 class="form-control" name="pr" ng-change="productSelectionChanged('sector')" ng-model="availableProducts.pr" ng-options="l1product as l1product.name for l1product in allProducts|orderBy:'name'" required>
+													</select>
+												</div>
+												<div class="col-md-3 col-sm-4 col-xs-12" ng-if="availableProducts.pr && availableProducts.pr.children.length > 0">
+													<select size=10 class="form-control" data-ng-model="availableProducts.category1" ng-options="l2product as l2product.name for l2product in availableProducts.pr.children|orderBy:'name'" required>
+													</select>
+												</div>
+												<div class="col-md-3 col-sm-4 col-xs-12" ng-if="availableProducts.category1 && availableProducts.category1.children.length > 0">
+													<select size=10 class="form-control" data-ng-model="availableProducts.category2" ng-options="l3product as l3product.name for l3product in availableProducts.category1.children|orderBy:'name'" required></select>
+												</div>
+												<div class="col-md-3 col-sm-8 col-xs-12" ng-if="availableProducts.category2 && availableProducts.category2.children.length > 0">
+													<select size=10 class="form-control" name="category" data-ng-model="availableProducts.category" ng-options="l4product as l4product.name for l4product in availableProducts.category2.children|orderBy:'name'" required></select>
+												</div>												
+												<div class="clearfix"></div>
+												<button class="btn btn-primary" ng-click="validateAndSubmitCategories(categoryProductForm.$valid)">Next</button>
+											</div>
+										</div>
+									</form>
+									<div class="clearfix"></div>
+								</step>
+								
+								<step name="step2">
+									<h2>Basic product info</h2>
+									<div ng-if="productForm.product.id > 0">
+										
+										<busy ng-show="!templateInfo.productConfigTemplateLoaded"></busy>
+										<div class="productCategorySelectionText">
+											<span class="title">Selected:</span> <span>{{selectedCategoryText}}</span>
+											<a href='' ng-click="goToPrevStep();">&nbsp;&nbsp; Change Category</a>
+										</div>
+										<div class="clearfix"></div>
+												
+											<form name="step2addpro">
+											<div class="product-config">	
+												<div class="col-md-8 col-sm-12 col-xs-12">
+													<div class="form-group">
+															<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Product Name</label>
+															<div class="col-sm-8 col-sm-8 col-xs-12">
+															  <input type="text" class="form-control" name="productName" data-ng-model="productForm.productName" required data-ng-maxlength=40>
+														  </div>
+														  <div class="clearfix"></div>
+										
+													</div>
+													
+													<div class="form-group">
+														  <label class="control-label col-md-4 col-sm-4 col-xs-12">Product Description</label>
+														  <div class="col-sm-8 col-sm-8 col-xs-12">
+															  <textarea type="text" class="form-control" name="productDesc" data-ng-model="productForm.productDesc" data-ng-maxlength=2000></textarea>
+														  </div>
+														  <div class="clearfix"></div>
+													</div>
+													
+													<div class="ln_solid col-xs-12"></div>
+													<h2>Trade Related info</h2>
+													<div class="form-group">
+														  <label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Trade Type</label>
+														  <div class="col-sm-8 col-sm-8 col-xs-12">
+															  <select class="form-control" name="type" data-ng-model="productForm.tradeType" required>
+																  <option value="">Select Trade Type</option>
+																  <option value="export">Export</option>
+																  <option value="import">Import</option>
+															  </select>
+															  <p data-ng-show="proaddform.type.$invalid && submittedprod" style="padding: 5px; text-align: left; border-radius: 7px;" data-ng-cloak>
+																  <small style="color:red;" data-ng-show="proaddform.type.$error.required">{{error.required}}</small>
+															  </p>
+														  </div>
+														  <div class="clearfix"></div>
+													</div> 
+													
+												</div>
+												
+												<div class="clearfix"></div>
+												<p style="color:red;">* Required fields</p>
+												
+												<div class="ln_solid col-xs-12"></div>
+												<div class="form-group">
+													<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">											
+														<button class="btn btn-primary" type="button" ng-if="productConfigTemplateLoaded" ng-click="goToPrevStep();">Previous</button>
+														<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Next" ng-click="updateProduct(step2addpro.$valid, step2addpro.$dirty)"/>
+													</div>
+												</div>
+											
+											</div>
+											</form>
+											
+										
+									</div>
+									
+								</step>
+								
+								<step name="step3">
+									<h2>Basic product info</h2>
+									<div ng-if="productForm.product.id > 0">
+										<busy ng-show="!templateInfo.productConfigTemplateLoaded"></busy>
+										<div class="productCategorySelectionText">
+											<span class="title">Selected:</span> <span>{{selectedCategoryText}}</span>
+											<a href='' ng-click="goToPrevStep();">&nbsp;&nbsp; Change Category</a>
+										</div>
+										
+										<product-input-template ng-attr-name="uiProductForm" ng-if="productFormTemplate"  ng-attr-categoryTemplate="{{productFormTemplate}}"  ng-attr-submit="updateProduct(uiProductForm.$valid, uiProductForm.$dirty, uiProductForm)" ng-attr-class="form-horizontal form-label-left">
+											
+											<div class="ln_solid col-xs-12"></div>
+											<div class="form-group">
+												<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">											
+													<button class="btn btn-primary" type="button" ng-if="productConfigTemplateLoaded" ng-click="goToPrevStep();">Previous</button>
+													<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Next"/>
+												</div>
+											</div>
+										</product-input-template>
+									</div>
+								</step>
+								<step name="step4">									
+										<div class="row" ng-show="productForm.companyProductId > 0">
+											<h2>Add images for your product </h2>
+											<div class="col-md-3 cbContent" ng-repeat="imgeUrl in productImageSources">
+												<div class="boxContent productBox">
+													<img style="width: 150px;" ng-if="imgeUrl" ng-src="{{imgeUrl}}" alt="#">
+													<a style=" background: red;color: white;" href='' ng-click="removeProductImage(imgeUrl);">Remove</a>
+												</div>
+											</div>
+											<div class="col-md-3 cbContent">
+												<div class="boxContent productBox">
+													<a ng-click="addNewProductImage();">
+														<i class="fa fa-plus 5x"></i>
+														<h4 class="btn btn-primary" >Upload Product Image</h4>
+													</a>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<p>*Image file size should be less than 5MB. Supported formats: .jpeg .jpg .png</p>
+											<div class="ln_solid col-xs-12"></div>
+
+										</div>
+										<button class="btn btn-primary" step-previous>Previous</button>
+										<button class="btn btn-success"  ng-click="finishProductAdded(categoryProductForm.$valid)">Finish</button>
+								</step>
+							</steps>	  
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

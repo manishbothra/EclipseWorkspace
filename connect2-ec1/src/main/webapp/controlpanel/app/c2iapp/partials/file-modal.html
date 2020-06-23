@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+	<div class="modal-header" >
+			<h3 style="color:#333;">{{modalOptions.headerText}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="fileUploadModal">
+			<form name="contactForm3">
+				<div class="fcontent">
+					<input type="file" id="exampleInputFile" file-model="fileData.attachedFile">
+					<div class="clearfix"></div>
+					<p>*Image file size should be less than 5MB. Supported formats: .jpeg .jpg .png</p>
+					<div class="ln_solid col-xs-12"></div>
+					<div class="image-preview">
+						<img style="max-width: 400px;margin: 40px;" ng-if="fileData.filepreview" ng-src="{{fileData.filepreview}}"/>
+					</div>
+				</div>
+			</form>
+				
+		</div>
+    </div>
+    <div class="modal-footer">
+		<div>
+			<button type="button" class="btn btn-default" data-ng-click="modalOptions.close()"  >Cancel</button>
+			<button class="btn btn-primary" ng-click="addProductImage(contactForm3);">Upload Image </button>
+		</div>
+	
+	</div>
+</div>

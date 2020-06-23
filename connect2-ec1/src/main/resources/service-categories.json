@@ -1,0 +1,416 @@
+[{
+  "subProducts" : [ {
+    "subProducts" : [ "Server Repairing Services","Laptop Keyboard Repairing Services","Computer Upgradation Service","Plotters Repairing","Computer Security Services","Remote IT Infrastructure Management" ],
+    "name" : "Computer Hardware & Network Support"
+  }, {
+    "subProducts" : [ "Digital Communications Services","Media Transcription Service","Offshore Medical Transcription Services","Fax Services","AV Solutions","VoIP Services" ],
+    "name" : "Tele Conferencing & VoIP Services"
+  }, {
+    "subProducts" : [ "Ethical Hacking Services","Digital Photogrammetry Services","Accessibility Testing Services","Application Prototyping Services","Embedded System Repair Services","Airport Substation Automation" ],
+    "name" : "IT, Networking & Automation Solution"
+  }, {
+    "subProducts" : [ "Domain Theft Protection","Dedicated Hosting Service","Intranet Portals Service","HTML Website Designs","Web Consultant Services","Global Reach Services" ],
+    "name" : "Web Development & Marketing Services"
+  }],  "name" : "IT & Telecom Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Educational Services","Science Education Service","B Ed Course","Academic Support Services","Academic Project Support Services","Admission Counseling Services" ],
+    "name" : "Career Guidance & Admission Services"
+  }, {
+    "subProducts" : [ "Computer Hardware Training Service","SAS Training","Embedded System Training Services","3D CAD Training","SQL Courses","Internet Training Services" ],
+    "name" : "Computer, IT & Software Training"
+  }, {
+    "subProducts" : [ "Leasing Management service","Graduate Schools","Instrumentation Engineering Courses","Electro Homeopathy Course","Overseas Education Services","Career Development Services" ],
+    "name" : "Graduation & High Education Programs"
+  }, {
+    "subProducts" : [ "IAS Coaching Services","GRE Coaching","Civil Service Coaching","Deck Cadet Training Services","Abacus Training","IELTS Coaching Services" ],
+    "name" : "Coaching Classes & Tuition Centers"
+  }],  "name" : "Education & Training"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Fall Ceiling Designing","Flat Interior Designing","Kitchen Designing Services","Kitchens Interior Service","Modular Kitchen Interior","POP Ceilings Design" ],
+    "name" : "Interior Designing & Decoration"
+  }, {
+    "subProducts" : [ "Injection Grouting Service","Sewer Pipeline Construction","Sprinkler Installation Services","Sanitary Work Services","Thermal Insulation Contractors","Re Piping Services" ],
+    "name" : "Building & Real Estate Developers"
+  }, {
+    "subProducts" : [ "Wall Covering Service","Gym Flooring Services","Vacuum Dewatered Flooring","Township Construction Services","Building Water Proofing Services","Industrial Property Development" ],
+    "name" : "Building and Flooring Services"
+  }],  "name" : "Architecture & Interiors"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Harmonic Solutions","Temperature Controller Calibration Services","Stop Watch Calibration","Data Logger Calibration Service","Deep Freezer Calibration Services","Rotor Dynamic Balancing" ],
+    "name" : "Instrument Calibration & Adjustment"
+  }, {
+    "subProducts" : [ "Circuit Breaker Repairing Services","Fire Alarm System AMC","Home Electronics Repair & Maintenance","Set Top Box Repairing Service","Video Door Phones Installation","Plotters Repairing" ],
+    "name" : "Electrical & Electronic Goods Repair"
+  }, {
+    "subProducts" : [ "UPS Cabling Services","Panel Erection Services","LT Underground Cable Work","Sports Lighting Services","Air Conditioning Contractors","Thermal Power Generation Services" ],
+    "name" : "Electrical & Signaling Contractors"
+  }, {
+    "subProducts" : [ "Cyber Cafe","Refrigerator Rental","DJ Setup Service","TV Rental Services","AC Rental","Desktop Rental" ],
+    "name" : "Electrical & Electronic Goods Rental"
+  }],  "name" : "Electronics & Electrical"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Bar Coding Services","Medicine Packaging Services","Tube Packing Services","Packing Crating Service","Material Packaging Service","Seaworthy Export Packing Service" ],
+    "name" : "Product Packing & Labelling Services"
+  }],  "name" : "Packaging Machines & Goods"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Border Embroidery","Garment Stitching Service","Computerized Embroidery Service","Knitting Job Work","Shirt Stitching","Needle Work" ],
+    "name" : "Garments & Textiles Job Work"
+  }],  "name" : "Textiles, Yarn & Fabrics"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Digital Content Service","Content Filtering Services","Story Writing Service","Content Development Service","Content Optimization Services","Technical Content Writing Service" ],
+    "name" : "Copywriting & Content Development"
+  }, {
+    "subProducts" : [ "Electronic Media Tracking","Newsletter Management Services","Book Publisher","E-Book Publishing Service","Trade Journals","Technical Magazine" ],
+    "name" : "Newspaper & Magazine Publishers"
+  }, {
+    "subProducts" : [ "Glow Sign Printing","Thermal Transfer Printing Service","Typesetting Service","Foam Screen Printing","Annual Report Printing","Sun Board Printing Service" ],
+    "name" : "Printing & Binding Services"
+  }, {
+    "subProducts" : [ "Multilingual Desktop Publishing Services","Desktop Publishing","DTP Job Work" ],
+    "name" : "Book & Magazine Publishers"
+  }],  "name" : "Books & Stationery"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Halal Certification Services","Magnetic Particle Inspection","Vibration Analysis Services","Chartered Engineering Services","Quantity Surveying Services","Third Party Inspection Service" ],
+    "name" : "Inspection & Quality Check Services"
+  }, {
+    "subProducts" : [ "Harmonic Solutions","Temperature Controller Calibration Services","Stop Watch Calibration","Data Logger Calibration Service","Deep Freezer Calibration Services","Rotor Dynamic Balancing" ],
+    "name" : "Instrument Calibration & Adjustment"
+  }, {
+    "subProducts" : [ "Brick Testing Services","Material Identification Services","Cement Testing Services","Radiographic Testing Services","Particle Count Testing Service","Gemstone Identification Services" ],
+    "name" : "Material Testing Labs & Services"
+  }, {
+    "subProducts" : [ "Viscosity Testers","Contract Research Organization","Pharmaceutical Research Services","Industry Research","Research Center Service","Air Dispersion Modeling Service" ],
+    "name" : "Research and Development (R&D) Work"
+  }],  "name" : "R&D and Testing Labs"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "IT Helpdesk Service","IT Enabled Services","Telesales","Telemarketing Services Outsourcing","Post Deployment Support","Telephonic IT Support" ],
+    "name" : "Call Centre & Customer Care Services"
+  }, {
+    "subProducts" : [ "Non Voice BPO","Business Development Outsourcing","Design Outsource Services","Rural BPO Service","Business Outsourcing Service","Sub Contracting Services" ],
+    "name" : "BPO Operations and Services"
+  }, {
+    "subProducts" : [ "Giant Balloon","Corporate Shop Branding","Brand Valuation Services","Brand Support Service","Market Promotion Services","Point-of-Purchase Design" ],
+    "name" : "Branding & Advertising Agencies"
+  }],  "name" : "Call Center & BPO Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Circuit Breaker Repairing Services","Fire Alarm System AMC","Home Electronics Repair & Maintenance","Set Top Box Repairing Service","Video Door Phones Installation","Plotters Repairing" ],
+    "name" : "Electrical & Electronic Goods Repair"
+  }],  "name" : "Hand & Machine Tools"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Tempo Transportation Service","International Logistics Solution","Cargo Lashing Services","Cold Chain Transportation","Freight Broker Services","Freight Negotiation Services" ],
+    "name" : "Transport Agents & Bulk Carriers"
+  }, {
+    "subProducts" : [ "Home Relocation Services","Wire Rope Lashing Services","Home Storage Service","Canter Truck Service","Corporate Relocation Service","Dangerous Goods Packaging Services" ],
+    "name" : "Packers & Movers"
+  }, {
+    "subProducts" : [ "Secured Cargo Warehousing Service","Warehouse Consulting","Cold Chain Management","Storage Houses","Goods Warehousing Service","Overnight Storage Services" ],
+    "name" : "Warehouses and Warehousing Agents"
+  }, {
+    "subProducts" : [ "Cargo Lashing Services","Dry Docking Services","Local Courier Services","Marine Consultancy Services","International Cargo Services","ICD Operation Services" ],
+    "name" : "Cargo & Shipping"
+  }],  "name" : "Transportation & Logistics"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Automobile Workshops","Auto Wheel Repair Services","Car Customisation Services","Bus Painting Services","Automotive Engineering Service","Vehicle Graphics Design" ],
+    "name" : "Automobile Repairing and Maintenance"
+  }],  "name" : "Automobile, Parts & Spares"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Bunk Bed Designing Services","Chair Repairing Services","Interior Wood Work","Sofa Repairing Services","Home Furniture Contractors","Door Repairing Service" ],
+    "name" : "Furniture Making & Carpentry Service"
+  }],  "name" : "Furniture & Supplies"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Reverse Osmosis Service","Industrial Wastewater Treatment","Sewage Treatment Plant Service","Water Softening Service","Hospital Waste Management","Scrap Dealers" ],
+    "name" : "Waste Management & Control Services"
+  }, {
+    "subProducts" : [ "Layout Drawings Services","Car Body Design","Electrical Design Service","Detailed Drawing Services","Architectural BIM Services","Raster Vector Conversion Services" ],
+    "name" : "CAD CAM Design & Consultancy"
+  }, {
+    "subProducts" : [ "Furnace Designing","Reverse Engineering Design Services","Embedded Hardware Design","Prototype Manufacturing Service","Machining Tools Designing Services","FPGA Design Services" ],
+    "name" : "Product Engineering and Prototyping"
+  }, {
+    "subProducts" : [ "Project Risk Management Services","Electric Substation Turnkey Projects","Chemical Consultant","Project Recovery Services","Turnkey Design Services","Project Analysis Services" ],
+    "name" : "Turnkey Consultants & Solutions"
+  }],  "name" : "Industrial Plants & Machinery"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminum Mouldings","Bakelite Valve Body","Medical Injection Molding","Injection Molding Presses","Silicon Moulded Articles","Rubber Molding" ],
+    "name" : "Metal & Plastic Moulding Services"
+  }, {
+    "subProducts" : [ "Layout Drawings Services","Car Body Design","Electrical Design Service","Detailed Drawing Services","Architectural BIM Services","Raster Vector Conversion Services" ],
+    "name" : "CAD CAM Design & Consultancy"
+  }, {
+    "subProducts" : [ "Chemical Bar Fixing","SS Laser Marking Services","MS Stand Fabrication","Gear Grinding Services","Structural Steel Detailing Services","Shaping Machine Job Work" ],
+    "name" : "Manufacturing & Assembling Services"
+  }, {
+    "subProducts" : [ "PCB Soldering","Wave Soldering Services","Welding Works","Silver Brazing","Soldering Services","Metal Brazing" ],
+    "name" : "Welding, Soldering & Brazing Service"
+  }],  "name" : "Mechanical Parts & Spares"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Server Repairing Services","Laptop Keyboard Repairing Services","Computer Upgradation Service","Plotters Repairing","Computer Security Services","Remote IT Infrastructure Management" ],
+    "name" : "Computer Hardware & Network Support"
+  }, {
+    "subProducts" : [ "Digital Communications Services","Media Transcription Service","Offshore Medical Transcription Services","Fax Services","AV Solutions","VoIP Services" ],
+    "name" : "Tele Conferencing & VoIP Services"
+  }, {
+    "subProducts" : [ "Hardware Networking Diploma","Wireless Security Assessment","Storage Networking Services","IT Infrastructure Solution","Client Server Development","Networking Infrastructure Solutions" ],
+    "name" : "Computer and Networking Solutions"
+  }, {
+    "subProducts" : [ "Mobile Internet Services","Mobile Value Added Services","Payment Integration Service","SMS Integration Services","Telecom Infrastructure Consultancy","Data Transmission Services" ],
+    "name" : "Telecom Services, Engg & Maintenance"
+  }],  "name" : "Telecom Equipment & Goods"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Border Embroidery","Garment Stitching Service","Computerized Embroidery Service","Knitting Job Work","Shirt Stitching","Needle Work" ],
+    "name" : "Garments & Textiles Job Work"
+  }],  "name" : "Apparel & Garments"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Art Reproductions","Art Conservation House","Art Designing Service","Nature Art Painting Service","Art Restoration Service","Sketching Services" ],
+    "name" : "Painters & Painting Service Provider"
+  }],  "name" : "Handicrafts & Decoratives"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Glow Sign Printing","Thermal Transfer Printing Service","Typesetting Service","Foam Screen Printing","Annual Report Printing","Sun Board Printing Service" ],
+    "name" : "Printing & Binding Services"
+  }],  "name" : "Paper & Paper Products"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminum Mouldings","Bakelite Valve Body","Medical Injection Molding","Injection Molding Presses","Silicon Moulded Articles","Rubber Molding" ],
+    "name" : "Metal & Plastic Moulding Services"
+  }, {
+    "subProducts" : [ "Reverse Osmosis Service","Industrial Wastewater Treatment","Sewage Treatment Plant Service","Water Softening Service","Hospital Waste Management","Scrap Dealers" ],
+    "name" : "Waste Management & Control Services"
+  }, {
+    "subProducts" : [ "Layout Drawings Services","Car Body Design","Electrical Design Service","Detailed Drawing Services","Architectural BIM Services","Raster Vector Conversion Services" ],
+    "name" : "CAD CAM Design & Consultancy"
+  }, {
+    "subProducts" : [ "Chemical Bar Fixing","SS Laser Marking Services","MS Stand Fabrication","Gear Grinding Services","Structural Steel Detailing Services","Shaping Machine Job Work" ],
+    "name" : "Manufacturing & Assembling Services"
+  }],  "name" : "Engineering Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Horoscope Analysis Services","Moldavite Gemstone","Birth Chart Reading Service","Online Vastu Service","Business Problem Astrologers","Vastu Consultancy" ],
+    "name" : "Astrology and Numerology Services"
+  }],  "name" : "Gems, Jewelry & Astrology"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Digital Content Service","Content Filtering Services","Story Writing Service","Content Development Service","Content Optimization Services","Technical Content Writing Service" ],
+    "name" : "Copywriting & Content Development"
+  }, {
+    "subProducts" : [ "Electronic Media Tracking","Newsletter Management Services","Book Publisher","E-Book Publishing Service","Trade Journals","Technical Magazine" ],
+    "name" : "Newspaper & Magazine Publishers"
+  }, {
+    "subProducts" : [ "Giant Balloon","Corporate Shop Branding","Brand Valuation Services","Brand Support Service","Market Promotion Services","Point-of-Purchase Design" ],
+    "name" : "Branding & Advertising Agencies"
+  }, {
+    "subProducts" : [ "Commercial Printing","Designer Foil Printing Services","Acrylic Printing","Door Hanger Printing Service","Mug Printing Services","Metalized Printing Service" ],
+    "name" : "Metal, Plastic & Industrial Printing"
+  }],  "name" : "Media, PR & Publishing"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Nickel Electroplating","Chromate Conversion Coating Service","Electro-color Anodizing Services","Surface Treatment Services","Metal Powder Coating Services","Shot Peening Services" ],
+    "name" : "Metal Finishing & Coating Services"
+  }],  "name" : "Metals, Alloys & Minerals"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminum Mouldings","Bakelite Valve Body","Medical Injection Molding","Injection Molding Presses","Silicon Moulded Articles","Rubber Molding" ],
+    "name" : "Metal & Plastic Moulding Services"
+  }, {
+    "subProducts" : [ "Harmonic Solutions","Temperature Controller Calibration Services","Stop Watch Calibration","Data Logger Calibration Service","Deep Freezer Calibration Services","Rotor Dynamic Balancing" ],
+    "name" : "Instrument Calibration & Adjustment"
+  }, {
+    "subProducts" : [ "Furnace Designing","Reverse Engineering Design Services","Embedded Hardware Design","Prototype Manufacturing Service","Machining Tools Designing Services","FPGA Design Services" ],
+    "name" : "Product Engineering and Prototyping"
+  }, {
+    "subProducts" : [ "Nickel Electroplating","Chromate Conversion Coating Service","Electro-color Anodizing Services","Surface Treatment Services","Metal Powder Coating Services","Shot Peening Services" ],
+    "name" : "Metal Finishing & Coating Services"
+  }],  "name" : "Industrial Supplies"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Safety Inspection Services","Strategic Security Planning Service","Armed Security Guard","Personnel Security Assistant","Parking Security Services","Infrastructural Security Services" ],
+    "name" : "Residential & Commercial Security"
+  }, {
+    "subProducts" : [ "Home Relocation Services","Wire Rope Lashing Services","Home Storage Service","Canter Truck Service","Corporate Relocation Service","Dangerous Goods Packaging Services" ],
+    "name" : "Packers & Movers"
+  }, {
+    "subProducts" : [ "Fly Control","Pest Management","Garden Pest Control","Outdoor Pest Control","Smoke Pest Control Services","Pest Control Gel Treatment" ],
+    "name" : "Termite & Pest Control Services"
+  }, {
+    "subProducts" : [ "Pressure Washing Service","Hotel Housekeeping Services","Building Maintenance","Curtain Dry Cleaning Services","Upholstery Cleaning","Aquarium Maintenance Service" ],
+    "name" : "Housekeeping and Cleaning Services"
+  }],  "name" : "House Keeping Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "IT Process Governance","Core Banking Solution","Management Information Services","Software Documentation","Infrastructure Software Services","Travel Agencies Software Service" ],
+    "name" : "Software Development & IT Consultant"
+  }, {
+    "subProducts" : [ "Layout Drawings Services","Car Body Design","Electrical Design Service","Detailed Drawing Services","Architectural BIM Services","Raster Vector Conversion Services" ],
+    "name" : "CAD CAM Design & Consultancy"
+  }, {
+    "subProducts" : [ "Server Repairing Services","Laptop Keyboard Repairing Services","Computer Upgradation Service","Plotters Repairing","Computer Security Services","Remote IT Infrastructure Management" ],
+    "name" : "Computer Hardware & Network Support"
+  }, {
+    "subProducts" : [ "Transaction Processing Services","Data Visualization Service","Data Synchronization Services","Data Cleansing Service","Transfer Pricing Documentation Service","Data Warehousing Consultancy Services" ],
+    "name" : "Data Entry & Data Processing Service"
+  }],  "name" : "Computer & IT Solutions"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Video Editing","Photo Editing Services","Wedding Videography","Modeling Photo Shoot","Jewellery Photography","Wedding Photographers" ],
+    "name" : "Photographers & Videographers"
+  }, {
+    "subProducts" : [ "Trade Fair Event","Trade Fair Organizer","Modular Exhibition Stall Designer","Exhibition Display Design","International Exhibition Services","Entrance Decoration Service" ],
+    "name" : "Event Planners & Organizers"
+  }, {
+    "subProducts" : [ "Canteen Service","Institutional Catering","Cake Home Delivery Services","Hotel Catering Service","Tiffin Catering Service","Fine Dining Restaurants" ],
+    "name" : "Food & Catering Services"
+  }, {
+    "subProducts" : [ "Dance Party Organizers","Crockery Rental","Cultural Activities Services","Bar Tendering Services","Church Decorations Service","Kitty Party Service" ],
+    "name" : "Corporate Events & Party Organizers"
+  }],  "name" : "Event Planner & Organizer"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Company Incorporation Services","Secretarial Compliance Services","Statutory Compliance Auditing Services","Corporate Sustainability Reporting","Social Compliance Audit","Labour Compliance Services" ],
+    "name" : "Company Law & Labour Law Consultants"
+  }, {
+    "subProducts" : [ "Insurance Renewal Services","Insurance Brokers","Cattle Insurance","Medical Insurance","Unit Linked Insurance Plan","Two Wheeler Insurance" ],
+    "name" : "Insurance Agents and Services"
+  }, {
+    "subProducts" : [ "Legal Drafting Services","Patent Prosecution Service","Dentist Certificate Apostille","Death Certificate Attestation Services","Educational Certificate Attestation","Document Apostille Services" ],
+    "name" : "Legal Drafting & Litigation Services"
+  }, {
+    "subProducts" : [ "Property Risk Management","Risk Advisory Service","Actuarial Services","M&A Advisory Services","Operational Risk Management","Sell-Side Advisory Services" ],
+    "name" : "Actuarial & Risk Management"
+  }],  "name" : "Financial & Legal Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Mahindra Xylo Rental","Airport Taxi","Mortuary Van Rentals","Aviation Services","Ambulance Service","Tourist Coach Rental" ],
+    "name" : "Air Taxi, Bus Rentals & Services"
+  }, {
+    "subProducts" : [ "Island Tour Service","Diving Support Services","Underwater Diving Training Service","Motivational Camp","Golf Cart Rental Services","Cultural Tour" ],
+    "name" : "Adventure & Trekking Tours"
+  }, {
+    "subProducts" : [ "Train Tour Packages","Passport Consulting Service","Passport Renewal Services","Immigration Consultancy","Study Visa Consultancy Services","Domestic Tour Operators" ],
+    "name" : "Tour Operators and Travel Agents"
+  }, {
+    "subProducts" : [ "Hospitality Consultants Service","Club Management Services","Valet Parking","Guest House Booking","Bar Service","Hobby Clubs" ],
+    "name" : "Hotel Booking & Reservation Services"
+  }],  "name" : "Travel, Tourism & Hotels"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Safety Inspection Services","Strategic Security Planning Service","Armed Security Guard","Personnel Security Assistant","Parking Security Services","Infrastructural Security Services" ],
+    "name" : "Residential & Commercial Security"
+  }],  "name" : "Security, Safety System & Service"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Thyroid Diseases Treatment","Urticaria Treatment","Peptic Ulcer Treatment","Periodontal Dental Treatment Services","Pregnancy Care Treatment","Medical Surgery Services" ],
+    "name" : "Medical Surgery & Treatment Centres"
+  }, {
+    "subProducts" : [ "Medicinal Chemistry Services","Biotech Consultancy Services","Biotechnology Services","Pharmaceutical Testing Services","Clinical Research Services","Clinical Management Services" ],
+    "name" : "Pharma & Bioanalytical Services"
+  }, {
+    "subProducts" : [ "Behavior Therapy Services","Family Relationship Management","Heart Care Service","Cardiothoracic Surgeons","Computed Tomography Scan","Interventional Cardiology" ],
+    "name" : "Medical Consultants & Clinics"
+  }, {
+    "subProducts" : [ "Non Invasive Diagnostics","Pathology Laboratory","Genetic Testing","Digital Colposcopy","Hemoglobin Testing Services","Diagnostic Lab" ],
+    "name" : "Diagnostic Imaging & Pathology Labs"
+  }],  "name" : "Hospital, Clinic & Consultation"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Harmonic Solutions","Temperature Controller Calibration Services","Stop Watch Calibration","Data Logger Calibration Service","Deep Freezer Calibration Services","Rotor Dynamic Balancing" ],
+    "name" : "Instrument Calibration & Adjustment"
+  }, {
+    "subProducts" : [ "Brick Testing Services","Material Identification Services","Cement Testing Services","Radiographic Testing Services","Particle Count Testing Service","Gemstone Identification Services" ],
+    "name" : "Material Testing Labs & Services"
+  }, {
+    "subProducts" : [ "Viscosity Testers","Contract Research Organization","Pharmaceutical Research Services","Industry Research","Research Center Service","Air Dispersion Modeling Service" ],
+    "name" : "Research and Development (R&D) Work"
+  }],  "name" : "Lab Instruments & Supplies"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Circuit Breaker Repairing Services","Fire Alarm System AMC","Home Electronics Repair & Maintenance","Set Top Box Repairing Service","Video Door Phones Installation","Plotters Repairing" ],
+    "name" : "Electrical & Electronic Goods Repair"
+  }, {
+    "subProducts" : [ "Hydra Crane Rental Service","Telescopic Boom Lift Rental","Crawler Crane Rental Services","Crane Rental","Batching Plant Rental","Centering Sheet Renting Services" ],
+    "name" : "Construction Equipment Rental"
+  }, {
+    "subProducts" : [ "Cyber Cafe","Refrigerator Rental","DJ Setup Service","TV Rental Services","AC Rental","Desktop Rental" ],
+    "name" : "Electrical & Electronic Goods Rental"
+  }, {
+    "subProducts" : [ "Milling Machines Retrofitting","Water Softening Systems Maintenance","Sewage Treatment Plant Service","STP Maintenance","Cold Ducting Insulation","Food Processing Equipment Repairs" ],
+    "name" : "Repair & Maintenance Services"
+  }],  "name" : "Product Rental & Leasing"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Freelance HR Training","Human Resource Planning Services","Resource Planning Services","Human Resource Audit Services","Personality Assessment Services","Employee Satisfaction Survey" ],
+    "name" : "HR Consulting & Advisory"
+  }, {
+    "subProducts" : [ "Orientation Program Services","On-Campus Recruitment Services","Corporate Concierge Services","Compensation Structuring","Secretarial Support Service","Payroll Processing Service" ],
+    "name" : "HR & Payroll Outsourcing Services"
+  }, {
+    "subProducts" : [ "Personality Development Counseling","Pre-Departure Briefing Services","BPO Training Service","Diversity Training","Skill Development Services","Business Development Training" ],
+    "name" : "Corporate and Soft Skills Training"
+  }, {
+    "subProducts" : [ "Outsourced Staffing Services","Bulk Staffing Solutions","Contract Placement Service","Security Guards Training","Contingency Recruitment Service","Catering Staff" ],
+    "name" : "Contract Employment & Staffing Firms"
+  }],  "name" : "HR Planning & Recruitment"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Women Hair Cut Services","Skin Pigmentation Treatment Services","Scar Treatment","Tattoo Training Services","Hair Fixing","Hair Fall Treatment Service" ],
+    "name" : "Fitness Clubs and Beauty Parlours"
+  }],  "name" : "Cosmetics & Personal Care"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Rera Registration Service","Patent Litigation Support Service","Geographical Indication","Patent Preparation Services","Company Registration","Patent Licensing Service" ],
+    "name" : "Copyright & Trademark"
+  }, {
+    "subProducts" : [ "Direct Selling Service","Newsletter Marketing Service","Strategic Marketing Service","Mobile Sales Service","Local Marketing Services","Events Marketing Service" ],
+    "name" : "Marketing Services & Consultants"
+  }, {
+    "subProducts" : [ "Mystery Shopping Service","Big Data Analytics","Field Research Services","Market Penetration Services","Documentation Advisory Services","Industrial Project Reports" ],
+    "name" : "Market Research Advisors & Agencies"
+  }, {
+    "subProducts" : [ "Project Risk Management Services","Electric Substation Turnkey Projects","Chemical Consultant","Project Recovery Services","Turnkey Design Services","Project Analysis Services" ],
+    "name" : "Turnkey Consultants & Solutions"
+  }],  "name" : "Business & Audit Services"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Woman Empowerment Services","Senior Day Care","Blood Donation Camps","Social Development Services","Social Collaboration Services","Child Developmental Solution" ],
+    "name" : "Charity & Non Profit Organizations"
+  }, {
+    "subProducts" : [ "Video Editing","Photo Editing Services","Wedding Videography","Modeling Photo Shoot","Jewellery Photography","Wedding Photographers" ],
+    "name" : "Photographers & Videographers"
+  }, {
+    "subProducts" : [ "Police Record Check","Education Verification Services","Shadowing Service","Undercover Workplace Investigation","Theft Investigation Services","Vehicle Tracking Service" ],
+    "name" : "Detective & Investigation Agencies"
+  }, {
+    "subProducts" : [ "Bunk Bed Designing Services","Chair Repairing Services","Interior Wood Work","Sofa Repairing Services","Home Furniture Contractors","Door Repairing Service" ],
+    "name" : "Furniture Making & Carpentry Service"
+  }],  "name" : "Contractors & Freelancers"
+},{
+  "subProducts" : [ {
+    "subProducts" : [ "Rera Registration Service","Corporate Office Services","Row House Selling Services","Building Selling Services","Commercial Land Consultancy Services","Buildings Valuation Service" ],
+    "name" : "Real Estate Agent & Property Dealers"
+  }, {
+    "subProducts" : [ "Farmhouse Landscaping Services","Home Garden Services","Landscape Edging","Landscape Consultancy Services","Garden Design","Residential Landscape Service" ],
+    "name" : "Landscape Structure and Designing"
+  }, {
+    "subProducts" : [ "Hydra Crane Rental Service","Telescopic Boom Lift Rental","Crawler Crane Rental Services","Crane Rental","Batching Plant Rental","Centering Sheet Renting Services" ],
+    "name" : "Construction Equipment Rental"
+  }, {
+    "subProducts" : [ "Injection Grouting Service","Sewer Pipeline Construction","Sprinkler Installation Services","Sanitary Work Services","Thermal Insulation Contractors","Re Piping Services" ],
+    "name" : "Building & Real Estate Developers"
+  }],  "name" : "Building & Construction"
+}]

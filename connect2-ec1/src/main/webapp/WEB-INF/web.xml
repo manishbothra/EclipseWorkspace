@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Connect2India</display-name>
+  
+  <welcome-file-list>
+   
+    <welcome-file>index.html</welcome-file>
+    
+  </welcome-file-list>
+  
+   <context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>
+		/WEB-INF/rest-servlet.xml
+		/WEB-INF/spring-mvc-servlet.xml
+	</param-value>
+</context-param>
+  <listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+  
+  <filter>
+	<filter-name>springSecurityFilterChain</filter-name>
+	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+ 
+<filter-mapping>
+  <filter-name>springSecurityFilterChain</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<filter>
+  <filter-name>GzipFilter</filter-name>
+  <filter-class>com.connect2.servlet.filter.GZipServletFilter</filter-class>
+</filter>
+
+<filter-mapping>
+  <filter-name>GzipFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+  <servlet>
+    <servlet-name>rest</servlet-name>
+    <servlet-class>
+           org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param> 
+		<param-name>contextConfigLocation</param-name> 
+		<param-value>
+		</param-value> 
+	</init-param> 
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rest</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+	
+	<filter>
+		<filter-name>UrlPreRewriteFilter</filter-name>
+		<filter-class>com.connect2.servlet.filter.C2IUrlPreFilter</filter-class>		    
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>UrlPreRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+		
+<servlet>
+	<servlet-name>combineResources</servlet-name>
+	<servlet-class>com.connect2.servlet.FileMergerServlet</servlet-class>
+	<init-param>
+		<param-name>isNoCacheMode</param-name>
+		<param-value>true</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>combineResources</servlet-name>
+		<url-pattern>/appresouces.cmb</url-pattern>
+	</servlet-mapping>
+	
+	     
+     <filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>com.connect2.servlet.filter.URLRewriteFilter</filter-class>
+		
+		<init-param>
+			<param-name>confReloadCheckInterval</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		 
+		<init-param>
+			<param-name>logLevel</param-name>  
+			<param-value>ERROR</param-value>  
+		</init-param>    
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>		
+
+<filter>
+	<filter-name>SEOFilter</filter-name>
+	<filter-class>net.angularseo.SEOFilterRemote</filter-class>
+	<init-param>
+		<param-name>phantomjs.binary.path</param-name>
+		<param-value>/usr/bin/phantomjs</param-value>
+	</init-param>
+	<init-param>
+		<param-name>waitForPageLoad</param-name>
+		<param-value>10</param-value>
+	</init-param>
+	<init-param>
+		<param-name>cacheTimeout</param-name>
+		<param-value>24</param-value>
+	</init-param>
+	<init-param>
+		<param-name>driverPoolSize</param-name>
+		<param-value>0</param-value>
+	</init-param>	
+	<init-param>
+		<param-name>daemonCrawlerCount</param-name>
+		<param-value>1</param-value>
+	</init-param>	
+	<init-param>
+		<param-name>cachePath</param-name>
+		<param-value>/xssr/c2i/snapshots</param-value>
+	</init-param>
+	<init-param>
+		<param-name>crawlDepth</param-name>
+		<param-value>1</param-value>
+	</init-param>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>	
+	<init-param>
+		<param-name>delegate</param-name>
+		<param-value>true</param-value>
+	</init-param>
+	<init-param>
+		<param-name>mode</param-name>
+		<param-value>remote</param-value>
+	</init-param>
+	<init-param>
+		<param-name>snaphostServerUrl</param-name>
+		<param-value>http://iconnect2india.com:9090</param-value>
+	</init-param>	
+</filter>
+
+	<filter-mapping>
+		<filter-name>SEOFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	
+  
+	
+  <servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+    <servlet-name>spring-mvc</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+	<filter>
+	    <filter-name>c2iFilter</filter-name>
+	    <filter-class>com.connect2.servlet.filter.C2IServletFilter</filter-class>
+	   
+	 </filter>
+	 <filter-mapping>
+	     <filter-name>c2iFilter</filter-name>
+	     <url-pattern>/*</url-pattern>
+	 </filter-mapping>
+  
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+    </error-page>
+	 
+</web-app>

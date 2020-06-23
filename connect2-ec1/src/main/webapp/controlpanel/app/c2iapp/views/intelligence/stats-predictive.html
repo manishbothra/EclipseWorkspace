@@ -1,0 +1,114 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-line-chart"></i>&nbsp;Predictive Analysis</h1>
+		</div>
+	</div>
+
+	<div class="searchFilter">
+		<!-- Tab panes -->
+		<div class="container x_panel" data-ng-cloak>
+			<div class="row">
+				<div class="col-md-3 col-md-4 col-sm-6 col-xs-12">
+					<strong>Predict </strong>
+					<select ng-model="compareParams.predictionType" ng-options="item as item for item in statsComparisontypes"></select>
+				</div>
+			</div> 
+			
+			<div class="row">
+				<div class="col-md-8">
+					<label>Years</label>
+					<tags-input ng-model="compareParams.yearTags" display-property="label" placeholder="Enter year to predict" addFromAutocompleteOnly="true" addOnEnter="false">
+					  <auto-complete source="loadYearTags($query)" min-length="2"></auto-complete>
+					</tags-input>			
+				</div>
+				<div class="col-md-8">
+					<label>Products</label>
+					<tags-input ng-model="compareParams.productTags" display-property="label" placeholder="Enter Product name to compare" addFromAutocompleteOnly="true" addOnEnter="false">
+					  <auto-complete source="loadTags($query)" min-length="2"></auto-complete>
+					</tags-input>
+				</div>
+				<div class="col-md-4">
+					<button style="margin-top: 2em" type="button" class="btn btn-primary" ng-click="predictStats()">
+						Predict
+					</button>
+				</div>
+			</div>			
+				  
+		</div>
+				
+	<div class="tab-content">
+		<div>
+			
+			<div class="container x_panel"  data-ng-cloak >
+				<div class="x_title title">
+					  <h2>{{tableTitle}}</h2>
+					  <ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+						</li>
+					  </ul>
+					  <div class="clearfix"></div>
+				</div>
+			
+			
+				<div class="row x_content" id="tableStats">
+					<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+						<strong>Error! </strong> {{errorMessage}}
+					</div>
+					 <div class="col-md-9" data-ng-cloak ng-show="dataAvailable">
+						<table class="table table-striped table-bordered table-responsive">
+							<tr style="background-color:#454545;color:#fff;">
+								<th style="width:30%;min-width: 157px;"> Product </th>
+								<th ng-repeat="header in tableHeader" title="{{header}}"> {{header}} </th>
+							</tr>
+							 
+							<tr ng-repeat="(code, trade) in allData">
+								<td>{{getProductName(code)}}</td>
+								<td ng-repeat="header in tableHeader" ng-if="'value' === selectedPredictionType.toLowerCase()">						 
+									{{trade[header].value}}
+								</td>
+								 <td ng-repeat="header in tableHeader" ng-if="'quantity' === selectedPredictionType.toLowerCase()">						 
+									{{trade[header].qty}}
+								</td>
+							</tr>
+						</table>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	   <div class="x_panel" data-ng-cloak ng-if="dataAvailable">
+			
+			<div class="x_title title">
+			  <h2>Infographics</h2>
+			  <ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+				</li>
+			  </ul>
+			  <div class="clearfix"></div>
+			</div>
+			
+			
+		   <div class="container x_content" id="tradeComparison">
+				
+				<div class="row">
+
+					<div class="col-md-12 col-sm-12">
+						<div class="tradeGraph">
+							<nvd3 options='predictionChart.options' data='predictionChart.data' config="nvChartConfig" api="predictionChart.api"></nvd3>
+							   
+						</div>
+					</div>
+					
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

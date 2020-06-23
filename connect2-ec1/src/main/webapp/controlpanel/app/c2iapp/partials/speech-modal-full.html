@@ -1,0 +1,52 @@
+
+<style>
+	#c2iAssistanceModal b{font-weight:500;}
+	#c2iAssistanceModal .answers{margin-left: 100px;border: 1px solid #ccc;border-radius: 4px;padding: 6px;}
+	#c2iAssistanceModal .questions{margin-top:10px;background-color: #cccccc5c;border: 1px solid #ccc;border-radius: 4px;padding: 6px;max-width: 50%;}
+
+</style>
+<div  class="modal fade popupform" id="c2iAssistanceModal" role="dialog" style="display:none;">
+	<div class="modal-dialog modal-content">
+		<div class="modal-header" >
+				<h3 style="color:#333;font-size: 30px;">{{ speechHeaderText || 'Connect2India Global Trade Assistant'}}</h3>
+		</div>
+		<div class="modal-body">
+			<div class="fileUploadModal">
+
+					<form id="labnol" method="post" ng-submit="searchByVoice()">
+					  <div class="speech">
+						<div class="answer">
+							<div ng-repeat="qna in answeredQueries" >
+								<p class="questions" ng-if="qna.question"><b>{{qna.question}} </b> </p>
+
+								<div class="answers">
+									<img src="https://cdn.connect2india.com/global/images/assistance-logo.png"></img>
+									<p style="font-size:15px;color:#333" ng-if="qna.answer" ng-bind-html="qna.answer|as_trusted"></p>
+								</div>
+							</div>
+							<!-- <p style="font-size:15px;color:#333" ng-if="speechResp.nextAction" ng-bind-html="speechResp.nextAction| as_trusted"> </p> -->
+						</div>
+						<div>
+							<input style="width: 60%;margin-top:10px;padding: 8px;border: 1px solid;border-radius: 3px;" type="text" ng-model="speechForm.searchText" name="q" id="transcript" placeholder="{{speechInputPlaceholder}}" />
+							<a ng-click="startDictation()" >
+								<img ng-if="speechStarted" ng-src="/controlpanel/assets/images/mic.gif" />
+								<img ng-if="!speechStarted" src="/controlpanel/assets/images/mic-static.gif" />
+							</a>
+							<button ng-if="showManualSubmitBtn" ng-disabled="analyzing" class="btn btn-primary">Submit </button>
+						</div>
+						<div>
+							<blink ng-show="analyzing" ng-attr-activate="analyzingVoiceSearch">{{analyzingInfo}}</blink>
+						</div>
+					  </div>
+					</form>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div>
+				<button type="button" class="btn btn-default" ng-click="modalOptions.closeModal()"  >Close</button>
+			</div>
+
+		</div>
+	</div>
+</div>

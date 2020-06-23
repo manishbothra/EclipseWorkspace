@@ -1,0 +1,173 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Exporters</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>	
+	<div class="row" style="overflow-x: auto">
+		<div class="col-md-12" ng-if="expReports && expReports.length > 0">
+			<!-- Custom Tabs -->
+			<div class="row">
+				<div  class="col-md-8 productAutoComplete">
+					<table class="table table-bordered table-responsive table-hover dataTable" >
+						<thead>
+							<tr class="table-header"> 
+								<td>Sl No.</td>
+								<td>Report Name</td>
+								<td>Date</td>
+								<td>#Order</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</thead>
+						<tr ng-repeat="report in expReports" ng-class="{active: isRowSelected(report)}"> 
+							<td>{{$index+1}}</td>
+							<td>{{report.reportName}}</td>
+							<td>{{report.reportDateFormatted}}</td>
+							<td><span ng-if="report.orderId">{{report.orderIdDisplayName}}</span></td>
+							<td><a href='' class="btn btn-primary" ng-click="populateReport(report);" >View</a></td>
+							<td><a class="btn btn-success" ng-if="report.reportDoc && report.reportDoc.documentId" href='' ng-click="downloadReportFile(report);" >Download</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="clearfix"></div>
+				<hr/>
+				
+				<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+					<strong>Success! </strong> {{successMsg}}
+				</div>
+				<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+					<strong>Error! </strong> {{errorMessage}}
+				</div>
+				<div ng-show="showContactCompanyTemplate" id="contactCompanyTemplate">
+					<div class="x_panel" >
+						<div class="x_title">
+							<p>Template - <b> {{contactForm.templateId}} </b></p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<form  class="form-horizontal form-label-left"><!-- ng-submit="showContactCompany(templateData)" -->
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobileNo">Template <span class="required">*</span>
+									</label>
+									<div class="col-md-4 col-sm-6 col-xs-12">
+									  <select type="text" ng-change="changeTemplate()" ng-model="contactForm.templateId" class="form-control col-md-7 col-xs-12" required>
+									  <option ng-value="">Select any Template</option>
+									  <option ng-value="1">Template 1</option>
+									  <option ng-value="2">Template 2</option>
+									  <option ng-value="3">Template 3</option>
+									  <option ng-value="4">Template 4</option>
+									  <option ng-value="5">Template 5</option>
+									  </select>
+									</div>
+								</div>
+								
+								<div class="clearfix"></div>
+								<!-- <div ng-bind-html="templateData" ng-binding"></div> -->
+								<div class="ln_solid"></div>
+								  <!-- <div class="form-group">
+									<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+									  <button type="submit" class="btn btn-success">Select</button>
+									</div>
+								</div> -->
+							</form>
+						</div>
+					</div>
+				</div>
+				<div ng-show="showContactCompanyForm" id="contactCompanyDiv">
+					<div class="x_panel" >
+						<div class="x_title">
+							<p>Contact exporter - <b> {{contactForm.companyName}} </b></p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<form ng-submit="contactCompany()" class="form-horizontal form-label-left">
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobileNo">Email <span class="required">*</span>
+									</label>
+									<div class="col-md-8 col-sm-6 col-xs-12">
+									  <input ng-model="contactForm.email" type="text" ng-disabled="true" class="form-control col-md-7 col-xs-12" required/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobileNo">Subject <span class="required">*</span>
+									</label>
+									<div class="col-md-8 col-sm-6 col-xs-12">
+									  <input ng-model="contactForm.subject" type="text" class="form-control col-md-7 col-xs-12" required/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobileNo">Message <span class="required">*</span>
+									</label>
+									<div class="col-md-8 col-sm-6 col-xs-12" text-angular ng-model="contactForm.message">
+									  <!-- <textarea text-angular ng-model="contactForm.message" type="text" class="form-control col-md-7 col-xs-12" required></textarea> -->
+									</div>
+									<!-- <a href="javascrip:void(0)" ng-click="showImporterTemplate();">choose another template</a> -->
+								</div>
+								<div class="clearfix"></div>
+								<div class="ln_solid"></div>
+								  <div class="form-group">
+									<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+									  <button type="submit" class="btn btn-success">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="reportDetailedDiv" data-ng-if="expReport">
+					<h1> Details </h1>
+				</div>
+				<div class="col-sm-12 realTimeDemad" data-ng-if="expReport">
+					<h2 class="reportHeader">{{expReport.reportName}}</h2>
+					<div class="reportSummary col-xs-12 col-sm-8 col-md-4">
+						<table>
+							<tr> 
+								<td> Date generated: {{expReport.reportDateFormatted}}</td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+						</table>
+					</div>
+					
+					<div class="tbl-report-detailed">
+						<table class="table table-bordered table-responsive dataTable " role="grid">
+							<thead>
+								<tr role="row" class="table-header">
+									<th></th>
+									<th class="sorting" tabindex="0" ng-repeat="header in reportHeaders">
+										{{header}}
+									</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr role="row" class="odd" ng-repeat="comp in reportData">
+									<td ng-if="expReport.reportType ==='EXPORTERS_DATA' || expReport.reportType ==='IMPORTERS_DATA'">
+										<button class="btn btn-primary" ng-show="comp.email" ng-click="showExporterTemplate(comp);">Send Mail</button>
+									</td>
+									<td ng-repeat="key in dataKeys">
+										{{comp[key]}}
+									</td>
+									<td ng-if="comp.id">
+										<a target="_blank" ng-href="/{{comp.companyName|spaceToDash}}/{{comp.id}}">Full Holistic Profile</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="col-md-12" ng-if="!expReports || expReports.length == 0">
+			<div>
+				<p>You have not purchased any exporter.</p>
+			</div>
+			<a href='#exporters-search' class="btn btn-primary"> Get New exporter </a>
+		</div>
+	</div>
+</div>

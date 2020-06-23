@@ -1,0 +1,122 @@
+.ecom .formapproval{border: 1px solid lavender; padding: 20px 8px 8px 8px; background-color: lavender; }
+
+.ecom .form-row{margin-bottom: 10px;}
+
+
+
+
+.ecom .seller-info-card{padding: 0px 10px 10px 10px; background-color: white; margin-right: 10px; box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3); min-height: 310px; border-radius: 5px; margin-top: 10px;} 
+.ecom .main{padding: 0px 10px; }
+ .ecom .card-heading{text-align: center; color: black; margin-bottom: 20px; }
+.ecom .seller-info-card h3{color: black;}
+.ecom .seller-info-card .inner-info{margin-bottom: 15px; border-bottom: 1px solid lavender; }
+.ecom .seller-info-card .values{color: black;font-size: 13px;float: right; margin-right: 20px;}
+.ecom .seller-address{color: black;font-size: 13px; margin-right: 20px; }
+.ecom .seller-info-top{width: 100%;height: 5px;}
+
+.wizard_horizontal ul.wizard_steps li a.done1:before, .wizard_horizontal ul.wizard_steps li a.done1 .step_no {
+    background: #F3A152;
+    color: white;cursor:pointer;
+  }
+
+
+
+.ecom .otp-btn{padding: 4px 8px; border:1px solid #007bff;cursor:pointer;color:#007bff;}
+.ecom .otp-btn:hover{background-color:#007bff ;color:white;}
+.ecom .form-input{height: 30px; border: none; } 
+.ecom .seller-form-info{background-color: lavender; padding: 10px 30px 20px 30px; margin-bottom: 8px;}
+.ecom .form-error{color: red;}
+.ecom .ecom-outer{background-color: lavender; min-height: 50px; border-radius: 4px; margin: 0px 0px 10px; padding: 20px; border: 1px solid lavender; }
+.ecom .ecom-common{padding-bottom: 8px; }
+.ecom .ecom-bottom{margin-bottom: 10px; }
+.ecom .com{background-color: white;}
+.ecom .ecom-main{display: flex; }
+.ecom .ecom-check{height: 18px; width: 18px; margin-right: 10px; margin-top: 3px;text-align: center;border-radius: 50%;background-color: grey;color: white;font-size: 13px;line-height: 18px;} 
+.ecom .ecom-text{font-size: 17px;}
+.ecom .ecom-edit{margin-left: auto;cursor:pointer;}
+.ecom .prevStepBtn-wrapper{margin-top: 5px; }
+.ecom .prevStepBtn{padding:5px 8px;cursor:pointer; border: 1px solid #2E5A9B; color: #2E5A9B;border-radius: 5px;}
+
+
+
+  .ecom .outer{margin-bottom: 20px;border-radius: 4px;width: 400px; } 
+  .ecom .brand-container{text-align: left; font-family: "Riona Sans Light", sans-serif; background-color: transparent; display: inline-block; width: 100%;} 
+  .ecom .brandmsg{margin-top: 11px; display: inline-block; font-size: 15px; font-weight: bold; line-height: 18px; padding: 10px 22px;}
+  .ecom .inputouter{text-align: center;padding: 17px 0px 10px;}
+  .ecom .inputouter>div{display: inline-block; width: 250px;position: relative;}
+  .ecom .brandinput{width: 100%; box-sizing: border-box; color: rgb(119, 119, 119); background-color: rgb(255, 255, 255); height: 40px; border-width: 1px; border-style: solid; border-color: rgb(223, 223, 223); border-image: initial; padding: 0px 13px 2px; border-radius: 3px;} 
+  .ecom .checkbrandbtn{
+  padding-left: 8px; padding-right: 9px; cursor: pointer; min-width: 90px; white-space: nowrap; color: rgb(71, 160, 251); background-color: rgb(255, 255, 255); border-radius: 2px; border: 1px solid rgb(71, 160, 251); }
+  .ecom .brand-container .checkbtn{top: 1px; width: 110px; height: 40px; position: relative; vertical-align: middle; margin: 0px 0px 0px -4px; border-radius: 0px 2px 2px 0px; }
+  .ecom .recent-outer{position: relative; margin-top: 40px; text-align: center; border-top: 1px solid rgb(223, 223, 223); padding: 30px 15px;}
+  .ecom .circle{text-align: center; width: 31px; height: 31px; position: absolute; left: calc(50% - 31px); top: -15px;
+    font-size: 12px; border-radius: 50%;border: 1px solid rgb(223, 223, 223);line-height: 31px;z-index: 1;background-color: white;} 
+  .ecom .approved-brand-label{text-align: justify;padding: 20px 10px 16px;font-size:16px;}
+  .ecom .approved-brand-list{text-align: justify;
+    padding: 16px 10px;color: #3B7ADB;font-size: 12px;}
+   .ecom .checkbtn:hover{background-color:rgb(71, 160, 251);color: white;}
+   .ecom .brandDocUpload-btn{padding:4px 7px;border: 1px solid #27A1B0;color: #27A1B0;float: right;cursor:pointer;}
+   .ecom .brandDocUpload-btn:hover{cursor: pointer;background-color:#27A1B0;color: white;}
+
+
+
+
+.ecom .basic-det-outer{padding: 10px;}
+.ecom .basic-det-outer-title{text-align: center;background-color: lavender;padding: 5px;}
+.ecom .flipkart-outer{border: 1px solid #BDC8D8;}
+.ecom .amazon-outer{border: 1px solid #BDC8D8;;}
+.ecom .basic-det-inner-each{padding: 6px; border-bottom: 1px solid lavender;position: relative;}
+.ecom .view-more{border-bottom: none;padding: 8px;}
+.ecom .basic-det-outer-body a{cursor:pointer;float:right;}
+.ecom .view-more a{border: 1px solid #27A1B0;padding: 4px 7px;color:#27A1B0;}
+.ecom .view-more a:hover{background-color: #27A1B0;color:white;}
+.ecom .det-val-span{position: absolute;left: 40%;}
+.ecom .edit-pencil{margin-left: 5px;font-size: 13px;cursor: pointer;}
+.ecom .edit-dialog{position: absolute;z-index:9999;display:inline-block;border: 1px solid #759798; background-color: white;margin-left: 10px;padding: 5px;}
+.ecom .edit-dialog-btn{border: 1px solid #C4CCCD;padding: 3px 5px; cursor:pointer;margin-left:0px;}
+.ecom .edit-dialog-btn-wrapper{padding: 10px;display: inline-block;}
+
+  .ecom .order-detail-wrapper .order-detail-title{position:relative;}
+  .ecom .order-detail-wrapper .order-detail-title span{padding-top:1%;margin-left:10px;font-size:16px;}
+  .ecom .order-detail-wrapper .order-header{float: left;font-size:24px;text-decoration: underline;}
+  .ecom .order-detail-wrapper .summary-inside{margin-bottom: 0px;}
+  .ecom .order-detail-wrapper .btn{margin-bottom: 10px;}
+  .ecom .order-detail-wrapper .shipping-outer{box-shadow:0px 0px 2px 0px;display:flex; padding-left:10px;padding-right: 20px;min-height: 120px;border: 1px solid #E0E0EA;}
+  .ecom .order-detail-wrapper .shipping{width: 50%;height: 100%;}
+  .ecom .order-detail-wrapper .shipping p{margin-bottom: 10px;font-size:17px;}
+  .ecom .order-detail-wrapper .table-outer{margin-top: 40px;border:1px solid lavender;}
+  .ecom .order-detail-wrapper .table-outer thead{background-color: #2A3F54;color: white;}
+  .ecom .order-detail-wrapper .table-outer tbody{background-color: #F9F9F9;}
+  .ecom .cancel-btn-wrapper .cancel-btn{border-radius: 5px;cursor:pointer;border: 1px solid #119EA5;padding: 6px 12px;color: #119EA5;}
+  .ecom .cancel-btn-wrapper .cancel-btn:hover{background-color: #119EA5;color: white;}
+  .ecom .cancel-btn-wrapper{margin-top: 20px;text-align: center;}
+  .ecom .row .order-summary-outer{box-shadow:0px 0px 2px 0px;border: 1px solid #E0E0EA;padding-left: 10px; min-height: 120px;}
+  
+
+ 
+ .ecom .image-outer{vertical-align: top;}
+ .ecom .wrappers .guidelines{margin-bottom: 10px;border: 1px solid lavender;border-radius: 5px;padding:0px 10px 0px 10px;width: 50%;}
+ .ecom .image-outer input[type="file"]{display: none; }
+ .ecom .custom-file-upload {display: inline-block; padding: 3px 6px; cursor: pointer; position: absolute;transform: translate(-50%,-50%); left: 50%; top:50%; } 
+.ecom .btn-wrapper{position: relative; }
+.ecom .custom-file-upload .fa {color: #3FDAF3; }
+.ecom .btn-wrapper .fa-plus{position: absolute; top: -5px; right: -5px; }
+.ecom .btn-wrapper .fa-edit{font-size:20px;}
+.ecom .image-outer .img-upload-btn{color: grey;font-size: 14px;padding:2px 4px;border: 1px solid grey;position: absolute;bottom: 0px;left: 35%;cursor:pointer;}
+.ecom .image-outer .img-upload-btn:hover{color: white;background-color: grey;}
+.ecom .image-outer .fa-check-circle{font-size: 18px;color: green;}
+.ecom .image-outer img{width: 100%; height: 88%;}
+.ecom .image-outer{padding:10px; border: 1px solid rgb(223,223,223); width: 19%; height: 190px; position: relative; display: inline-block;margin-left: 5px;  }
+.ecom .selected-wrapper{position: absolute;top:-1px;left:-1px;}
+.ecom .shadow{box-shadow: 0px 0px 4px 0px; }
+.ecom .top{position: absolute;bottom:0px;right:6px;cursor:pointer;}
+.ecom .image-outer .del{position: absolute;bottom:4px; left: 10px; cursor: pointer;font-size:20px;}
+.ecom .upload-btn-wrapper .upload-btn{border-radius: 5px;cursor:pointer;border: 1px solid #119EA5;padding: 6px 12px;color: #119EA5;}
+.ecom .upload-btn-wrapper .upload-btn:hover{background-color: #119EA5;color: white;}
+.ecom .upload-btn-wrapper{margin-top: 20px;margin-left: 5px;}
+  
+
+
+
+
+

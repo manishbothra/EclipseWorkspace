@@ -1,0 +1,141 @@
+[ {
+  "subProducts" : [ "Metal & Metal Made Products", "Minerals and Ores", "Steel & Stainless Steel Products", "Iron & Copper Alloys" ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Metals, Alloys & Minerals"
+}, {
+  "subProducts" : [ "Commercial & Academic Uniforms", "Unisex Clothing", "Apparel Fabrics & Dress Materials", "Towels, Napkins & Handkerchieves" ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "name" : "Apparel & Garments"
+}, {
+  "subProducts" : [ "Snacks and Namkeen", "Cereals & Food Grains", "Cooking Spices and Masala", "Edible Oil & Allied Products" ],
+  "imageUrl" : "/global/images/product-categories/9.jpg",
+  "name" : "Food & Beverages"
+}, {
+  "subProducts" : [ "Decorative Light, Lamp & Lamp Shades", "Lantern, Chandeliers & Hanging Lamps", "Candle Stands & Candelabra", "Gifts, Crafts & Artifacts" ],
+  "imageUrl" : "/global/images/product-categories/16.jpg",
+  "name" : "Handicrafts & Decoratives"
+}, {
+  "subProducts" : [ "Industrial Chemicals & Supplies", "Chemical Reagents & Catalysts", "Petroleum and Petrochemical Products", "Adhesives, Glue and Sealants" ],
+  "imageUrl" : "/global/images/product-categories/19.jpg",
+  "name" : "Chemicals, Dyes & Solvents"
+}, {
+  "subProducts" : [ "Garment & Textile Industrial Tools", "Yarns & Threads", "Sewing Threads, Laces & Accessories", "Motifs, Badges, Emblems & Lanyards" ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "name" : "Textiles, Yarn & Fabrics"
+}, {
+  "subProducts" : [ "Animal Clothing & Accessories", "Leather Bags & Handbags", "Leather Goods & Accessories", "Leather Jackets and Garments" ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "name" : "Leather Products"
+}, {
+  "subProducts" : [ "Farming Tools, Equipment & Machines", "Irrigation and Harvesting Machines", "Coir and Agro Products", "Bird Seeds, Poultry & Animal Food" ],
+  "imageUrl" : "/global/images/product-categories/7.jpg",
+  "name" : "Agriculture & Farming"
+}, {
+  "subProducts" : [ "Industrial Valves & Valve Fittings", "Carts, Dollies & Trolleys", "Industrial Air Conditioner & Devices", "Drilling Bits, Collets and Chucks" ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "name" : "Industrial Supplies"
+}, {
+  "subProducts" : [ "Granite, Marble, Sandstone & Others", "Stone Tiles & Floorings", "Marble & Stone Artifacts", "Cobbles, Pebbles & Pavings" ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Marble, Granite & Stones"
+}, {
+  "subProducts" : [ "Nails, Fasteners, Rivets & Shackles", "Alloy, Metal and Industrial Nuts", "Alloy, Metal and High Strength Bolts", "Alloy, Metal and Machine Screws" ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Mechanical Parts & Spares"
+}, {
+  "subProducts" : [ "Laptops, PC, Mainframes & Computers", "Computer Hardware & Peripherals", "Router, Cables & Networking Devices", "Computer PCI Cards, Cables & Modules" ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Computer & IT Solutions"
+}, {
+  "subProducts" : [ "Electric Fittings & Components", "Electrical Cables & Wires", "Switches & Switch Boxes", "Heater, Thermostat & Heating Devices" ],
+  "imageUrl" : "/global/images/product-categories/4.jpg",
+  "name" : "Electronics & Electrical"
+}, {
+  "subProducts" : [ "Dinnerware and Serving Utensils", "Induction Cooktops, Hobs & Burners", "Disposable Cutlery and Crockery", "Gas Cylinders and Accessories" ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Kitchen Utensils & Appliances"
+}, {
+  "subProducts" : [ "Measuring Equipments & Instruments", "Instrumentation & Control Equipments", "Flowmeters & Temperature Indicators", "Calibrators & Monitoring Systems" ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Lab Instruments & Supplies"
+}, {
+  "subProducts" : [ "Lubrication Systems and Equipment", "Automotive Repair Tools & Equipments", "Off Road & Earth Moving Vehicles", "Automobile Interiors & Accessories" ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Automobile, Parts & Spares"
+}, {
+  "subProducts" : [ "Milling & Grinding Tools", "CNC Machines, Lathes & Tools", "Sewing,Knitting& Embroidery Machine", "Drills, Grinders, Saws & Power Tools" ],
+  "imageUrl" : "/global/images/product-categories/11.jpg",
+  "name" : "Hand & Machine Tools"
+}, {
+  "subProducts" : [ "Bicycle Spare Parts", "Tyre, Tube & Flaps", "Kids, Racing Bicycles and Rickshaws" ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Bicycle, Rickshaw & Spares"
+}, {
+  "subProducts" : [ "Audio Mixer, Recorder & Transmitter", "Telecommunication Equipment & Parts", "Antennas, Wifi & Communication Tower" ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Telecom Equipment & Goods"
+}, {
+  "subProducts" : [ "Pharmaceutical Machinery & Equipment", "Hospital & Medical Lights", "Natural, Industrial & Medical Gases", "Medical Sterilizers & Autoclaves" ],
+  "imageUrl" : "/global/images/product-categories/15.jpg",
+  "name" : "Medical & Healthcare"
+}, {
+  "subProducts" : [ "Machines & Equipments", "Cranes, Forklift & Lifting Machines", "Industrial Furnaces & Ovens", "Printing Machinery & Equipment" ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "name" : "Industrial Plants & Machinery"
+}, {
+  "subProducts" : [ "Paper & Paper Made Products", "Barcode, Stickers & Luggage Tags", "Paper Bags, Gifts & Paper Products", "Greeting & Invitation Cards" ],
+  "imageUrl" : "/global/images/product-categories/26.jpg",
+  "name" : "Paper & Paper Products"
+}, {
+  "subProducts" : [ "Blankets & Quilts", "Drapes & Curtains", "Wallpaper, Blinds And Accessories", "PU Foam, Coir & Jute Mattresses" ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Home Textile & Furnishing"
+}, {
+  "subProducts" : [ "Strapping & Sealing Machines", "Packaging & Lamination Machinery", "Aluminium,Tin Can & Metal Containers", "Packaging Films & Foils" ],
+  "imageUrl" : "/global/images/product-categories/17.jpg",
+  "name" : "Packaging Machines & Goods"
+}, {
+  "subProducts" : [ "Brackets, Holder & Hardware Fittings", "Pet Furniture & Products", "Buckets, Mugs & Storage Bins", "Brooms, Mops & Dusters" ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "name" : "Housewares & Supplies"
+}, {
+  "subProducts" : [ "Ayurvedic & Herbal Health Supplement", "Ayurvedic,Herbal Products & Medicine", "Natural & Herbal Henna", "Ayurvedic, Herbal Oils and Cosmetics" ],
+  "imageUrl" : "/global/images/product-categories/10.jpg",
+  "name" : "Herbal & Ayurvedic Product"
+}, {
+  "subProducts" : [ "Soaps, Detergent Powder & Cakes", "Salon, Spa Kits & Equipments", "Personal Care & Cosmetic Products", "Child and Baby Care Products" ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Cosmetics & Personal Care"
+}, {
+  "subProducts" : [ "Presentation Boards & Accessories", "Printing Inks & Other Supplies", "Crayon, Painting Brush & Craft Tools", "Pen, Pencil & Writing Supplies" ],
+  "imageUrl" : "/global/images/product-categories/6.jpg",
+  "name" : "Books & Stationery"
+}, {
+  "subProducts" : [ "Jewellery Making Tools & Machines", "Costume & Fashion Jewelry", "Silver Jewelry & Ornaments", "Precious Stones and Gemstones" ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Gems, Jewelry & Astrology"
+}, {
+  "subProducts" : [ "Doors and Windows", "Door, Window Frame, Panel & Shutters", "Office & Commercial Furniture", "Living Room & Plastic Furniture" ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Furniture & Supplies"
+}, {
+  "subProducts" : [ "Cufflink, Buttons, Zippers & Buckles", "Eyewear, Sunglasses & Accessories", "Fashion & Leather Belts", "Neckties, Bow Ties & Tie Accessories" ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Fashion Accessories & Gear"
+}, {
+  "subProducts" : [ "Swimming Pool & Water Sport Goods", "Adventure Sporting & Trekking Goods", "Target Sports Goods & Supplies", "Inflatable Toys and Preschool Toys" ],
+  "imageUrl" : "/global/images/product-categories/3.jpg",
+  "name" : "Sports Goods, Toys & Games"
+}, {
+  "subProducts" : [ "Biometrics & Access Control Devices", "Security Alarms, Detectors & Devices", "CCTV, Surveillance Systems and Parts", "Security & Inspection Devices" ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Security, Safety System & Service"
+}, {
+  "subProducts" : [ "Carry Bags and Multiutility Bags & Pouches", "Cotton, Jute & Canvas Bags", "Fashion & Designer Bags", "Briefcase, Portfolio & Laptop Bags" ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "name" : "Bags, Belts & Wallets"
+}, {
+  "subProducts" : [ "Elevators & Escalators", "Building & Construction Machines", "Door & Window, Hinges & Fittings", "Door, Window Handles & Knockers" ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "name" : "Building & Construction"
+} ]

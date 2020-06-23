@@ -1,0 +1,40 @@
+<div class="right_col">
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Your Orders</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+        	<div class="col-md-10 col-sm-10 col-xs-12" >
+        		<table class="table table-bordered table-responsive table-hover dataTable" >
+					<thead style="background-color: #2A3F54; color: white; cursor: pointer;	">
+						<tr>
+							<td>Sr No.</td>
+							<td>Status</td>
+							<td>Product Description</td>
+							<td>Additional Info</td>
+							<td>Quantity</td>
+							<td>Price</td>
+							<td>Order Total</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="order in ecommOrders">
+						<td>{{order.attributes.orderItems[0].status}}</td>
+						<td>Puma Backpack<br> SKU: {{order.sku || '24234' }}</td>
+						<td>Order Id: {{order.attributes.orderItems[0].orderId}}</td>
+						<td>{{order.attributes.orderItems[0].quantity}}</td>
+						<td>{{order.attributes.orderItems[0].priceComponents.sellingPrice}}</td>
+						<td>Subtotal: 400<br>Shipping Charges:{{order.attributes.orderItems[0].priceComponents.shippingCharge}}<br>Total: {{order.attributes.orderItems[0].priceComponents.totalPrice}}</td>
+						</tr>
+					</tbody>
+				</table>
+        	</div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>

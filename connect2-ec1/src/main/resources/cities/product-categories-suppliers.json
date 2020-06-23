@@ -1,0 +1,744 @@
+[
+  {
+    "subProducts": [
+      {
+        "subProducts": ["Mica Powder","Mica Tube","Rolled Mica Tube","Mica Insulator","Mica Plate","Backing Mica"],
+        "name": "Mica & Mica Products"
+      }, {
+        "subProducts": ["Copper Beryllium Rods","Brass Hex","Brass Ingot","Copper Circles","Brass Parts For Gas","Copper Foils"],
+        "name": "Copper & Brass Products"
+      }, {
+        "subProducts": ["Ss 202","Flat Stainless Steel","Steel Flat","Mild Steel Chain","Steel Coils And Strips","Mild Steel Shims"],
+        "name": "Steel & Stainless Steel Products"
+      }, {
+        "subProducts": ["Flat Bright Bars","Pressure Vessels Steel Plate","Angle Bar","Round Bar Steel","Ss Sheet 316","Stainless Steel Plates"],
+        "name": "Steel Bars, Rods, Plates & Sheets"
+      }, {
+        "subProducts": ["Alloy Coils","Ferro Alloys","Aluminum Alloys","Phosphor","Non Ferrous Alloys","Alloyed Aluminum"],
+        "name": "Iron & Copper Alloys"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Metals, Alloys & Minerals"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Garments Display Rack","Garment Display Rack","Garments Display Racks","Gondola","Trousers Rack","Trouser Rack"],
+        "name": "Mannequins & Apparel Display"
+      }, {
+        "subProducts": ["Lungi","Printing T Shirt","Printed T Shirt","Custom T Shirt","Printed Garment","Printed Dress"],
+        "name": "Printed & Patchwork Clothing"
+      }, {
+        "subProducts": ["Lab Coat","Industries Uniforms","Bomb Suit","Corporate Uniform","School Belts","Fancy Dress"],
+        "name": "Commercial & Academic Uniforms"
+      }, {
+        "subProducts": ["Cotton Safety Glove","Knitted Cotton Gloves","Hand Gloves","Jean Hand Gloves","Knitted Hand Gloves","Dotted Gloves"],
+        "name": "Gloves & Mittens"
+      }, {
+        "subProducts": ["Casual T Shirts","Mens Trousers","Half Sleeves T-Shirt","Customize T Shirts","Fabric Shirt","Men Casual Shirt"],
+        "name": "Unisex Clothing"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Apparel & Garments"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Mutton","Egg","Chickens","Sausage","Liver","Provisions"],
+        "name": "Meat & Poultry Food"
+      }, {
+        "subProducts": ["Nutmeg","Mustards","Mustard","Cumin Seeds","Masala","Cinnamon"],
+        "name": "Cooking Spices and Masala"
+      }, {
+        "subProducts": ["Ice Cream","Milk","Curd","Cow Milk","Cups Ice Cream","Kulfi"],
+        "name": "Milk & Dairy Products"
+      }, {
+        "subProducts": ["Peanut butter","Donuts","Mouth Freshener","Desserts","Cake","Sprinkles"],
+        "name": "Bakery & Confectionery Products"
+      }, {
+        "subProducts": ["Crabs","Shrimp","Octopus","Cod","Prawn","Crab"],
+        "name": "Marine Food Supplies"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Food & Beverages"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Hurricane","Gift Pack","Chicken Feathers","Decoration Item","Gifts Box","Gift Box"],
+        "name": "Gifts, Crafts & Artifacts"
+      }, {
+        "subProducts": ["Glass Mug","Glass Holders","Decanter","Glass Rods","Fuse Glass","Glass Facade"],
+        "name": "Mirrors and Glassware"
+      }, {
+        "subProducts": ["Potted Plants","Vertical Gardening","Grass Lawn","Vertical Gardens","Artificial Flower","Wedding Flowers"],
+        "name": "Artificial Plants & Foliage"
+      }, {
+        "subProducts": ["Bollard Light","Garden Pole Light","Poles Lights","Decorative Fountains","Landscape Lightings","High Tech"],
+        "name": "Garden & Landscaping Products"
+      }, {
+        "subProducts": ["Whips","Bayonets","Weapons","Mail"],
+        "name": "Medieval Swords & Armours"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Handicrafts & Decoratives"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Net","Insects Screen","Insects Nets","Protection Nets","Anti Bird Net","Shading Nets"],
+        "name": "Mosquito, Insect & Bugs Netting"
+      }, {
+        "subProducts": ["Dyed Yarns","Knitted Yarn","Steel Fibres","Cotton Waste","Piling","Thread Ball"],
+        "name": "Yarns & Threads"
+      }, {
+        "subProducts": ["Braids","Borders","Woven Tape","Braiding","Loop","Border"],
+        "name": "Sewing Threads, Laces & Accessories"
+      }, {
+        "subProducts": ["Carpeting","Woven Carpet","Wall To Wall Carpets","Design Carpet","Wall To Wall Carpeting","Carpets"],
+        "name": "Carpets & Rugs"
+      }, {
+        "subProducts": ["Sewing Needle","Shuttle","Wooden Printing","Sewing Machine Needle","Plastic Bobbins","Embroidery Needle"],
+        "name": "Embroidery Needles & Accessories"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Textiles, Yarn & Fabrics"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Sugar Free","Antioxidants","Essences","Coco Powder","Benzoic Acid","Orange Color"],
+        "name": "Flavours & Aromatics"
+      }, {
+        "subProducts": ["Petrol","White Oil","Lng","Biodiesel","Diesel Service","Liquid Paraffin"],
+        "name": "Petroleum and Petrochemical Products"
+      }, {
+        "subProducts": ["Dyes And Chemicals","Liquid Chemical","Dye Textile","Earthings","Auxiliaries","Viscose"],
+        "name": "Textile, Dyeing & Finishing Chemical"
+      }, {
+        "subProducts": ["Water Colour","Reactive Dyes","Reactive Dyeing","Fabric Dyeing","Pasting","Plastisol"],
+        "name": "Dyes & Color Additives"
+      }, {
+        "subProducts": ["Isopropyl Alcohol","Solvents","Butyle Acetate","Distilled Solvents","Propylene Glycols","Glycol"],
+        "name": "Organic and Inorganic Solvents"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Chemicals, Dyes & Solvents"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Plasma Welding Machines","Welding Inverter Machine","Automatic Welding Machine","Welding Blankets","Spot Projection Welders","Spot Welding Gun"],
+        "name": "Welding Equipments & Machinery"
+      }, {
+        "subProducts": ["Atta Maker","Length Grader","Corn Mill","Supari Cutting Machine","Soya Nuggets Extruder","Grain Grading Machine"],
+        "name": "Food Grains & Nut Processing Machine"
+      }, {
+        "subProducts": ["Vulcanizers","Tyre Building Machine","Rubber Processing Machineries","Rubber Extruding Machine","Rubber Kneader","Tyre Pyrolysis Plants"],
+        "name": "Rubber, Tires Processing Machines"
+      }, {
+        "subProducts": ["Plastic Pipe Extrusion Line","Pet Blowing Machines","Plastics Mixers","PVC Extruder","Injection Plastic Molding Machine","PP Blown Film Plant"],
+        "name": "Plastic Work & Processing Machines"
+      }, {
+        "subProducts": ["Pressurization System","Multi Cyclone Dust Collectors","Cyclone Collectors","High Volume","Cyclones Dust Collectors","Solid Waste Incinerators"],
+        "name": "Pollution Control Devices & Machines"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Industrial Plants & Machinery"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Auto Levels","Auto Level","Telescopic Pole","Plane Tables","Telescope","Magnifier Glass"],
+        "name": "Compass, Telescopes & Survey Tools"
+      }, {
+        "subProducts": ["Grains Moisture Meter","Humidity Logger","Co2 Meter","Temperature Humidity Indicators","Humidity","Barometers"],
+        "name": "Weather & Meteorological Equipments"
+      }, {
+        "subProducts": ["Heating Meters","Vortex Flowmeters","Flow Transmitters","Digital Flow Meters","Orifice Flow Meters","Non Contact Thermometers"],
+        "name": "Flowmeters & Temperature Indicators"
+      }, {
+        "subProducts": ["Balancing Electron","Spring Balancers","Inclinometers","Blade Micrometers","Weighing System","Electronic Balance"],
+        "name": "Weighing Scales & Measuring Tapes"
+      }, {
+        "subProducts": ["Panel For Industrial Automation","Ac Variable Frequency Drives","Humidity Equipment","Industrial Control Panel","Wifi System","Hvac Control"],
+        "name": "Instrumentation & Control Equipments"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Lab Instruments & Supplies"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Mould Dies","Steel Mold","Moulding Boxes","PET Injection Mould","Bottle Mould","Iron Moulds"],
+        "name": "Die Casting Mould & Moulding Tools"
+      }, {
+        "subProducts": ["Fluid Coupling","Pin Bush Coupling","Flanged Coupling","Spider For Coupling","Cross Joints","Jaw Couple"],
+        "name": "Power Transmission Tools & Couplings"
+      }, {
+        "subProducts": ["Core Pin","Track Pins","Blade Ejector Pins","Collated Nail","Twist Nail","Bucket Pins"],
+        "name": "Nails & Pins"
+      }, {
+        "subProducts": ["Sleeve Bushings","Bush Plates","Guide Bushes","Metal Bushes","Sleeve And Bush","King Pin Bushings"],
+        "name": "Bushings & Bushing Parts"
+      }, {
+        "subProducts": ["Ring Sealing","Vitone O Rings","Teflon Seal","Diaphragms Seals","Sealing Kits","Joint Rubber"],
+        "name": "Seals, Oil Seals & Industrial Seals"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Mechanical Parts & Spares"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Insulation Resistance Tester","Analog Trainer","Electronics Energy Meter","Battery Capacity Testers","Electrical Testing","Digital Resistance Tester"],
+        "name": "Electrical & Electronic Test Devices"
+      }, {
+        "subProducts": ["Refrigerating Units","Refrigerator Spare Parts","Visi Cooler","Two Door Refrigerator","Refrigerated Equipment","Whirlpool Refrigerators"],
+        "name": "Freezers, Refrigerators & Chillers"
+      }, {
+        "subProducts": ["LED Tree Light","LED Chandelier","LED Decorative Light","Flexible LED Strips","String Light","LED Hanging Light"],
+        "name": "Decorative and Party Lights"
+      }, {
+        "subProducts": ["Solar Generator","Led Home Lights","Solar Cfl","Solar Power Plant Off Grid","Solar Panel Module","Solar On Grid Inverters"],
+        "name": "Solar & Renewable Energy Products"
+      }, {
+        "subProducts": ["Wireless Microphone","DJ Headphone","Cable Earphone","Wired Microphone","Sony Headphone","Karaoke Microphone"],
+        "name": "Headphones and Microphones"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Electronics & Electrical"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Rolling Bearing","Roller Industrial Bearing","Sleeve Bearing","Bearing Pedestal","Bearing Rubber","Stainless Steel Bearing"],
+        "name": "Ball Bearings and Bearing Assemblies"
+      }, {
+        "subProducts": ["Rear Hub","Ac Car Part","Automotive Belts","Automotive Belt","Gear Levers","Component Parts"],
+        "name": "Automobile Fittings & Components"
+      }, {
+        "subProducts": ["Grease Dispensers","Pneumatic Grease Guns","Centralised Lubricating System","Gun Accessory","Air Lubricators","Oil Circulating System"],
+        "name": "Lubrication Systems and Equipment"
+      }, {
+        "subProducts": ["Propeller Shafts","Transmission Parts","Coupling Joint","Cross Universal Joint","Yoke","Steering Assemblies"],
+        "name": "Steering Parts & Components"
+      }, {
+        "subProducts": ["Lubrication Grease","Oil And Lubricant","Mineral Oil","Thermic Fluids Oil","Turpentine Oil","Mobil Oil"],
+        "name": "Oils, Grease & Lubricants"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Automobile, Parts & Spares"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Quick Couplings","Rotor Blade","Silicone Rollers","Brake Drum Coupling","Female Coupling","Hard Chrome Plating On Rollers"],
+        "name": "Industrial & Engineering Goods"
+      }, {
+        "subProducts": ["Condensate Pump","Air Operated Double Diaphragm Pumps","Vacuum Pump With Oil","Cylinder Pump","Multi Stage Pumps","Filter Pumps"],
+        "name": "Pumps, Pumping Machines & Spares"
+      }, {
+        "subProducts": ["Modular Belt","Industrial Roller","Conveyor Parts","Cleated Belt","Elevator Chains","Conveyor Steel Roller"],
+        "name": "Conveyor & Transmission Belts"
+      }, {
+        "subProducts": ["Mesh Netting","Wire Mesh Stainless Steel","Stainless Steel Perforated Sheets","Mesh","Welded Mesh Wire","Wire Screen"],
+        "name": "Wire Mesh & Gratings"
+      }, {
+        "subProducts": ["Recycled Plastic","PVC Cone","Plastic Cards","Plastic Spacers","Plastic Housing","PET Strap"],
+        "name": "Plastic & Rubber Products"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Industrial Supplies"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Office Automation","Development Planning","Mems","Accounting Software Tally","Quick Heal Antivirus Pros","Visitors Management Software"],
+        "name": "Computer and Mobile Softwares & Apps"
+      }, {
+        "subProducts": ["Networking Equipment","Networking Lan Cable","Ethernet Media Converters","Server Accessories","Fiber Switch","Servers And Networking"],
+        "name": "Router, Cables & Networking Devices"
+      }, {
+        "subProducts": ["Computer Laptop Accessories","Hdmi To Vga Converter","Computer And Laptop Accessories","USB Programmers","Wifi Dongle","Laptop Chip"],
+        "name": "Computer Stationery Products"
+      }, {
+        "subProducts": ["Open Frame","Tft Screens","Water Block","Game Pad","Peripherals Accessories","Computer Rams"],
+        "name": "Computer Hardware & Peripherals"
+      }, {
+        "subProducts": ["Dell Inspiron Black Laptop","Computer Second Hand","Desktop Pcs","Hp Silver Laptop","Industrial Rugged Tablets Pc","Computers Laptop"],
+        "name": "Laptops, PC, Mainframes & Computers"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Computer & IT Solutions"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Cradle","Carriers","Bassinet","Baby Diaper","Bassinets","Walkers"],
+        "name": "Child and Baby Care Products"
+      }, {
+        "subProducts": ["Sauna Bath","Dolphine Massager","Legs Massager","Roller Foam","Foot Massager","Steam Baths"],
+        "name": "Massage Equipments & Spa Devices"
+      }, {
+        "subProducts": ["Eucalyptus","Jojoba Oil","Lemon Oil","Aromatics","Juniper","Natural Oils"],
+        "name": "Essential & Aromatic Oils"
+      }, {
+        "subProducts": ["Home Kit","Shampoo With Conditioner","Hair Straightening","Hair Shampoo","Ups Set","Colors"],
+        "name": "Salon, Spa Kits & Equipments"
+      }, {
+        "subProducts": ["Detergent Cake","Glycerine Soap","Beauty Soap","Washing Powder","Liquid Soap","Cubes"],
+        "name": "Soaps, Detergent Powder & Cakes"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Cosmetics & Personal Care"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Ear Studs","Ear Stud","Stone Ring","Stoner","Sapphire","Amber"],
+        "name": "Precious Stones & Gemstone Jewelry"
+      }, {
+        "subProducts": ["Gold Ring","Ring","Gold Pendants","Gold Bangle","Chain","Gold Chains"],
+        "name": "Gold & Gold Jewellery"
+      }, {
+        "subProducts": ["Necklace Designing","Necklace Set","Fancy Necklace","Beads Necklace","Designer Necklaces","Stone Necklaces"],
+        "name": "Artificial and Metal Necklaces"
+      }, {
+        "subProducts": ["Magnetic Bracelet","Titanium Bio Magnetic Bracelets","Mst Bracelet","Bio Magnetic Bracelets","Metalic Black","Beaded Bracelet"],
+        "name": "Bangles, Bracelets & Anklets"
+      }, {
+        "subProducts": ["Earring Set","Trendy","Dangler","Fancy Earrings","Studded Earrings","Silver Earings"],
+        "name": "Artificial, Stone and Metal Earrings"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Gems, Jewelry & Astrology"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Wall Mounted Racks","Wall Shelves","Corners Stands","Garment Racks","Partition Walls","Multipurpose Rack"],
+        "name": "Furniture Racks & Shelves"
+      }, {
+        "subProducts": ["Towel Rack","Canteen Table","Folding Table","Beddings","Bed Side Locker Deluxe","Storage Bed"],
+        "name": "Bedroom, Bathroom & Kids Furniture"
+      }, {
+        "subProducts": ["Support Base","Furniture Handles","Sofa Leg In Steel","Steel Door Frame","Raiser","Arm Rest"],
+        "name": "Furniture Fittings & Hardware"
+      }, {
+        "subProducts": ["Swing Chair","Park Benches","Frp Bench","Bench","Lounges","Garden Furniture"],
+        "name": "Outdoor and Garden Furniture"
+      }, {
+        "subProducts": ["Visitors Chairs","Industrial Tables","Light Tables","Revolving Office Chair","Restaurant Chairs And Tables","Fire Filing Cabinets"],
+        "name": "Office & Commercial Furniture"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Furniture & Supplies"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["IP Video Camera","Hikvision Dome Hd Camera","Closed Circuit Televisions","Dvr Pc Based Card","Camera Kit","Ptz Security Camera"],
+        "name": "CCTV, Surveillance Systems and Parts"
+      }, {
+        "subProducts": ["Alarm Hooter","Headlamp","Body Harnesses","Ultra Helmets","Barricade","Call Point"],
+        "name": "Safety Equipment & Systems"
+      }, {
+        "subProducts": ["Night Vision"],
+        "name": "Military Clothing & Tactical Gears"
+      }, {
+        "subProducts": ["Lock Cylinder","Shutter Lock","Remote Locking System","Lock With Handle","Multi Purpose Lock","Point Locks"],
+        "name": "Door Lock, Electronic Lock & Latches"
+      }, {
+        "subProducts": ["Portable Tracking Device","Bug Detector","Photo Electric Sensors","Spy Camera Keychain","Slot Sensors","Photo Electrical Sensor"],
+        "name": "Intelligence and Spying Devices"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Security, Safety System & Service"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Roofing Structure","Steel Rebars","Aluminum Frame","Structural Beam","Roof Trusses","Fabric Roofing Structure"],
+        "name": "Beams, Purlins, Frames and Girders"
+      }, {
+        "subProducts": ["Acoustic Enclosure For Generator","Sound Proofing Enclosures","Insulating Sheets","Acoustic Insulator","Acoustic Room","Acoustical Tiles"],
+        "name": "Acoustic Window, Foam & Enclosures"
+      }, {
+        "subProducts": ["Bath Set","Bathroom Vanity","Brush Holders","Design Hook","Soap Dishes","Holders With Brush"],
+        "name": "Bathroom Fittings & Accessories"
+      }, {
+        "subProducts": ["Key Hangers","Wall Mount Stand","Designer Hooks","Wall Mounting Bracket","Mounting Frame","Wall Mounting Stand"],
+        "name": "Hardware: Hooks & Mounts"
+      }, {
+        "subProducts": ["Profile Sheet","Colored Profile Sheet","Gypsum False Ceilings","Mineral Ceiling","Gi Roofing","Color Profile Sheet"],
+        "name": "False Ceiling & Roofing Supplies"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Building & Construction"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Casual Shoes","Ladies Sandal","Industrial Safety Shoe","Lady Sandal","Leon","Safety Shoe Tiger"],
+        "name": "Men, Women & Kids Footwear"
+      }, {
+        "subProducts": ["Toggles","Sewing Buttons","Button Press","Plastic Pins","Snap Buttons","Brass Eyelets"],
+        "name": "Cufflink, Buttons, Zippers & Buckles"
+      }, {
+        "subProducts": ["Scarf","Infinity","Scarfs"],
+        "name": "Scarves, Shawls, Stoles, Bandanas"
+      }, {
+        "subProducts": ["Hat","Caps With Embroidery","Printed Cap","Hats","Printed Caps","Led Caps"],
+        "name": "Hats, Caps and Headwears"
+      }, {
+        "subProducts": ["Wedges","Shoe Covers","Heels","Shank","Shoe Polisher","Shoes Laces"],
+        "name": "Footwear Laces, Insole & Accessories"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Fashion Accessories & Gear"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Singer Machines","Socks Machine","Motor Sewing Machine","Sewing Machine Spare Part","Handheld Sewing Machine","Ultrasonic Sewing Machines"],
+        "name": "Sewing,Knitting& Embroidery Machine"
+      }, {
+        "subProducts": ["Tools Machinery","Groove Rollers","Vmc Machining Fixtures","Motorized Spindles","Milling Fixtures","Machine Tool Accessory"],
+        "name": "Machine & Precision Tools"
+      }, {
+        "subProducts": ["Impact Screwdrivers","Air Blowing Gun","Nut Splitters","Coil Nailer","Brad Nailers","Hydraulic Broomer"],
+        "name": "Hydraulic & Pneumatic Tools"
+      }, {
+        "subProducts": ["Extension Bar","Bolt Cutters","Vices","Spanners","Impact Socket","Allen Keys Set"],
+        "name": "Pliers, Screwdrivers & Hammers"
+      }, {
+        "subProducts": ["Marine Lights","Pole Masts","Anchors Chains","Light Towers","Anchor","Marine Engineering"],
+        "name": "Marine Tools & Equipments"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Hand & Machine Tools"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Bar Code","Barcode Sticker","Barcode Stickers","Shrink Sleeve","Paper Tag","Price Tags"],
+        "name": "Barcode, Stickers & Luggage Tags"
+      }, {
+        "subProducts": ["Paper Printing Material","Pos Roll","Board Paper","Steel Paper","A4 Copier Paper","Aluminium Plate Roll"],
+        "name": "Paper & Paper Made Products"
+      }, {
+        "subProducts": ["Photo Card","Birthday Card","Printed Card","Photo Cards","Gift Card","Business Card"],
+        "name": "Greeting & Invitation Cards"
+      }, {
+        "subProducts": ["Handmade Paper","Handmade Papers"],
+        "name": "Handmade Paper & Products"
+      }, {
+        "subProducts": ["Gifting Card","Cardboard","Spiral Paper Core","Corrugated Paper","Printed Pamphlets","Paper Product"],
+        "name": "Paper Bags, Gifts & Paper Products"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Paper & Paper Products"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Outdoor Pool","Under Water Led Light","Calcium Chloride","Swimming Pool System","Pool Heat Pump","Pool Cover"],
+        "name": "Swimming Pool & Water Sport Goods"
+      }, {
+        "subProducts": ["Playground Sliding","Double Slide","Round Type","See Saws","Frp Slides","Metal Swing"],
+        "name": "Fun Parks & Amusement Park Equipment"
+      }, {
+        "subProducts": ["Bows","Air Gun","Dart","Bow","Air Guns","Golf Cart"],
+        "name": "Target Sports Goods & Supplies"
+      }, {
+        "subProducts": ["Plastic Net","Fishing Nets","Floats","Hunting Camera","Side Wall","Fish Nets"],
+        "name": "Camping, Fishing & Hunting Goods"
+      }, {
+        "subProducts": ["Boxing Gears","Punching Bags","Boxing Glove","Boxing Set","Punching Bag","Boxing Kit"],
+        "name": "Boxing and Martial Arts Goods"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Sports Goods, Toys & Games"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Rapid","Disposable","Soundness","Sound","Sounds","Gynecology"],
+        "name": "Urological & Obstetrics Instruments"
+      }, {
+        "subProducts": ["DHS Plates","Shaft Screws","T Plates","Bone Screws","Shaft Screw","Heating Belt"],
+        "name": "Orthopedic Equipment & Supplies"
+      }, {
+        "subProducts": ["Hydraulic Operating Table","Operating Table","C Arm Table","Fetal Monitor","Co2 Lasers","Hydraulic Operation Table"],
+        "name": "Surgical & ICU Equipments"
+      }, {
+        "subProducts": ["Multi Gym","Commercial Treadmill","Stepper","Crossovers","Leg Extension","Sprint"],
+        "name": "Exercise Bikes & Fitness Equipments"
+      }, {
+        "subProducts": ["Finger Pulse Oximeter","Digital Blood Pressure Monitor","Multi Parameter Monitor","Multi Parameter","ECG Machine","Cpap Machines"],
+        "name": "Clinical Diagnostic Instruments"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Medical & Healthcare"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Printed Blankets","Printed Blanket","Machine Quilts","Electric Blankets","Machine Quilt","Electric Blanket"],
+        "name": "Blankets & Quilts"
+      }, {
+        "subProducts": ["Spring Mattresses","Pep","Foam Pads","PU Foam","Polyurethane Foam","Foam Pad"],
+        "name": "PU Foam, Coir & Jute Mattresses"
+      }, {
+        "subProducts": ["Kitchen Roll","Kitchen Rolls"],
+        "name": "Kitchen Towels and Kitchen Textiles"
+      }, {
+        "subProducts": ["Baby Beddings","Bedsheet","Bed Cover","Throws","Bed Covers","Hotel Bed"],
+        "name": "Bed Linen & Bedspreads"
+      }, {
+        "subProducts": ["Wall Coverings","Designer Wallpapers","Aluminium Blinds","Roller Designs","Zebra Blinds","Roller Blinds"],
+        "name": "Wallpaper, Blinds And Accessories"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Home Textile & Furnishing"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Pp Strapping Rolls","Strap","Plastic Strap Rolls","Strapping Rolls","Steel Strapping","Fully Automatic Machine Roll"],
+        "name": "Packing Straps, Clips & Supplies"
+      }, {
+        "subProducts": ["Food Box","Fruit Boxes","Spices Packaging","Cake Box","Rice Bags","Water Bag"],
+        "name": "Food Packaging Materials & Supplies"
+      }, {
+        "subProducts": ["Liquid Nitrogen Containers","Fuel Storage Tanks","Fly Ash Silo","Storage Drums","Head Drums","Ss Water Tank"],
+        "name": "Storage Tanks, Drums & Containers"
+      }, {
+        "subProducts": ["Chamber Shrink Wrapping Machine","Automatic Shrinking Machine","Shrink Wrapping Machine","Bundling Machine","Horizontal Flow Wrap Machines","Wrapping Machines"],
+        "name": "Wrapping & Banding Machines"
+      }, {
+        "subProducts": ["Flip Top Cap","Pet Bottle Cap","Seal Plastic","Metal Cap","Plastic Bottle Cap","Thread Cap"],
+        "name": "Packaging Caps & Seals"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Packaging Machines & Goods"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Fancy Bags","Non Woven D Cut Bag","Fancy Bag","Cloth Bag","Cloth Bags","Non Woven D Cut Bags"],
+        "name": "Cotton, Jute & Canvas Bags"
+      }, {
+        "subProducts": ["Leather Men Wallet","Men Wallets","Leather Wallets","Leather Mens Wallets","Mens Leather Wallets","Mens Wallet"],
+        "name": "Wallets & Purses"
+      }, {
+        "subProducts": ["Fashion","Pink Bag","D Bags","Handbags","Bag Slings","Hand Bag"],
+        "name": "Fashion & Designer Bags"
+      }, {
+        "subProducts": ["Rolling Bag","Travel Bags","Carrying Case","Trolley Bag","Suitcases","Luggage Bags"],
+        "name": "Travel Bags & Backpacks"
+      }, {
+        "subProducts": ["Executive Bag","Laptops Case","Computer Note Book","Laptop Backpacks","Leather Laptop Bag","Backpack For Laptops"],
+        "name": "Briefcase, Portfolio & Laptop Bags"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Bags, Belts & Wallets"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Single Gas Burner Stove","Hot Plate","Three Gas Stoves","Four Burner Gas Stoves","3 Burner Gas Stoves","Cooking Top"],
+        "name": "Induction Cooktops, Hobs & Burners"
+      }, {
+        "subProducts": ["Aluminum Circles","Non Stick Pan","Aluminum Disc","Aluminum Discs","Non Stick Pans","Baking Oven"],
+        "name": "Baking Tray, Pans and Bakeware"
+      }, {
+        "subProducts": ["Ladles","Perforated Cutlery","Cutlery Tray","Fork","Cutlery Holders","Spatula"],
+        "name": "Spoons, Table Knife and Cutlery"
+      }, {
+        "subProducts": ["Steel Tiffin","Water Dispensers Bottle","Aluminium Milk Cans","Canister","Jar Water","Steel Flask"],
+        "name": "Food Storage Boxes & Containers"
+      }, {
+        "subProducts": ["Gas Cartridge","Salamander Grill","Salamander","Salamander Grills","Salamanders Grill","Oven Grill"],
+        "name": "Barbecue & Outdoor Cooking Devices"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Kitchen Utensils & Appliances"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Banana Plant","Ornamental Plants","Roses","Bouquets Flowers","Plant Nursery","Bunch"],
+        "name": "Fresh Flowers, Plants & Trees"
+      }, {
+        "subProducts": ["Tractors With Hydraulic Trolley","Tractor Shafts","Tractor Parts","Front End Loader","Hitch Pins","Tractors Hydraulic Jack"],
+        "name": "Tractor, Tractor Parts & Assemblies"
+      }, {
+        "subProducts": ["Hydraulic Plough","Tractor Chaff Cutter","Chaff Cutters","Micro Mini","Pop Up Sprinkler","Sugarcane Harvester"],
+        "name": "Irrigation and Harvesting Machines"
+      }, {
+        "subProducts": ["Flower Pots","Plastic Pot","Pot Planter","Designer Pot","Decorative Pots","Flower Pot"],
+        "name": "Flower Pots, Wall & Garden Planters"
+      }, {
+        "subProducts": ["Groundnut Shell","Gum Guar","Xanthan Gum","Groundnut Shells","Coco Peats","Coir"],
+        "name": "Coir and Agro Products"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Agriculture & Farming"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Handle Grips","Steel Pedal","Handle Bar","Pedals","Leaf Chains","Cycle Parts"],
+        "name": "Bicycle Spare Parts"
+      }, {
+        "subProducts": ["Atlas","Carriage","Cycle","Cycling","Tricycle","Scott"],
+        "name": "Kids, Racing Bicycles and Rickshaws"
+      }, {
+        "subProducts": ["Tyres","Inner Tubes","Alloys Wheels","Track Wheels","Tyre","Free Wheels"],
+        "name": "Tyre, Tube & Flaps"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Bicycle, Rickshaw & Spares"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Sharp Projector","White Board","Flip Chart","Opaque Projector","Smart Panels","Writing Boards"],
+        "name": "Presentation Boards & Accessories"
+      }, {
+        "subProducts": ["Cutouts","Set Squars","Color Set","Printed Canvas","Instruments And Sets","Skull"],
+        "name": "Crayon, Painting Brush & Craft Tools"
+      }, {
+        "subProducts": ["Environmental Studies","Environmental Study","History"],
+        "name": "Social Science & Literature Books"
+      }, {
+        "subProducts": ["Management Books","Visual Aid","Anatomy","Cds Services","Book Of Accounting","Accountancy Book"],
+        "name": "Reference Books & Study Material"
+      }, {
+        "subProducts": ["Devotional"],
+        "name": "Culture & Religion Related Books"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Books & Stationery"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Ring Holder","Tea Coaster","Table Coasters","Coasters","Coaster Set","Coaster"],
+        "name": "Coasters & Napkin Rings"
+      }, {
+        "subProducts": ["Steel Baskets","Swing Dustbins","Plastic Tub","Stand Bin","Pedal Dustbin","Stainless Steel Bins"],
+        "name": "Buckets, Mugs & Storage Bins"
+      }, {
+        "subProducts": ["Double Hook","Cloth Dry Stand","Clothes Drying Stand","Clothe Dryer","Dryer Stand","Towels Hanger"],
+        "name": "Hangers & Cloth Pegs"
+      }, {
+        "subProducts": ["Key Holder","Key Stand","Metal Keychain","Opener","Key Steel","Key Tags"],
+        "name": "Keychains & Bottle Openers"
+      }, {
+        "subProducts": ["Ferrules","Alloys Fittings","Aluminum Profile","Structural Angle","304 Angle","Bracket Assembly"],
+        "name": "Brackets, Holder & Hardware Fittings"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Housewares & Supplies"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Chlorophyl","Nutricharge Powder For Women","Methi Hills","Kalp Ark Juice","Immunorich","Herbal Height Increaser"],
+        "name": "Ayurvedic & Herbal Health Supplement"
+      }, {
+        "subProducts": ["Ginkgo Biloba","Leafs","Green Leafs","Lemon Grass","Fresh","Aloe Vera"],
+        "name": "Natural and Pure Herbs"
+      }, {
+        "subProducts": ["Ganoderma","Maca Powder","Ch Balance Capsule","Aloe Vera Capsule","No Addiction Powder","Karela Capsules"],
+        "name": "Ayurvedic,Herbal Products & Medicine"
+      }, {
+        "subProducts": ["Gentle Daily Care Protein Shampoo","Neem Face Wash","Herbal Soap","Neem Soap","Aloe Vera Cream","Kasly A1 Capsule"],
+        "name": "Ayurvedic, Herbal Oils and Cosmetics"
+      }, {
+        "subProducts": ["Henna","Mehandi"],
+        "name": "Natural & Herbal Henna"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Herbal & Ayurvedic Product"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Plasma Welding Machines","Welding Inverter Machine","Automatic Welding Machine","Welding Blankets","Spot Projection Welders","Spot Welding Gun"],
+        "name": "Welding Equipments & Machinery"
+      }, {
+        "subProducts": ["Auto Levels","Auto Level","Telescopic Pole","Plane Tables","Telescope","Magnifier Glass"],
+        "name": "Compass, Telescopes & Survey Tools"
+      }, {
+        "subProducts": ["Mould Dies","Steel Mold","Moulding Boxes","PET Injection Mould","Bottle Mould","Iron Moulds"],
+        "name": "Die Casting Mould & Moulding Tools"
+      }, {
+        "subProducts": ["Insulation Resistance Tester","Analog Trainer","Electronics Energy Meter","Battery Capacity Testers","Electrical Testing","Digital Resistance Tester"],
+        "name": "Electrical & Electronic Test Devices"
+      }, {
+        "subProducts": ["Hurricane","Gift Pack","Chicken Feathers","Decoration Item","Gifts Box","Gift Box"],
+        "name": "Gifts, Crafts & Artifacts"
+      }
+    ],
+    "imageUrl": "",
+    "name": ""
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Samsung Galaxy Black","Italian Marbles","Stone Decorative","Solid Surface","Counter Tops","Sandstone"],
+        "name": "Granite, Marble, Sandstone & Others"
+      }, {
+        "subProducts": ["Paver Blocks","Interlocking Pavers","Pebble Stone","KERB Stones","Interlocking Paver","Paving Blocks"],
+        "name": "Cobbles, Pebbles & Pavings"
+      }, {
+        "subProducts": ["Stone Design","Designs Marble","Stone Wall Claddings","Hand Cut","Stone Wall Cladding","Granite Flooring"],
+        "name": "Stone Tiles & Floorings"
+      }, {
+        "subProducts": ["Carving On Stone","With Marble","Mortar Pestle","Stone Carvings","Pestle","Designer Marble"],
+        "name": "Marble & Stone Artifacts"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Marble, Granite & Stones"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["Leather Ladies Bag","Leather Bags","Office Bags Leather","Office Leather Bag","Bags Leather","Leather Pouch"],
+        "name": "Leather Bags & Handbags"
+      }, {
+        "subProducts": ["Tool Belts","Leather Folder","Tools Belt","Leather Key Chains","Belt Tools","Key Fob"],
+        "name": "Leather Goods & Accessories"
+      }, {
+        "subProducts": ["Horseshoe","Horseshoes","Spur","Stirrups","Girth","Girths"],
+        "name": "Animal Clothing & Accessories"
+      }, {
+        "subProducts": ["Finished Leather","Finish Leather","PU Leather","Leather Products","Leather Finishes","Leather Product"],
+        "name": "Raw and Processed Leather"
+      }, {
+        "subProducts": ["Leather Jacket","Leather Jackets","Leather Gloves","Leather Glove","Leather Sleeves","Leather Sleeve"],
+        "name": "Leather Jackets and Garments"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Leather Products"
+  }, {
+    "subProducts": [
+      {
+        "subProducts": ["HDCVI DVR","Nano Ipod","Rg6 Cables","DJ System","Siren Hooter","Audio Recording Device"],
+        "name": "Audio Mixer, Recorder & Transmitter"
+      }, {
+        "subProducts": ["Dish Television","Base Station","UHF Antenna","Transmission Line Towers","Tata Sky And Dish Tv","Whip Antenna"],
+        "name": "Antennas, Wifi & Communication Tower"
+      }, {
+        "subProducts": ["Unit Terminals","Cdma Repeater","Drop Wires","PABX System","Equipments For Transmission","Polycom"],
+        "name": "Telecommunication Equipment & Parts"
+      }
+    ],
+    "imageUrl": "",
+    "name": "Telecom Equipment & Goods"
+  }
+]

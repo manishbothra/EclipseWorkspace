@@ -1,0 +1,278 @@
+<link  href="/global/market-analysis.css" type="text/css" rel="stylesheet" media="screen" />
+
+<script>
+$( document).ready(function(){
+    $('ul.tabs').each(function(){
+	    var $active, $content, $links = $(this).find('a');
+	    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+	    $active.addClass('active');
+	    $content = $($active.attr('href'));
+	    $links.not($active).each(function () {
+	        $($(this).attr('href')).hide();
+	    });
+
+	    // Bind the click event handler
+	    $(this).on('click', 'a', function(e){
+	        $active.removeClass('active');
+	        $content.hide();
+	        $active = $(this);
+	        $content = $($(this).attr('href'));
+	        $active.addClass('active');
+	        $content.show();
+	        e.preventDefault();
+	    });
+	});
+
+});
+
+</script>
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-bar-chart"></i>&nbsp;India Trade Analysis</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+	
+	<div class="row">
+	
+		<div role="tabpanel" class="tab-pane fade in active" id="buyer">
+			
+			<div class="container x_panel"  data-ng-cloak >
+	 			<h2 style="    text-align: center; font-size: 20px;">INDIA EXPORT IMPORT TRENDS</h2>
+				
+				<div class="x_title title">		 
+					<div class="row x_content" id="tableStats" >
+						<div id="indiaExportUpdates">
+							<div class="content moving" data-ng-cloak>
+								<marquee direction="up" height="384" scrolldelay="80" onmouseover="stop();" onmouseout="start();">
+									<ul>
+										<li><strong>top 5 products exported by
+												india</strong>
+											<p>
+												{{exportTopProduct[0].name}} <span>({{exportTopProduct[0].value}})</span>,
+												{{exportTopProduct[1].name}} <span>({{exportTopProduct[1].value}})</span>,
+												{{exportTopProduct[2].name}} <span>({{exportTopProduct[2].value}})</span>,
+												{{exportTopProduct[3].name}} <span>({{exportTopProduct[3].value}})</span>,
+												and {{exportTopProduct[4].name}} <span>({{exportTopProduct[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 products imported by
+												india</strong>
+											<p>
+												{{importTopProduct[0].name}} <span>({{importTopProduct[0].value}})</span>,
+												{{importTopProduct[1].name}} <span>({{importTopProduct[1].value}})</span>,
+												{{importTopProduct[2].name}} <span>({{importTopProduct[2].value}})</span>,
+												{{importTopProduct[3].name}} <span>({{importTopProduct[3].value}})</span>,
+												and {{importTopProduct[4].name}} <span>({{importTopProduct[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 import trading
+												partners</strong>
+											<p>
+												{{importTopCountry[0].country}} <span>({{importTopCountry[0].value}})</span>,
+												{{importTopCountry[1].country}} <span>({{importTopCountry[1].value}})</span>,
+												{{importTopCountry[2].country}} <span>({{importTopCountry[2].value}})</span>,
+												{{importTopCountry[3].country}} <span>({{importTopCountry[3].value}})</span>,
+												and {{importTopCountry[4].country}} <span>({{importTopCountry[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 export trading
+												partners</strong>
+											<p>
+												{{exportTopCountry[0].country}} <span>({{exportTopCountry[0].value}})</span>,
+												{{exportTopCountry[1].country}} <span>({{exportTopCountry[1].value}})</span>,
+												{{exportTopCountry[2].country}} <span>({{exportTopCountry[2].value}})</span>,
+												{{exportTopCountry[3].country}} <span>({{exportTopCountry[3].value}})</span>,
+												and {{exportTopCountry[4].country}} <span>({{exportTopCountry[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 Export Ports</strong>
+											<p>
+												{{topExportPorts[0].oport}} <span>({{topExportPorts[0].value}})</span>,{{topExportPorts[1].oport}}<span>({{topExportPorts[1].value}})</span>,
+												{{topExportPorts[2].oport}} <span>({{topExportPorts[2].value}})</span>,
+												{{topExportPorts[3].oport}}<span>({{topExportPorts[3].value}})</span>,
+												and {{topExportPorts[4].oport}} <span>({{topExportPorts[4].value}})</span>
+											</p></li>
+	
+										<li ng-cloak><strong>top 5 Import Ports</strong>
+											<p>
+												{{topImportPorts[0].oport}} <span>({{topImportPorts[0].value}})</span>,{{topImportPorts[1].oport}}<span>({{topImportPorts[1].value}})</span>,
+												{{topImportPorts[2].oport}} <span>({{topImportPorts[2].value}})</span>,
+												{{topImportPorts[3].oport}}<span>({{topImportPorts[3].value}})</span>,
+												and {{topImportPorts[4].oport}} <span>({{topImportPorts[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 products exported by
+												india</strong>
+											<p>
+												{{exportTopProduct[0].name}} <span>({{exportTopProduct[0].value}})</span>,
+												{{exportTopProduct[1].name}} <span>({{exportTopProduct[1].value}})</span>,
+												{{exportTopProduct[2].name}} <span>({{exportTopProduct[2].value}})</span>,
+												{{exportTopProduct[3].name}} <span>({{exportTopProduct[3].value}})</span>,
+												and {{exportTopProduct[4].name}} <span>({{exportTopProduct[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 products imported by
+												india</strong>
+											<p>
+												{{importTopProduct[0].name}} <span>({{importTopProduct[0].value}})</span>,
+												{{importTopProduct[1].name}} <span>({{importTopProduct[1].value}})</span>,
+												{{importTopProduct[2].name}} <span>({{importTopProduct[2].value}})</span>,
+												{{importTopProduct[3].name}} <span>({{importTopProduct[3].value}})</span>,
+												and {{importTopProduct[4].name}} <span>({{importTopProduct[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 import trading
+												partners</strong>
+											<p>
+												{{importTopCountry[0].country}} <span>({{importTopCountry[0].value}})</span>,
+												{{importTopCountry[1].country}} <span>({{importTopCountry[1].value}})</span>,
+												{{importTopCountry[2].country}} <span>({{importTopCountry[2].value}})</span>,
+												{{importTopCountry[3].country}} <span>({{importTopCountry[3].value}})</span>,
+												and {{importTopCountry[4].country}} <span>({{importTopCountry[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 export trading
+												partners</strong>
+											<p>
+												{{exportTopCountry[0].country}} <span>({{exportTopCountry[0].value}})</span>,
+												{{exportTopCountry[1].country}} <span>({{exportTopCountry[1].value}})</span>,
+												{{exportTopCountry[2].country}} <span>({{exportTopCountry[2].value}})</span>,
+												{{exportTopCountry[3].country}} <span>({{exportTopCountry[3].value}})</span>,
+												and {{exportTopCountry[4].country}} <span>({{exportTopCountry[4].value}})</span>
+											</p></li>
+										<li ng-cloak><strong>top 5 Export Ports</strong>
+											<p>
+												{{topExportPorts[0].oport}} <span>({{topExportPorts[0].value}})</span>,{{topExportPorts[1].oport}}<span>({{topExportPorts[1].value}})</span>,
+												{{topExportPorts[2].oport}} <span>({{topExportPorts[2].value}})</span>,
+												{{topExportPorts[3].oport}}<span>({{topExportPorts[3].value}})</span>,
+												and {{topExportPorts[4].oport}} <span>({{topExportPorts[4].value}})</span>
+											</p></li>
+	
+										<li ng-cloak><strong>top 5 Import Ports</strong>
+											<p>
+												{{topImportPorts[0].oport}} <span>({{topImportPorts[0].value}})</span>,{{topImportPorts[1].oport}}<span>({{topImportPorts[1].value}})</span>,
+												{{topImportPorts[2].oport}} <span>({{topImportPorts[2].value}})</span>,
+												{{topImportPorts[3].oport}}<span>({{topImportPorts[3].value}})</span>,
+												and {{topImportPorts[4].oport}} <span>({{topImportPorts[4].value}})</span>
+											</p></li>
+									</ul>
+								</marquee>
+							</div>
+						</div>				
+			   		</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-md-12">
+			<!-- India Export -->
+			<div id="indiaExport" class="container-fluid">
+				<div class="container">
+					<div class="row import-export-row">
+						<div class="col-md-6">
+							<h4 class="text-center ie-head">what does india export ?</h4>
+							<div class="tableList">
+								<div class="tableListheading">
+									<ul class="pull-left tabs">
+										<li><a href="#tab1">By Country</a></li>
+										<li><a href="#tab2">By Product</a></li>
+									</ul>
+								</div>
+		
+								<div class="tableListContent" data-ng-cloak>
+									<div class="tableListRow" id="tab1">
+										<div class="tableListSearch pull-right" style="margin-right: 10px; margin-top: -55px;">
+											<input type="text" placeholder="Search country" ng-model="exportCompanyFilter"> <input type="submit" value="search">
+										</div>
+										<ul class="listAlter">
+											<li></li>
+											<li></li>
+											<li ng-class="{headerSort:selectedSort!='sortCountryByName', headerSortUp:sortCountryByName, headerSortDown:!sortCountryByName}" ng-click="sortList('exportTopCountry', 'country', 'sortCountryByName')">Name</li>
+											<li ng-class="{headerSort:selectedSort!='sortCountryByValue' ,headerSortUp:sortCountryByValue, headerSortDown:!sortCountryByValue}" ng-click="sortList('exportTopCountry', 'value', 'sortCountryByValue')">Value(USD million)</li>
+										</ul>
+										<div class="content mCustomScrollbar">
+											<ul class="listAlter" ng-repeat="pro in exportTopCountry | filter:{country:exportCompanyFilter} ">
+												<li>#</li>
+												<li></li>
+												<li><span class="carmodel"><a ng-cloak>{{pro.country}}</a></span></li>
+												<li ng-cloak>{{pro.value}}</li>
+											</ul>
+		
+										</div>
+									</div>
+									<div class="tableListRow" id="tab2">
+										<div class="tableListSearch pull-right" style="margin-right: 10px; margin-top: -55px;">
+											<input type="text" placeholder="Search product" ng-model="exportProductFilter"> <input type="submit" value="search">
+										</div>
+										<ul class="listAlter">
+											<li></li>
+											<li>HS Code</li>
+											<li ng-class="{headerSort:selectedSort!='sortProductByName', headerSortUp:sortProductByName, headerSortDown:!sortProductByName}" ng-click="sortList('exportTopProduct', 'name', 'sortProductByName')">Name</li>
+											<li ng-class="{headerSort:selectedSort!='sortProductByValue', headerSortUp:sortProductByValue, headerSortDown:!sortProductByValue}" ng-click="sortList('exportTopProduct', 'value', 'sortProductByValue')">Value(USD million)</li>
+										</ul>
+										<div class="content mCustomScrollbar">
+											<ul class="listAlter" ng-repeat="pro in exportTopProduct | filter:{name:exportProductFilter}">
+												<li>#</li>
+												<li>{{pro.id}}</li>
+												<li><span class="carmodel"><a ng-cloak>{{pro.name}}</a></span></li>
+												<li ng-cloak>{{pro.value}}</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h4 class="text-center ie-head">what does india import ?</h4>
+							<div class="tableList">
+								<div class="tableListheading">
+									<ul class="pull-left tabs">
+										<li><a href="#tab3">By Country</a></li>
+										<li><a href="#tab4">By Product</a></li>
+									</ul>
+								</div>
+		
+								<div class="tableListContent" data-ng-cloak>
+									<div class="tableListRow" id="tab3">
+										<div class="tableListSearch pull-right" style="margin-right: 10px; margin-top: -55px;">
+											<input type="text" placeholder="Search country" ng-model="importCompanyFilter"> <input type="submit" value="search">
+										</div>
+										<ul class="listAlter">
+											<li></li>
+											<li></li>
+											<li ng-class="{headerSort:selectedSort!='sortImportCountryByName', headerSortUp:sortImportCountryByName, headerSortDown:!sortImportCountryByName}" ng-click="sortList('importTopCountry', 'country', 'sortImportCountryByName')">Name</li>
+											<li ng-class="{headerSort:selectedSort!='sortImportCountryByValue', headerSortUp:sortImportCountryByValue, headerSortDown:!sortImportCountryByValue}" ng-click="sortList('importTopCountry', 'value', 'sortImportCountryByValue')">Value(USD million)</li>
+										</ul>
+										<div class="content mCustomScrollbar">
+											<ul class="listAlter" ng-repeat="pro in importTopCountry | filter:{country:importCompanyFilter} ">
+												<li>#</li>
+												<li></li>
+												<li><span class="carmodel"><a ng-cloak>{{pro.country}}</a></span></li>
+												<li ng-cloak>{{pro.value}}</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tableListRow" id="tab4">
+										<div class="tableListSearch pull-right" style="margin-right: 10px; margin-top: -55px;">
+											<input type="text" placeholder="Search product" ng-model="importProductFilter"> <input type="submit" value="search">
+										</div>
+										<ul class="listAlter">
+											<li></li>
+											<li>HS Code</li>
+											<li ng-class="{headerSort:selectedSort!='sortImportProductByName', headerSortUp:sortImportProductByName, headerSortDown:!sortImportProductByName}" ng-click="sortList('importTopProduct', 'name', 'sortImportProductByName')">Name</li>
+											<li ng-class="{headerSort:selectedSort!='sortImportProductByValue', headerSortUp:sortImportProductByValue, headerSortDown:!sortImportProductByValue}" ng-click="sortList('importTopProduct', 'value', 'sortImportProductByValue')">Value(USD million)</li>
+										</ul>
+										<div class="content mCustomScrollbar">
+											<ul class="listAlter" ng-repeat="pro in importTopProduct | filter:{name:importProductFilter}">
+												<li>#</li>
+												<li>{{pro.id}}</li>
+												<li><span class="carmodel"><a>{{pro.name}}</a></span></li>
+												<li ng-cloak>{{pro.value}}</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

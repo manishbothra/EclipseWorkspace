@@ -1,0 +1,520 @@
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="buyer">
+    <div style="background-color:#f3f3f3;padding:10px;font-family:open_sanssemibold;text-align: center;font-size: 16px;"  data-ng-cloak><div class="container"><strong>{{mainTitle}}</strong></div> </div>
+    
+      	<div class="container" data-ng-cloak>
+		<div class="row">			
+			<div class="col-md-4">
+				<label>Change Product</label>
+		   <input class="form-control"  type="text" placeholder="Enter Product name or HS code" ng-model="selectedProduct" ui-autocomplete="myOption">
+				
+			</div>
+			<div class="col-md-4">
+				<label>Trade type</label>
+				<select name="" class="form-control" ng-model="type" ng-change="changeType(type)">
+				<option value="export">Export</option>
+				 <option value="import">Import</option>
+				</select>
+			</div> 
+			<div class="col-md-4">
+				<label>Duration</label>
+				<daterangepicker initRange="{{calendarDateRange}}" callbackfn='dateRangeChanged(frmDate, toDate)'></daterangepicker>
+				<!-- <select class="form-control" ng-model="selectedDuration" ng-change="changeDuration(selectedDuration)">
+					<option value="any" ng-disabled="!allowedFilters.duration">--- Select Duration ---</option>
+					
+					<option value="{{duration.value}}" ng-disabled="!allowedFilters.duration" ng-repeat="duration in filterRanges.durations">
+					{{duration.label}}
+					</option>
+				</select> -->
+			</div>
+			
+		</div>
+		
+		<div class="row">  
+			<div class="col-md-4">
+			   <label>Country</label>
+				<select class="form-control" ng-model="country" ng-change="changeCountry(country)"
+					 ng-options="country.country for country in filterRanges.country | filter:filterLocation | orderBy:'country' track by country.id" ng-disabled="!allowedFilters.country || disableLocationFilter" rel="tooltip" title="{{(allowedFilters.country)?'' : filterDisableMessage1}}">
+						<option value="" ng-disabled="!allowedFilters.country">Any</option>
+						<!-- <option value={{country}} ng-repeat="country in filterRanges.country | filter:filterLocation" ng-disabled="!allowedFilters.country">
+							{{country.country}}
+					</option> -->
+				</select>
+			</div>
+			<div class="col-md-4">
+			   <label>Origin Port</label>
+				<select class="form-control" ng-model="selectedOPort" ng-change="changePort('origin', selectedOPort)">
+					<option value="any" ng-disabled="!allowedFilters.originPort">Any Port</option>
+					
+					<option ng-disabled="!allowedFilters.originPort" value="{{op.trim()}}" ng-repeat="op in filterRanges.originPorts | orderBy">
+					{{op}}
+					</option>
+				</select>
+			</div>
+			
+			<div class="col-md-4">
+			   <label>Destination Port</label>
+				<select class="form-control" ng-model="selectedDPort" ng-change="changePort('destination', selectedDPort)">
+					<option value="any" ng-disabled="!allowedFilters.destinationPort">Any Port</option>
+					
+					<option ng-disabled="!allowedFilters.destinationPort" value="{{dp.trim()}}" ng-repeat="dp in filterRanges.destinationPorts | orderBy">
+					{{dp}}
+					</option>
+				</select>
+			</div>
+		</div>	
+          
+	</div>
+  
+		
+<div class="container searchMid"  data-ng-cloak>
+
+            <div class="row">
+            <div class="col-md-4">
+        <div class="otherfilter">
+        <h4  style="font-family:open_sanssemibold;">More filters</h4>
+       
+
+        <div class="filterSerach" style="margin-top:25px;">
+
+       
+		<div class="filter-section">
+		</div>
+		
+		<div class="filter-section">
+			<div class="filter-header">
+				
+				<ul class="expertiseFiltersCompany filterMore" style="">
+
+					   <li  rel="tooltip" title="{{(allowedFilters.quantity)?'' : filterDisableMessage1}}" >
+						
+						<p  class="slideName" style="font-family: 'open_sansregular';">quantity</p>
+					   <rzslider rz-slider-model="filterRanges['quantity'].minValue" rz-slider-high="filterRanges['quantity'].maxValue"
+						rz-slider-options="filterRanges['quantity'].options"></rzslider>
+					   </li>
+					<li rel="tooltip" title="{{(allowedFilters.value)?'' : filterDisableMessage1}}" >
+						<p  class="slideName">value</p>
+						
+					   <rzslider rz-slider-model="filterRanges['value'].minValue" rz-slider-high="filterRanges['value'].maxValue"
+						rz-slider-options="filterRanges['value'].options"></rzslider>
+					</li>
+				</ul>
+			</div>
+		</div><!-- end of filter section -->
+												
+												
+												
+ 
+        </div>
+
+
+        </div>
+
+         <div class="visitor" style="padding:30px 10px;" ng-if="url.name && url.name.length>1">
+            Find
+            <a ng-if="isOverseasUser" class="btn btn-danger btn-block" style="margin-top:15px;" >{{url.name}} Importers</a>
+       		<a ng-if="!isOverseasUser" class="btn btn-danger btn-block" style="margin-top:15px;" >{{url.name}} Importers</a>
+        </div> 
+        <div class="line"></div>
+        <div class="visitor" style="padding:30px 10px;font-family: 'open_sansregular';">
+            Over <span class="text-pink" style="font-size:25px;"> 5.5 Million</span> Businesses Listed<br><br>
+            <a class="btn btn-danger btn-block" style="margin-top:15px;"  data-toggle="modal" data-target="#joinNow">Join Now to Get Listed</a>
+        </div>
+        <div class="line"></div>
+        <h3  class="planning-2">Our expert tools</h3>
+         <div class="cost">
+            <a href="export-price-calculator.html" target="_self"><img class="first" src="https://cdn.connect2india.com/global/images/freight.png"><h6>Export Price Calculator</h6><img class="last" src="images/right-arrow.png"></a>
+        </div>
+        <div class="cost post">
+            <a href="hs-code-finder.html" target="_self"><img class="first" src="https://cdn.connect2india.com/global/images/duty.png"><h6>HS Code finder</h6><img class="last" src="images/right-arrow.png"></a>
+        </div>
+        <div class="cost duty">
+            <a ng-href="{{crossDomainLocal1 || ''}}nic-code-finder.html" target="_self"><img class="first" src="https://cdn.connect2india.com/global/images/duty.png"><h6>NIC Code finder</h6><img class="last" src="images/right-arrow.png"></a>
+        </div>
+        </div>
+
+            <!-- <busy-indicator  ng-show="loadingData"> </busy-indicator> -->
+            <div class="col-md-8" ng-if="url.product || url.oport|| url.dport" data-ng-cloak>
+            <table class="table table-striped table-bordered" style="font-family:open_sansregular">
+                 <tr style="background-color:#454545;color:#fff;">
+                    <th style="width:10%">S. No</th>
+                    <th style="width:15%" ng-class="{headerSort:selectedSorting !='sortByDate', headerSortUp:sortByDate, headerSortDown:!sortByDate}" ng-click="sortList('products', 'tradeDate', 'sortByDate')">Date</th>
+                    <th style="width:35%" ng-class="{headerSort:selectedSorting !='sortByName', headerSortUp:sortByName, headerSortDown:!sortByName}" ng-click="sortList('products', 'name', 'sortByName')">Product</th>
+                    <th style="width:15%" ng-class="{headerSort:selectedSorting !='sortByQty', headerSortUp:sortByQty, headerSortDown:!sortByQty}" ng-click="sortList('products', 'qty', 'sortByQty')">Quantity</th>
+                    <th style="width:15%" ng-class="{headerSort:selectedSorting !='sortByValue', headerSortUp:sortByValue, headerSortDown:!sortByValue}" ng-click="sortList('products', 'value', 'sortByValue')">Value (INR in Million)</th>
+                    <th style="width:25%" ng-class="{headerSort:selectedSorting !='sortByCountry', headerSortUp:sortByCountry, headerSortDown:!sortByCountry}" ng-click="sortList('products', 'country', 'sortByCountry')" ng-show="showCountryHeader">Country</th>
+					<th style="width:25%" ng-class="{headerSort:selectedSorting !='sortByOPort', headerSortUp:sortByOPort, headerSortDown:!sortByOPort}" ng-click="sortList('products', 'oport', 'sortByOPort')" ng-show="showOPortHeader">Origin Port</th>
+					<th style="width:25%" ng-class="{headerSort:selectedSorting !='sortByDPort', headerSortUp:sortByDPort, headerSortDown:!sortByDPort}" ng-click="sortList('products', 'dport', 'sortByDPort')" ng-show="showDPortHeader">Destination Port</th>
+                  </tr>
+                 
+                   <tr ng-repeat="pro in products | filter:qtyValueRangeFilter">
+                    <td class="count"></td>
+					<td>{{pro.tradeDate}}</td>
+                    <td>
+                    <a ng-if="pro.id<10000" href='stats-current-demand.html?productId={{pro.productId}}&country1={{pro.country}}&type={{type}}{{durationParam}}' ng-click="showData($event, 'productId-country1', pro.country, pro.productId)"  target="_self">{{pro.name}}</a>
+                    <a ng-if="pro.id>10000" >{{pro.name}}</a>
+                    </td>
+                    <td>{{pro.qty}}</td>
+                    <td>{{pro.value}}</td>
+                     
+                    <td ng-show="!pro.oport && !pro.dport">
+						<a href='stats-current-demand.html?country={{pro.country}}&type={{type}}{{durationParam}}' ng-click="showData($event, 'country', pro.oport, pro.productId, pro.country)" target="_self">
+                    {{pro.country}}
+                   
+                   </a>
+					</td>
+					<td ng-show="pro.oport">
+						<a href='stats-current-demand.html?oport={{pro.oport}}&product={{url.product}}&type={{type}}{{durationParam}}' ng-click="showData($event, 'oport', pro.oport, url.product)" target="_self">
+							{{pro.oport}}
+						</a>
+					</td>
+					<td ng-show="pro.dport">
+						<a href='stats-current-demand.html?dport={{pro.dport}}&product={{url.product}}&type={{type}}{{durationParam}}' ng-click="showData($event, 'dport', pro.dport, url.product)" target="_self">
+							{{pro.dport}}
+						</a>
+					</td>
+                  </tr>
+			</table>
+			
+            <pagination style="float: right;margin-top: -3px;font-family: open_sansregular;" ng-hide="totalResults==0" boundary-links="true" max-size="4" total-items="totalResults" ng-model="currentPage" class="pagination-sm" items-per-page="{{pageSize}}" ng-change=changePage(currentPage)></pagination>   
+            
+            </div>
+           
+            
+           </div>
+        </div>
+        
+        
+        
+    </div>
+    
+    
+    
+   <div role="tabpanel" class="tab-pane fade" id="demand">
+    	<div class="container">
+        	<!-- <div class="row">
+                <div class="col-md-3"><select name="" class="form-control"><option>Select Products</option></select></div>
+                <div class="col-md-3"><select name="" class="form-control"><option>Select Regions</option></select></div>
+                <div class="col-md-3"><select name="" class="form-control"><option>Trade Value</option></select></div>
+                <div class="col-md-3"><select name="" class="form-control"><option>Trade Type</option></select></div>
+            </div> -->
+        </div>	
+        
+       <div class="container" id="tradeComparison">
+        	
+            <div class="row">
+
+                <div class="col-md-8 col-sm-6">
+                    <div class="tradeGraph">
+                        <!-- <div id="chart_div1" google-chart chart="exportChartCountry" style="{{exportChartCountry.cssStyle}}">
+							</div> -->
+                        <nvd3 options='pieChart.options' data='pieChart.data' config="nvChartConfig" api="pieChart.api"></nvd3> 
+                           
+                    </div>
+                </div>
+                
+                 <div class="col-md-8 col-sm-6">
+					<div class="tradeGraph">
+						<label style="font-weight: bold;">Product</label>
+						<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.product" ng-options="item as item.label for item in trendChartSelectableOptions.products" >							
+						</select>
+						<label style="font-weight: bold;">{{trendFilterSelectionLabel}}</label>
+						<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.oport" ng-options="item as item for item in trendChartSelectedOption.product.ports" >							
+						</select>
+						<label style="font-weight: bold;">Indicator</label>
+						<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.key" ng-options="item as item for item in trendChartSelectableOptions.keys" >							
+						</select>
+						<br/>
+						<nvd3 options='trendChart.options' data='trendChart.data' config="nvChartConfig" api="trendChart.api"></nvd3>
+					</div>
+				</div>
+                
+                
+                
+				<div class="col-md-8 col-sm-6">
+                    <div class="tradeGraph">
+                        <!-- <div id="chart_div1" google-chart chart="exportChartCountry" style="{{exportChartCountry.cssStyle}}">
+							</div> -->
+                        <nvd3 options='topPortChart.options' data='topPortChart.data' config="nvChartConfig" api="topPortChart.api"></nvd3> 
+                           
+                    </div>
+                </div>
+				
+                
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="clearfix"></div>
+
+                
+
+<footer>
+    <ng-include src="'footer.html'">
+</footer>
+
+ <div class="modal fade" id="joinNow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-ng-controller="quoteController">
+       <!-- <busy-indicator  ng-show="loadingData"> </busy-indicator> -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel" style="font-size: 1.17em">JOIN NOW</h3>
+                </div>
+                <div class="modal-body" style="padding:15px; font-family: OpenSans-Light;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;">
+        <form name="userInsert"  novalidate data-ng-submit="submitForm(userInsert.$valid)">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name" name="firstName" data-ng-model="formData.firstName" required  data-ng-pattern="/^([a-zA-Z\s]+)$/" data-ng-minlength="3" data-ng-maxlength="35">
+                    
+                    <p data-ng-show="userInsert.firstName.$invalid && submitted" style="padding: 5px; text-align: left; border-radius: 7px;" data-ng-cloak>
+                 <small style="color:red;" data-ng-show="userInsert.firstName.$error.required">Name Is Required</small>
+                 <small style="color:red;" data-ng-show="userInsert.firstName.$error.pattern">Invalid Name. Enter only characters</small>
+                 <small style="color:red;" data-ng-show="userInsert.firstName.$error.minlength">Name is too short</small>
+                 <small style="color:red;" data-ng-show="userInsert.firstName.$error.maxlength">Name must not exceed 35 characters</small>
+             </p>
+                    
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Company Name" name="companyName" data-ng-model="formData.companyName" required data-ng-minlength="3" data-ng-pattern="/^([a-zA-Z0-9\.-\s]+)$/" data-ng-max-length="70">
+                    
+                    <p data-ng-show="userInsert.companyName.$invalid && submitted" style="padding: 5px; text-align: left; border-radius: 7px;" data-ng-cloak>
+                 <small style="color:red;" data-ng-show="userInsert.companyName.$error.required">Please provide your company name</small>
+                 <small style="color:red;" data-ng-show="userInsert.companyName.$error.pattern">Name must contain characters only </small>
+                 <small style="color:red;" data-ng-show="userInsert.companyName.$error.minlength">Name is too short</small>
+                 <small style="color:red;" data-ng-show="userInsert.companyName.$error.maxlength">Name must not exceed 70 characters</small>
+             </p>
+                    
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" data-ng-model="formData.email" data-ng-pattern="/^([a-zA-Z0-9_\.-]{0,30})@([\da-zA-Z\.-]{0,30})\.([a-zA-Z\.]{2,15})$/" required>
+                  
+                  <p  data-ng-show="userInsert.email.$invalid && submitted" style="padding: 5px; text-align: left; border-radius: 7px;" data-ng-cloak>
+                 <small style="color:red;" data-ng-show="userInsert.email.$error.required">Please provide your Email Address</small>
+                 <small style="color:red;" data-ng-show="userInsert.email.$error.pattern">Incorrect Email Address </small>
+
+             </p><p style="color:red; font-size:12px;">{{message}}</p>
+                  
+                    </div>
+
+                    <div class="form-group">
+                          <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password" name="password" data-ng-model="formData.password" required data-ng-pattern="/^([a-zA-Z0-9_\.-~#$]{8,25})$/">
+
+<p data-ng-show="userInsert.password.$invalid && submitted" style="padding: 5px; text-align: left; border-radius: 7px;" data-ng-cloak>
+                 <small style="color:red;" data-ng-show="userInsert.password.$error.required">Please enter your password</small>
+                 <small style="color:red;" data-ng-show="userInsert.password.$error.pattern">password length must be between 8-16 characters with only underscore(_), dash(-), hash(#) and dot(.) allowed. </small>
+
+             </p>
+
+                    </div>
+                                        <button type="submit" class="btn btn-danger">Register</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" style="background: #3E3E3E; color: #ffffff">Close</button>
+                    
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+<!--SIDE SLIDER--> 
+       <!--  <div class="callMePanel">
+        
+           <div style="position:relative;">
+             <span class="closebtn">X</span>
+            
+             <div id="callMe" class="iconMobPanel"><img src="https://cdn.connect2india.com/global/images/feedback.png" style="margin-left: -10px;"></div>
+            
+            </div>
+        
+        	<div class="callMePanelTop"><span > Request a free quote</span></div>
+        
+       	 	<div class="callMePanelBottom" data-ng-controller="quoteController">
+          <form name="type" novalidate>
+         <div class="form-group">
+         
+          <label for="exampleInputEmail1"></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name" name="companyName" data-ng-model="formData.companyName" required data-ng-minlength="3" data-ng-pattern="/^([a-zA-Z0-9\.-\s]+)$/" data-ng-maxlength="75">
+             <p class="" data-ng-show="type.companyName.$invalid && submitted10" style="padding: 2px; text-align: left; font-size:14px; border-radius:7px; width:100%; margin-top:5px;" data-ng-cloak>
+                <small style="color:red;" data-ng-show="type.companyName.$error.required">Please provide your company name</small>
+                <small style="color:red;" data-ng-show="type.companyName.$error.pattern">Invalid Name. Enter only characters</small>
+                <small style="color:red;" data-ng-show="type.companyName.$error.minlength">Name is too short</small>
+                       <small style="color:red;" data-ng-show="type.companyName.$error.maxlength">You have entered more than 75 characters </small>
+            </p>
+
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Email" name="email" data-ng-model="formData.email" required data-ng-pattern="/^([a-zA-Z0-9_\.-]{0,30})@([\da-zA-Z\.-]{0,30})\.([a-zA-Z\.]{2,15})$/">
+             <p class="" data-ng-show="type.email.$invalid && submitted10" style="padding: 2px; text-align: left;font-size:14px; border-radius: 7px; width:100%; margin-top:5px;" data-ng-cloak>
+                   <small style="color:red;" data-ng-show="type.email.$error.required">Please provide your Email Address</small>
+                   <small style="color:red;" data-ng-show="type.email.$error.pattern">Incorrect Email Address </small>
+
+               </p> <p style="color:red; font-size:16px;">{{message}}</p>
+
+          </div>
+
+              <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Phone no" name="phone" data-ng-model="formData.phone"  data-ng-pattern="/^([0-9]+)$/">
+                  <p class="" data-ng-show="type.phone.$invalid && submitted10" style="padding: 2px; text-align: left;font-size:14px; border-radius: 7px; width:100%; margin-top:5px;" data-ng-cloak>
+
+                      <small style="color:red;" data-ng-show="type.phone.$error.pattern">Incorrect Phone number </small>
+
+                  </p> 
+              </div>
+          
+          <div class="form-group">
+            <textarea name="" cols="4" rows="4" class="form-control" placeholder="Comment" name="description" data-ng-model="formData.description" required data-ng-minlength="5" data-ng-maxlength="2000" data-ng-pattern="/^([\w\d\s\.,-]+)$/"></textarea>
+             <p data-ng-show="type.description.$invalid && submitted10" style="padding: 2px; text-align: left;font-size:14px; border-radius: 7px; width:100%; margin-top:5px;" data-ng-cloak>
+                   <small style="color:red;" data-ng-show="type.description.$error.required">Please specify your query</small>
+                   <small style="color:red;" data-ng-show="type.description.$error.pattern">only dot(.), comma(,) and dash(-) is allowed </small>
+                         <small style="color:red;" data-ng-show="type.description.$error.maxlength"> You have entered more than 2000 characters </small>
+                         <small style="color:red;" data-ng-show="type.description.$error.minlength">Enter Minimum 5 characters </small>
+
+               </p>
+
+          </div>
+
+<button type="submit" class="btn btn-danger" data-ng-click="submitForm10(type.$valid)">Send</button>
+              <button class="btn btn-danger" id="closebutton"  style="background: #3e3e3e; color: #ffffff">Close</button>
+          </form>
+        	</div>
+        </div>
+        -->         
+        <!--End SIDE SLIDER-->
+
+
+<!--   thank you modal   -->
+<div class="modal fade popupform" id="thankyou" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="thanksBanner">
+                <div class="thanksPanel">
+                    <img src="https://cdn.connect2india.com/global/images/send-email-icon.png" alt="#" class="sendemailIcon"><br>
+                    <h1>Thank You For Registering..</h1>
+                    <p>We have sent a confirmation email at your registered email address.Please verify your account</p>
+                </div>
+                <a href="#">DID NOT RECEIVE EMAIL? CLICK HERE</a><br/>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--   thank you 2 modal   -->
+<div class="modal fade popupform" id="thankyou2" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="thanksBanner">
+                <div class="thanksPanel">
+                    <img src="https://cdn.connect2india.com/global/images/send-email-icon.png" alt="#" class="sendemailIcon"><br>
+                    <h1>Thank You ..</h1>
+                    <p>We will get in touch with you shortly</p>
+                </div>
+               
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/global/js/jquery-1.11.2.min.js"></script>
+<script src="/global/js/angular.min.js"></script>
+<script src="/global/js/angular-route.min.js"></script>
+<script defer src="/global/js/angular-translate.min.js"></script>
+<script  src="/global/js/bootstrap.min.js"></script>
+
+<script  src="/global/js/jquery-ui.min.js"></script>
+<script defer src="/global/js/rzslider.min.js"></script>
+<link rel="stylesheet" href="/global/css/rzslider.min.css"/>
+
+<script defer type="text/javascript" src="/global/js/jquery.nicescroll.min.js"></script>
+<script src="/global/js/autocomplete.js"></script>
+<script src="/appresouces.cmb?type=js&sf=/global/js/new-header.js"></script>
+<script src="/global/js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<script defer type="text/javascript" src="/global/js/d3.min.js"></script>
+<script defer type="text/javascript" src="/global/js/nv.d3.min.js"></script>
+<script defer type="text/javascript" src="/global/js/directives/angular-nvd3.min.js"></script>
+<script defer type="text/javascript" src="/global/js/directives/directives.js"></script>
+<link async defer rel="stylesheet" href="/global/css/nv.d3.css"/>
+<script  src="/global/js/market-analysis-current-demand.js"></script>
+<script  src="/global/js/google-chart.js"></script> 
+<script src="/global/js/moment.min.js"></script>
+<script src="/global/js/daterangepicker.min.js"></script>
+<link rel="stylesheet" href="/global/css/daterangepicker.css">
+
+ <script type="text/javascript">
+  	$(function () {	
+	submenunicescroller();
+
+});
+  	</script>
+<SCRIPT>
+
+
+    /*  slider from right side   */
+$(document).ready(function(){
+ 	$('#callMe').click(function(){$('.callMePanel').animate({'right':'0','position':'fixed'}, 500);});
+	
+ $('.closebtn').click(function(){$('.callMePanel').animate({'right':'-275','position':'fixed'}, 500);});
+    $('#closebutton').click(function(){$('.callMePanel').animate({'right':'-275','position':'fixed'}, 500);});
+
+});
+</SCRIPT>
+ <!-- <script>
+              new WOW().init();
+</script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip({html:true});
+</script> -->
+<script>
+function loginregister(){
+
+    $(".submenuLogin").ready(function(){
+
+        $("ul.loginTabHead li ").click(function(){
+
+            $(".loginTabHead  li").removeClass("active");
+            $(this).addClass("active");
+            var indexvalue = $(this).index();
+            $(".loginTabBody  li").removeClass("active");
+            $(".loginTabBody  li").eq(indexvalue).addClass("active");
+        });
+    });
+}
+</script>
+<script>
+loginregister();
+   // rangeSlider();
+</script>
+
+
+
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100908643); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100908643ns.gif" /></p></noscript>
+
+</body>
+</html>

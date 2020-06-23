@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+  <Header>
+    <DocumentVersion>1.01</DocumentVersion>
+    <MerchantIdentifier>A1ZRT2O38J6EA0</MerchantIdentifier>
+  </Header>
+  <MessageType>Product</MessageType>
+  <PurgeAndReplace>false</PurgeAndReplace>
+  <Message>
+    <MessageID>1</MessageID>
+    <OperationType>Update</OperationType>
+    <Product>
+      <SKU>7444111555</SKU>
+      <StandardProductID>
+        <Type>GTIN</Type>
+        <Value>13456</Value>
+      </StandardProductID>
+      <ProductTaxCode>0 TAX</ProductTaxCode>
+      <!-- <Condition>
+      	<ConditionType>New</ConditionType>
+	  </Condition> -->
+      <!-- <ItemPackageQuantity>1</ItemPackageQuantity> -->
+      <!-- <NumberOfItems>6</NumberOfItems> -->
+      <DescriptionData>
+        <Title>XML EDITOR</Title>
+        <Brand>NEW BRAND</Brand>
+        <Description>THIS IS GOOD</Description>
+        <BulletPoint>Good Book</BulletPoint>
+        <!-- <MSRP currency="INR">250</MSRP> -->
+        <Manufacturer>Shashank</Manufacturer>
+        <SearchTerms/>
+        <!-- <ItemType>Book</ItemType> -->
+        <RecommendedBrowseNode>11111111</RecommendedBrowseNode>
+      </DescriptionData>
+      <ProductData>
+        <Health>
+          <ProductType>
+            <HealthMisc>
+              <!-- <Ingredients>Knowledge</Ingredients>
+              <Directions>Read with peaceful mind.</Directions> -->
+            </HealthMisc>
+          </ProductType>
+        </Health>
+      </ProductData>
+    </Product>
+  </Message>
+</AmazonEnvelope>

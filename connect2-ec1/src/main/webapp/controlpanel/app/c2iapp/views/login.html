@@ -1,0 +1,283 @@
+<div class="right-panel2">
+<div class="login" style="background: rgba(121,131,183,0.75);height: 850px;">
+
+  <div class="container" style="width: 1170px;">
+    <div class="row">
+      <div class="col-sm-6 rcpanel rcpanelleft1">
+
+        <div class="loginleft" style="margin: 100px 55px;">
+          <h2 style="color: white;font-size: 28px;">Login to C2I Global Trade Panel</h2>
+            <li class="w3">
+             <div style="width: 60px;">
+              <button class="icon"> <i class="fa fa-search"></i> </button>
+              </div>
+               <span class="w3-write">Verified Counterparts</span>
+                <br>
+               <span class="w3-write2">Genuine importers / exporters for your products</span> 
+             </li>
+
+             <li class="w3">
+              <div style="width: 60px;"> 
+                <button class="icon"> <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                 </button> 
+               </div>
+                <span class="w3-write">Worldwide Market Analysis</span> 
+                <br> 
+                <span class="w3-write2">Market demand and analysis for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-share"></i> </button>
+                </div>
+                  <span class="w3-write">Global Trade Resources</span>
+                  <br>
+                  <span class="w3-write2">Trade resources and tools for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+                </div>
+                <span class="w3-write">Arrange Export Orders</span>
+                 <br> 
+                <span class="w3-write2"> Support for executing your export / import orders</span>
+               </li>
+
+               <li class="w3">
+                <div style="width: 60px;">
+                 <button class="icon"> <i class="fa fa-check-square-o" aria-hidden="true"></i> </button>
+                </div>
+                 <span class="w3-write">Genuine Leads</span>
+                  <br>
+                 <span class="w3-write2">Buyer / Supplier leads specific to your products</span> 
+               </li>
+        </div>
+
+    </div>
+      <div class="col-sm-6 rcpanel rcpanelright">
+        
+         <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content login_box">
+      <div>
+        <img class="login-logo" style="margin-bottom:0px;" src="assets/images/logo.png"/> 
+        <h2>Connect2India Global Trade Panel</h2></div>
+         <div class="separator"></div>
+        <div class="clearfix"></div>
+      <p ng-if="pwdResetSuccessfull" style="color:green;font-weight:bold;"> You have successfully reset the password. Please login to continue.</p>
+            <form name="loginForm" ng-submit="login();" ng-if="showLoginForm">
+        
+              <h2>Login</h2>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" ng-model="login.userName" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" ng-model="login.password"  required="" />
+              </div>
+		        <div ng-if="errorMessage && errorMessage.length > 0" class="error"> 
+		        <p>* {{errorMessage}}</p>
+		        </div>
+              <div>
+        		<a class="reset_pass" href="" ng-click="initiateFyp();">Forgot your password?</a>
+                <input class="btn btn-primary loginBtn" type="submit" value="Log in"></input>
+              </div>
+              
+              <div>
+              	<a class="reset_pass" href="" ng-click="initiateVerification()">Resend Verification link</a>
+              </div>
+              
+              <div>
+				<a class="reset_pass" href="#register/dashboard">Don't have an account? Sign up now</a>
+              </div>
+
+            </form>
+            <form name="fypFrm" ng-submit="requestFyp(fypFrm.$valid);" ng-if="showFypForm">
+        
+              <h2>Forgot your password?</h2>
+              <div>
+                <input type="text" class="form-control" placeholder="Enter your email address" ng-model="fypForm.email" required="" />
+              </div>
+        <div ng-if="errorMessage && errorMessage.length > 0" class="error"> 
+        <p>* {{errorMessage}}</p>
+        </div>
+              <div>
+        <a href="" ng-click="initiateLogin();">Back to login </a>
+                <input class="btn btn-primary loginBtn" type="submit" value="Submit"></input>
+              </div>
+
+            </form>
+      
+            <form name="resetPwdForm" ng-submit="resetPwd(resetPwdForm.$valid);" ng-if="showResetPwdForm" autocomplete="off">
+        
+              <h2>Reset your password?</h2>
+        <p>A verification code is sent to your email address. Please enter the code and the new password below to reset your password.</p>
+              <div>
+                <input type="text" class="form-control" placeholder="Enter the verification code" ng-model="resetForm.token" required="true" autocomplete="off" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Enter the new Password" ng-model="resetForm.password" required="true" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Confirm the new Password" ng-model="resetForm.confirmedPassword" required="true" />
+              </div>
+        <div ng-if="errorMessage && errorMessage.length > 0" class="error"> 
+        <p>* {{errorMessage}}</p>
+        </div>
+              <div>
+        <a href="" ng-click="initiateLogin();">Back to login </a>
+                <input class="btn btn-primary loginBtn" type="submit" value="Submit"></input>
+              </div>
+            </form>
+            
+            
+            <form name="verificationFrm" ng-submit="requestVerification(verificationFrm.$valid);" ng-if="showVerificationForm">
+        
+              	<h2>Resend Verification link</h2>
+	              	<div>
+	                	<input type="text" class="form-control" placeholder="Enter your email address" ng-model="verificationForm.email" required="" />
+	              	</div>
+			        <div ng-if="errorMessage && errorMessage.length > 0" class="error"> 
+			        <p>* {{errorMessage}}</p>
+			        </div>
+              	<div>
+        			<a href="" ng-click="initiateLogin();">Back to login </a>
+                	<input class="btn btn-primary loginBtn" type="submit" value="Submit"></input>
+              </div>
+            </form>
+      		
+      		
+      		 <form name="submitVerificationFrm" ng-submit="verifyAccount(submitVerificationFrm.$valid);" ng-if="submitVerificationForm">
+        
+              	<h2>We have sent a verification token to your email / Mobile Number. Please enter the verification token below.</h2>
+              	<div>
+                	<input type="text" class="form-control" autocomplete="off"   placeholder="Enter verification code" ng-model="vfForm.otp" required="" />
+              	</div>
+        		<div ng-if="errorMessage && errorMessage.length > 0" class="error"> 
+        			<p>* {{errorMessage}}</p>
+        		</div>
+              	<div>
+        			<a href="" ng-click="initiateLogin();">Back to login </a>
+                	<input class="btn btn-primary loginBtn" type="submit" value="verify my Account"></input>
+              	</div>
+            </form>
+      
+          </section>
+              <div class="clearfix"></div>
+
+              <div class="separator1">
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+
+                  <p style="color: white;">©2019 All Rights Reserved.</p>
+                </div>
+              </div>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Connect2India</h1>
+                  <p>©2018 All Rights Reserved.</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      </div>
+
+<div class="col-sm-6 rcpanel rcpanelleft2">
+
+        <div class="loginleft" style="margin: 100px 55px;">
+          <h2 style="color: white;font-size: 28px;">Login to C2I Global Trade Panel</h2>
+            <li class="w3">
+             <div style="width: 60px;">
+              <button class="icon"> <i class="fa fa-search"></i> </button>
+              </div>
+               <span class="w3-write">Verified Counterparts</span>
+                <br>
+               <span class="w3-write2">Genuine importers / exporters for your products</span> 
+             </li>
+
+             <li class="w3">
+              <div style="width: 60px;"> 
+                <button class="icon"> <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                 </button> 
+               </div>
+                <span class="w3-write">Worldwide Market Analysis</span> 
+                <br> 
+                <span class="w3-write2">Market demand and analysis for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-share"></i> </button>
+                </div>
+                  <span class="w3-write">Global Trade Resources</span>
+                  <br>
+                  <span class="w3-write2">Trade resources and tools for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+                </div>
+                <span class="w3-write">Arrange Export Orders</span>
+                 <br> 
+                <span class="w3-write2"> Support for executing your export / import orders</span>
+               </li>
+
+               <li class="w3">
+                <div style="width: 60px;">
+                 <button class="icon"> <i class="fa fa-check-square-o" aria-hidden="true"></i> </button>
+                </div>
+                 <span class="w3-write">Genuine Leads</span>
+                  <br>
+                 <span class="w3-write2">Buyer / Supplier leads specific to your products</span> 
+               </li>
+        </div>
+
+    </div>
+
+
+      
+    </div>
+    
+  </div>
+</div>
+</div>

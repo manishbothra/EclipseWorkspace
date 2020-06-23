@@ -1,0 +1,590 @@
+[ {
+  "subProducts" : [ {
+    "subProducts" : [ "Calibrated Iron Ore", "Ilmenite Sand", "Lead Ores", "Fly Ash Powder", "Bauxite Ore", "Bentonite" ],
+    "name" : "Minerals and Ores"
+  }, {
+    "subProducts" : [ "Rolled Steel", "Steel Hollow Sections", "Stainless Steel Blanks", "Die Steels", "HCHCR Steel", "Stainless Steel Board" ],
+    "name" : "Steel & Stainless Steel Products"
+  }, {
+    "subProducts" : [ "Ferro Niobium", "Alloy Steel Plates", "Silicon Bronze", "Ferro Silicon", "Stainless Steel Alloys", "Alloy Powders" ],
+    "name" : "Iron & Copper Alloys"
+  }, {
+    "subProducts" : [ "Antimony Metal", "Metal Channels", "Cadmium Metal", "Coated Aluminium Strip", "Lead Powder", "Blue Metal" ],
+    "name" : "Metal & Metal Made Products"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/metals,-alloys-&-minerals.jpg",
+  "name" : "Metals, Alloys & Minerals"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Cotton Waste", "Knitted Fabrics", "Wool Waste", "Cotton Fabric", "Silk Waste", "Monofilament Fabric" ],
+    "name" : "Apparel Fabrics & Dress Materials"
+  }, {
+    "subProducts" : [ "Boys Jacket", "Boys Shirts", "Boys Trousers" ],
+    "name" : "Kids Dresses"
+  }, {
+    "subProducts" : [ "Mens Trousers", "Shirt", "Nightwear" ],
+    "name" : "Unisex Clothing"
+  }, {
+    "subProducts" : [ "Mens Coat", "Mens Wear", "Men Shirts" ],
+    "name" : "Men Shirts, Jeans & Clothing"
+  } ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/apparel-&-garments.jpg",
+  "name" : "Apparel & Garments"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Palm Oil", "Mustard Oil", "Hydrogenated Vegetable Oil", "Edible Oil", "Palm Kernel Oil", "Olive Oil" ],
+    "name" : "Edible Oil & Allied Products"
+  }, {
+    "subProducts" : [ "Ginger Paste", "Turmeric", "Cinnamon", "Organic Salt", "Rock Salt", "Spices" ],
+    "name" : "Cooking Spices and Masala"
+  }, {
+    "subProducts" : [ "Onion", "Beetroot", "Mushroom", "Ginger", "Chilli", "Cucumber" ],
+    "name" : "Fresh, Dried & Preserved Vegetables"
+  }, {
+    "subProducts" : [ "Buckwheat", "Agar Agar", "Coconut Powder", "Wheat Flour", "Jaggery", "Barley" ],
+    "name" : "Cereals & Food Grains"
+  } ],
+  "imageUrl" : "/global/images/product-categories/9.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/food-&-beverages.jpg",
+  "name" : "Food & Beverages"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Mood Light", "Aluminum Lantern", "Iron Hanging Lanterns", "Glass Ceiling Light", "Lantern Light", "Wall Mount Lamp" ],
+    "name" : "Lantern, Chandeliers & Hanging Lamps"
+  }, {
+    "subProducts" : [ "Laboratory Glassware", "Cut Glass", "Glass Mirrors", "Glass Rods", "Glass Brick" ],
+    "name" : "Mirrors and Glassware"
+  }, {
+    "subProducts" : [ "Rope Light", "Iron Lamps", "Black Light Lamps", "Colour Light", "Chandelier Lamp", "Hurricane Lanterns" ],
+    "name" : "Decorative Light, Lamp & Lamp Shades"
+  }, {
+    "subProducts" : [ "Antique Gramophones", "Postage Stamps", "Gramophone", "Wooden Gramophone" ],
+    "name" : "Antique Coins, Stamps & Collectibles"
+  } ],
+  "imageUrl" : "/global/images/product-categories/16.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/handicrafts-&-decoratives.jpg",
+  "name" : "Handicrafts & Decoratives"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Laboratory Reagents", "Coating Powder", "Sodium", "Whiting Powder", "Culture Media", "Paraformaldehyde" ],
+    "name" : "Chemical Reagents & Catalysts"
+  }, {
+    "subProducts" : [ "Vinegar", "Modified Starch", "Cocoa Powder", "Baking Powder", "Fructose" ],
+    "name" : "Flavours & Aromatics"
+  }, {
+    "subProducts" : [ "Acrylic Polymers", "Gum Resin", "PET Resin", "Polyurethane Resin", "Petroleum Resins" ],
+    "name" : "Natural and Synthetic Resins"
+  }, {
+    "subProducts" : [ "Silica Gel", "Ammonium Hydroxide", "Black Powder", "Manganese Dioxide Powder", "Formaldehyde", "Calcined Lime" ],
+    "name" : "Industrial Chemicals & Supplies"
+  } ],
+  "imageUrl" : "/global/images/product-categories/19.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/chemicals,-dyes-&-solvents.jpg",
+  "name" : "Chemicals, Dyes & Solvents"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Ribbons", "Plastic Bobbins" ],
+    "name" : "Motifs, Badges, Emblems & Lanyards"
+  }, {
+    "subProducts" : [ "Pin Bar", "Steel Heald", "Rapier Weaving Loom", "Autoconer", "Shuttleless Loom", "Schlafhorst Autoconer" ],
+    "name" : "Garment & Textile Industrial Tools"
+  }, {
+    "subProducts" : [ "Sewing Machine Needle", "Plastic Bobbins", "Sewing Needles" ],
+    "name" : "Embroidery Needles & Accessories"
+  }, {
+    "subProducts" : [ "Carbon Fiber", "Jute Yarn", "Coir Fibre", "Filament Yarn", "Synthetic Yarn", "Cotton Waste" ],
+    "name" : "Yarns & Threads"
+  } ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/textiles,-yarn-&-fabrics.jpg",
+  "name" : "Textiles, Yarn & Fabrics"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Positive Pressure Module", "Air Cooling Unit", "Mold Temperature Controller", "Air Chiller", "Ceiling Cassette", "Panel Air Conditioner" ],
+    "name" : "Industrial Air Conditioner & Devices"
+  }, {
+    "subProducts" : [ "FRP Ducts", "Stainless Steel Olets", "Socket Fittings", "Pipe Caps", "Stainless Steel Hex Nipples", "Orifice Plates" ],
+    "name" : "Pipe Fittings and Plumbing Fittings"
+  }, {
+    "subProducts" : [ "Airport Luggage Carts", "Concrete Trolley", "Heavy Duty Cart", "Tray Rack Trolley", "Shopping Carts", "Wheeled Cart" ],
+    "name" : "Carts, Dollies & Trolleys"
+  }, {
+    "subProducts" : [ "Back Pressure Regulators", "Tank Valves", "Foot Valves", "Diaphragm Valves", "Flush Bottom Valve", "Bronze Valves" ],
+    "name" : "Industrial Valves & Valve Fittings"
+  } ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/industrial-supplies.jpg",
+  "name" : "Industrial Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Steel Nuts", "Hex Coupling Nut", "Nut Locks", "Stainless Steel Wing Nut", "Steel Hex Coupling Nut", "Brass Lock Nuts" ],
+    "name" : "Alloy, Metal and Industrial Nuts"
+  }, {
+    "subProducts" : [ "Hex Head Screws", "Washer Head Screws", "Screw Anchors", "Oval Head Screw", "Plated Screws", "Captive Screws" ],
+    "name" : "Alloy, Metal and Machine Screws"
+  }, {
+    "subProducts" : [ "Stainless Steel Anchor Bolts", "Stainless Steel Stud Bolts", "Square Head Bolts", "Stainless Steel Hex Bolt", "Stainless Steel Bolts", "Brass Bolts" ],
+    "name" : "Alloy, Metal and High Strength Bolts"
+  }, {
+    "subProducts" : [ "Anchor Rod", "Hexagonal Spacer", "Wall Plug", "Bronze Fasteners", "High Strength Fasteners", "Snap Ring" ],
+    "name" : "Nails, Fasteners, Rivets & Shackles"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/mechanical-parts-&-spares.jpg",
+  "name" : "Mechanical Parts & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Rotary Limit Switches", "Breaker Switch", "Magnetic Proximity Switches", "Emergency Stop Push Button", "Magnetic Float Switch", "Micro Limit Switch" ],
+    "name" : "Switches & Switch Boxes"
+  }, {
+    "subProducts" : [ "USB Extension Cable", "Fire Survival Cables", "Coil Cord", "PVC Flat Cable", "PVC Sheathed Flexible Cable", "PVC Insulated Wire" ],
+    "name" : "Electrical Cables & Wires"
+  }, {
+    "subProducts" : [ "Radiant Heaters", "Immersion Water Heater", "PTC Heaters", "Rod Heater", "Titanium Heater", "Hopper Heaters" ],
+    "name" : "Heater, Thermostat & Heating Devices"
+  }, {
+    "subProducts" : [ "Brass Electrical Components", "Switch Board Sheets", "PVC Conduit Fitting", "Cable Channel", "Copper Plated Electrode", "Electrodes" ],
+    "name" : "Electric Fittings & Components"
+  } ],
+  "imageUrl" : "/global/images/product-categories/4.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/electronics-&-electrical.jpg",
+  "name" : "Electronics & Electrical"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Potato Harvester", "Paddy Harvester", "Drip Irrigation Systems", "Chaff Cutter", "Potato Planter", "Rain Gun Sprinkler" ],
+    "name" : "Irrigation and Harvesting Machines"
+  }, {
+    "subProducts" : [ "Paddy Rice", "Oil Seeds", "Grain Seed", "Sunflower Seeds", "Areca Leaf", "Seeds" ],
+    "name" : "Seeds and Plantation Products"
+  }, {
+    "subProducts" : [ "Coconut Shell", "Natural Gum", "Guar Gum", "Coir Fibre", "Coffee Husk", "Coconut Shell Powder" ],
+    "name" : "Coir and Agro Products"
+  }, {
+    "subProducts" : [ "Seed Drills", "Hydraulic Reversible Plough", "Grain Dryers", "Heavy Duty Rigid Tiller", "Power Tiller", "Rice Huller Spare Parts" ],
+    "name" : "Farming Tools, Equipment & Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/7.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/agriculture-&-farming.jpg",
+  "name" : "Agriculture & Farming"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Stone Tiles & Floorings"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Marble & Stone Artifacts"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Cobbles, Pebbles & Pavings"
+  }, {
+    "subProducts" : [ "Slate Stone", "Flagstone", "Natural Stone", "Granite Stone", "Basalt Stone", "Artificial Stone" ],
+    "name" : "Granite, Marble, Sandstone & Others"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/marble,-granite-&-stones.jpg",
+  "name" : "Marble, Granite & Stones"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "LAN Cable", "Ethernet Switch", "Video Server", "Computer Servers", "Mobile Data Terminal", "Storage Server" ],
+    "name" : "Router, Cables & Networking Devices"
+  }, {
+    "subProducts" : [ "Multimedia Headphone", "Computer Chassis", "USB Speaker", "Keyboard", "Computer Speakers", "Computer Headphone" ],
+    "name" : "Computer Hardware & Peripherals"
+  }, {
+    "subProducts" : [ "Digital Card" ],
+    "name" : "Computer PCI Cards, Cables & Modules"
+  }, {
+    "subProducts" : [ "Notebook Computers", "Palmtop Computers", "Mini Computers", "Embedded Computers", "Single Board Computers", "Branded Computers" ],
+    "name" : "Laptops, PC, Mainframes & Computers"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/computer-&-it-solutions.jpg",
+  "name" : "Computer & IT Solutions"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminium Trays", "Aluminium Trivet", "Plastic Plate", "Iron Trays", "Bowl" ],
+    "name" : "Dinnerware and Serving Utensils"
+  }, {
+    "subProducts" : [ "Industrial Burners", "Oil Burner", "Stove", "Boiler Burners", "Burner Controllers", "Hot Plates" ],
+    "name" : "Induction Cooktops, Hobs & Burners"
+  }, {
+    "subProducts" : [ "Vacuum Flask", "Stainless Steel Cans", "Aluminium Milk Cans" ],
+    "name" : "Food Storage Boxes & Containers"
+  }, {
+    "subProducts" : [ "Paper Plate", "Leaf Plate", "Aluminum Foil Containers" ],
+    "name" : "Disposable Cutlery and Crockery"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/kitchen-utensils-&-appliances.jpg",
+  "name" : "Kitchen Utensils & Appliances"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Chamois Leather" ],
+    "name" : "Raw and Processed Leather"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Animal Clothing & Accessories"
+  }, {
+    "subProducts" : [ "Leather Accessories" ],
+    "name" : "Leather Goods & Accessories"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Leather Bags & Handbags"
+  } ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/leather-products.jpg",
+  "name" : "Leather Products"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Vibration Monitoring System", "Temperature Calibrator", "Process Indicator", "Rate Indicator", "Programmable Digital Timer", "Process Calibrator" ],
+    "name" : "Calibrators & Monitoring Systems"
+  }, {
+    "subProducts" : [ "Viscosity Meters", "Mercury Thermometers", "Vortex Flowmeters", "Wall Thermometer", "Flow Measurement Systems", "Soil Thermometer" ],
+    "name" : "Flowmeters & Temperature Indicators"
+  }, {
+    "subProducts" : [ "Busbar Conductor System", "Assembly Automation Equipment", "Variable Speed Motor Drives", "Emission Control System", "Furnace Control System", "Automation Equipment" ],
+    "name" : "Instrumentation & Control Equipments"
+  }, {
+    "subProducts" : [ "Force Measuring Instruments", "Salinity Meter", "Digital Light Meter", "Coating Inspection Equipment", "Pressure Meters", "TDS Meter" ],
+    "name" : "Measuring Equipments & Instruments"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/lab-instruments-&-supplies.jpg",
+  "name" : "Lab Instruments & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Car Mat", "Car Power Inverter", "Rear View Camera", "Remote Control Key Fob", "Vehicle Scanner", "Car Scanner" ],
+    "name" : "Automobile Interiors & Accessories"
+  }, {
+    "subProducts" : [ "Mini Truck", "Boom Trucks", "Mining Trucks", "Dumper Parts", "Material Handling Truck", "Lorry Loader Spare Parts" ],
+    "name" : "Off Road & Earth Moving Vehicles"
+  }, {
+    "subProducts" : [ "Cable Drum Lifting Jacks", "Hydraulic Car Lift", "Tyre Machine", "Car Washer", "Four Post Lift", "Hydraulic Motorcycle Lift" ],
+    "name" : "Automotive Repair Tools & Equipments"
+  }, {
+    "subProducts" : [ "Air Grease Gun", "Grease Gun", "Grease Nipples", "Oil Circulating System", "Grease Machine", "Dose Feeders" ],
+    "name" : "Lubrication Systems and Equipment"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/automobile,-parts-&-spares.jpg",
+  "name" : "Automobile, Parts & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Steel Rolling Mill Parts", "Automatic Milling Machine", "Lump Breaker", "Emery Stone", "Rolling Mill Equipment", "Milling Tools" ],
+    "name" : "Milling & Grinding Tools"
+  }, {
+    "subProducts" : [ "Heavy Duty CNC Lathe Machine", "CNC Lathe Machine", "CNC Trainer Lathe Machine", "Bench Lathes", "Flat Bed CNC Lathe", "CNC Bender" ],
+    "name" : "CNC Machines, Lathes & Tools"
+  }, {
+    "subProducts" : [ "Cordless Drill", "Heavy Duty Angle Grinder", "Die Grinder", "Bench Grinder", "Radial Drill", "Rotary Tool" ],
+    "name" : "Drills, Grinders, Saws & Power Tools"
+  }, {
+    "subProducts" : [ "Hemming Machine", "Saddle Stitching Machines", "Bag Stitching Machine", "Overlock Machine", "Embroidery Sewing Machine", "Single Needle Sewing Machine" ],
+    "name" : "Sewing,Knitting& Embroidery Machine"
+  } ],
+  "imageUrl" : "/global/images/product-categories/11.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/hand-&-machine-tools.jpg",
+  "name" : "Hand & Machine Tools"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Used Tyre", "Tyres", "Inner Tubes", "Car Wheel" ],
+    "name" : "Tyre, Tube & Flaps"
+  }, {
+    "subProducts" : [ "Bicycle" ],
+    "name" : "Kids, Racing Bicycles and Rickshaws"
+  }, {
+    "subProducts" : [ "Handlebar" ],
+    "name" : "Bicycle Spare Parts"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/bicycle,-rickshaw-&-spares.jpg",
+  "name" : "Bicycle, Rickshaw & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Data Transmission Cable", "GSM Router", "Wireless Access Point", "Portable Data Terminal", "Satellite System", "Dual Band Repeater" ],
+    "name" : "Telecommunication Equipment & Parts"
+  }, {
+    "subProducts" : [ "Audio Transmitter", "Voice Recording Device", "Wireless Transmitter", "Microphone Stands", "Dynamic Microphone", "Audio Switch" ],
+    "name" : "Audio Mixer, Recorder & Transmitter"
+  }, {
+    "subProducts" : [ "Telecom Tower", "Horn Antenna", "Parabolic Antenna", "Dipole Antenna", "GPS Antenna", "Grid Antenna" ],
+    "name" : "Antennas, Wifi & Communication Tower"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/telecom-equipment-&-goods.jpg",
+  "name" : "Telecom Equipment & Goods"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Laparoscopic LED Light Source", "Dental Lamp", "Medical Headlight", "Fibre Optic Light Sources", "Analog LED Light Source", "Digital Cold Light Source" ],
+    "name" : "Hospital & Medical Lights"
+  }, {
+    "subProducts" : [ "Depyrogenation Tunnels", "Tablet Punching Machine", "Tilting Device", "Pharmaceutical Machinery Parts", "Pharmaceutical Scoop", "Pharmaceutical Filters" ],
+    "name" : "Pharmaceutical Machinery & Equipment"
+  }, {
+    "subProducts" : [ "Hydrogen Gas", "Carbon Dioxide", "Acetylene Gas", "Natural Gas", "Nitrogen Gas", "Oxygen Gas" ],
+    "name" : "Natural, Industrial & Medical Gases"
+  }, {
+    "subProducts" : [ "Hot Air Oven", "Carbon Dioxide Incubator", "Heat Chamber" ],
+    "name" : "Medical Sterilizers & Autoclaves"
+  } ],
+  "imageUrl" : "/global/images/product-categories/15.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/",
+  "name" : "Medical & Healthcare"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Assembly Line Machines", "Tube End Forming Machine", "Paper Plate Making Machine", "Non Woven Bag Making Machine", "Vacuum Suction Machine", "Glass Washing Machine" ],
+    "name" : "Machines & Equipments"
+  }, {
+    "subProducts" : [ "FRP Chimney", "Gold Melting Electric Furnace", "Rotary Hearth Furnaces", "Electrode Drying Oven", "Roller Hearth Furnaces", "High Temperature Furnaces" ],
+    "name" : "Industrial Furnaces & Ovens"
+  }, {
+    "subProducts" : [ "EOT Cranes", "Crane Pulley", "Girder Crane", "Crane Control Equipments", "Crane Trolley", "Underslung Crane" ],
+    "name" : "Cranes, Forklift & Lifting Machines"
+  }, {
+    "subProducts" : [ "Screen Printing Accessories", "Handheld Printer", "Digital Plotter", "Flat Board Printer", "Rotogravure Printing Rollers", "Plate Exposure Machine" ],
+    "name" : "Printing Machinery & Equipment"
+  } ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/industrial-plants-&-machinery.jpg",
+  "name" : "Industrial Plants & Machinery"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Barcode", "EAS Tag" ],
+    "name" : "Barcode, Stickers & Luggage Tags"
+  }, {
+    "subProducts" : [ "Coated Paper Board", "Cardboard", "Sanitary Paper" ],
+    "name" : "Paper Bags, Gifts & Paper Products"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Greeting & Invitation Cards"
+  }, {
+    "subProducts" : [ "Uncoated Paper", "Waste Paper", "Kraft Paper", "Paper Printing Material", "Paper Pulp", "Wood Pulp" ],
+    "name" : "Paper & Paper Made Products"
+  } ],
+  "imageUrl" : "/global/images/product-categories/26.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/paper-&-paper-products.jpg",
+  "name" : "Paper & Paper Products"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Fibre Mat" ],
+    "name" : "Door Mats & Bath Mats"
+  }, {
+    "subProducts" : [ "Aluminium Blind" ],
+    "name" : "Wallpaper, Blinds And Accessories"
+  }, {
+    "subProducts" : [ "Welding Curtains", "Valance Curtain" ],
+    "name" : "Drapes & Curtains"
+  }, {
+    "subProducts" : [ "Electric Blanket" ],
+    "name" : "Blankets & Quilts"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/home-textile-&-furnishing.jpg",
+  "name" : "Home Textile & Furnishing"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminum Boxes", "Aluminum Cases", "Steel Containers", "Tin Box", "Metal Boxes", "Stainless Steel Cans" ],
+    "name" : "Aluminium,Tin Can & Metal Containers"
+  }, {
+    "subProducts" : [ "Seal Cap", "Aluminium Seal", "Corks", "Crown Corks", "Aluminium Cap" ],
+    "name" : "Packaging Caps & Seals"
+  }, {
+    "subProducts" : [ "Pillow Pack Machine", "Glue Applicators", "Film Machinery", "Flexo Printer Slotter Machine", "Film Lamination Machine", "Thermal Lamination Machine" ],
+    "name" : "Packaging & Lamination Machinery"
+  }, {
+    "subProducts" : [ "Plastic Sealers", "Table Top Strapping Machine", "Tong Sealing Machine", "Bag Sealing Machine", "Blister Sealing Machine", "Foot Sealer" ],
+    "name" : "Strapping & Sealing Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/17.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/packaging-machines-&-goods.jpg",
+  "name" : "Packaging Machines & Goods"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Steel Baskets" ],
+    "name" : "Buckets, Mugs & Storage Bins"
+  }, {
+    "subProducts" : [ "Wall Brushes", "Cleaning Cloth" ],
+    "name" : "Brooms, Mops & Dusters"
+  }, {
+    "subProducts" : [ "Stainless Steel Spider Fitting", "Aluminium Extrusion Sections", "Aluminium Channels", "Aluminum Angle", "Drum Handle", "Aluminum Section" ],
+    "name" : "Brackets, Holder & Hardware Fittings"
+  }, {
+    "subProducts" : [ "Percussion Instruments", "Keyboard Instruments", "Musical Instrument Bag", "Musical Instrument Parts" ],
+    "name" : "Musical Equipment & Accessories"
+  } ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/housewares-&-supplies.jpg",
+  "name" : "Housewares & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Ayurvedic, Herbal Oils and Cosmetics"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Natural & Herbal Henna"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Ayurvedic & Herbal Health Supplement"
+  }, {
+    "subProducts" : [ "Natural Honey" ],
+    "name" : "Ayurvedic,Herbal Products & Medicine"
+  } ],
+  "imageUrl" : "/global/images/product-categories/10.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/herbal-&-ayurvedic-product.jpg",
+  "name" : "Herbal & Ayurvedic Product"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Soap Powder", "Detergent Cake" ],
+    "name" : "Soaps, Detergent Powder & Cakes"
+  }, {
+    "subProducts" : [ "Hair Pins", "Petroleum Jelly", "Lanolin", "Human Hair", "Compact Powder" ],
+    "name" : "Personal Care & Cosmetic Products"
+  }, {
+    "subProducts" : [ "Hair Pins", "Human Hair" ],
+    "name" : "Cosmetics, Hair & Beauty Products"
+  }, {
+    "subProducts" : [ "Electric Shaver", "Hair Dryer" ],
+    "name" : "Salon, Spa Kits & Equipments"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/cosmetics-&-personal-care.jpg",
+  "name" : "Cosmetics & Personal Care"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Film Projector", "Business Projector", "Portable Projector", "LCD Projector Lamp", "Projector Stand", "Video Projector" ],
+    "name" : "Presentation Boards & Accessories"
+  }, {
+    "subProducts" : [ "Alphabet Stencil", "Drawing Board" ],
+    "name" : "Crayon, Painting Brush & Craft Tools"
+  }, {
+    "subProducts" : [ "Globe", "Binder Clip", "Paper Clips" ],
+    "name" : "Office Stationery & Calculator"
+  }, {
+    "subProducts" : [ "Inkjet Ink", "Cartridge", "Toner" ],
+    "name" : "Printing Inks & Other Supplies"
+  } ],
+  "imageUrl" : "/global/images/product-categories/6.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/books-&-stationery.jpg",
+  "name" : "Books & Stationery"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Glass Beads", "Stone Beads", "Glass Stone" ],
+    "name" : "Glass, Gem Stone, Wood & Other Beads"
+  }, {
+    "subProducts" : [ "Pendant" ],
+    "name" : "Costume & Fashion Jewelry"
+  }, {
+    "subProducts" : [ "Precious Stone", "cubic zirconia" ],
+    "name" : "Precious Stones and Gemstones"
+  }, {
+    "subProducts" : [ "Gold Melting Furnace", "Hydraulic Coining Press" ],
+    "name" : "Jewellery Making Tools & Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/gems,-jewelry-&-astrology.jpg",
+  "name" : "Gems, Jewelry & Astrology"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Perimeter Guards", "Steel Frame" ],
+    "name" : "Door, Window Frame, Panel & Shutters"
+  }, {
+    "subProducts" : [ "Security Steel Door", "Rolling Doors", "Vault Doors", "Stainless Steel Security Door", "Security Window" ],
+    "name" : "Doors and Windows"
+  }, {
+    "subProducts" : [ "Iron Rack", "Iron Table" ],
+    "name" : "Metal Furniture Suppliers"
+  }, {
+    "subProducts" : [ "Glass Table", "Lamp Table" ],
+    "name" : "Living Room & Plastic Furniture"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/furniture-&-supplies.jpg",
+  "name" : "Furniture & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Plastic Footwear" ],
+    "name" : "Men, Women & Kids Footwear"
+  }, {
+    "subProducts" : [ "Bow Ties" ],
+    "name" : "Neckties, Bow Ties & Tie Accessories"
+  }, {
+    "subProducts" : [ "Plastic Pin", "Textile Accessories", "Garment Accessories" ],
+    "name" : "Cufflink, Buttons, Zippers & Buckles"
+  }, {
+    "subProducts" : [ "Leather Sole" ],
+    "name" : "Footwear Laces, Insole & Accessories"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/fashion-accessories-&-gear.jpg",
+  "name" : "Fashion Accessories & Gear"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Fishing Equipment", "Fishing Nets" ],
+    "name" : "Camping, Fishing & Hunting Goods"
+  }, {
+    "subProducts" : [ "Swimming Pool Heat Pump", "Pool Heating System", "Swimming Pool Heaters" ],
+    "name" : "Swimming Pool & Water Sport Goods"
+  }, {
+    "subProducts" : [ "Rope Ladder" ],
+    "name" : "Adventure Sporting & Trekking Goods"
+  }, {
+    "subProducts" : [ "Sports Equipment" ],
+    "name" : "Sports Training Aids & Equipments"
+  } ],
+  "imageUrl" : "/global/images/product-categories/3.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/sports-goods,-toys-&-games.jpg",
+  "name" : "Sports Goods, Toys & Games"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Electronic Safes", "Wireless Alarm System", "Electronic Alarm Systems", "Door Phone", "Wireless Intruder Alarm", "Home Monitoring System" ],
+    "name" : "Security Alarms, Detectors & Devices"
+  }, {
+    "subProducts" : [ "EAS Security Tag", "Hydraulic Car Parking System", "EAS Tag", "Metal Detector Gate", "Transponder Keys", "Stun Guns" ],
+    "name" : "Security & Inspection Devices"
+  }, {
+    "subProducts" : [ "Fingerprint Scanners", "Fingerprint Device", "Smart Card System", "Biometric Fingerprint Scanners", "Voice Recognition System", "Biometric Devices" ],
+    "name" : "Biometrics & Access Control Devices"
+  }, {
+    "subProducts" : [ "Number Plate Reader Camera", "CCTV SMPS", "CCTV Video Camera", "CCTV", "CCTV Power Supply", "Night Vision Camera" ],
+    "name" : "CCTV, Surveillance Systems and Parts"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/security-systems-&-services.jpg",
+  "name" : "Security, Safety System & Service"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Metal Case", "Bag Buckle", "Carry Bag" ],
+    "name" : "Carry Bags and Multiutility Bags & Pouches"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Briefcase, Portfolio & Laptop Bags"
+  }, {
+    "subProducts" : [ "Handbags" ],
+    "name" : "Fashion & Designer Bags"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Cotton, Jute & Canvas Bags"
+  } ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/bags,-belts-&-wallets.jpg",
+  "name" : "Bags, Belts & Wallets"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Maintenance Lifts", "Chair Lift", "Elevator Controller", "Wall Mounted Lifts", "Platform Lifts", "Ropeway" ],
+    "name" : "Elevators & Escalators"
+  }, {
+    "subProducts" : [ "Pad Bolt", "Barrel Bolt", "Indicator Bolt", "Overhead Door Operator", "Locking Bolts", "Stainless Steel Tower Bolt" ],
+    "name" : "Door & Window, Hinges & Fittings"
+  }, {
+    "subProducts" : [ "Ceramic Floor Tiles", "Ceramic Wall Tiles", "Ceramic Glazed Tiles", "Glazed Wall Tiles", "Floor Coverings", "Tile Accessories" ],
+    "name" : "Ceramic, Glass and Vitrified Tiles"
+  }, {
+    "subProducts" : [ "Suspended Platform", "Lump Crusher", "Lime Stone Crusher", "Portable Platforms", "Facade Access System", "Personnel Lifts" ],
+    "name" : "Building & Construction Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "imageLink" : "https://static.connect2india.com/c2icd/product_resources/images/building-&-construction.jpg",
+  "name" : "Building & Construction"
+} ]

@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+/home/manishbothra/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2929637887.index
+2875977922.index
+2615467027.index
+3193827987.index
+79075491.index
+911765585.index
+1414584253.index
+3700156791.index
+1688809419.index

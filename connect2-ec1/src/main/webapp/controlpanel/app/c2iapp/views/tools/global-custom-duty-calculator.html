@@ -1,0 +1,241 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Global Custom Duty Calculator</h1>
+			<p style="font-weight: 500;font-size: 14px;">Get custom duties, taxes and tariffs for products from any country to any country in the world, all at one place.</p>
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-md-12 custom-calculator">
+			<form class="x_panel" name="customDutyForm">
+				<div class="container">
+					<section class="calculator-form-section">
+						<ul class="margins">
+							<li>
+								<div class="row">
+									
+									<div class="form-fields">
+										<label class="label">Country Of Import</label>
+										<select class="form-control" type="text" name="terma" ng-model="tools.globalCustomDutyCalc.formData.country1" ng-change="changeTab()" style="border-radius: 0px;" required>
+										<option value="">Select Country</option>
+										<option ng-repeat="val in countries | orderBy" value="{{val}}">{{val}}</option>
+										</select>
+									</div>
+									
+									<div class="form-fields">
+									<label class="label">Country of Export</label>
+									<select class="form-control" type="text" name="terma" ng-model="tools.globalCustomDutyCalc.formData.country2" ng-change="changeTab()" style="border-radius: 0px;" required>
+									<option value="">Select Country</option>
+									<option ng-repeat="val in countries | orderBy" value="{{val}}">{{val}}</option>
+									</select>
+									</div>
+									
+									<div class="form-fields">
+									<label class="label">Product classification number</label>
+									<input class="form-control" type="text" name="terma" ng-model="tools.globalCustomDutyCalc.formData.productCode" ui-autocomplete="productAutoComplete" required placeholder="Enter HS code">
+									<a style="float:right;" href="javascipt:void(0)" ng-click="openHSModal()" target="_self">Search Product in {{tools.customDutyCalc.formData.country1}} HS Classification</a>
+									</div>
+												
+									<div class="submit-button">
+										<button type="submit" class="form-submit-button"  ng-click="tools.globalCustomDutyCalc.getCustomDuties(customDutyForm.$valid);">FIND</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+					
+					</section>
+					
+								
+				</div>
+					<p style="color:red;">{{cdMessage}}</p>
+			</form>
+			
+			<div class="x_panel calculator-result-section" ng-repeat="(key, value) in DutiesData" ng-if="key=='MFN'">
+				<h1>Tariff</h1>
+				<h3>{{tools.globalCustomDutyCalc.formData.country2}}&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;{{tools.globalCustomDutyCalc.formData.country1}}</h3>
+				<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in value">
+
+					<tr>
+						<th>HS Code</th>
+						<th>{{pro.productCode}}</th>
+					</tr>
+
+					<tr>
+						<th>Description</th>
+						<th>{{pro.productName}}</th>
+					</tr>
+
+					<tr>
+						<th>Duty (%)</th>
+						<th>{{pro.basicDuty}}</th>
+					</tr>
+
+					<!-- <tr>
+						<th>Tariff</th>
+						<th>{{pro.tariff}}</th>
+					</tr> -->
+			
+				</table>
+			</div>
+				
+			<div class="x_panel calculator-result-section" ng-repeat="(key, value) in DutiesData" ng-if="key=='NON-MFN'">
+				<h1>Tariff</h1>
+				<h3>{{tools.globalCustomDutyCalc.formData.country2}}&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;{{tools.globalCustomDutyCalc.formData.country1}}</h3>
+				<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in value">
+
+					<tr>
+						<th>HS Code</th>
+						<th>{{pro.productCode}}</th>
+					</tr>
+
+					<tr>
+						<th>Description</th>
+						<th>{{pro.productName}}</th>
+					</tr>
+
+					<tr>
+						<th>Duty (%)</th>
+						<th>{{pro.basicDuty}}</th>
+					</tr>
+
+					<!-- <tr>
+						<th>Tariff</th>
+						<th>{{pro.tariff}}</th>
+					</tr> -->
+					
+					<tr>
+						<th>Tariff Details</th>
+						<th>{{pro.tariffDetails}}</th>
+					</tr>
+				
+				</table>
+			</div>
+						
+			<div class="x_panel calculator-second">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-3 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-cloud"></i></span>
+								<div>
+									<span class="s1">Updated Real-time Data</span>
+									<br>
+									<span class="s2">Trade Tariffs levied upon goods across national borders based on real-time trade data</span>
+								</div>
+							</li>
+						</div>
+
+						<div class="col-sm-4 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-star-o"></i></span>
+								<div>
+									<span class="s1">Anywhere to Anywhere</span>
+									<br>
+									<span class="s2">Custom Duties for products being shipped to large geographical distances, across the world retrieved in near real time.</span>
+								</div>
+							</li>
+						</div>
+
+						<div class="col-sm-3 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-bar-chart"></i></span>
+								<div>
+									<span class="s1">Wide Range of products</span>
+									<br>
+									<span class="s2">Get duties and taxes not only for specified HS Codes, but also for wide range of related products</span>
+								</div>
+							</li>
+						</div>
+					</div>
+
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+<div class="modal fade popupform" id="hscode" role="dialog" data-ng-cloak>
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="border-radius: 0; background: #eeeeee;width: 800px;margin-left: -120px;    padding-bottom: 50px;">
+            <button type="button" class="close" ng-click="closeHSModal();" data-dismiss="modal" style="margin-right: 20px; margin-top: 20px; color: black">&times;</button>
+            <!-- <h3 class="modal-title" id="myModalLabel" style="font-size: 1.17em;font-family: 'open_sansregular'">HS Classification</h3> -->
+			<div class="container">
+			<div class="col-md-8">
+			<div class="tool" style="padding: 5px 20px 1px 21px;">
+			<h1>{{dutyForm.country1}} HS CLASSIFICATION</h1>
+				<div class="row">
+				
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by code:</h3>
+							<p>Enter the first 2 or 4 digits of H.S code</p>
+							<select ng-model="customDutyFormData.sector" ng-change="getSectorProducts(customDutyFormData.sector);" style="width: 90%;">
+							<option value="">Select Sector</option>
+							<option ng-repeat="sec in sectrosData" value="{{sec.name}}">{{sec.name}}</option>
+							</select>
+							<select ng-model="customDutyFormData.chapter" ng-change="getChapterProducts(customDutyFormData.chapter);" style="width: 90%;">
+							<option value="">Select Chapter</option>
+							<option ng-repeat="sec in sectorProducts" value="{{sec.value}}">{{sec.name}}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by keyword:</h3>
+							<p>Describe your product:</p>
+							<input placeholder="Enter product name" class="form-control" type="text" name="terma" ng-model="customDutyFormData.name"  style="border-radius: 0px;"> 
+							<a style="background: #f00;" href="javascript:void(0)" ng-click="getProductsByNameCode('name');">Search</a>
+						</div>
+					</div>
+					
+					<div class="col-md-4 toolBoxes">
+						<div class="innerBox">
+							<h3>Search by code:</h3>
+							<p>Enter the first 2 or 4 digits of H.S code</p>
+							<input placeholder="Enter product Code" class="form-control" type="text" name="terma" ng-model="customDutyFormData.code"  style="border-radius: 0px;"> 
+							<a style="background: #f00;" href="javascript:void(0)" ng-click="getProductsByNameCode('code');">Search</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+			</div>
+			
+			<div class="outputTable" ng-if="customDutyResult==1">
+
+		        <p>Results :</p>
+		
+		        <table width="100%" border="1" class=" table table-bordered table-striped" style=" font-family: 'open_sansregular';">
+		            <tr>
+		
+		                <th>Product Code</th>
+		                <th>Product Name</th>
+		                <th></th>
+		            </tr>
+		
+		            <tr ng-repeat="pro in customDutyResultProducts">
+		                <td>{{pro.productCode}}</td>
+		                <td>{{pro.productName}}</td>
+		                <td><button class="btn btn-primary" ng-click="selectCode(pro.productCode)">Select</button></td>
+		            </tr>
+		
+		        </table>
+		
+		
+		
+		    </div>
+			
+        </div>
+    </div>
+</div>
+	
+</div>

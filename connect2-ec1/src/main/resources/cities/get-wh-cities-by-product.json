@@ -1,0 +1,426 @@
+[
+{
+	"name":"minerals",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"tea",
+	"cities":["Kolkata","Guwahati","Kanpur","Mumbai","New Delhi","Coimbatore","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"floor coverings",
+	"cities":["Kolkata","Howrah","Surat","Malappuram","Pune","Chandigarh","Thane","Goa","Mumbai","Ahmedabad","Chennai","Ludhiana","Bhilwara","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Tirupur","Jodhpur","Cuttack","Punjab","Gurgaon","Indore","Patna","Jaipur","Delhi"]
+},
+{
+	"name":"games",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"household linen",
+	"cities":["Kolkata","Howrah","Surat","Malappuram","Pune","Chandigarh","Thane","Goa","Mumbai","Ahmedabad","Chennai","Ludhiana","Bhilwara","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Tirupur","Jodhpur","Cuttack","Punjab","Gurgaon","Indore","Patna","Jaipur","Delhi"]
+},
+{
+	"name":"chemicals",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"rubber household products",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"hardware",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bhubaneswar","Punjab","Delhi"]
+},
+{
+	"name":"raw wool",
+	"cities":["Kolkata"]
+},
+{
+	"name":"eggs",
+	"cities":["Kolkata","Mumbai","Balasore","Chennai","New Delhi","Ernakulam","Bangalore","Cochin","Delhi"]
+},
+{
+	"name":"beverages",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Bangalore","Jaipur","Delhi"]
+},
+{
+	"name":"intoxicants",
+	"cities":["Kolkata","Howrah","Surat","Guwahati","Kanpur","Bareilly","Meerut","Liluah","Gwalior","Akola","Ranchi","Moradabad","Bhopal","Jammu","Nagpur","Pune","Aurangabad","Aligarh","Bharuch","Belgaum","Chandigarh","Thane","Mumbai","Srinagar","Hyderabad","Ajmer","Saharanpur","Siliguri","Raipur","Guntur","Ahmedabad","Bhiwandi","Chennai","Visakhapatnam","Ludhiana","Kota","Jabalpur","Kalyan","Bhilwara","New Delhi","Bhilai","Allahabad","Agra","Coimbatore","Uttar Pradesh","Noida","Vadodara","Vijayawada","Ernakulam","Bangalore","Bhubaneswar","Nashik","Ghaziabad","Jalgaon","Trichy","Hooghly","Alwar","Jamnagar","Morbi","Dehradun","Varanasi","Mathura","Rajkot","Faridabad","Madurai","Jodhpur","Gorakhpur","Secunderabad","Karnal","Punjab","Gurgaon","Panipat","Indore","Muzaffarnagar","Patna","Bilaspur","Udaipur","Jaipur","Gandhidham","Jamshedpur","Mysore","Lucknow","Gandhinagar","Muzaffarpur","Delhi"]
+},
+{
+	"name":"flat glass",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bhubaneswar","Punjab","Delhi"]
+},
+{
+	"name":"agricultural raw material",
+	"cities":["Kolkata","Kottayam","Pune","Mumbai","Hyderabad","Ahmedabad","Chennai","New Delhi","Ernakulam","Bangalore","Bhubaneswar","Secunderabad","Punjab","Andhra Pradesh","Jaipur","Delhi"]
+},
+{
+	"name":"cleaning materials",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"leather",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"cocoa",
+	"cities":["Kolkata","Guwahati","Kanpur","Mumbai","New Delhi","Coimbatore","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"cotton fibers",
+	"cities":["Kolkata","Howrah","Mumbai","Ahmedabad","New Delhi","Coimbatore","Indore"]
+},
+{
+	"name":"clocks",
+	"cities":["Kolkata","Mumbai","New Delhi"]
+},
+{
+	"name":"books",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Uttar Pradesh","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"household equipment",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"pulses",
+	"cities":["Kolkata","Guwahati","Mumbai","Chennai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"lottery tickets",
+	"cities":["Kolkata","Mumbai","Ahmedabad","Chennai","New Delhi","Delhi"]
+},
+{
+	"name":"bicycles",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"toiletry",
+	"cities":["Kolkata","Pune","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Jaipur","Delhi"]
+},
+{
+	"name":"consumer electronics",
+	"cities":["Kolkata","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Ahmedabad","Chennai","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Cuttack","Indore","Patna","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"skin",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"jute fibers",
+	"cities":["Kolkata","Howrah","Mumbai","Ahmedabad","New Delhi","Coimbatore","Indore"]
+},
+{
+	"name":"precious metals",
+	"cities":["Kolkata","Surat","Kottayam","Malappuram","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Calicut","Ahmedabad","Chennai","Ludhiana","New Delhi","Coimbatore","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Punjab","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"travel accessories",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"computer",
+	"cities":["Kolkata"]
+},
+{
+	"name":"scrap",
+	"cities":["Mumbai","Chennai","New Delhi","Delhi"]
+},
+{
+	"name":"fruits",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Bangalore","Bhubaneswar","Delhi"]
+},
+{
+	"name":"fats",
+	"cities":["Kolkata","Chandigarh","Mumbai","Ahmedabad","Chennai","Ludhiana","New Delhi","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"plastic household products",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"sanitary fittings",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bhubaneswar","Punjab","Delhi"]
+},
+{
+	"name":"computer peripheral equipments",
+	"cities":["Kolkata"]
+},
+{
+	"name":"television",
+	"cities":["Kolkata","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Ahmedabad","Chennai","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Cuttack","Indore","Patna","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"sports goods",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"oilseed",
+	"cities":["Kolkata","New Delhi","Bangalore"]
+},
+{
+	"name":"food",
+	"cities":["Kolkata","Howrah","Surat","Guwahati","Kanpur","Bareilly","Meerut","Liluah","Gwalior","Akola","Ranchi","Moradabad","Bhopal","Jammu","Nagpur","Pune","Aurangabad","Aligarh","Bharuch","Belgaum","Chandigarh","Thane","Mumbai","Srinagar","Hyderabad","Ajmer","Saharanpur","Siliguri","Raipur","Guntur","Ahmedabad","Bhiwandi","Chennai","Visakhapatnam","Ludhiana","Kota","Jabalpur","Kalyan","Bhilwara","New Delhi","Bhilai","Allahabad","Agra","Coimbatore","Uttar Pradesh","Noida","Vadodara","Vijayawada","Ernakulam","Bangalore","Bhubaneswar","Nashik","Ghaziabad","Jalgaon","Trichy","Hooghly","Alwar","Jamnagar","Morbi","Dehradun","Varanasi","Mathura","Rajkot","Faridabad","Madurai","Jodhpur","Gorakhpur","Secunderabad","Karnal","Punjab","Gurgaon","Panipat","Indore","Muzaffarnagar","Patna","Bilaspur","Udaipur","Jaipur","Gandhidham","Jamshedpur","Mysore","Lucknow","Gandhinagar","Muzaffarpur","Delhi"]
+},
+{
+	"name":"lacquers",
+	"cities":["Kolkata","Mumbai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"leather goods",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"non mechanized vehicles",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"paints",
+	"cities":["Kolkata","Mumbai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"perfumery",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"metal utensils",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"waste products",
+	"cities":["Mumbai","Chennai","New Delhi","Delhi"]
+},
+{
+	"name":"fish",
+	"cities":["Kolkata","Mumbai","Balasore","Chennai","New Delhi","Ernakulam","Bangalore","Cochin","Delhi"]
+},
+{
+	"name":"stones",
+	"cities":["Kolkata","Surat","Kottayam","Malappuram","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Calicut","Ahmedabad","Chennai","Ludhiana","New Delhi","Coimbatore","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Punjab","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"dairy products",
+	"cities":["Kolkata","Mumbai","Ahmedabad","New Delhi"]
+},
+{
+	"name":"fur",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"optical goods",
+	"cities":["Kolkata","Mumbai","New Delhi"]
+},
+{
+	"name":"fuel",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"metal ores",
+	"cities":["Kolkata","Howrah","Kanpur","Ranchi","Nagpur","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","Rourkela","Ludhiana","New Delhi","Coimbatore","Bangalore","Bhubaneswar","Nashik","Cuttack","Punjab","Indore","Patna","Jamshedpur","Delhi"]
+},
+{
+	"name":"textiles",
+	"cities":["Kolkata","Howrah","Surat","Guwahati","Kanpur","Bareilly","Meerut","Liluah","Gwalior","Akola","Ranchi","Moradabad","Bhopal","Jammu","Nagpur","Pune","Aurangabad","Aligarh","Bharuch","Belgaum","Chandigarh","Thane","Mumbai","Srinagar","Hyderabad","Ajmer","Saharanpur","Siliguri","Raipur","Guntur","Ahmedabad","Bhiwandi","Chennai","Visakhapatnam","Ludhiana","Kota","Jabalpur","Kalyan","Bhilwara","New Delhi","Bhilai","Allahabad","Agra","Coimbatore","Uttar Pradesh","Noida","Vadodara","Vijayawada","Ernakulam","Bangalore","Bhubaneswar","Nashik","Ghaziabad","Jalgaon","Trichy","Hooghly","Alwar","Jamnagar","Morbi","Dehradun","Varanasi","Mathura","Rajkot","Faridabad","Madurai","Jodhpur","Gorakhpur","Secunderabad","Karnal","Punjab","Gurgaon","Panipat","Indore","Muzaffarnagar","Patna","Bilaspur","Udaipur","Jaipur","Gandhidham","Jamshedpur","Mysore","Lucknow","Gandhinagar","Muzaffarpur","Delhi"]
+},
+{
+	"name":"metals",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"bakery products",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Bangalore","Jaipur","Delhi"]
+},
+{
+	"name":"crockery",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"radio",
+	"cities":["Kolkata","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Ahmedabad","Chennai","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Cuttack","Indore","Patna","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"edible oils",
+	"cities":["Kolkata","Chandigarh","Mumbai","Ahmedabad","Chennai","Ludhiana","New Delhi","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"gaseous fuels",
+	"cities":["Kolkata","Nagpur","Mumbai","Ahmedabad","Chennai","New Delhi","Coimbatore","Ernakulam","Bangalore"]
+},
+{
+	"name":"household appliances",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"photographic equipments",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"agricultural",
+	"cities":["Kolkata","Kottayam","Pune","Mumbai","Hyderabad","Ahmedabad","Chennai","New Delhi","Ernakulam","Bangalore","Bhubaneswar","Secunderabad","Punjab","Andhra Pradesh","Jaipur","Delhi"]
+},
+{
+	"name":"furniture",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Cochin","Delhi"]
+},
+{
+	"name":"tobacco",
+	"cities":["Kolkata","New Delhi"]
+},
+{
+	"name":"wood",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"raw milk",
+	"cities":["Kolkata","Mumbai","Ahmedabad","New Delhi"]
+},
+{
+	"name":"petroleum",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"building materials",
+	"cities":["Kolkata","Kottayam","Malappuram","Pune","Chandigarh","Mumbai","Hyderabad","Calicut","Ahmedabad","Chennai","Kochi","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Cochin","Punjab","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"watches",
+	"cities":["Kolkata","Mumbai","New Delhi"]
+},
+{
+	"name":"glass",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"tapestry",
+	"cities":["Kolkata","Howrah","Surat","Malappuram","Pune","Chandigarh","Thane","Goa","Mumbai","Ahmedabad","Chennai","Ludhiana","Bhilwara","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Tirupur","Jodhpur","Cuttack","Punjab","Gurgaon","Indore","Patna","Jaipur","Delhi"]
+},
+{
+	"name":"fertilizers",
+	"cities":["Kolkata","Mumbai","New Delhi","Uttar Pradesh","Punjab"]
+},
+{
+	"name":"cereals",
+	"cities":["Kolkata","Guwahati","Mumbai","Chennai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"newspapers",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Uttar Pradesh","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"liquid fuels",
+	"cities":["Kolkata","Nagpur","Mumbai","Ahmedabad","Chennai","New Delhi","Coimbatore","Ernakulam","Bangalore"]
+},
+{
+	"name":"clothing",
+	"cities":["Kolkata","Howrah","Surat","Malappuram","Pune","Chandigarh","Thane","Goa","Mumbai","Ahmedabad","Chennai","Ludhiana","Bhilwara","New Delhi","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Tirupur","Jodhpur","Cuttack","Punjab","Gurgaon","Indore","Patna","Jaipur","Delhi"]
+},
+{
+	"name":"sugar",
+	"cities":["Kolkata","Chandigarh","Mumbai","Ahmedabad","Chennai","Ludhiana","New Delhi","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"spices",
+	"cities":["Kolkata","Chandigarh","Mumbai","Ahmedabad","Chennai","Ludhiana","New Delhi","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"medical goods",
+	"cities":["Kolkata","Guwahati","Amritsar","Kanpur","Kozhikode","Gwalior","Ranchi","Bhopal","Jalandhar","Kottayam","Malappuram","Nagpur","Pune","Chandigarh","Thiruvananthapuram","Thane","Goa","Mumbai","Hyderabad","Mohali","Erode","Calicut","Ahmedabad","Chennai","Rourkela","Kochi","Ludhiana","Jabalpur","New Delhi","Agra","Coimbatore","Uttar Pradesh","Vijayawada","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Gaya","Haryana","Dehradun","Varanasi","Cochin","Cuttack","Punjab","Trivandrum","Gurgaon","Andhra Pradesh","Indore","Patna","Jaipur","Mysore","Lucknow","Kollam","Muzaffarpur","Delhi"]
+},
+{
+	"name":"plastic materials",
+	"cities":["Kolkata","Thane","Mumbai","Ahmedabad","Chennai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"pharmaceutical goods",
+	"cities":["Kolkata","Guwahati","Amritsar","Kanpur","Kozhikode","Gwalior","Ranchi","Bhopal","Jalandhar","Kottayam","Malappuram","Nagpur","Pune","Chandigarh","Thiruvananthapuram","Thane","Goa","Mumbai","Hyderabad","Mohali","Erode","Calicut","Ahmedabad","Chennai","Rourkela","Kochi","Ludhiana","Jabalpur","New Delhi","Agra","Coimbatore","Uttar Pradesh","Vijayawada","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Gaya","Haryana","Dehradun","Varanasi","Cochin","Cuttack","Punjab","Trivandrum","Gurgaon","Andhra Pradesh","Indore","Patna","Jaipur","Mysore","Lucknow","Kollam","Muzaffarpur","Delhi"]
+},
+{
+	"name":"raw silk",
+	"cities":["Kolkata","New Delhi"]
+},
+{
+	"name":"confectionery",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Bangalore","Jaipur","Delhi"]
+},
+{
+	"name":"vegetables",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Bangalore","Bhubaneswar","Delhi"]
+},
+{
+	"name":"cosmetics",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"procurement agencies",
+	"cities":["Kolkata","Howrah","Mumbai","Ahmedabad","New Delhi","Coimbatore","Indore"]
+},
+{
+	"name":"paper",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"pesticides",
+	"cities":["Kolkata","Mumbai","New Delhi","Uttar Pradesh","Punjab"]
+},
+{
+	"name":"magazines",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Uttar Pradesh","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"industrial chemicals",
+	"cities":["Kolkata","Pune","Thane","Mumbai","Ahmedabad","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"textile fibres",
+	"cities":["Kolkata","Surat","Pune","Chandigarh","Mumbai","Ahmedabad","Chennai","Ludhiana","New Delhi","Bangalore","Punjab","Gurgaon","Panipat","Delhi"]
+},
+{
+	"name":"toys",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"electrical machinery",
+	"cities":["Mumbai"]
+},
+{
+	"name":"solid fuels",
+	"cities":["Kolkata","Nagpur","Mumbai","Ahmedabad","Chennai","New Delhi","Coimbatore","Ernakulam","Bangalore"]
+},
+{
+	"name":"ores",
+	"cities":["Kolkata","Kanpur","Gwalior","Ranchi","Bhopal","Pune","Mumbai","Hyderabad","Raipur","Ahmedabad","Chennai","New Delhi","Bhilai","Coimbatore","Mangalore","Bangalore","Rajkot","Cuttack","Indore","Patna","Udaipur","Jaipur","Jamshedpur","Delhi"]
+},
+{
+	"name":"rickshaws",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"jewellery",
+	"cities":["Kolkata","Surat","Kottayam","Malappuram","Pune","Chandigarh","Thane","Mumbai","Hyderabad","Calicut","Ahmedabad","Chennai","Ludhiana","New Delhi","Coimbatore","Ernakulam","Bangalore","Bhubaneswar","Thrissur","Punjab","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"varnishes",
+	"cities":["Kolkata","Mumbai","New Delhi","Bangalore","Delhi"]
+},
+{
+	"name":"household goods",
+	"cities":["Kolkata","Kanpur","Jalandhar","Pune","Aurangabad","Chandigarh","Thane","Goa","Mumbai","Hyderabad","Ahmedabad","Chennai","Ludhiana","New Delhi","Allahabad","Agra","Coimbatore","Uttar Pradesh","Ernakulam","Bangalore","Bhubaneswar","Varanasi","Punjab","Gurgaon","Jaipur","Lucknow","Delhi"]
+},
+{
+	"name":"coffee",
+	"cities":["Kolkata","Guwahati","Kanpur","Mumbai","New Delhi","Coimbatore","Ernakulam","Bangalore","Indore","Jaipur","Delhi"]
+},
+{
+	"name":"chinaware",
+	"cities":["Kolkata","Mumbai","Chennai","New Delhi","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"stationery items",
+	"cities":["Kolkata","Pune","Chandigarh","Mumbai","Chennai","New Delhi","Uttar Pradesh","Ernakulam","Bangalore","Delhi"]
+},
+{
+	"name":"electrical equipment",
+	"cities":["Mumbai"]
+}
+]

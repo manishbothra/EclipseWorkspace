@@ -1,0 +1,102 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Export Duty Calculator</h1>
+			<p>The Export duties automated tool allows you to obtain duties and taxes to be paid when a product is imported into another country. Fees are calculated based on the product's classification number.</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<form class="x_panel" name="exportDutyForm">
+				<table class=" table table-bordered table-striped">
+					
+					<tr>
+					<td>Product classification number</td>
+					<td><input class="form-control" type="text" name="term" ng-model="tools.exportDutyCalc.formData.productCode" ui-autocomplete="productAutoComplete" required>
+					<!-- <a href="javascipt:void(0)" data-toggle="modal" data-target="#hscode" target="_self">Search Product</a> -->
+					</td>
+					</tr>
+								
+					<tr>
+					<td colspan="4"><button type="submit" class="btn btn-primary"  ng-click="tools.exportDutyCalc.getExportsDuty(exportDutyForm.$valid);">FIND</button></td>
+					</tr>
+								
+				</table>
+					<p style="color:red;">{{errMessage}}</p>
+			</form>
+			    <div class="tool x_panel" ng-if="tools.exportDutyCalc.customDuties && tools.exportDutyCalc.customDuties.length>0" data-ng-cloak>
+				  <h1>GST : </h1>
+					<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in tools.exportDutyCalc.customDuties">
+		                <tr>
+	                        <td>HS Code</td>
+	                        <td>{{pro.productCode}}</td>
+	                    </tr>
+	
+	                    <tr>
+	                        <td>Description</td>
+	                        <td>{{pro.productName}}</td>
+	                    </tr>
+	
+	                    <tr>
+	                        <td>IGST</td>
+	                        <td>{{pro.igst}}</td>
+	                    </tr>
+	
+	                </table>
+	           </div>
+			   	<div class="tool x_panel" ng-if="tools.exportDutyCalc.drawbackDuties && tools.exportDutyCalc.drawbackDuties.length>0" data-ng-cloak>
+				  <h1>DRAWBACK DUTIES : </h1>
+					<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in tools.exportDutyCalc.drawbackDuties">
+		              
+                        <tr>
+                            <td>HS Code</td>
+                            <td>{{pro.productCode}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Description</th>
+                            <td>{{pro.productName}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Serial Number</td>
+                            <td>{{pro.serial_number}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Notification Number</td>
+                            <td>{{pro.notification_no}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Description</td>
+                            <td>{{pro.description}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rate (%)</td>
+                            <td>{{pro.rate}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Specific Rate / Value Cap</td>
+                            <td>{{pro.specific_rate}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Unit</td>
+                            <td>{{pro.unit}}</td>
+                        </tr>
+                    </table>
+	
+	           </div>
+		</div>
+	</div>
+	
+	
+	
+</div>

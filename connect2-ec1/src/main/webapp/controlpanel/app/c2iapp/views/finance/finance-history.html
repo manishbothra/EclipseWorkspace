@@ -1,0 +1,77 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-cogs"></i>&nbsp;Your current trade details</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="x_panel" data-ng-cloak>
+					
+					<div class="x_title">
+						<h2>Your trade details</h2>
+						<div class="clearfix"></div>
+					</div>
+					
+					<div class="x_content">
+					
+						<a class="btn btn-primary" style="margin-bottom:20px;" ng-if="!disableProductAdd" href="#start-new-trade/export">
+							<i class="fa fa-plus-circle"></i> &nbsp; Start Export</a>
+							
+						<!--
+						<a class="btn btn-primary" style="margin-bottom:20px;" ng-if="!disableProductAdd" href="#start-new-trade/import">
+							<i class="fa fa-plus-circle"></i> &nbsp; Start Import</a>
+						-->
+						<div ng-if="!ongoingTrades || ongoingTrades.length == 0" class="col-md-8 productAutoComplete">
+							<p>You haven't started any import\export yet.</p>
+						</div>
+						<div class="clearfix"></div>
+						<div ng-if="ongoingTrades && ongoingTrades.length > 0" class="col-md-8 productAutoComplete">
+							<table class="table table-bordered table-responsive table-hover dataTable" >
+								<thead>
+									<tr class="table-header"> 
+										<td>Trade Id</td>
+										<td>Trade Type</td>
+										<td>Product Name</td>
+										<td>HS Code</td>
+										<td>Date Started</td>
+										<td>Date Updated</td>
+										<td>Current Stage</td>
+										<td>Finance</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</thead>
+								<tr ng-repeat="ot in ongoingTrades"> 
+									<td>{{ot.activeTradeId}}</td>
+									<td>{{ot.tradeType}}</td>
+									<td>{{ot.productName}}</td>
+									<td>{{ot.hsCode}}</td>
+									<td>{{ot.dateStarted|formatDate}}</td>
+									<td>{{ot.dateLastUpdated|formatDate}}</td>
+									<td>{{ot.currentStepName}}</td>
+									<td>
+										<a ng-if="!ot.financeRequired" href='' ng-click="financeTrade(ot)" class="btn btn-primary">Finance</a>
+										<span ng-if="ot.financeRequired">Requested</span>
+									</td>
+									<td><a href='' ng-href='#/update-trade/{{ot.activeTradeId}}' class="btn btn-primary">Details</a></td>
+									<td><a href='' ng-click="deleteTrade(ot)" class="btn btn-danger">Delete</a></td>
+								</tr>
+							</table>
+							
+						</div>
+						<div class="col-md-12" style="margin-bottom:5em;">
+							<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+								<strong>Error! </strong> {{errorMessage}}
+							</div>
+							<a class="btn btn-primary" ng-if="showUpgradeBtn" href="/subscription/export-packages.html">Upgrade your subscription</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

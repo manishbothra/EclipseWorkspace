@@ -1,0 +1,228 @@
+<div class="right_col" role="main">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-cog"></i> &nbsp;Export FinanceApplication</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 finance-application">
+			<div data-ng-cloak>
+				<div class="form-group top-form-finance">
+					<div class="col-md-8 col-sm-8 col-xs-12">
+						<label style="margin-right:20px;margin-left:20px;">IEC</label><input type="text" class="form-control" placeholder="Enter IE Code" type="text" ng-model="finForm.iec" required></input>
+						<label style="margin-right:20px;margin-left:20px;">Email</label><input type="text" class="form-control" placeholder="Enter Email id" type="text" ng-model="finForm.iec" required></input>
+						<label style="margin-right:20px;margin-left:20px;">Phone</label><input type="text" class="form-control" placeholder="Enter Mobile number" type="text" ng-model="finForm.iec" required></input>
+						<button type="button" class="btn btn-primary" name="button">Submit</button>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="x_panel" data-ng-cloak>
+					<div class="x_title">
+						<div class="clearfix"></div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<br/>
+						<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+							<strong>Success! </strong> {{successMsg}}
+						</div>
+						<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+							<strong>Error! </strong> {{errorMessage}}
+						</div>
+
+						<div id="wizard" class="form_wizard wizard_horizontal" ng-show="!showResults">
+							  <ul class="wizard_steps">
+								<li ng-repeat="step in stepMaps[tradeType]">
+								  <a href="" ng-click="setSelectedStep(step.step);" ng-class="{done: isStepDone(step.step), disabled: selectedStep != step.step && !isStepDone(step.step),selected:selectedStep == step.step}">
+									<span class="step_no">{{step.id}}</span>
+									<span class="step_descr"><small>{{step.name}}</small></span>
+								  </a>
+								</li>
+							  </ul>
+
+							<steps current-step="selectedStep" class="col-md-12 col-sm-12 trade-finance">
+								<step name="step1">
+									<!-- <h3>{{stepMaps[tradeType][0].name}}</h3> -->
+									<div class="clearfix"></div>
+									<form name="financeForm" class="col-md-12 col-sm-12 trade-finance">
+										<div class="col-md-8 col-sm-12 col-xs-12" >
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Company Name</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter company name" type="text" ng-model="finForm.companyName" required >
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >IEC</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter IE Code" type="text" ng-model="finForm.iec" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >IEC Allotment Date</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter IE Code" type="text" ng-model="finForm.iec" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >IEC Status</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter IE Code" type="text" ng-model="finForm.iec" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Exporter Type</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter products you export" type="text" ng-model="finForm.product" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12" >Date of Establishment</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter number of shipments in last 6 months." ng-model="finForm.shipmentHistory" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >PAN Number</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter export turnover in last 12 months" ng-model="finForm.exportTurnover" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >PAN Issue Date</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter export turnover in last 12 months" ng-model="finForm.exportTurnover" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Bank Details</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter export turnover in last 12 months" ng-model="finForm.exportTurnover" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Directors</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<table class="table table-striped">
+														<tr>
+															<th>Name</th>
+															<th>Address</th>
+															<th>Phone/Email</th>
+														</tr>
+														<tr>
+																<td>Mr. ABasdf </td>
+																<td> 502, srs, sector 31 fardiabad</td>
+																<td>+91 955966585</td>
+														</tr>
+														<tr>
+															<td>Mr. ABasdf </td>
+															<td> 502, srs, sector 31 fardiabad</td>
+															<td>+91 955966585</td>
+														</tr>
+													</table>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-4 col-sm-4 col-xs-12"  >Office Locations</label>
+												<div class="col-md-8 col-sm-8 col-xs-12">
+													<table class="table table-striped">
+														<tr>
+															<th>Address</th>
+															<th>Phone/Email</th>
+														</tr>
+														<tr>
+
+															<td> 502, srs, sector 31 fardiabad</td>
+															<td>+91 955966585</td>
+														</tr>
+														<tr>
+
+															<td> 502, srs, sector 31 fardiabad</td>
+															<td>+91 955966585</td>
+														</tr>
+													</table>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="info-box bg-blue"> <span class="info-box-icon"><i class="glyphicon glyphicon-export"></i></span> <div class="info-box-content">
+												<span class="info-box-text">Total Export Value (in last 1 year)</span> <span class="info-box-number ng-binding">22.1 USD Million</span> <div class="progress"> <div class="progress-bar" style="width: 0.012106394480751329%"></div> </div> <span class="progress-description ng-binding">January: 6.33M, June: 6.11M, February: 4.99M ...</span> </div> </div>
+												<div class="info-box bg-green"> <span class="info-box-icon"><i class="fa fa-ship"></i></span> <div class="info-box-content">
+												<span class="info-box-text">Total Shipments (in last 1 year)</span> <span class="info-box-number ng-binding">30</span> <div class="progress"> <div class="progress-bar" style="width: 0.012106394480751329%"></div> </div> <span class="progress-description ng-binding"> January: 6, June: 6, February: 4 ...</span></div> </div>
+												<div class="info-box bg-orange"> <span class="info-box-icon"><i class="fa fa-globe"></i></span> <div class="info-box-content">
+												<span class="info-box-text">Countries Exported To</span> <span class="info-box-number ng-binding">5</span> <div class="progress"> <div class="progress-bar" style="width: 0.012106394480751329%"></div> </div> <span class="progress-description ng-binding">USA, United Kingdom, Germany,....</span> </div> </div>
+
+										</div>
+									</form>
+									<div class="clearfix"></div>
+									<div class="col-md-12 col-sm-12 trade-finance">
+										<div class="x_panel" data-ng-cloak>
+											<div class="x_title">
+												<h2>Monthwise Export Trends</h2>
+												<div class="clearfix"></div>
+											</div>
+											<div class="x_content">
+												<div class="tradeGraph col-md-8">
+														<nvd3 options='monthwiseTrendChart.options' data='monthwiseTrendChart.data' config="nvChartConfig" api="monthwiseTrendChart.api"></nvd3>
+
+													</div>
+												<div class="col-md-4">
+														<p class="text-center">
+																<strong>Last 6 Months {{selectedTradeType.toUpperCase()}} Trends <span ng-if="'ALL' != trendChart.data[0].key.toUpperCase() ">
+																	 for {{ monthwiseTrendChart.data[0].key.toUpperCase()}}</span>
+																 </strong>
+														</p>
+
+														<div class="progress-group" ng-repeat="td in monthwiseTrendSummary.data">
+																<span class="progress-text" style="text-transform: capitalize;">{{getMonthText(td.x)}}</span>
+																<span class="progress-number"><b>{{td.y}}M </b>USD</span>
+																<div class="progress sm">
+																	<div class="progress-bar progress-bar-red" style="width: {{(td.y/monthwiseTrendSummary.max)*100}}%"></div>
+																</div>
+														</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+									<div class="col-md-12 col-sm-12 trade-finance">
+										</div>
+
+									<div class="col-md-12 col-sm-12 trade-finance">
+										<div class="x_panel" data-ng-cloak>
+											<div class="x_title">
+												<h2>Preferred Export Countries</h2>
+												<div class="clearfix"></div>
+											</div>
+											<div class="x_content">
+												<img style="width: 80%;" src="assets/images/temp-preferred-counry.jpg"></img>
+											</div>
+										</div>
+									</div>
+								</step>
+
+							</steps>
+						</div>
+						<div class="clearfix"></div>
+						<hr/>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

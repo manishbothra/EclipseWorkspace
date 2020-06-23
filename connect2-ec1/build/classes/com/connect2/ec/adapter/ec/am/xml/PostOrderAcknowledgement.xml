@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+  <Header>
+     <DocumentVersion>1.01</DocumentVersion>
+    <MerchantIdentifier>A1ZRT2O38J6EA0</MerchantIdentifier>
+  </Header>
+  <MessageType>OrderAcknowledgement</MessageType>
+  <Message>
+    <MessageID>1</MessageID>
+    <OperationType>Update</OperationType>
+    <OrderAcknowledgement>
+      <AmazonOrderID>amazonOrderID</AmazonOrderID>
+      <MerchantOrderID>merchantOrderID</MerchantOrderID>
+      <StatusCode>Success</StatusCode>
+      <Item>
+        <AmazonOrderItemCode>amazonItemOrderID</AmazonOrderItemCode>
+        <MerchantOrderItemID>merchantItemOrderID</MerchantOrderItemID>
+        <CancelReason>Kuch Bhii</CancelReason>
+        <Quantity>10</Quantity>
+      </Item>
+    </OrderAcknowledgement>
+  </Message>
+</AmazonEnvelope>

@@ -1,0 +1,37 @@
+package com.connect2.ec.BoxnbizDemo;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.RestController;
+
+
+public class Demo {
+	
+	public static void main(String [] args) throws Exception {
+		String para="{\"email_id\":\"yogesh.garg@connect2india.com\",\"password\":\"yogesh@123\",\"api_key\":\"57c50e-27f0d2-b00e8f-9ed0e5-19c6e8\"}";
+		JSONObject json=new JSONObject(para);
+		StringEntity entity=new StringEntity(json.toString(2),  "UTF-8");
+		String url="https://app.swaggerhub.com/apis-docs/Boxnbiz/BoxnbizDemo/1.0.0#/auth/get-token";
+		HttpPost req=new HttpPost(url);
+		req.addHeader("Content-Type", "application/json; charset=utf-8");
+		req.setEntity(entity);
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpResponse response = httpClient.execute(req);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	
+}

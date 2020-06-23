@@ -1,0 +1,93 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-bar-chart"></i>&nbsp;Product Report</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+    <div class="x_panel"> 
+		<div class="x_content col-md-8 ">
+			<br/>
+			<div class="form-horizontal form-label-left">
+				<div class="form-group">
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						
+						<h4><input type="radio" id="rdoYp" ng-model="reportForm.productType" value="yourProducts"> <label for="rdoYp">Your Products</label></h4>
+						<select ng-disabled="reportForm.productType != 'yourProducts'" ng-model="productReport.name" ng-options="product as product for product in companyProductNames" ng-change="changeProduct()">
+						<option value="">---Select Product---</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						<h4><input type="radio" id="rdoNp" ng-model="reportForm.productType" value="newProduct"> 
+						 <label for="rdoNp">Search for Other Products </label></h4>
+							<input ng-disabled="reportForm.productType != 'newProduct'"  class="form-control" type="text" placeholder="Enter product name" name="term" ng-model="productReport.name" required data-ng-pattern=/^([a-zA-Z0-9\s]+)$/ data-ng-maxlength=35 data-ng-minlength=3
+									ui-autocomplete="myOption" data-ng-cloak>
+					</div>
+					
+					
+					<div class="col-md-4 col-sm-4 col-xs-12 productAutoComplete1">
+						<h4><label></label></h4>
+						<input class="btn btn-primary" ng-disabled="!productReport.name || productReport.name.length <=2" type="button" ng-click="changeProduct()" value="GET REPORT">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="x_panel"> 
+		
+		<div class="productHighlights">  				
+			<div class="numbers" style="width: 50%;float:left">
+				<h4>Total Export value</h4>
+				<p>{{productData.productExport}} USD million</p>
+			</div>
+			<div class="numbers" style="    width: 50%;float:right">
+				<h4>Total Export quantity</h4>
+				<p>{{productData.productQtyExport}}</p>
+			</div>
+		</div>
+		<div>
+			<div class="col-md-12">
+				<h2 class="reportHeader">Top {{productTitle.toUpperCase()}} Export Markets from India</h2>
+				<table class="table table-striped table-bordered">
+					<tr style="background-color:#454545;color:#fff;">
+						<th>S. No</th>
+						<th>Country</th>
+						<th>Quantity</th>
+						<th>Value (USD million)</th>
+
+					</tr>
+
+					<tr ng-repeat="pro in countryData | limitTo:10">
+						<td class="count">{{$index+1}}</td>
+						<td><a href="">{{pro.country}}</a>
+						</td>
+						<td>{{pro.qty}}</td>
+						<td>{{pro.value}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="row chartDiv">
+			<div class="clearfix"></div>
+			<h3 style="margin-bottom:1em;" class="text-center">PAST {{productTitle.toUpperCase()}} EXPORT TRENDS</h3>
+
+			<div class="lineChartStyle">
+				<canvas id="canvas-valueChart" height="280" width="800"></canvas>
+				<h4>{{chartData.valueChart.title.toUpperCase()}}</h4>
+			</div>
+			<div class="clearfix"></div>
+
+			<div class="lineChartStyle">
+				<canvas id="canvas-qtyChart" height="280" width="800"></canvas>
+				<h4>{{chartData.qtyChart.title.toUpperCase()}}</h4>
+			</div>
+
+		</div>
+	</div>    
+	<div class="clearfix"></div>
+
+</div>

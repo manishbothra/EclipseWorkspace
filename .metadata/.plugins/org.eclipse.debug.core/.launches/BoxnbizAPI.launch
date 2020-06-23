@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/connect2-ec1/src/com/connect2/ec/BoxnbizDemo/BoxnbizAPI.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.connect2.ec.BoxnbizDemo.BoxnbizAPI"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="connect2-ec1"/>
+</launchConfiguration>
