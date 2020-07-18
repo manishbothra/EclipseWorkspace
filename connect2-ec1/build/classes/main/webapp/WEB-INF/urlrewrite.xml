@@ -1,0 +1,2940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<!-- Configuration file for UrlRewriteFilter http://www.tuckey.org/urlrewrite/ -->
+<urlrewrite use-query-string="true" use-context="true">
+
+	<!-- <rule> <from>^(.*(.jpg|.gif|.css|.js$|/errorpages/|.ico).*)$</from>
+		<to last="true">$1</to> </rule> <rule> <name>subdomain Redirection</name>
+		<condition name="host" operator="equal">^(.*).connect2india.com$</condition>
+		<from>^(.*)$</from> <to type="redirect" last="true">http://connect2india.com/%1$1/index.html</to>
+		</rule> -->
+    <!-- friendly url for nic  -->
+
+    <!--<rule  match-type="wildcard">
+        <from>/*-steel</from>
+        <to last="true">/indian-company-list.html</to>
+
+    </rule>-->
+    
+    <!-- redirection for wrong pages -->
+    <rule>
+        <from casesensitive="false">^/404.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/contactca(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/-indian-companies(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/-indian-companies/page-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/products-hs-classification.html</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/products-hs-classification-detailed.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/stats_countrywise.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/hs-search-result.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+        <to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/global/product-directory.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/index.html</to>
+    </rule>
+    <rule>
+        <from casesensitive="false">^/product-directory.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/index.html</to>
+    </rule>
+    <!-- redirection for wrong pages -->
+    
+    <!-- redirection for wrong product demand url pages  -->
+	<rule>
+        <from>^/in/([^/]+)-export-from-india/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-to-india/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-export-to-port-([^/]+)/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-export-from-port-([^/]+)/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-to-port-([^/]+)/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-from-port-([^/]+)/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-(export|import)-for-([^/]+)/([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>    
+    <rule>
+        <from>^/in/([^/]+)-export-from-india/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-to-india/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-export-to-port-([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-export-from-port-([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-to-port-([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-import-from-port-([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/in/([^/]+)-(export|import)-for-([^/]+)/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+	<!-- redirection for wrong product demand url pages  -->
+    
+    <rule>
+        <from>^/all-export-import.html\?category=trade-re_escaped_fragment_=(.*)$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    
+    <!-- redirection for wrong all export import url pages -->
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=company-directory-pages&amp;page=*&amp;type=ownership-data*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=cities&amp;product=*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=company-directory-pages&amp;page=*&amp;type=ownership-character*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=company-directory-pages&amp;page=*&amp;type=ownership-city*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=product-type-location&amp;product=*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=product-type&amp;page=*</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/all-export-import.html\?category=indian-service-providers</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-suppliers/suppliers/([^/]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <!-- stats 1 new urls -->     
+   <!--  http://iconnect2india.com:8080/stats1.html?region=United%20Kingdom&type=export&name=Tomato%20ketchup%20and%20other%20tomato%20...&id=210320&_escaped_fragment_= -->
+    <rule>
+        <from>^/stats1.html\?region=([^/]+)&amp;type=(Export|export|import|Import)&amp;name=([^/]+)&amp;id=([^/]+)&amp;_escaped_fragment_=$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/stats1.html\?region=([^/]+)&amp;type=(Export|export|import|Import)&amp;name=([^/]+)&amp;id=([^/]+)$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <!-- stats 1 new urls -->
+    
+    <!-- redirection for mobile auto login urls -->
+    <rule>
+        <from>^/controlpanel$</from>
+        <to last="true" type="permanent-redirect">/controlpanel/index.html</to>
+    </rule>
+    <rule>
+        <from>^/cplogin/([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/api/profile/autoLoginUser/$1</to>
+    </rule>
+    <rule>
+        <from>^/cplogin/([^/]+)/([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/api/profile/autoLoginUser/$1/$2</to>
+    </rule>  
+    <rule>
+        <from>^/verifycpUser/([^/]+)/([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/api/profile/verifyUser/$1/$2</to>
+    </rule>
+    <!-- redirection for mobile auto login urls -->
+    
+    
+    <rule>
+        <from>^/products.html\?type=trending&amp;data=importers-indian&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/all-export-import.html\?category=product-importers2&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=trending&amp;data=importers-global&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=product-importers2&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=trending&amp;data=demand-export&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=product-demand-export&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=trending&amp;data=demand-import&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=product-demand-import&amp;page=$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=export-from-india&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=export-products-from-india&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=exporters-indian&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/all-export-import.html\?category=product-exporters2&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=import-to-india&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=import-products-to-india&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=importers-global&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/global/all-export-import.html\?category=product-importers2&amp;page=$1</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=importers-indian&amp;page=([0-9]+)$</from>
+        <to last="true" type="permanent-redirect">/all-export-import.html\?category=product-importers2&amp;page=$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=exports&amp;page=([0-9]+)$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=exports$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=imports&amp;page=([0-9]+)$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/products.html\?type=most-searched&amp;data=imports$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    
+    
+    <!-- static pages snapshot folder -->
+    <rule>
+        <from>^/all-export-import.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <!-- <set name="c2iSnapshotDir">/all-export-import</set>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <to last="true">-</to> -->
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/all-export-import</set>
+        <to last="true">/th/all-export-import-listings/india/1</to>
+    </rule>
+    <rule>
+        <from>^/global/all-export-import.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <!-- <set name="c2iSnapshotDir">/all-export-import</set>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <to last="true">-</to> -->
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/all-export-import</set>
+        <to last="true">/th/all-export-import-listings/global/1</to>
+    </rule>   
+    <rule>
+        <from>^/i18n/hindi/all-export-import.html\?([^/]+)(&amp;_escaped_fragment_=)?$</from>
+        <!-- <set name="c2iSnapshotDir">/all-export-import</set>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <to last="true">-</to> -->
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/all-export-import-listings/hindi/1</to>
+    </rule>
+     
+    <rule>
+        <from>^/global/stats-search.html\?([^/]+)&amp;_escaped_fragment_=$</from>
+        <to last="true" type="permanent-redirect">/global/market-analysis.html</to>
+    </rule> 
+    <rule>
+        <from>^/global/stats-search.html\?([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/global/market-analysis.html</to>
+    </rule>
+    <rule>
+        <from>^/global/intelligence/stats-search.html\?([^/]+)&amp;_escaped_fragment_=$</from>
+        <to last="true" type="permanent-redirect">/global/market-analysis.html</to>
+    </rule> 
+    <rule>
+        <from>^/global/intelligence/stats-search.html\?([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/global/market-analysis.html</to>
+    </rule>   
+    <rule>
+        <from>^/global/search-counterparts.html\?([^/]+)&amp;_escaped_fragment_=$</from>
+        <to last="true" type="permanent-redirect">/global/index.html</to>
+    </rule>
+    <rule>
+        <from>^/global/search-counterparts.html\?([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/global/index.html</to>
+    </rule>
+    <rule>
+        <from>^/global/search.html\?([^/]+)&amp;_escaped_fragment_=$</from>
+        <to last="true" type="permanent-redirect">/global/index.html</to>
+    </rule>
+    <rule>
+        <from>^/global/search.html\?([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/global/index.html</to>
+    </rule>
+    <rule>
+        <from>^/search.html\?([^/]+)&amp;_escaped_fragment_=$</from>
+        <to last="true" type="permanent-redirect">/index.html</to>
+    </rule>
+    <rule>
+        <from>^/search.html\?([^/]+)$</from>
+        <to last="true" type="permanent-redirect">/index.html</to>
+    </rule>
+    <rule>
+        <from>^/inspect/about-us.html(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/about/overview.html</to>
+    </rule>
+    <!-- static pages snapshot folder -->
+    
+    <!-- resources country urls -->
+    <rule>
+        <from>^/resources/document-required-to-import-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/document-required-to-import-$1/hs-code-$2</to>
+    </rule>
+    <rule>
+        <from>^/trade-resources/document-required-to-import-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/products/import-documents/$1/$2</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/Guidelines-to-export-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/Guidelines-to-export-$1/hs-code-$2</to>
+    </rule>
+	<rule>
+        <from>^/trade-resources/Guidelines-to-export-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/products/export-guidelines/$1/$2</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/how-to-export-to-([^/]+)-from-india.html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/how-to-export-to-$1-from-india.html</to>
+    </rule>
+    <rule>
+        <from>^/trade-resources/how-to-export-to-([^/]+)-from-india.html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true">/resources/country/how-to-export-country-india/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/How-to-export-from-India-to-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/How-to-export-from-India-to-$1.html</to>
+    </rule>
+	<rule>
+        <from>^/trade-resources/How-to-export-from-India-to-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true">/resources/country/how-to-export-country/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/documents-required-to-export-from-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/documents-required-to-export-from-$1.html</to>
+    </rule>
+	 <rule>
+        <from>^/trade-resources/documents-required-to-export-from-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/country/export-document-country/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/Import-documents-required-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/Import-documents-required-in-$1.html</to>
+    </rule>
+    <rule>
+        <from>^/trade-resources/Import-documents-required-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/country/import-documents-country/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/Export-documents-required-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/Export-documents-required-in-$1.html</to>
+    </rule>
+	<rule>
+        <from>^/trade-resources/Export-documents-required-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+		<to last="true">/resources/country/export-document/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/how-to-import-to-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/how-to-import-to-$1.html</to>
+    </rule>
+    <rule>
+        <from>^/trade-resources/how-to-import-to-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+		<to last="true">/resources/country/import-in-country/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/step-by-step-procedures-to-import-from-([^/]+)-to-india.html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/step-by-step-procedures-to-import-from-$1-to-india.html</to>
+    </rule>
+	 <rule>
+        <from>^/trade-resources/step-by-step-procedures-to-import-from-([^/]+)-to-india.html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/country/step-procedure-import-country/$1</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/export-customs-procedure-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/trade-resources/export-customs-procedure-in-$1.html</to>
+    </rule>
+	<rule>
+        <from>^/trade-resources/export-customs-procedure-in-([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/resources/country/custom-procedure-country/$1</to>
+    </rule>
+	
+    <!-- <rule>
+        <from>^/resources/How-to-export-from-India-to-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/how-to-export-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/how-to-export-country.html</to>
+    </rule>  
+    <rule>
+        <from>^/resources/documents-required-to-export-from-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/export-documents-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/export-documents-country.html</to>
+    </rule>  
+    <rule>
+        <from>^/resources/export-customs-procedure-in-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/custom-procedure-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/custom-procedure-country.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/Import-documents-required-in-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/import-documents-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/import-documents-country.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/how-to-export-to-([^/]+)-from-india.html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/how-to-export-country-india</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/how-to-export-country-india.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/step-by-step-procedures-to-import-from-([^/]+)-to-india.html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/step-procedure-import-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/step-procedure-import-country.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/Export-documents-required-in-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/export-documents-in-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/export-documents-in-country.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/how-to-import-to-([^/]+).html(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/how-to-import-country</set>
+        <set name="countryName">resources-countries</set>		
+		<run class="com.connect2.servlet.filter.CountryUrlRedirectFilter" neweachtime="false"></run>
+        <to last="true">/resources/how-to-import-country.html</to>
+    </rule> -->
+    <!-- resources country urls -->
+    
+    <!-- resources product urls -->
+    <!-- <rule>
+        <from>^/resources/document-required-to-import-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/import-documents-products</set>
+        <to last="true">/resources/import-documents-products.html</to>
+    </rule>  
+    <rule>
+        <from>^/resources/Guidelines-to-export-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/resources/export-guidelines-products</set>
+        <to last="true">/resources/export-guidelines-products.html</to>
+    </rule> -->
+    <!-- resources product urls -->
+   
+    <!-- redirect wrong pages -->
+    <rule>
+        <condition name="host" operator="equal">connect2india.com</condition>
+        <from>^/export-([^/]+)-from-india(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/global/export-$1-from-india</to>
+    </rule>
+    <rule>
+        <condition name="host" operator="equal">connect2india.com</condition>
+        <from>^/in/export-([^/]+)-from-india(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/global/export-$1-from-india</to>
+    </rule>
+    <rule>
+        <from>^/mobile/activate-website(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/digital/index.html?user=mobile</to>
+    </rule>
+    <!-- redirect wrong pages -->
+    
+    <!-- static pages -->
+    <rule>
+    	<condition name="host" operator="equal">www.connect2india.com</condition>
+    	<from>^/(.*)</from>
+    	<to type="permanent-redirect" last="true">https://connect2india.com/$1</to>
+	</rule>	
+	<rule>
+        <from>^/about-us.html(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/about/overview.html</to>
+    </rule>
+    <rule>
+        <from>^/resources/export_from_india/index.html(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/resources/how-to-export-from-india</to>
+    </rule>
+    <!-- static pages -->
+	
+    <rule>
+        <from>^/global/market-analysis.html(\?([^/]+))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="serveCached">true</set>
+        <set name="c2i_ignore_query_params">true</set>
+        <set name="c2iSnapshotDir">/</set>
+        <to last="true">-</to>
+    </rule>
+	
+    <rule>
+        <from>^/trade-leads.html$</from>
+        <to type="permanent-redirect" last="true">/trade-leads</to>
+    </rule>
+	<rule>
+        <from>^/export-finance/home.html$</from>
+        <to type="permanent-redirect" last="true">/finance/export-finance.html</to>
+    </rule>
+    <rule>
+        <from>^/export-finance/what-it-is.html$</from>
+        <to type="permanent-redirect" last="true">/finance/export-finance.html</to>
+    </rule>
+    <rule>
+        <from>^/export-finance/how-it-works.html$</from>
+        <to type="permanent-redirect" last="true">/finance/export-finance/how-it-works.html</to>
+    </rule>
+    <rule>
+        <from>^/export-finance/services.html$</from>
+        <to type="permanent-redirect" last="true">/finance/export-finance.html</to>
+    </rule>
+    <rule>
+        <from>^/export-finance/apply-now.html$</from>
+        <to type="permanent-redirect" last="true">/finance/apply-trade-finance.html</to>
+    </rule>
+	
+	<!-- tools pages -->
+	<rule>
+        <from>^/tools/header.html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true">/header.html</to>
+    </rule>
+    <rule>
+        <from>^/tools/footer.html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true">/footer.html</to>
+    </rule> 
+    <rule>
+        <from>^/hs-code-finder.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/hs-code-finder.html</to>
+    </rule>
+    <rule>
+        <from>^/nic-code-finder.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/nic-code-finder.html</to>
+    </rule>
+    <rule>
+        <from>^/export-price-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/export-price-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/global-custom-duty-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/global-custom-duty-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/custom-duty-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/custom-duty-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/export-duty-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/export-duty-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/landed-cost-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/landed-cost-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/freight-rate-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/freight-rate-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/measurement-converter.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/measurement-converter.html</to>
+    </rule>
+    <rule>
+        <from>^/indian-custom-duty.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/indian-custom-duty.html</to>
+    </rule>
+    <rule>
+        <from>^/gst-rate-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/gst-rate-calculator.html</to>
+    </rule>
+    <rule>
+        <from>^/anti-dumping-duty.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/anti-dumping-duty.html</to>
+    </rule>
+    <rule>
+        <from>^/drawback-duty.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/drawback-duty.html</to>
+    </rule>
+    <rule>
+        <from>^/export-import-documents.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/export-import-documents.html</to>
+    </rule>
+    <rule>
+        <from>^/currency-converter.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/currency-converter.html</to>
+    </rule>
+	 <rule>
+        <from>^/shipment-tracker.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/shipment-tracker.html</to>
+    </rule>
+    <rule>
+        <from>^/air-volumetric-weight-calculator.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/tools/air-volumetric-weight-calculator.html</to>
+    </rule>
+    <!-- tools pages -->
+
+	<!-- redirect subdomain index page -->
+    <rule match-type="wildcard">
+        <from>^/local</from>
+        <to last="true">/local/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>^/global</from>
+        <to last="true">/global/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>^/digital</from>
+        <to last="true">/digital/index.html</to>
+    </rule>
+    <!-- redirect subdomain index page -->
+
+    <!-- redirection for wrong country demand urls -->
+    <rule>
+        <from>^/global/([^/]+)-export-from-india-to-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-india-to-$2/hs-code-$3</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-([^/]+)-to-india/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/global/$1-import-from-$2-to-india/hs-code-$3</to>
+    </rule>
+    <!-- redirection for wrong country demand urls -->
+   
+	<!-- services rules -->
+    <rule>
+        <from>^/services/([^/]+)-in-([^/]+)(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/local/services</to>
+    </rule>
+   	<!-- end of services rules -->
+   	
+   	<!-- new services rules -->
+    <rule>
+        <from>^/local/services(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/all-categories/1</to>
+    </rule>
+    <rule>
+        <from>^/local/services/([a-zA-Z-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/main-category/$1</to>
+    </rule>
+    <rule>
+        <from>^/local/services/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/sub-category/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/local/services/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/sub-category/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/local/services-listing/([a-zA-Z0-9-&amp;,]+)-in-([a-zA-Z-]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/services-city-listing/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/local/services-listing/([a-zA-Z0-9-&amp;,]+)-in-([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/services-city-listing/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/local/services-listing/([a-zA-Z0-9-&amp;,]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/services-listing/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/local/services-listing/([a-zA-Z0-9-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/services-directory/services-listing/$1/1</to>
+    </rule>
+   	<!-- end of new services rules -->
+   	
+   	<!-- service providers urls -->
+    <rule>
+        <from>^/local/service-providers-for-([^/]+)/nic-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/nic-service-providers/india/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/local/service-providers-for-([^/]+)/nic-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/nic-service-providers/india/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/service-providers-for-([^/]+)/nic-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <to type="permanent-redirect" last="true">/local/service-providers-for-$1/nic-code-$2</to>
+    </rule>
+    <!-- service providers urls -->
+    
+    <!-- COMMODITY PRICES URLS  -->
+	<!-- <rule>
+        <from>^/commodities/agro/([^/]+)-market-price-in-([^/]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/commodity-pricing/product-market-data/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/commodities/agro/([^/]+)-market-price-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/commodity-pricing/product-market-data/$1/$2/1</to>
+    </rule>
+	<!-- <rule>
+        <from>^/commodities/agro/([^/]+)-market-price\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/commodity-pricing/product-data/$1</to>
+    </rule> -->
+    <rule>
+        <from>^/commodities/agro/([^/]+)-market-price(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/commodity-pricing/product-data/$1</to>
+    </rule>
+	<!-- COMMODITY PRICES URLS -->
+	
+	<!-- MONTHLY DATA URLS  -->
+	<!-- <rule>
+        <from>^/monthly-export-data/([0-9]+)/([a-zA-Z]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+		<set name="c2iSnapshotDir">/monthly-data</set>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <to last="true">/monthly-data.html</to>
+    </rule>
+	<rule>
+        <from>^/monthly-import-data/([0-9]+)/([a-zA-Z]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+		<set name="c2iSnapshotDir">/monthly-data</set>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <to last="true">/monthly-data.html</to>
+    </rule> -->
+	<!-- MONTHLY DATA URLS -->
+	
+    <!-- hs code directory urls -->
+    <rule>
+        <from>^/hs-codes-directory/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/hs-code-directory/india/$1</to>
+    </rule>
+    <!-- hs code directory urls -->
+
+    <rule>
+        <from>^/finance/explore/([^/]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/finance/india/product/$1</to>
+    </rule> 
+    
+    <!-- price urls -->
+    <rule>
+        <from>^/([^/]+)-price/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/price-analysis/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-price(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/price-analysis/india/$1/0</to>
+    </rule>
+    <!-- price urls -->
+    
+    <!-- global importers + country urls  -->
+    <rule>
+        <from>^/global/([^/]+)-importers-in-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/importers-country</set>
+        <to last="true">/th/importers/hs/country/global/$1/$3/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-importers-in-([^/]+)/hs-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/importers-country</set>
+        <to last="true">/th/importers/hs/country/global/$1/$3/$2/$4</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/([^/]+)-importers-in-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/importers-country</set>
+        <to last="true">/th/importers/country/global/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/([^/]+)-importers-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/importers-country</set>
+        <to last="true">/th/importers/country/global/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-importers-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/importers-country</set>
+        <to last="true">/th/importers/country/global/$1/$2/$3</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/([^/]+)-suppliers-in-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/country/global/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/([^/]+)-suppliers-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/country/global/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-suppliers-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/country/global/$1/$2/$3</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/suppliers-in-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-suppliers-directory/global/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/suppliers-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-suppliers-directory/global/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/global/suppliers-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-suppliers-directory/global/$1/$2</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/importers-in-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-importers-directory/global/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/importers-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-importers-directory/global/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/global/importers-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-country-importers-directory/global/$1/2</to>
+    </rule>
+    <!-- end of global importers + country urls  -->
+
+	<!-- nic classification urls -->
+    <rule>
+        <from>^/local/nic-classification-for-([^/]+)/nic-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/nic-codes/india/$1/$2</to>
+        
+    </rule>
+    <rule>
+        <from>^/nic-classification-for-([^/]+)/nic-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/local/nic-classification-for-$1/nic-code-$2</to>
+    </rule>
+    <rule>
+        <from>^/local/nic-classification(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/nic-classification/india</to>
+    </rule>
+    <rule>
+        <from>^/nic-classification(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/local/nic-classification</to>
+    </rule>
+    <!-- nic classification urls  -->
+    
+    <!--  redirect tools index page -->
+    <rule>
+        <from>^/global/tools.html(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/tools.html</to>
+    </rule>
+    <rule>
+        <from>^/local/tools.html(\?_escaped_fragment_=)?$</from>
+        <to type="permanent-redirect" last="true">/tools.html</to>
+    </rule>
+    <!--  redirect tools index page -->
+    
+    <!--  trade service providers index page -->
+    <rule>
+        <from>^/trade-service-providers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-service-providers/importer-exporter.html</to>
+    </rule>
+	<rule>
+        <from>^/trade-service-providers-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/all/directory</to>
+    </rule>
+    <rule>
+        <from>^/trade-experts(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-service-providers/importer-exporter.html</to>
+    </rule>
+    <!--  trade service providers index page -->
+    
+    <!--  redirect wrong duty, demand urls  -->
+    <rule>
+        <from>^/import-duty-for-([^/]+)/hs-code-0(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/import-duty-for-$1</to>
+    </rule>
+    <rule>
+        <from>^/export-duty-for-([^/]+)/hs-code-0(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/export-duty-for-$1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-(export|import)-for-([a-zA-Z]+)-([0-9]+)/hs-code-0/1(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-$2-for-$3-$4/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-import-from-port-([^/]+)/hs-code-0/1(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-from-port-$2/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-import-to-port-([^/]+)/hs-code-0/1(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-port-$2/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-export-from-port-([^/]+)/hs-code-0/1(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-port-$2/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-export-to-port-([^/]+)/hs-code-0/1(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-to-port-$2/1</to>
+    </rule>
+    <!--  redirect wrong duty, demand urls -->
+
+    <!--  trade shows urls -->
+    <rule>
+        <from>^/([^/]+)-trade-shows-in-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/trade-events/directory</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-trade-shows(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/trade-events/directory</to>
+    </rule>
+    <rule>
+        <from>^/trade-shows-in-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/trade-events/directory</to>
+    </rule>
+    <!--  trade shows urls -->
+    
+    <!--  import export duty urls -->
+    <rule>
+        <from>^/([^/]+)-import-duties/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/global-import-duty</set>
+        <to last="true">/th/global-import-duty-data/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-duties(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/global-import-duty</set>
+        <to last="true">/th/global-import-duty-main-products/$1</to>
+    </rule>
+    <rule>
+        <from>^/import-duty-for-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/import-duty</set>
+        <to last="true">/th/import-duty-data/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/export-duty-for-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/export-duty</set>
+        <to last="true">/th/export-duty-data/india/$1/$2</to>
+    </rule>
+    <!-- <rule>
+        <from>^/import-duty-for-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/import-duty</set>
+        <to last="true">/th/import-duty-data/india/$1/0</to>
+    </rule> -->
+    <rule>
+        <from>^/import-duty-for-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/import-duty</set>
+        <to last="true">/th/import-duty-data/india/$1/0</to>
+    </rule>
+    <!-- <rule>
+        <from>^/export-duty-for-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/export-duty</set>
+        <to last="true">/th/export-duty-data/india/$1/0</to>
+    </rule> -->
+    <rule>
+        <from>^/export-duty-for-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/tools/export-duty</set>
+        <to last="true">/th/export-duty-data/india/$1/0</to>
+    </rule>
+    <!-- <rule>
+        <from>^/drawback-duty-for-hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/tools/drawback-duty</set>
+        <to last="true">/tools/product-drawback-duty.html</to>
+    </rule>
+    <rule>
+        <from>^/anti-dumping-duty-for-hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/tools/dumping-duty</set>
+        <to last="true">/tools/product-anti-dumping-duty.html</to>
+    </rule>
+    <rule>
+        <from>^/gst-rate-for-hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/tools/gst</set>
+        <to last="true">/tools/gst.html</to>
+    </rule> -->
+    <!--  import export duty urls -->
+    
+    <!-- export to india flow -->
+    <rule>
+        <from>^/export-([^/]+)-to-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data/overseas/$1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/export-to-india-from-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data-country/overseas/$1</to>
+    </rule> -->
+    <rule>
+        <from>^/export-to-india-from-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data-country/overseas/$1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/export-([^/]+)-to-india-from-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data-product-country/overseas/$1/$2</to>
+    </rule> -->
+    <rule>
+        <from>^/export-([^/]+)-to-india-from-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data-product-country/overseas/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/import-([^/]+)-from-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data/overseas/$1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/import-from-india-to-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data-country/overseas/$1</to>
+    </rule> -->
+    <rule>
+        <from>^/import-from-india-to-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data-country/overseas/$1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/import-([^/]+)-from-india-to-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data-product-country/overseas/$1/$2</to>
+    </rule> -->
+    <rule>
+        <from>^/import-([^/]+)-from-india-to-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data-product-country/overseas/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/export-to-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/export-data/overseas/main-page</to>
+    </rule>
+	<rule>
+        <from>^/import-from-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/import-data/overseas/main-page</to>
+    </rule>
+
+	<!--  global import to india urls -->
+	<rule>
+        <from>^/import-([^/]+)-to-india-from-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-$1-to-india-from-$2</to>
+    </rule>
+    <rule>
+        <from>^/import-to-india-from-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-to-india-from-$1</to>
+    </rule>
+    <rule>
+        <from>^/import-([^/]+)-to-india/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-$1-to-india/hs-code-$2</to>
+    </rule>
+    <rule>
+        <from>^/import-([^/]+)-to-india(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-$1-to-india</to>
+    </rule>
+    <rule>
+        <from>^/import-to-india(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-to-india</to>
+    </rule>
+	
+    <!-- <rule>
+        <from>^/global/import-([^/]+)-to-india-from-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data-product-country/$1/$2</to>
+    </rule> -->
+    <rule>
+        <from>^/global/import-([^/]+)-to-india-from-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data-product-country/$1/$2</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/import-to-india-from-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data-country/india/$1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/import-to-india-from-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data-country/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/global/import-([^/]+)-to-india/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/import-([^/]+)-to-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data/india/$1/0</to>
+    </rule>
+    <rule>
+        <from>^/global/import-to-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/import-to-india</set>
+        <to last="true">/th/import-data/india/main-page</to>
+    </rule>
+    <!--  global import to india urls -->
+
+    <!-- country exports imports partners urls -->
+	<rule>
+        <from>^/global/([^/]+)-top-exports(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-top-data/india/export/$1</to>
+	</rule>
+	<rule>
+        <from>^/global/([^/]+)-top-imports(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-top-data/india/import/$1</to>
+	</rule>
+	<rule>
+        <from>^/global/([^/]+)-export-partners(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-exim-partners/global/$1/export</to>
+	</rule>
+	<rule>
+        <from>^/global/([^/]+)-import-partners(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-exim-partners/global/$1/import</to>
+	</rule>
+	<!-- <rule>
+        <from>^/global/([^/]+)-exports-to-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-country-partners/global/$1/$2/export</to>
+	</rule> -->
+	<rule>
+        <from>^/global/([^/]+)-exports-to-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-country-partners/global/$1/$2/export</to>
+	</rule>
+	<!-- <rule>
+        <from>^/global/([^/]+)-imports-from-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-country-partners/global/$1/$2/import</to>
+	</rule> -->
+	<rule>
+        <from>^/global/([^/]+)-imports-from-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-country-partners/global/$1/$2/import</to>
+	</rule>
+	<!-- country exports imports partners urls -->
+
+	<!-- product exports and imports urls -->
+	<rule>
+        <from>^/global/([^/]+)-worldwide-exports-by-country(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/product-world-top-exports-by-country/$1</to>
+	</rule>
+	<rule>
+        <from>^/global/([^/]+)-worldwide-imports-by-country(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/product-world-top-imports-by-country/$1</to>
+	</rule>
+	<rule>
+        <from>^/global/([^/]+)-exports-by-country(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/product-top-exports-by-country/$1</to>
+	</rule>
+     <rule>
+        <from>^/global/([^/]+)-exports/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/product-exim-data/global/export/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-imports/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/product-exim-data/global/import/$1/$2</to>
+    </rule>
+    <!-- product exports and imports urls -->
+    
+	<!-- country demand urls -->
+    <!-- <rule>
+        <from>^/global/export-to-(((?!india)[^/]+)*)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-data/$1/export</to>
+    </rule> -->
+    <rule>
+        <from>^/global/export-to-(((?!india)[^/?]+)*)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-data/$1/export</to>
+    </rule>
+    <!-- <rule>
+        <from>^/global/import-from-(((?!india)[^/]+)*)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-data/$1/import</to>
+    </rule> -->
+    <rule>
+        <from>^/global/import-from-(((?!india)[^/?]+)*)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-data/$1/import</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-from-india-to-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-products-data/$2/$1/$3/export</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-from-india-to-([^/]+)/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-products-data/$2/$1/$3/export</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-([^/]+)-to-india/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-products-data/$2/$1/$3/import</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-([^/]+)-to-india/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-demand-products-data/$2/$1/$3/import</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-export-from-india-to-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-to-$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-from-([^/]+)-to-india(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-from-$2</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-from-india-to-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-to-$2</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-([^/]+)-to-india(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-from-$2</to>
+    </rule>
+    <rule>
+        <from>^/export-to-((?!india).*)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-to-$1</to>
+    </rule>
+    <rule>
+        <from>^/import-from-((?!india).*)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/import-from-$1</to>
+    </rule>
+	<!-- country demand urls -->
+
+	<!-- sub domain global importers urls -->
+    <rule match-type="wildcard">
+        <condition name="host">global.connect2india.com</condition>
+        <from>/*-importers</from>
+        <to last="true">/importers.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <condition name="host">global.connect2india.com</condition>
+        <from>/global/*-importers/page-*</from>
+        <to last="true">/importers.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <condition name="host">global.connect2india.com</condition>
+        <from>/global/*-importers/hs-code-*</from>
+        <to last="true">/importers.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <condition name="host">global.connect2india.com</condition>
+        <from>/global/*-importers/hs-code-*/page-*</from>
+        <to last="true">/importers.html</to>
+    </rule>
+    <!-- sub domain global importers urls -->
+
+	<!-- global importers urls -->
+    <rule>
+        <from>^/global/([^/]+)-importers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/global/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-importers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/global/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-importers/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/hs/global/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-importers/hs-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/hs/global/$1/$2/$3</to>
+    </rule>
+    
+    <rule>
+        <from>^/global/browse/buyers/([^/]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/browse/country/importers/global/$1/</to>
+    </rule>
+    
+    <!-- global importers urls -->
+
+	<!-- global exporters urls -->
+    <rule match-type="wildcard">
+		<condition name="host">global.connect2india.com</condition>
+        <from>/*-exporters</from>
+         <to last="true">/exporters.html</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-exporters(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/global/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-exporters/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/global/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-exporters/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/global/hs/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-exporters/hs-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/global/hs/$1/$2/$3</to>
+    </rule>
+    <!-- global importers urls -->
+
+	<!-- indian exporters urls -->
+    <rule>
+        <from>^/([^/]+)-exporters(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-exporters/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-exporters/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/india/hs/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-exporters/hs-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/exporters/india/hs/$1/$2/$3</to>
+    </rule>
+    <!-- indian exporters urls -->
+
+	<!-- indian importers urls -->
+    <rule >
+		<from>^/([^/]+)-importers(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/india/$1/1</to>
+    </rule>
+    <rule >
+        <from>^/([^/]+)-importers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/india/$1/$2</to>
+    </rule>
+    <rule >
+        <from>^/([^/]+)-importers/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/india/hs/$1/$2/1</to>
+    </rule>
+    <rule >
+        <from>^/([^/]+)-importers/hs-code-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/importers/india/hs/$1/$2/$3</to>
+    </rule>
+    <!-- indian importers urls -->
+
+    <!-- indian buyers urls -->
+    <rule>
+        <from>^/([^/]+)-buyers(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-buyers/page-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-buyers(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-buyers/page-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set type="status">404</set>
+        <set type="request" name="is404">true</set>
+   	 	<to last="true">/404.html</to>
+    </rule>
+    <!-- indian buyers urls -->
+    
+    <!-- indian service providers urls -->
+    <rule>
+        <from>^/([^/]+)-service-providers(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/local/$1-service-providers</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-service-providers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <to last="true" type="permanent-redirect">/local/$1-service-providers/page-$2</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-service-providers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/service-providers/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-service-providers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/service-providers/india/$1/$2</to>
+    </rule>
+    <!-- indian service providers urls -->
+
+	<!-- indian suppliers urls -->
+    <rule>
+        <from>^/([^/]+)-suppliers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-suppliers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-suppliers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/local/([^/]+)-suppliers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers/india/$1/$2</to>
+    </rule>
+    <!-- indian suppliers urls -->
+    
+    <!-- indian manufacturers urls -->
+    <rule>
+        <from>^/([^/]+)-manufacturers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/manufacturers/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-manufacturers/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/manufacturers/india/$1/$2</to>
+    </rule>
+    <!-- indian manufacturers urls -->
+    
+    <!-- suppliers manufacturers directory -->
+    <rule>
+        <from>^/indian-suppliers-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers-directory/indian/mainPage/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-suppliers-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/suppliers-directory/indian/mainPage/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-suppliers-directory/all-cities(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/local/suppliers-city-list.html</to>
+    </rule>
+    <rule>
+        <from>^/indian-manufacturers-directory/all-cities(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/local/manufacturers-city-list.html</to>
+    </rule>
+    <!-- suppliers manufacturers directory -->
+    
+    <!-- Directories -->
+    <rule>
+        <from>^/indian-exporters-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-exporters-directory/india/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-exporters-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-exporters-directory/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-buyers-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-buyers-directory/india/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-buyers-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-buyers-directory/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-manufacturers-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-manufacturers-directory/india/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-manufacturers-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-manufacturers-directory/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/global-exporters-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-exporters-directory/global/1</to>
+    </rule>
+    <rule>
+        <from>^/global-exporters-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-exporters-directory/global/$1</to>
+    </rule>
+    <rule>
+        <from>^/global-importers-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-importers-directory/global/1</to>
+    </rule>
+    <rule>
+        <from>^/global-importers-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/cp-global-importers-directory/global/$1</to>
+    </rule>
+    <!-- Directories -->
+    
+    <!-- global company directory -->
+    <rule>
+        <from>^/global/company-directory(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/global/mainPage/1</to>
+    </rule>
+    <rule>
+        <from>^/global/company-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/global/mainPage/$1</to>
+    </rule>    
+    <!-- <rule>
+        <from>^/global/company-directory/companies-in-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/global/country/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/global/company-directory/companies-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/global/country/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/global/company-directory/companies-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/global/country/$1/$2</to>
+    </rule>
+	<!-- global company directory -->
+
+	<!-- port data urls -->
+	<rule>
+        <from>^/global/([^/]+)-export-data(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-demand-data/$1/export</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-data(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-demand-data/$1/import</to>
+    </rule>
+	<!-- port data urls -->
+
+	<!-- redirect wrong product demand urls -->
+	<rule>
+        <from>^/(?:global/)?([^/]+)-export-from-india/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-india/hs-code-$2/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-import-to-india/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-india/hs-code-$2/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-export-from-port-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-port-$2/hs-code-$3/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-import-from-port-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-from-port-$2/hs-code-$3/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-import-to-port-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-port-$2/hs-code-$3/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-export-to-port-([^/]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-to-port-$2/hs-code-$3/1</to>
+    </rule>
+    <rule>
+        <from>^/(?:global/)?([^/]+)-(export|import)-for-([a-zA-Z]+)-([0-9]+)/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-$2-for-$3-$4/hs-code-$5/1</to>
+    </rule>
+    
+	<!-- search by hs code with hs keyword without global redirect -->
+    <rule>
+        <from>^/([^/]+)-export-from-india/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-india/hs-code-$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-to-india/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-india/hs-code-$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-export-from-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-port-$2/hs-code-$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-from-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-from-port-$2/hs-code-$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-to-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-port-$2/hs-code-$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-export-to-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-to-port-$2/hs-code-$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-(export|import)-for-([a-zA-Z]+)-([0-9]+)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-$1-for-$3-$4/hs-code-$5/$6</to>
+    </rule>
+    
+    <!-- search by hs code with hs keyword with global -->
+    <rule>
+        <from>^/global/([^/]+)-export-from-india/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand</set>
+        <to last="true">/th/product-demand-data/$1/$2/export</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-to-india/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand</set>
+        <to last="true">/th/product-demand-data/$1/$2/import</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-from-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/$3/export/$2/origin</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/$3/import/$2/dest</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-to-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/$3/import/$2/origin</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-to-port-([^/]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/$3/export/$2/dest</to>
+    </rule>
+    <!-- steel-export-for-NOV-2015 and same for import also -->
+    <rule>
+        <from>^/global/([^/]+)-(export|import)-for-([a-zA-Z]+)-([0-9]+)/hs-code-([0-9]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-duration</set>
+        <to last="true">/th/product-demand-duration-data/$1/$5/$3-$4/$2</to>
+    </rule>
+    
+    <!-- search by hs code -->
+	<rule>
+		<from>^/(?:global/)?([^/]+)-export-from-india/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-export-from-india/hs-code-$2/$3</to>
+	</rule>
+	<rule>
+		<from>^/(?:global/)?([^/]+)-import-to-india/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-import-to-india/hs-code-$2/$3</to>
+	</rule>
+	<rule>
+		<from>^/(?:global/)?([^/]+)-export-from-port-([^/]+)/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-export-from-port-$2/hs-code-$3/$4</to>
+	</rule>
+	<rule>
+		<from>^/(?:global/)?([^/]+)-import-from-port-([^/]+)/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-import-from-port-$2/hs-code-$3/$4</to>
+	</rule>
+	<rule>
+		<from>^/(?:global/)?([^/]+)-import-to-port-([^/]+)/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-import-to-port-$2/hs-code-$3/$4</to>
+	</rule>
+	<rule>
+		<from>^/(?:global/)?([^/]+)-export-to-port-([^/]+)/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-export-to-port-$2/hs-code-$3/$4</to>
+	</rule>
+	<!-- steel-export-for-NOV-2015 and same for import also -->
+	<rule>
+		<from>^/(?:global/)?([^/]+)-(export|import)-for-([a-zA-Z]+)-([0-9]+)/([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/$1-$2-for-$3-$4/hs-code-$5/$6</to>
+	</rule>
+
+	<!-- search by name without global redirect -->
+    <rule>
+        <from>^/([^/]+)-export-from-india/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-india/$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-to-india/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-india/$2</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-export-from-port-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-port-$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-from-port-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-from-port-$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-import-to-port-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-to-port-$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-export-to-port-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-to-port-$2/$3</to>
+    </rule>
+    <!-- steel-export-for-NOV-2015 and same for import also -->
+    <rule>
+        <from>^/([^/]+)-(export|import)-for-([^/]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-$2-for-$3/$4</to>
+    </rule>
+    <!-- end of search by name without global redirect -->
+
+    <!-- search by name with global -->
+    <rule>
+        <from>^/global/([^/]+)-export-from-india/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand</set>
+        <to last="true">/th/product-demand-data/$1/0/export</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-to-india/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand</set>
+        <to last="true">/th/product-demand-data/$1/0/import</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-from-port-([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/0/export/$2/origin</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-from-port-([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/0/import/$2/dest</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-import-to-port-([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/0/import/$2/origin</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-export-to-port-([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-port</set>
+        <to last="true">/th/product-demand-port-data/$1/0/export/$2/dest</to>
+    </rule>
+    <!-- steel-export-for-NOV-2015 and same for import also -->
+    <rule>
+        <from>^/global/([^/]+)-(export|import)-for-([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/product-demand-duration</set>
+        <to last="true">/th/product-demand-duration-data/$1/0/$3/$2</to>
+    </rule>
+    <!-- end of search by name with global -->
+
+	<!-- End of product export from india flow -->
+	
+    <!-- end of rules for /in folder -->
+	<!-- when using global.c2i.com  -->
+    <rule match-type="wildcard">
+        <condition name="host" operator="notequal">global.connect2india.com</condition>
+		<from>/export-*-from-india</from>
+		<to last="true">/404.html</to>
+	</rule>
+	
+	<rule>
+		<from>^/export-from-india-to-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-from-india-to-$1</to>
+	</rule>
+	<rule>
+		<from>^/export-([^/]+)-from-india-to-([^/]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-$1-from-india-to-$2</to>
+	</rule>
+    <rule>
+        <from>^/export-([^/]+)-from-india/hs-code-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-$1-from-india/hs-code-$4</to>
+    </rule>
+    <rule>
+        <from>^/export-([^/]+)-from-india(\?source=([^/]+))?(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-$1-from-india</to>
+    </rule>
+    <rule>
+		<from>^/export-from-india(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/export-from-india</to>
+	</rule>
+	
+	<!-- <rule>
+		<from>^/global/export-from-india-to-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data-country/india/$1</to>
+	</rule> -->
+	<rule>
+		<from>^/global/export-from-india-to-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data-country/india/$1</to>
+	</rule>
+	<!-- <rule>
+		<from>^/global/export-([^/]+)-from-india-to-([^/]+)\?_escaped_fragment_=$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data-product-country/$1/$2</to>
+	</rule> -->
+	<rule>
+		<from>^/global/export-([^/]+)-from-india-to-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data-product-country/$1/$2</to>
+	</rule>
+    <rule>
+        <from>^/global/export-([^/]+)-from-india/hs-code-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data/india/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/export-([^/]+)-from-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data/india/$1/0</to>
+    </rule>
+    <rule>
+		<from>^/global/export-from-india(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iSnapshotDir">/global/export-from-india</set>
+        <to last="true">/th/export-data/india/main-page</to>
+	</rule>
+	<!-- end of export from india flow  -->
+
+   <!--redirection rules for transfer of old indexed pages onto the new structure  -->
+    <rule match-type="wildcard">
+        <from>/import_to.html?country=*</from>
+        <to last="true" type="permanent-redirect">/global/export-from-india-to-${replace:$1:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from>/product-directory.html?name=*&amp;type=export</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-exporters</to>
+    </rule>
+
+     <rule match-type="wildcard">
+         <from>/product-directory.html?name=*&amp;type=import</from>
+         <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-importers</to>
+     </rule>
+    
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;type=(Export|export)&amp;region=All&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=All&amp;type=(export|Export)&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=All&amp;type=(import|Import)&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-to-india/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=All&amp;type=(export|Export)&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/$2/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=All&amp;type=(import|Import)&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/$2/1</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=*&amp;type=(export|Export)&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-from-india-to-$2/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=*&amp;type=(import|Import)&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/$1-import-from-$2-to-india/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=*&amp;type=(export|Export)&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india-to-$2/$3/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=*&amp;type=(import|Import)&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-from-$2-to-india/$3/1</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;type=(export|Export)&amp;region=All&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/$2/1</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;type=(import|Import)&amp;region=All&amp;id=0</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-to-india/1</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/country-demand.html?country=*&amp;type=export</from>
+        <to last="true" type="permanent-redirect">/global/export-to-${replace:$1:%20:-}</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/country-demand.html?country=*&amp;type=import</from>
+        <to last="true" type="permanent-redirect">/global/import-from-${replace:$1:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/search.html?name=*&amp;country=India&amp;type=Product&amp;subtype=All</from>
+        <to last="true" type="permanent-redirect">/${replace:$1:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/search.html?name=*&amp;country=India&amp;type=All</from>
+        <to last="true" type="permanent-redirect">/${replace:$1:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/import_from.html?country=*</from>
+        <to last="true" type="permanent-redirect">/global/import-from-${replace:$1:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/stats-search.html?productId=*&amp;country2=*</from>
+        <to last="true" type="permanent-redirect">/global/export-to-${replace:$2:%20:-}</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;type=import&amp;region=All&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-to-india/$2/1</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/stats_productwise.html?name=*&amp;region=All&amp;type=import&amp;id=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-to-india/$2/1</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/product-export-import-details.html?name=*</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/1 </to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/product-demand.html?id=*&amp;name=*&amp;oport=*&amp;type=export</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$2:%20:-}-export-from-port-$3/$1/1 </to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/product-demand.html?id=*&amp;name=*&amp;type=export</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$2:%20:-}-export-from-india/$1/1 </to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/product-demand.html?name=*&amp;id=*&amp;type=export</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-export-from-india/$2/1 </to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/product-demand.html?id=*&amp;name=*&amp;type=import</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$2:%20:-}-import-to-india/$1/1 </to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/product-demand.html?name=*&amp;id=*&amp;type=import</from>
+        <to last="true" type="permanent-redirect">/global/${replace:$1:%20:-}-import-to-india/$2/1 </to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/stats-search.html?country=*</from>
+        <to last="true" type="permanent-redirect">/global/export-to-${replace:$1:%20:-}</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/market-analysis.html</from>
+        <to last="true" type="permanent-redirect">/global/market-analysis.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/in/search.html?name=*&amp;country=India&amp;type=Services</from>
+        <to last="true" type="permanent-redirect">/local/${replace:$1:%20:-}-service-providers</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/product-exporters.html?name=*</from>
+        <to last="true" type="permanent-redirect">/${replace:$1:%20:-}-exporters</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from casesensitive="false">/product-exporters.html?name=*</from>
+        <to last="true" type="permanent-redirect">/${replace:$1:%20:-}-exporters</to>
+    </rule>
+
+    <rule match-type="wildcard">
+        <from casesensitive="false">/resources/sulphur/elemental-sulphur.html</from>
+        <to last="true" type="permanent-redirect">http://elementalsulphur.com/</to>
+    </rule>
+	
+	<!-- this rule needs to be verified-->
+	<rule>
+        <from>^/(?:global/|local/)?hs-code-directory.html\?hsCode=([0-9]+)(&amp;_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/hs-codes-directory/hs-code-$1</to>
+    </rule>
+    <!--  end of new structure resirection rules  -->
+    
+    <rule>
+        <from>^/resources/exchange-rates.html(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/resources/customs-exchange-rate.html</to>
+    </rule>
+    <!--  codes urls -->
+    
+    <rule>
+        <from>^/resources/country-code.html(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/country-codes.html</to>
+    </rule>
+    
+    <rule>
+        <from>^/resources/port-codes.html(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/indian-port-codes.html</to>
+    </rule>
+    <rule>
+        <from>^/country-codes.html\?page=([0-9]+)(&amp;([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-codes/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/country-codes.html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-codes/india/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-port-codes.html\?page=([0-9]+)(&amp;([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-codes/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-port-codes.html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-codes/india/1</to>
+    </rule>
+    <rule>
+        <from>^/international-port-codes.html\?page=([0-9]+)(&amp;([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-codes/global/$1</to>
+    </rule>
+    <rule>
+        <from>^/international-port-codes.html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/port-codes/global/1</to>
+    </rule>
+    <!--  end of codes urls  -->
+	
+	<rule>
+        <from>^/global/([^/]+)-for-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(2015|2016)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-for-$2-$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)-for-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(2015|2016)/hs-code-([0-9]+)/([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <to last="true" type="permanent-redirect">/global/$1-export-for-$2-$3/hs-code-$4/$5</to>
+    </rule>
+    
+    <!--  url rewriting for company details  -->
+    <rule>
+        <from>^/local/([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2</to>
+        <!-- <to last="true">/company_details.html</to> -->
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2</to>
+        <!-- <to last="true">/company_details.html</to> -->
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2</to>
+        <!-- <to last="true">/company_details.html</to> -->
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([0-9]+)/(products|contact-details|trade-data|trade-history|scores|web-details)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/global/([^/]+)/([0-9]+)/(products|contact-details|trade-data|trade-history|scores|web-details)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([0-9]+)/products/([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/products/$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([0-9]+)/(products|resources)/([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/static-pages/$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([0-9]+)/([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/static-pages/$3</to>
+    </rule>
+    <rule>
+        <from>^/prod-detail/([^/]+)/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/prod-details/$1/$2</to>
+    </rule>
+    
+    <!-- <rule>
+        <from>^/([^/]+)/([0-9]+)/resources/([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+		<set name="serveCached">false</set>
+        <to last="true">/company/$1/$2/resources-details/$3</to>
+    </rule> -->
+    
+    <!-- trade leads rewrite rules -->
+    <!-- <rule>
+        <from>^/trade-leads?(\?_escaped_fragment_=)?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/main-leads/1</to>
+    </rule> -->
+    <rule>
+        <from>^/trade-leads(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/main-leads/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/all-leads/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/all-leads/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)/([a-zA-Z0-9-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/product-leads/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)/([a-zA-Z0-9-&amp;,]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/product-leads/$1/$2/$3</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)/([a-zA-Z0-9-&amp;,]+)/([a-zA-Z0-9-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/sub-product-leads/$1/$2/$3/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-leads/(buy|sell)/([a-zA-Z0-9-&amp;,]+)/([a-zA-Z0-9-&amp;,]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/trade-leads-data/sub-product-leads/$1/$2/$3/$4</to>
+    </rule>
+    <!-- END of trade leads rewrite rules -->
+
+	<!-- indian company directory -->
+	<rule>
+        <from>^/indian-company-directory/recently-registered(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/recentData/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-company-directory/recently-registered/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/recentData/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-company-directory/all-cities/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/mainCityDirectory/$1</to>
+    </rule>
+    <rule>
+        <from>^/indian-company-directory/all-cities(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/mainCityDirectory/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-company-directory(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/mainPage/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-company-directory/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/mainPage/$1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/indian-companies-with-([a-zA-Z])\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/letter/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/indian-companies-with-([a-zA-Z])(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/letter/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-companies-with-([a-zA-Z])/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/letter/$1/$2</to>
+    </rule>
+    <!-- indian company directory -->
+    <!-- company by age -->
+    <rule>
+        <from>^/companies-with-age-less-than-1-year(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/age/0/1/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-with-age-less-than-1-year/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/age/0/1/$1</to>
+    </rule>
+    <rule>
+        <from>^/companies-with-age-([0-9]+)-([0-9]+)-years(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/age/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-with-age-([0-9]+)-([0-9]+)-years/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/age/$1/$2/$3</to>
+    </rule>
+    <!-- end of company by age -->
+    <!-- company by year -->
+    <!-- <rule>
+        <from>^/companies-registered-in-([0-9]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/year/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/companies-registered-in-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/year/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-registered-in-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/year/$1/$2</to>
+    </rule>
+    <!-- end of company by year -->
+    <!-- company by city -->
+    <!-- <rule>
+        <from>^/companies-in-([^/]+)\?([^/]+)=([^/]*)?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/city/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/companies-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/city/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/city/$1/$2</to>
+    </rule>
+    <!-- end of company by city -->
+    <!-- company by activity -->
+    <!-- <rule>
+        <from>^/companies-involved-in-([^/]+)/nic-([0-9]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/activity/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/companies-involved-in-([^/]+)/nic-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/activity/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-involved-in-([^/]+)/nic-([0-9]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/activity/$1/$2/$3</to>
+    </rule>
+    <!-- end of company by activity -->
+    <!-- company by status -->
+    <rule>
+        <from>^/([^/]+)-indian-companies(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/status/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)-indian-companies/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/status/$1/$2</to>
+    </rule>
+    <!-- end of company by status -->
+    <!-- company by registrant (\?([^/]+)=([^/]*))?$ -->
+    <!-- <rule>
+        <from>^/companies-registered-with-([^/]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/registrant/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/companies-registered-with-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/registrant/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/companies-registered-with-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/registrant/$1/$2</to>
+    </rule>
+    <!--end for company by registrant -->
+    <!-- for ownership type and city directory page -->
+    <rule>
+        <from>^/indian-([^/]+)-companies/all-cities/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipCityDirectory/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/indian-([^/]+)-companies/all-cities(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipCityDirectory/$1/1</to>
+    </rule>
+    <!-- end for ownership type and city directory page -->
+    <!-- for ownership type and city page -->
+    <!-- <rule>
+        <from>^/indian-([^/]+)-companies-in-([^/]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipCity/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/indian-([^/]+)-companies-in-([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipCity/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-([^/]+)-companies-in-([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipCity/$1/$2/$3</to>
+    </rule>
+    <!--end for ownership type and city page -->
+    <!-- for ownership type and starting character page -->
+    <!-- <rule>
+        <from>^/indian-([^/]+)-companies-starting-with-([a-zA-Z])\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipLetter/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/indian-([^/]+)-companies-starting-with-([a-zA-Z])(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipLetter/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-([^/]+)-companies-starting-with-([a-zA-Z])/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownershipLetter/$1/$2/$3</to>
+    </rule>
+    <!--end for ownership type and starting character page -->
+    <!-- for ownership type page -->
+    <rule>
+        <from>^/indian-([^/]+)-companies(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownership/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/indian-([^/]+)-companies/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/company-directory/indian/ownership/$1/$2</to>
+    </rule>
+    <!--end for ownership type page -->
+    
+    <!-- for New Directory -->
+    <rule>
+        <from>^/global/(importers|exporters)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/main-category-directory/india/global-$1</to>
+    </rule>
+    <rule>
+        <from>^/(buyers|suppliers|importers|exporters|products|manufacturers|wholesalers)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/main-category-directory/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/countries(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/countries-list.html</to>
+    </rule>
+    
+    <!-- /suppliers/mumbai/page-2 -->
+    <rule>
+        <from>^/(buyers|suppliers|importers|exporters|products|manufacturers|wholesalers)/([a-zA-Z-&amp;,]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="paramCategory">$1</set>
+		<set name="paramToCheck">$2</set>
+        <set name="paramPageNo">$3</set>
+        <set name="paramProduct">NoProduct</set>
+		<run class="com.connect2.servlet.filter.CityCategoryFilter" neweachtime="false"></run>
+        <to last="true">%{attribute:newPath}</to>
+    </rule>
+    <!-- /suppliers/Metals,-Alloys-&-Minerals and suppliers/mumbai -->
+    <rule>
+        <from>^/(buyers|suppliers|importers|exporters|products|manufacturers|wholesalers)/([a-zA-Z-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="paramCategory">$1</set>
+		<set name="paramToCheck">$2</set>
+        <set name="paramPageNo">1</set>
+        <set name="paramProduct">NoProduct</set>
+		<run class="com.connect2.servlet.filter.CityCategoryFilter" neweachtime="false"></run>
+        <to last="true">%{attribute:newPath}</to>
+    </rule>
+    <!-- /suppliers/mumbai/CCTV-Camera-Cable/page-2 and /suppliers/Metals,-Alloys-&-Minerals/Steel-&-Stainless-Steel-Products/page-2 -->
+    <rule>
+        <from>^/(buyers|suppliers|importers|exporters|products|manufacturers|wholesalers)/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="paramCategory">$1</set>
+		<set name="paramToCheck">$2</set>
+        <set name="paramProduct">$3</set>
+        <set name="paramPageNo">$4</set>
+		<run class="com.connect2.servlet.filter.CityCategoryFilter" neweachtime="false">	</run>	
+        <to last="true">%{attribute:newPath}</to>
+    </rule>
+    <!-- /suppliers/mumbai/CCTV-Camera-Cable and /suppliers/Metals,-Alloys-&-Minerals/Steel-&-Stainless-Steel-Products -->
+    <rule>
+        <from>^/(buyers|suppliers|importers|exporters|products|manufacturers|wholesalers)/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="paramCategory">$1</set>
+		<set name="paramToCheck">$2</set>
+        <set name="paramProduct">$3</set>
+        <set name="paramPageNo">1</set>
+		<run class="com.connect2.servlet.filter.CityCategoryFilter" neweachtime="false">	</run>
+        <to last="true">%{attribute:newPath}</to>
+    </rule>
+    <rule>
+        <from>^/global/(importers|exporters)/([a-zA-Z-&amp;,]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/main-sub-category-directory/india/global-$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/global/(importers|exporters)/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/main-product-name-directory/india/global-$1/$2/$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/global/(importers|exporters)/([a-zA-Z-&amp;,]+)/([a-zA-Z0-9-&amp;,:]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/main-product-name-directory/india/global-$1/$2/$3/1</to>
+    </rule>
+    <!-- END for New Directory -->
+	
+    <rule>
+        <from>^/trade-service-providers-in-([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/all/directory/country/$1</to>
+    </rule>
+    <rule>
+        <from>^/trade-service-providers/([a-zA-Z-]+)-in-([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/category/country/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-service-providers/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)-in-([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/country/$1/$2/$3/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-service-providers/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)-in-([a-zA-Z-]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/country/$1/$2/$3/$4</to>
+    </rule>
+    <rule>
+        <from>^/trade-service-providers/([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/category/$1/1</to>
+    </rule>
+	<rule>
+        <from>^/trade-service-providers/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/$1/$2/1</to>
+    </rule>
+	<rule>
+        <from>^/trade-service-providers/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/$1/$2/$3</to>
+    </rule>
+	<rule>
+        <from>^/trade-experts/([a-zA-Z-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/category/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-experts/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/$1/$2/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-experts/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-sp/subCategory/$1/$2/$3</to>
+    </rule>
+    
+    <!-- TRADE EVENTS -->
+    <rule>
+        <from>^/trade-events/directory(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/directory</to>
+    </rule>
+    <rule>
+        <from>^/trade-events/industry/([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/industry/$1/$2</to>
+    </rule>
+    <!-- <rule>
+        <from>^/trade-events/industry/([^/]+)\?_escaped_fragment_=$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/industry/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/trade-events/industry/([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/industry/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-events/country/([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/country/$1/$2</to>
+    </rule>
+    <rule>
+        <from>^/trade-events/country/([^/]+)/([^/]+)/page-([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/countryindustry/$1/$2/$3</to>
+    </rule>
+    <!-- <rule>
+        <from>^/trade-events/country/([^/]+)/([^/]+)\?([^/]+)=([^/]*)?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/countryindustry/$1/$2/1</to>
+    </rule> -->
+    <rule>
+        <from>^/trade-events/country/([^/]+)/([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/countryindustry/$1/$2/1</to>
+    </rule>
+    <!-- <rule>
+        <from>^/trade-events/country/([^/]+)\?(([^/]+)=([^/]*))?$</from>
+		<set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/country/$1/1</to>
+    </rule> -->
+    <rule>
+        <from>^/trade-events/country/([^/?]+)(?:(?:[^/]+)=(?:[^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/all/country/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/trade-events/event-details/([0-9]+)(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/trade-events/event-info/$1</to>
+    </rule>
+    <!-- TRADE EVENTS -->
+	
+	<!-- for /location/product-name in area/ page-->
+    <rule>
+        <from>^/([^/]+)/([a-zA-Z0-9-]+)-(buyers|suppliers|importers|exporters)-in-((?!.html).)*(\?_escaped_fragment_=)?$</from>
+		<set name="productName">$2</set>		
+			<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([a-zA-Z0-9-]+)-in-((?!.html).)*(\?_escaped_fragment_=)?$</from>
+		<set name="productName">$2</set>		
+			<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+    <rule>
+        <from>^/([^/]+)/([a-zA-Z0-9-]+)/page-([0-9]+)-in-((?!.html).)*$/page-([0-9]+)(\?_escaped_fragment_=)?</from>
+		<set name="productName">$2</set>		
+			<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+
+    <!--end for /location/product-name/ page-2 -->
+
+    <!-- url rewriting for pincode-->
+    <rule>
+        <from>^/([a-zA-Z0-9-]+)-in-pincode-([0-9]+)(\?_escaped_fragment_=)?$</from>
+		<set name="productName">$1</set>		
+			<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+    <!-- end of url rewriting for pincode-->
+
+    <!-- for /product-name/ page-2 -->
+    <!-- <rule>
+        <from>^/china(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/country-page</set>
+        <set name="productName">$1</set>
+        <to last="true">/country-page.html</to>
+    </rule> -->
+    <rule>
+        <from>^/([a-zA-Z0-9-]+)/suppliers(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <to last="true">/th/country-page-suppliers-data/$1</to>
+    </rule>
+    <rule>
+        <from>^/([a-zA-Z0-9-]+)(\?([^/]+)=([^/]*))?$</from>
+        <!-- <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/product-page</set> -->
+        <set name="productName">$1</set>
+        <!-- <to last="true">/product-page.html</to> -->	
+		<run class="com.connect2.servlet.filter.ProductUrlRedirectFilter" neweachtime="false">
+		</run>
+        <to last="true">%{attribute:newPath}</to>
+    </rule>
+    <!-- <rule>
+        <from>^/([a-zA-Z0-9-]+)/page-([0-9]+)(\?_escaped_fragment_=)?$</from>
+        <set name="c2iWaitCondition">elAllPageDataLoaded</set>
+        <set name="c2iSnapshotDir">/product-page</set>
+        <set name="productName">$1</set>
+        <to last="true">/product-page.html</to>
+		<run class="com.connect2.servlet.filter.ProductUrlRedirectFilter" neweachtime="false">
+		</run>
+        <to last="true">%{attribute:newPath}</to>
+    </rule> -->
+    <!-- end of product name -->
+
+    <!-- for /location/product-name/ page -->
+    <rule>
+        <from>^/([^/]+)/([a-zA-Z0-9-]+)-(buyers|suppliers|importers|exporters)(\?_escaped_fragment_=)?$</from>
+        <!-- <to last="true">/indian-company-list.html</to> -->
+		<set name="productName">$2</set>		
+		<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>	
+    </rule>
+	
+	<rule>
+        <from>^/(?:(?!in|!suppliers)[^/]+)/([a-zA-Z0-9-]+)(\?_escaped_fragment_=)?$</from>
+		<set name="productName">$1</set>		
+		<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+    <rule>
+        <from>^/(?:(?!in|!suppliers)[^/]+)/([a-zA-Z0-9-]+)/page-([0-9]+)(\?_escaped_fragment_=)?$</from>
+		<set name="productName">$2</set>		
+		<run class="com.connect2.servlet.filter.CityUrlRedirectFilter" neweachtime="false">
+		</run>
+		<to last="true" type="permanent-redirect">%{attribute:redirectPath}</to>
+    </rule>
+    <!--end for /location/product-name/ page -->
+    
+	<rule>
+        <from>^/resources/(.*).html(\?_escaped_fragment_=)?$</from>
+        <set name="resource">$1</set>		
+		<run class="com.connect2.servlet.filter.ResourceUrlRedirectFilter" neweachtime="false">
+		</run>
+        <!-- <to last="true">/resources/resources.html</to> -->
+    </rule>
+    
+    <rule>
+        <from>^/i18n/hindi/resources/export/Guidelines-to-export-([^/]+)-hs-code-([0-9]+).html$</from>
+        <to last="true" type="permanent-redirect">/hi/trade-resources/Guidelines-to-export-$1/hs-code-$2</to>
+    </rule>
+    <rule>
+        <from>^/i18n/hindi/resources/import/document-required-to-import-([^/]+)-hs-code-([0-9]+).html$</from>
+        <to last="true" type="permanent-redirect">/hi/trade-resources/document-required-to-import-$1/hs-code-$2</to>
+    </rule>
+    <rule>
+		<from>^/i18n/hindi/resources/(.*).html$</from>
+		<to last="true" type="permanent-redirect">/hi/trade-resources/$1.html</to>
+	</rule>
+	<rule>
+		<from>^/i18n/spanish/resources/(.*).html$</from>
+		<to last="true" type="permanent-redirect">/es/trade-resources/$1.html</to>
+	</rule>
+	<rule>
+		<from>^/i18n/french/resources/(.*).html$</from>
+		<to last="true" type="permanent-redirect">/fr/trade-resources/$1.html</to>
+	</rule>
+	<rule>
+		<from>^/i18n/german/resources/(.*).html$</from>
+		<to last="true" type="permanent-redirect">/de/trade-resources/$1.html</to>
+	</rule>
+    
+	<!-- <rule>
+		<from>^/i18n/(spanish|french|german|hindi)/resources/(.*).html$</from>
+		<set name="lang">$1</set>
+		<set name="template">$2</set>
+		<run class="com.connect2.servlet.filter.ResourceUrlRedirectFilter2" neweachtime="false"></run>
+	</rule> -->
+
+	<rule match-type="wildcard">
+		<!-- <condition type="parameter" name="id" operator="greater">1008335</condition> -->
+		<from>/company_details.html?name=*&amp;id=*</from>
+		<run class="com.connect2.servlet.filter.QueryParamRedirect" neweachtime="true">
+		</run>
+		<to type="permanent-redirect" last="true">%{attribute:prefix}/${replace:$1:%20:-}/$2</to>
+	</rule>
+
+    <rule>
+        <from>^/amp/suppliers/([^/]+)-suppliers.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iAmpRequestType">amp</set>
+        <to last="true">/th/suppliers/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/amp/products/([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iAmpRequestType">amp</set>
+        <to last="true">/th/product-page/india/$1</to>
+    </rule>
+    <rule>
+        <from>^/amp/([^/]+)-exporters.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iAmpRequestType">amp</set>
+        <to last="true">/th/exporters/india/$1/1</to>
+    </rule>
+    <rule>
+        <from>^/amp/indian-suppliers-directory.html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iAmpRequestType">amp</set>
+        <to last="true">/th/suppliers-directory/indian/mainPage/1</to>
+    </rule>
+    <rule>
+        <from>^/amp/suppliers/([^/]+)/([^/]+).html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2iAmpRequestType">amp</set>
+        <to last="true">/th/suppliers/city/$1/$2/1</to>
+    </rule>
+	
+	<rule>
+        <from>^/amp/(.*).html(\?_escaped_fragment_=)?</from>
+        <set name="c2issrrefer">ssr</set>
+        <set name="c2i_static_file_resources_dir">/xssr/c2i/amp-pages</set>
+        <set name="c2i_static_file_resources_file">$1.html</set>
+        <to last="true">/amp-pages/$1.html</to>
+    </rule>
+    <!-- <rule>
+        <from>^/i18n/(.*).html(\?([^/]+)=([^/]*))?$</from>
+        <to last="true">-</to>
+    </rule> -->
+    <rule>
+        <from>^/(.*).html(\?([^/]+)=([^/]*))?$</from>
+        <set name="c2issrrefer">ssr</set>
+		<set name="serveCached">true</set>
+        <to last="true">/th/default-handler/$1</to>
+    </rule>
+	
+    <!-- end of url rewriting for company details  -->
+
+</urlrewrite>

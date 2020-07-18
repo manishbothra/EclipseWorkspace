@@ -23,6 +23,7 @@ import org.springframework.stereotype.Repository;
 import com.connect2.dao.User;
 import com.connect2.datasource.C2IDataSource;
 import com.connect2.ec.constants.ECType;
+import com.connect2.ec.controller.BookingDetails;
 import com.connect2.ec.controller.InquiryDetails;
 import com.connect2.ec.domain.C2IEcDashboard;
 import com.connect2.ec.domain.C2IEcProdSellingInfo;
@@ -1535,76 +1536,75 @@ public class C2IEcommerceDao {
 		}
 		return orderDetails;
 	}
-	public int insertInquiryDetails(InquiryDetails sid) throws SQLException {
+	public int insertInquiryDetails(InquiryDetails inquiryDetails) throws SQLException {
 		PreparedStatement stmt = null;
-		int inquiry_details_id=0;
+		int inquiryDetailsId=0;
 		ResultSet rs = null;
 		
-		slf4jLogger.info("LOCAL-DATA: INSERTING SELLER DETAILS");
+		slf4jLogger.info("LOCAL-DATA: INSERTING INQUIRY DETAILS");
 		Connection conn = getConnection();
 		
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("insert into inquiry_details(user_id,trade_type,mode,incoterms,pickup,pol")
-				.append("pod,delivery,pickup_service,origin_handling,origin_cha,delivery_service,destination_handling" )
-				.append("destination_cha,gross_weight,gross_weight_unit,commodity,cargo_type,expected_pickup_date")
-				.append("lcl_package_quantity,lcl_package_type,fcl_container_quantity,fcl_container_type,fcl_container_size")
-				.append("fcl_container_stuffing,length,width,height,quantity,unit,air_load_type,special_instruction")
-				.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) returning inquiry_details_id");
+			sql.append("insert into inquiry_details(user_id,trade_type,mode,incoterms,pickup,pol,")
+				.append("pod,delivery,pickup_service,origin_handling,origin_cha,delivery_service,destination_handling,")
+				.append("destination_cha,gross_weight,gross_weight_unit,commodity,cargo_type,expected_pickup_Date,")
+				.append("lcl_package_quantity,lcl_package_type,fcl_container_quantity,fcl_container_type,fcl_container_size,")
+				.append("fcl_container_stuffing,length,width,height,quantity,unit,air_load_type,special_instruction,")
+				.append("inquiry_id,instant_id,inquiry_status) ")
+				.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) returning inquiry_details_id");
 			
 			stmt = conn.prepareStatement(sql.toString());
 	
 			User loggedInUser  = C2IUtils.getLoggedInUser();
 			
 			List<Object> paramValues = new ArrayList<Object>();	
-			
 			paramValues.add(loggedInUser.getUserId());
-			paramValues.add(sid.getTrade_type());
-			paramValues.add(sid.getMode());
-			paramValues.add(sid.getIncoterms());
-			paramValues.add(sid.getPickup());
-			paramValues.add(sid.getPol());
-			paramValues.add(sid.getPod());
-			paramValues.add(sid.getDelivery());
-			paramValues.add(sid.getPickup_service());
-			paramValues.add(sid.getOrigin_handling());
-			paramValues.add(sid.getOrigin_cha());
-			paramValues.add(sid.getDelivery_service());
-			paramValues.add(sid.getDestination_handling());
-			paramValues.add(sid.getDestination_cha());
-			paramValues.add(sid.getGross_weight());
-			paramValues.add(sid.getGross_weight_unit());
-			paramValues.add(sid.getCommodity());
-			paramValues.add(sid.getCargo_type());
-			paramValues.add(sid.getExpected_pickup_date());
-			paramValues.add(sid.getLcl_package_quantity());
-			paramValues.add(sid.getLcl_package_type());
-			paramValues.add(sid.getFcl_container_quantity());
-			paramValues.add(sid.getFcl_container_type());
-			paramValues.add(sid.getFcl_container_size());
-			paramValues.add(sid.getFcl_container_stuffing());
-			paramValues.add(sid.getLength());
-			paramValues.add(sid.getWidth());
-			paramValues.add(sid.getHeight());
-			paramValues.add(sid.getQuantity());
-			paramValues.add(sid.getUnit());
-			paramValues.add(sid.getAir_load_type());
-			paramValues.add(sid.getSpecial_instruction());
-			Set<String> marketplaces = new HashSet<>();
-			
-			
-			paramValues.add(StringUtils.join(marketplaces, ","));			
+			paramValues.add(inquiryDetails.getTradeType());
+			paramValues.add(inquiryDetails.getMode());
+			paramValues.add(inquiryDetails.getIncoterms());
+			paramValues.add(inquiryDetails.getPickup());
+			paramValues.add(inquiryDetails.getPol());
+			paramValues.add(inquiryDetails.getPod());
+			paramValues.add(inquiryDetails.getDelivery());
+			paramValues.add(inquiryDetails.getPickupService());
+			paramValues.add(inquiryDetails.getOriginHandling());
+			paramValues.add(inquiryDetails.getOriginCha());
+			paramValues.add(inquiryDetails.getDeliveryService());
+			paramValues.add(inquiryDetails.getDestinationHandling());
+			paramValues.add(inquiryDetails.getDestinationCha());
+			paramValues.add(inquiryDetails.getGrossWeight());
+			paramValues.add(inquiryDetails.getGrossWeightUnit());
+			paramValues.add(inquiryDetails.getCommodity());
+			paramValues.add(inquiryDetails.getCargoType());
+			paramValues.add(inquiryDetails.getExpectedPickupDate());
+			paramValues.add(inquiryDetails.getLclPackageQuantity());
+			paramValues.add(inquiryDetails.getLclPackageType());
+			paramValues.add(inquiryDetails.getFclContainerQuantity());
+			paramValues.add(inquiryDetails.getFclContainerType());
+			paramValues.add(inquiryDetails.getFclContainerSize());
+			paramValues.add(inquiryDetails.getFclContainerStuffing());
+			paramValues.add(inquiryDetails.getLength());
+			paramValues.add(inquiryDetails.getWidth());
+			paramValues.add(inquiryDetails.getHeight());
+			paramValues.add(inquiryDetails.getQuantity());
+			paramValues.add(inquiryDetails.getUnit());
+			paramValues.add(inquiryDetails.getAirLoadType());
+			paramValues.add(inquiryDetails.getSpecialInstruction());
+			paramValues.add(inquiryDetails.getInquiryId());
+			paramValues.add(inquiryDetails.getInstantId());
+			paramValues.add(inquiryDetails.getInquiryStatus());
 			
 			DBUtility.mapParams(stmt, paramValues);
-			
+			//System.out.println(stmt);
 			rs=stmt.executeQuery();
 			
 			while(rs.next()) {
-				inquiry_details_id = rs.getInt("inquiry_details_id");
-				sid.setInquiry_details_id(inquiry_details_id);
+				inquiryDetailsId = rs.getInt("inquiry_details_id");
+				inquiryDetails.setInquiryDetailsId(inquiryDetailsId);
 			}
 		} catch (Exception e) {
-			slf4jLogger.error("inserting seller details ", e);
+			slf4jLogger.error("inserting inquiry details", e);
 			e.printStackTrace();
 
 		}finally {
@@ -1616,18 +1616,18 @@ public class C2IEcommerceDao {
 				conn.close();
 			}
 		}
-		return inquiry_details_id;
+		return inquiryDetailsId;
 	}
-	public InquiryDetails getInquiryDetails(int inquiry_details_id) throws SQLException {
+	public List<InquiryDetails> getInquiry() throws SQLException {
 		PreparedStatement stmt = null;
-		InquiryDetails idt=new InquiryDetails();
+		List<InquiryDetails> list=new ArrayList<>();
 		ResultSet rs = null;
 		
-		slf4jLogger.info("LOCAL-DATA: INSERTING SELLER DETAILS");
+		slf4jLogger.info("LOCAL-DATA: RETRIEVING ALL INQUIRY DETAILS");
 		Connection conn = getConnection();
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("select * from c2i_ec_seller where user_id=? and inquiry_details_id=?");
+			sql.append("select * from inquiry_details where user_id=? order by inquiry_details_id");
 			
 			stmt = conn.prepareStatement(sql.toString());
 	
@@ -1642,41 +1642,124 @@ public class C2IEcommerceDao {
 			rs=stmt.executeQuery();
 			
 			while(rs.next()) {
-				idt.setTrade_type(rs.getString("trade_type"));
-				idt.setMode(rs.getString("mode"));
-				idt.setIncoterms(rs.getString("incoterms"));
-				idt.setPickup(rs.getString("pickup"));
-				idt.setPol(rs.getString("pol"));
-				idt.setPod(rs.getString("pod"));
-				idt.setDelivery(rs.getString("delivery"));
-				idt.setPickup_service(rs.getString("pickup_service"));
-				idt.setOrigin_handling(rs.getString("origin_handling"));
-				idt.setOrigin_cha(rs.getString("origin_cha"));
-				idt.setDelivery_service(rs.getString("delivery_service"));
-				idt.setDestination_handling(rs.getString("destination_handling"));
-				idt.setDestination_cha(rs.getString("destination_cha"));
-				idt.setGross_weight(rs.getInt("gross_weight"));
-				idt.setGross_weight_unit(rs.getString("gross_weight_unit"));
-				idt.setCommodity(rs.getString("commodity"));
-				idt.setCargo_type(rs.getString("cargo_type"));
-				idt.setExpected_pickup_date(rs.getString("expected_pickup_date"));
-				idt.setLcl_package_quantity(rs.getInt("lcl_package_quantity"));
-				idt.setLcl_package_type(rs.getString("lcl_package_type"));
-				idt.setFcl_container_quantity(rs.getInt("fcl_container_quantity"));;
-				idt.setFcl_container_type(rs.getString("fcl_container_type"));
-				idt.setFcl_container_size(rs.getString("fcl_container_size"));
-				idt.setFcl_container_stuffing(rs.getString("fcl_container_stuffing"));
-				idt.setLength(rs.getInt("length"));
-				idt.setWidth(rs.getInt("width"));
-				idt.setHeight(rs.getInt("height"));
-				idt.setQuantity(rs.getInt("quantity"));
-				idt.setUnit(rs.getString("unit"));
-				idt.setAir_load_type(rs.getString("air_load_type"));
-				idt.setSpecial_instruction(rs.getString("special_instruction"));
+				InquiryDetails inquiryDetails=new InquiryDetails();
+				inquiryDetails.setTradeType(rs.getString("trade_type"));
+				inquiryDetails.setMode(rs.getString("mode"));
+				inquiryDetails.setIncoterms(rs.getString("incoterms"));
+				inquiryDetails.setPickup(rs.getString("pickup"));
+				inquiryDetails.setPol(rs.getString("pol"));
+				inquiryDetails.setPod(rs.getString("pod"));
+				inquiryDetails.setDelivery(rs.getString("delivery"));
+				inquiryDetails.setPickupService(rs.getString("pickup_service"));
+				inquiryDetails.setOriginHandling(rs.getString("origin_handling"));
+				inquiryDetails.setOriginCha(rs.getString("origin_cha"));
+				inquiryDetails.setDeliveryService(rs.getString("delivery_service"));
+				inquiryDetails.setDestinationHandling(rs.getString("destination_handling"));
+				inquiryDetails.setDestinationCha(rs.getString("destination_cha"));
+				inquiryDetails.setGrossWeight(rs.getInt("gross_weight"));
+				inquiryDetails.setGrossWeightUnit(rs.getString("gross_weight_unit"));
+				inquiryDetails.setCommodity(rs.getString("commodity"));
+				inquiryDetails.setCargoType(rs.getString("cargo_type"));
+				inquiryDetails.setExpectedPickupDate(rs.getString("expected_pickup_Date"));
+				inquiryDetails.setLclPackageQuantity(rs.getInt("lcl_package_quantity"));
+				inquiryDetails.setLclPackageType(rs.getString("lcl_package_type"));
+				inquiryDetails.setFclContainerQuantity(rs.getInt("fcl_container_quantity"));;
+				inquiryDetails.setFclContainerType(rs.getString("fcl_container_type"));
+				inquiryDetails.setFclContainerSize(rs.getString("fcl_container_size"));
+				inquiryDetails.setFclContainerStuffing(rs.getString("fcl_container_stuffing"));
+				inquiryDetails.setLength(rs.getInt("length"));
+				inquiryDetails.setWidth(rs.getInt("width"));
+				inquiryDetails.setHeight(rs.getInt("height"));
+				inquiryDetails.setQuantity(rs.getInt("quantity"));
+				inquiryDetails.setUnit(rs.getString("unit"));
+				inquiryDetails.setAirLoadType(rs.getString("air_load_type"));
+				inquiryDetails.setSpecialInstruction(rs.getString("special_instruction"));
+				inquiryDetails.setInquiryDetailsId(rs.getInt("inquiry_details_id"));
+				inquiryDetails.setInquiryId(rs.getString("inquiry_id"));
+				inquiryDetails.setInstantId(rs.getString("instant_id"));
+				inquiryDetails.setBookingStatus(rs.getBoolean("booking_status"));
+				inquiryDetails.setInquiryStatus(rs.getString("inquiry_status"));
+				list.add(inquiryDetails);
+			}
+		} catch (Exception e) {
+			slf4jLogger.error("ERROR IN GETTING ALL INQUIRY DETAILS ", e);
+			e.printStackTrace();
+
+		}finally {
+			if (stmt != null)
+				stmt.close();
+			if (rs != null)
+				rs.close();
+			if(conn != null ) {
+				conn.close();
+			}
+		}
+		return list;
+	}
+	public InquiryDetails getInquiryDetails(int inquiryDetailsId) throws SQLException {
+		PreparedStatement stmt = null;
+		InquiryDetails inquiryDetails=new InquiryDetails();
+		ResultSet rs = null;
+		
+		slf4jLogger.info("LOCAL-DATA: RETRIEVING INQUIRY DETAILS OF A PARTICULAR INQUIRY");
+		Connection conn = getConnection();
+		try {
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from inquiry_details where user_id=? and inquiry_details_id=?");
+			
+			stmt = conn.prepareStatement(sql.toString());
+	
+			User loggedInUser  = C2IUtils.getLoggedInUser();
+			
+			List<Object> paramValues = new ArrayList<Object>();	
+		
+			paramValues.add(loggedInUser.getUserId());
+			paramValues.add(inquiryDetailsId);
+			DBUtility.mapParams(stmt, paramValues);
+			
+			rs=stmt.executeQuery();
+			
+			while(rs.next()) {
 				
+				inquiryDetails.setTradeType(rs.getString("trade_type"));
+				inquiryDetails.setMode(rs.getString("mode"));
+				inquiryDetails.setIncoterms(rs.getString("incoterms"));
+				inquiryDetails.setPickup(rs.getString("pickup"));
+				inquiryDetails.setPol(rs.getString("pol"));
+				inquiryDetails.setPod(rs.getString("pod"));
+				inquiryDetails.setDelivery(rs.getString("delivery"));
+				inquiryDetails.setPickupService(rs.getString("pickup_service"));
+				inquiryDetails.setOriginHandling(rs.getString("origin_handling"));
+				inquiryDetails.setOriginCha(rs.getString("origin_cha"));
+				inquiryDetails.setDeliveryService(rs.getString("delivery_service"));
+				inquiryDetails.setDestinationHandling(rs.getString("destination_handling"));
+				inquiryDetails.setDestinationCha(rs.getString("destination_cha"));
+				inquiryDetails.setGrossWeight(rs.getInt("gross_weight"));
+				inquiryDetails.setGrossWeightUnit(rs.getString("gross_weight_unit"));
+				inquiryDetails.setCommodity(rs.getString("commodity"));
+				inquiryDetails.setCargoType(rs.getString("cargo_type"));
+				inquiryDetails.setExpectedPickupDate(rs.getString("expected_pickup_Date"));
+				inquiryDetails.setLclPackageQuantity(rs.getInt("lcl_package_quantity"));
+				inquiryDetails.setLclPackageType(rs.getString("lcl_package_type"));
+				inquiryDetails.setFclContainerQuantity(rs.getInt("fcl_container_quantity"));;
+				inquiryDetails.setFclContainerType(rs.getString("fcl_container_type"));
+				inquiryDetails.setFclContainerSize(rs.getString("fcl_container_size"));
+				inquiryDetails.setFclContainerStuffing(rs.getString("fcl_container_stuffing"));
+				inquiryDetails.setLength(rs.getInt("length"));
+				inquiryDetails.setWidth(rs.getInt("width"));
+				inquiryDetails.setHeight(rs.getInt("height"));
+				inquiryDetails.setQuantity(rs.getInt("quantity"));
+				inquiryDetails.setUnit(rs.getString("unit"));
+				inquiryDetails.setAirLoadType(rs.getString("air_load_type"));
+				inquiryDetails.setSpecialInstruction(rs.getString("special_instruction"));
+				inquiryDetails.setInquiryDetailsId(rs.getInt("inquiry_details_id"));
+				inquiryDetails.setInquiryId(rs.getString("inquiry_id"));
+				inquiryDetails.setInstantId(rs.getString("instant_id"));
+				inquiryDetails.setBookingStatus(rs.getBoolean("booking_status"));
+				inquiryDetails.setInquiryStatus(rs.getString("inquiry_status"));
 			}
 		} catch (Exception e) {
-			slf4jLogger.error("inserting seller details ", e);
+			slf4jLogger.error("ERROR IN RETRIEVING INQUIRY DETAILS ", e);
 			e.printStackTrace();
 
 		}finally {
@@ -1688,70 +1771,65 @@ public class C2IEcommerceDao {
 				conn.close();
 			}
 		}
-		return idt;
+		return inquiryDetails;
 	}
-	public int updateInquiryDetails(InquiryDetails sid) throws SQLException {
+	public int updateInquiryDetails(InquiryDetails inquiryDetails) throws SQLException {
 		PreparedStatement stmt = null;
 		int status=0;
 		ResultSet rs = null;
-		slf4jLogger.info("LOCAL-DATA: UPDATING EC PRODUCT IMAGES");
+		slf4jLogger.info("LOCAL-DATA: UPDATING INQUIRY DETAILS");
 		Connection conn = getConnection();
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("update inquiry_details set user_id=?,trade_type=?,mode=?,incoterms=?,pickup=?,pol=?")
-				.append("pod=?,delivery=?,pickup_service=?,origin_handling=?,origin_cha=?,delivery_service=?,destination_handling=?" )
-				.append("destination_cha=?,gross_weight=?,gross_weight_unit=?,commodity=?,cargo_type=?,expected_pickup_date=?")
-				.append("lcl_package_quantity=?,lcl_package_type=?,fcl_container_quantity=?,fcl_container_type=?,fcl_container_size=?")
-				.append("fcl_container_stuffing=?,length=?,width=?,height=?,quantity=?,unit=?,air_load_type=?,special_instruction=?");
-			
+			sql.append("update inquiry_details set trade_type=?,mode=?,incoterms=?,pickup=?,pol=?,")
+				.append("pod=?,delivery=?,pickup_service=?,origin_handling=?,origin_cha=?,delivery_service=?,destination_handling=?," )
+				.append("destination_cha=?,gross_weight=?,gross_weight_unit=?,commodity=?,cargo_type=?,expected_pickup_Date=?,")
+				.append("lcl_package_quantity=?,lcl_package_type=?,fcl_container_quantity=?,fcl_container_type=?,fcl_container_size=?,")
+				.append("fcl_container_stuffing=?,length=?,width=?,height=?,quantity=?,unit=?,air_load_type=?,special_instruction=? ")
+			    .append("where user_id=? and inquiry_details_id=?");
 			stmt = conn.prepareStatement(sql.toString());
 			
 			User loggedInUser  = C2IUtils.getLoggedInUser();
-			
+			System.out.println(inquiryDetails.toString());
 			List<Object> paramValues = new ArrayList<Object>();	
-			
+			paramValues.add(inquiryDetails.getTradeType());
+			paramValues.add(inquiryDetails.getMode());
+			paramValues.add(inquiryDetails.getIncoterms());
+			paramValues.add(inquiryDetails.getPickup());
+			paramValues.add(inquiryDetails.getPol());
+			paramValues.add(inquiryDetails.getPod());
+			paramValues.add(inquiryDetails.getDelivery());
+			paramValues.add(inquiryDetails.getPickupService());
+			paramValues.add(inquiryDetails.getOriginHandling());
+			paramValues.add(inquiryDetails.getOriginCha());
+			paramValues.add(inquiryDetails.getDeliveryService());
+			paramValues.add(inquiryDetails.getDestinationHandling());
+			paramValues.add(inquiryDetails.getDestinationCha());
+			paramValues.add(inquiryDetails.getGrossWeight());
+			paramValues.add(inquiryDetails.getGrossWeightUnit());
+			paramValues.add(inquiryDetails.getCommodity());
+			paramValues.add(inquiryDetails.getCargoType());
+			paramValues.add(inquiryDetails.getExpectedPickupDate());
+			paramValues.add(inquiryDetails.getLclPackageQuantity());
+			paramValues.add(inquiryDetails.getLclPackageType());
+			paramValues.add(inquiryDetails.getFclContainerQuantity());
+			paramValues.add(inquiryDetails.getFclContainerType());
+			paramValues.add(inquiryDetails.getFclContainerSize());
+			paramValues.add(inquiryDetails.getFclContainerStuffing());
+			paramValues.add(inquiryDetails.getLength());
+			paramValues.add(inquiryDetails.getWidth());
+			paramValues.add(inquiryDetails.getHeight());
+			paramValues.add(inquiryDetails.getQuantity());
+			paramValues.add(inquiryDetails.getUnit());
+			paramValues.add(inquiryDetails.getAirLoadType());
+			paramValues.add(inquiryDetails.getSpecialInstruction());
 			paramValues.add(loggedInUser.getUserId());
-			paramValues.add(sid.getTrade_type());
-			paramValues.add(sid.getMode());
-			paramValues.add(sid.getIncoterms());
-			paramValues.add(sid.getPickup());
-			paramValues.add(sid.getPol());
-			paramValues.add(sid.getPod());
-			paramValues.add(sid.getDelivery());
-			paramValues.add(sid.getPickup_service());
-			paramValues.add(sid.getOrigin_handling());
-			paramValues.add(sid.getOrigin_cha());
-			paramValues.add(sid.getDelivery_service());
-			paramValues.add(sid.getDestination_handling());
-			paramValues.add(sid.getDestination_cha());
-			paramValues.add(sid.getGross_weight());
-			paramValues.add(sid.getGross_weight_unit());
-			paramValues.add(sid.getCommodity());
-			paramValues.add(sid.getCargo_type());
-			paramValues.add(sid.getExpected_pickup_date());
-			paramValues.add(sid.getLcl_package_quantity());
-			paramValues.add(sid.getLcl_package_type());
-			paramValues.add(sid.getFcl_container_quantity());
-			paramValues.add(sid.getFcl_container_type());
-			paramValues.add(sid.getFcl_container_size());
-			paramValues.add(sid.getFcl_container_stuffing());
-			paramValues.add(sid.getLength());
-			paramValues.add(sid.getWidth());
-			paramValues.add(sid.getHeight());
-			paramValues.add(sid.getQuantity());
-			paramValues.add(sid.getUnit());
-			paramValues.add(sid.getAir_load_type());
-			paramValues.add(sid.getSpecial_instruction());
-			Set<String> marketplaces = new HashSet<>();
-			
-			
-			paramValues.add(StringUtils.join(marketplaces, ","));			
-			
+			paramValues.add(inquiryDetails.getInquiryDetailsId());
 			DBUtility.mapParams(stmt, paramValues);
-			
+			System.out.println(paramValues);
 			status=stmt.executeUpdate();
 		} catch (Exception e) {
-			slf4jLogger.error(" update product image details ", e);
+			slf4jLogger.error(" ERROR IN UPDATE INQUIRY DETAILS ", e);
 			e.printStackTrace();
 
 		}finally {
@@ -1765,5 +1843,101 @@ public class C2IEcommerceDao {
 		}
 		return status;
 	}
-	
+	public int saveBooking(BookingDetails bookingDetails) throws Exception{
+		PreparedStatement stmt = null;
+		int id=0;
+		ResultSet rs = null;
+		
+		slf4jLogger.info("LOCAL-DATA: INSERTING BOOKING DETAILS");
+		Connection conn = getConnection();
+		
+		try {
+			StringBuilder sql = new StringBuilder();
+			sql.append("insert into booking_details(user_id,inquiry_id,booking_id,quotation_id,booking_type) ")
+				.append("values(?,?,?,?,?) returning id");
+			
+			stmt = conn.prepareStatement(sql.toString());
+			List<Object> paramValues = new ArrayList<Object>();	
+			paramValues.add(bookingDetails.getUserId());
+			paramValues.add(bookingDetails.getInquiryId());
+			paramValues.add(bookingDetails.getBookingId());
+			paramValues.add(bookingDetails.getQuotationId());
+			paramValues.add(bookingDetails.getBookingType());
+			
+			rs=null;			
+			
+			DBUtility.mapParams(stmt, paramValues);
+			//System.out.println(stmt);
+			rs=stmt.executeQuery();
+			
+			while(rs.next()) {
+				id = rs.getInt("id");
+			}
+			sql=new StringBuilder();
+			sql.append("update inquiry_details set booking_status=?")
+			 .append("where user_id=? and inquiry_id=?");
+			
+			stmt = conn.prepareStatement(sql.toString());
+			paramValues = new ArrayList<Object>();	
+			paramValues.add(true);
+			paramValues.add(C2IUtils.getLoggedInUser().getUserId());
+			paramValues.add(bookingDetails.getInquiryId());
+			
+			
+						
+			
+			DBUtility.mapParams(stmt, paramValues);
+			//System.out.println(stmt);
+			rs=stmt.executeQuery();
+			
+		
+		} catch (Exception e) {
+			slf4jLogger.error("ERROR IN INSERTING BOOKING DETAILS ", e);
+			e.printStackTrace();
+
+		}finally {
+			if (stmt != null)
+				stmt.close();
+			if (rs != null)
+				rs.close();
+			if(conn != null ) {
+				conn.close();
+			}
+		}
+		return id;
+	}
+	public void updateInquiryStatus(String status, int inquiryDetailsId) throws Exception{
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		slf4jLogger.info("LOCAL-DATA: UPDATING INQUIRY STATUS");
+		Connection conn = getConnection();
+		try {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update inquiry_details set inquiry_status=? where inquiry_details_id=? and user_id=?");
+			stmt = conn.prepareStatement(sql.toString());
+			
+			User loggedInUser  = C2IUtils.getLoggedInUser();
+			
+			List<Object> paramValues = new ArrayList<Object>();	
+			paramValues.add(status);
+			paramValues.add(inquiryDetailsId);
+			paramValues.add(loggedInUser.getUserId());
+			
+			DBUtility.mapParams(stmt, paramValues);
+			
+			stmt.executeUpdate();
+		} catch (Exception e) {
+			slf4jLogger.error(" ERROR IN UPDATING INQUIRY STATUS ", e);
+			e.printStackTrace();
+
+		}finally {
+			if (stmt != null)
+				stmt.close();
+			if (rs != null)
+				rs.close();
+			if(conn != null ) {
+				conn.close();
+			}
+		}
+	}
 }

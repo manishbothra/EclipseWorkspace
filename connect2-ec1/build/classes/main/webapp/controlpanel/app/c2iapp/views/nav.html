@@ -1,0 +1,286 @@
+<div>
+	<div class="col-md-3 left_col">
+		<div class="left_col scroll-view">
+			<div class="navbar nav_title" style="border: 0;">
+			  <a href="#" class="site_title"><img src="assets/images/logo.png"/> <span>Global Trade Panel</span></a>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<!-- menu profile quick info -->
+			<div class="profile clearfix">
+			  <div class="profile_pic">
+				<img src="assets/images/user.svg" alt="..." class="img-circle profile_img">
+			  </div>
+			  <div class="profile_info">
+				<span>Welcome</span>
+				<h2>{{loggedInUser.first_name}}</h2>
+			  </div>
+			</div>
+			<!-- /menu profile quick info -->
+
+			<br />
+
+			<!-- sidebar menu -->
+			<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+			  <div class="menu_section">
+			   <ul class="nav side-menu">
+				  <li ng-class="{active:selectedNavModule=='dashboard'}"><a href="#dashboard"><i class="fa fa-tachometer active"></i> Dashboard</a>
+				  </li>
+				  <li ng-class="{active:selectedNavModule=='trade'}" ng-if="loggedInUser.priority >= 4"><a href="#trade"><i class="fa fa-gear"></i> Export Now</a></li>
+
+				  <li ng-if="loggedInUser.priority >= 4">
+					<speech-dir></speech-dir>
+				  </li>
+
+				  <li><a><i class="fa fa-bar-chart"></i> Global Trade Intelligence<span class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+					  <li><a>Trade Insights<span class="fa fa-chevron-down"></a>
+						<ul class="nav child_menu">
+							<li  ng-class="{active:selectedNavModule=='trade-summary'}" class="sub_menu"><a href="#trade-summary">Trade Summary</a>
+							</li>
+							<li  ng-class="{active:selectedNavModule=='historical-demand-analysis'}" class="sub_menu"><a href="#historical-demand-analysis">Historical Demand Analysis</a>
+							</li>
+							<li  ng-class="{active:selectedNavModule=='monthwise-demand-analysis'}" class="sub_menu"><a href="#monthwise-demand-analysis">Monthwise Demand Analysis</a>
+								</li>
+							<li  ng-class="{active:selectedNavModule=='global-trade'}" class="sub_menu"><a href="#global-trade">Global Trade Analysis</a>
+							</li>
+							<li ng-if="loggedInUser.priority >= 4" ng-class="{active:selectedNavModule=='daily-market-price'}" class="sub_menu"><a href="#daily-market-price">Commodity Daily Market Price</a>
+							</li>
+							<li  ng-class="{active:selectedNavModule=='current-demand-analysis'}" class="sub_menu"><a ng-disabled="!isSubscribed('current-demand-analysis');" href="#current-demand-analysis">Current Demand Analysis</a>
+							</li>
+							<li ng-class="{active:selectedNavModule=='price-analysis'}" class="sub_menu"><a ng-disabled="!isSubscribed('price-analysis');" href="#price-analysis">Price Analysis</a>
+							</li>
+							<li ng-class="{active:selectedNavModule=='compare-trade-stats'}" class="sub_menu"><a ng-disabled="!isSubscribed('compare-trade-stats');" href="#compare-trade-stats">Compare Trade Stats</a>
+							</li>
+							<li ng-class="{active:selectedNavModule=='predictive-analysis'}" class="sub_menu"><a ng-disabled="!isSubscribed('predictive-analysis');" href="#predictive-analysis">Predictive Analysis</a>
+							</li>
+						  </ul>
+					  </li>
+					  <li><a>Reports<span class="fa fa-chevron-down"></a>
+							  <ul class="nav child_menu">
+								<li class="sub_menu"><a ng-disabled="!isSubscribed('product-report');" href="#product-report">Product Report</a>
+								</li>
+								<!-- <li class="sub_menu"><a ng-disabled="!isSubscribed('current-demand-report');" href="#current-demand-report">Current Demand Report</a> </li> -->
+								<li class="sub_menu"><a href="#reports-purchased">Saved Reports</a>
+								</li>
+							  </ul>
+						  </li>
+					</ul>
+				  </li>
+				  <li><a><i class="fa fa-users" aria-hidden="true"></i> Global Trade Counterparts<span class="fa fa-chevron-down"></a>
+					  <ul class="nav child_menu">
+						<li class="sub_menu"><a href="#importers-purchased">Importers Details Downloaded</a>
+						</li>
+						<li class="sub_menu"><a href="#importers-search">Get Importers Details</a>
+						</li>
+					  </ul>
+				  </li>
+
+				  <li ng-if="loggedInUser.priority >= 0"><a><i class="fa fa-users" aria-hidden="true"></i>Setup Business<span class="fa fa-chevron-down"></a>
+				  	<ul class="nav child_menu">
+				  	  <li class="sub_menu">
+						  <a>Manage Online Marketplaces<span class="fa fa-chevron-down"></a>
+						  <ul class="nav child_menu">
+							<li class="sub_menu"><a href="#marketplaces/dashboard">Dashboard</a>
+							</li>
+							<li class="sub_menu"><a href="#marketplaces/add-store">Add Store</a>
+							</li>
+							<li class="sub_menu"><a href="#marketplaces/products">Products</a>
+							</li>
+							<li class="sub_menu"><a href="#marketplaces/orders">Orders</a>
+							</li>
+							<li class="sub_menu"><a href="#marketplaces/store-details">Store Details</a>
+							</li>
+						  </ul>
+				  	  </li>
+				  	  <li class="sub_menu">
+						 <a>Other Business Channels<span class="fa fa-chevron-down"></a>
+						 <ul class="nav child_menu">
+						   <li class="sub_menu"><a href="#marketplaces/distributors">Manage Distributors</a>
+						   </li>
+						   <li class="sub_menu"><a href="#marketplaces/campaigns">Run Campaigns</a>
+						   </li>
+						 </ul>
+
+				  	  </li>
+				  	</ul>
+				  </li>
+
+				  <li ><a><i class="fa fa-calculator"></i> Global Trade Resources <span class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+					  <li ><a href="#trade-finance-calculator">Finance Interest Calculator</a></li>
+					  <li ><a href="#export-import-documents">Export Import Documents</a></li>
+					  <li ><a href="#freight-rate-calculator">Freight Rate Calculator</a></li>
+					  <li ><a href="#global-custom-duty-calculator">Global Custom Duty Calculator</a></li>
+ 					  <li ><a href="#custom-duty-calculator">Custom Duty Calculator</a></li>
+ 					  <li ><a href="#global-export-duty-calculator">Global Export Duty Calculator</a></li>
+ 					  <li ><a href="#export-price-calculator">Export Price Calculator</a></li>
+					  <li ><a href="#export-duty-calculator">Export Duty Calculator</a></li>
+					  <li ><a href="#hs-code-finder">HS Code Finder</a></li>
+					  <li><a href="#shipment-tracker">Shipment Tracker</a></li>
+					  <li ><a href="#landed-cost-calculator">Landed Cost Calculator</a></li>
+					  <li ><a href="#indian-custom-duty">Indian Custom Duty</a></li>
+					  <li ><a href="#gst-rate-finder">GST Rate finder</a></li>
+					  <li ><a href="#drawback-duty">Drawback Duty</a></li>
+					  <li ><a href="#anti-dumping-duty">Antidumping Duty</a></li>
+					  <li ><a href="#nic-code-finder">NIC Code Finder</a></li>
+					  <li ><a ng-disabled="!isSubscribed('google-rank');" href="#google-rank">Google Rank Checker</a></li>
+					  <li ><a href="http://connect2india.com/resources/index.html">Global Trade Resources</a></li>
+					</ul>
+				  </li>
+				  <li><a><i class="fa fa-globe"></i> Global Trade Opportunities <span class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a ng-disabled="!isSubscribed('leads');" href="#leads">Recent Global Opportunities</a></li>
+						<li ><a>Connect2India Holisitic View<span class="fa fa-chevron-down"></a>
+						   <ul class="nav child_menu">
+								<li class="sub_menu"><a ng-disabled="!isSubscribed('websites');" href="#websites">Manage Holistic View</a></li>
+								<li class="sub_menu"><a ng-disabled="!isSubscribed('websites-analytics');"  href="#web-analytics">Analytics</a></li>
+							</ul>
+					  </li>
+					  <!--
+					  <li ><a> Global Branding<span class="fa fa-chevron-down"></a>
+					   <ul class="nav child_menu">
+							<li class="sub_menu"><a ng-disabled="!isSubscribed('mobile-apps');" href="#mobile-apps">Manage Branding</a>
+							</li>
+							<li class="sub_menu"><a ng-disabled="!isSubscribed('push-notification');" href="#push-notification">Send Push Notification</a>
+							</li>
+							<li class="sub_menu"><a ng-disabled="!isSubscribed('app-analytics');" href="#app-analytics">Analytics</a>
+							</li>
+						  </ul>
+					  </li>
+						<li ><a ng-disabled="!isSubscribed('social-media');" href="#social-media">Global Promotion</a>
+						</li>
+						-->
+					</ul>
+				  </li>
+
+				  <li  ng-if="loggedInUser.priority >= 4 "><a><i class="fa fa-ship" aria-hidden="true"></i> Manage Shipment & Freight<span class="fa fa-chevron-down"></a>
+					  <ul class="nav child_menu">
+						<li class="sub_menu"><a href="#book-shipment">Book a Shipment</a>
+						</li>
+						<li class="sub_menu"><a href="#bookings">Your bookings</a>
+						</li>
+						<li class="sub_menu"><a href="#freight-trend">Freight Rate Trend</a>
+						</li>
+					  </ul>
+				  </li>
+
+				  <li ng-if="loggedInUser.priority >= 4"><a><i class="fa fa-dollar" aria-hidden="true"></i> Manage Trade Finance<span class="fa fa-chevron-down"></a>
+					  <ul class="nav child_menu">
+						<li class="sub_menu"><a href="#apply-for-finance">Apply for Trade Finance</a>
+						</li>
+					  	<li ><a href="#trade-finance-calculator">Finance Interest Calculator</a></li>
+						<li class="sub_menu"><a href="#finances">Track Your Application</a>
+						</li>
+						<li class="sub_menu"><a href="#invoices">Your Invoices</a>
+						</li>
+						<li class="sub_menu"><a href="#finances">Your Finance History</a>
+						</li>
+					  </ul>
+				  </li>
+
+				   <li><a><i class="fa fa-envelope"></i> Mailbox <span class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+					  <li><a href="#inbox">Inbox</a></li>
+					  <!-- <li><a href="#">Sent</a></li> -->
+					  <li><a href="#trash">Trash</a></li>
+					</ul>
+				  </li>
+
+				  <li><a><i class="fa fa-wrench"></i> Preferences <span class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+					  <li><a>Products<span class="fa fa-chevron-down"></span></a>
+							<ul class="nav child_menu">
+								<li><a href="#manage-products">Manage Products</a></li>
+								<li><a href="#add-product">Add new product</a></li>
+							</ul>
+					  </li>
+					  <li ><a ng-disabled="!isSubscribed('lead-notification-config');" href="#lead-notification-config">Real time Notification Configuration</a></li>
+					  <li><a href="#change-password">Change Password</a></li>
+					  <li><a href="#personal-profile">Personal Profile</a></li>
+					  <li><a href="#business-profile">Business Profile</a></li>
+					  <!-- <li><a>Services</a></li> -->
+					</ul>
+				  </li>
+				</ul>
+			  </div>
+
+			</div>
+			<!-- /sidebar menu -->
+
+			<!-- /menu footer buttons -->
+			<div class="sidebar-footer hidden-small">
+			  <a data-toggle="tooltip" data-placement="top" title="Settings" href="#personal-profile">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+			  </a>
+			  <a data-toggle="tooltip" data-placement="top" ng-disabled="true" title="Mails" href="#inbox">
+				<i class="fa fa-bell" aria-hidden="true"></i>
+			  </a>
+			  <a data-toggle="tooltip" data-placement="top" ng-disabled="true" title="Counterparts" href="#importers-search">
+				 <i class="fa fa-handshake-o" aria-hidden="true"></i>
+			  </a>
+			  <a data-toggle="tooltip" data-placement="top" ng-click="loginOrOut()" title="Logout">
+				<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+			  </a>
+			</div>
+			<!-- /menu footer buttons -->
+		  </div>
+	</div>
+	<div class="top_nav" ng-show="loggedInUser && loggedInUser.loggedIn" ng-cloak>
+	  <div class="nav_menu">
+		<nav>
+		  <div class="nav toggle">
+			<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+		  </div>
+		  <label style="height: 40px;padding-top: 20px;color: white;">
+			<a  style="color: white;" href="https://connect2india.com/about/videos.html" target="_blank"><img style="width: 34px;" src="assets/images/loading.gif"></img> Help Videos</a>
+			</label>
+		  <!--
+		<label style="height: 40px;padding-top: 20px;color: white;"> Are you Indian User? <a style="color: white;" href="https://connect2india.com/in/index.html">Click Here</a></label>
+		-->
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="">
+			  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				<img src="assets/images/user.svg" alt="">{{loggedInUser.first_name}} {{loggedInUser.last_name}}
+				<span class=" fa fa-angle-down"></span>
+			  </a>
+			  <ul class="dropdown-menu dropdown-usermenu pull-right">
+				<li class="cp-subscription-pop-menu">
+							<div> Current Subscription:<br>
+								<span class="plan-name">{{subscription.planDisplayName || 'REGISTERED USER'}}</span>
+									<a ng-if="subscription.planName != 'ENTERPRISE'" class="" href="/subscription/export-packages.html">Upgrade >></a>
+							</div>
+				</li>
+				<li><a href="#personal-profile"> Profile</a></li>
+				<li>
+				  <a href="#change-password">
+					<span>Change Password</span>
+				  </a>
+				</li>
+				<li><a ng-click="loginOrOut()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+			  </ul>
+			</li>
+
+			<li role="presentation" class="dropdown">
+			  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+				<i class="fa fa-bell-o"></i>
+				<span class="badge bg-blue">{{alertCount||0}}</span>
+			  </a>
+			  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+
+				<li>
+				  <div class="text-center">
+					<a href="#inbox">
+					  <strong>See All Alerts</strong>
+					  <i class="fa fa-angle-right"></i>
+					</a>
+				  </div>
+				</li>
+			  </ul>
+			</li>
+		  </ul>
+		</nav>
+	  </div>
+	</div>
+</div>

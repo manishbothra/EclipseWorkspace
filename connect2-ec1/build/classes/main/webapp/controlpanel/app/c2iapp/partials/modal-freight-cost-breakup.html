@@ -1,0 +1,257 @@
+﻿<div class="modal-dialog">
+	<div class="modal-header">
+		<h3>{{modalOptions.headerText}}</h3>
+	</div>
+	<div class="modal-body">
+		<!--
+		 <table class="table table-bordered table-responsive table-hover dataTable" >
+			<thead>
+				<tr class="table-header"> 
+					<td>Charges</td>
+					<td>Qty</td>
+					<td>Rate</td>
+					<td>Amount</td>
+				</tr>
+				<tr>
+					<td>{{tempSelFreight.basicFreightRate}}</td>
+					{{tempSelFreight}}
+				</tr>
+			</thead>
+			<tr> 
+				
+			</tr>
+		</table>
+-->
+
+		<div class="limiter">
+			<div class="container-table100">
+				<div class="wrap-table100">
+					<div class="table">
+
+						<div class="t-row header">
+							<div class="cell">
+								OCEAN FRIEGHT
+							</div>
+							<div class="cell">
+								QTY
+							</div>
+							<div class="cell">
+								RATE
+							</div>
+							<div class="cell">
+								AMT
+							</div>
+						</div>
+						<div class="t-row">
+							<div class="cell">
+								Basic Freight
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.basicFreightRate}} USD
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.basicFreightRate}} USD
+							</div>
+						</div>
+						<!--
+						<div class="t-row">
+							<div class="cell">
+								Entry Summary Declaration
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								USD 25
+							</div>
+							<div class="cell">
+								USD 25
+							</div>
+						</div>
+						-->
+					</div>
+
+					<div class="table">
+
+						<div class="t-row header">
+							<div class="cell">
+								OCEAN CHARGES
+							</div>
+							<div class="cell">
+								QTY
+							</div>
+							<div class="cell">
+								RATE
+							</div>
+							<div class="cell">
+								AMT
+							</div>
+						</div>
+
+
+
+						<div class="t-row">
+							<div class="cell">
+								Terminal Handling Charges
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.terminalHandlingCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.terminalHandlingCharge}}
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell">
+								Bill of Loading
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.blCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.blCharge}}
+							</div>
+						</div>
+
+
+						<div class="t-row">
+							<div class="cell">
+								Seal Charges
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.sealCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.sealCharge}}
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell">
+								Toll Charges
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.tollCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.tollCharge}}
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell">
+								Administration Fee
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.adminCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.adminCharge}}
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell">
+								Facilitation Charge
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.facilationCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.facilationCharge}}
+							</div>
+						</div>
+					</div>
+
+					<div class="table">
+
+						<div class="t-row header">
+							<div class="cell">
+								CONVENIENCE
+							</div>
+							<div class="cell">
+								QTY
+							</div>
+							<div class="cell">
+								RATE
+							</div>
+							<div class="cell">
+								AMT
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell">
+								Platform Fee
+							</div>
+							<div class="cell">
+								1
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.convenienceCharge}}
+							</div>
+							<div class="cell">
+								{{modalOptions.tempSelFreight.convenienceCharge}}
+							</div>
+						</div>
+
+					</div>
+
+					<div class="table">
+						<div class="t-row header">
+							<div class="cell">
+								REMARKS
+							</div>
+						</div>
+
+						<div class="t-row">
+							<div class="cell" style="padding-left: 5px;font-size: 16px;">
+								<ul style="list-style: decimals;">
+									<li>Freight rate is valid between 10th Jan, 2019 and 31st Jan, 2019</li>
+									<li>Total amount subject to change, based on exchange rate, additional services, etc.</li>
+									<li>Taxes will be applicable at the time of invoicing</li>
+									<li>Rates are subject to local charges at both ends</li>
+									<li>Ratees are subject to GRI, Prepaid Charges/Surcharges at actuals if applicable at the time of shipment</li>
+									<li>Rates are subject to Overweight surcharges on weight restriction clauses as per shipping lines conditions</li>
+									<li>Vessel Routing &amp; transit may change subject to operation feasibility</li>
+									<li>All Charges are subject to GST</li>
+									<li>Exchange rate is subject to change according to carrier exchange rate on the day of vessel sailing</li>
+									<li>Destination Detention time is 2 days. However you have delected 7 Days. Based on your requirement, we shall refile the Free time and revert. In case we don't get the approval, following 126 USD will be applicable. Note these charges are Tentaive and subject to change basis consigee.</li>
+
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn" data-ng-click="modalOptions.close()" ng-if="modalOptions.closeButtonText">{{modalOptions.closeButtonText}}</button>
+		<button class="btn btn-primary" ng-if="!modalOptions.hideOk" data-ng-click="modalOptions.ok();">{{modalOptions.actionButtonText}}</button>
+	</div>
+</div>

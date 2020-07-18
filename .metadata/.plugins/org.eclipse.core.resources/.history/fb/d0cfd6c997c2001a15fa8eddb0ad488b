@@ -1,0 +1,412 @@
+package com.connect2.ec.BoxnbizDemo;
+
+import java.io.*;
+import java.net.URLEncoder;
+import java.util.*;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.connect2.utility.C2IUtils;
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
+
+
+
+public class BoxnbizAPI {
+	
+	static void login_get_token() throws Exception{
+		JSONObject json=new JSONObject();
+		json.put("email_id","yogesh.garg@connect2india.com");
+		json.put("password","yogesh@123");
+		json.put("api_key","57c50e-27f0d2-b00e8f-9ed0e5-19c6e8");
+		
+		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
+		String url="https://demo.api.boxnbiz.com/v1/login/get-token";
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Content-Type", "application/json");
+		httppost.setEntity(entity);
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpResponse response = httpClient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+		
+	}
+	private static String inquiry_id,inquiry_type;
+	static void inquiry_submit_inquiry() throws Exception {
+		JSONObject json=new JSONObject();
+		json.put("company_id", "ICONN660");
+		json.put("shipper_person_id", "ICONN660");
+		json.put("trade_type", "Import");
+		json.put("mode", "FCL");
+		json.put("incoterms", "EXW");
+		json.put("pickup", "Asp Avenue");
+		json.put("pol", "CN SHA");//India
+		json.put("pod", "IN BLR");//US
+		json.put("delivery", "K.R.Market");
+		json.put("pickup_service", "Y");
+		json.put("origin_handling", "Y");
+		json.put("origin_cha", "Y");
+		json.put("delivery_service", "Y");
+		json.put("destination_handling", "Y");
+		json.put("destination_cha", "Y");
+		json.put("gross_weight", 3000);
+		json.put("gross_weight_unit", "KG");
+		json.put("commodity", "LED Boards");
+		json.put("expected_pickup_Date", "15/06/2020");
+		json.put("lcl_package_quantity", 0);
+		json.put("lcl_package_type", "Null");
+		json.put("fcl_container_quantity", 1);
+		json.put("fcl_container_type", "Dry");
+		json.put("fcl_container_size", "40");
+		json.put("fcl_container_stuffing", "Not Sure");
+		json.put("cargo_type", "Non-HAZ");
+		JSONArray dtos = new JSONArray();
+		
+		JSONObject dto = new JSONObject();
+		dto.put("length",1);
+		dto.put("width",2);
+		dto.put("height",3);
+		dto.put("quantity",4);
+		dto.put("unit","cm");
+		dto.put("air_load_type","No");
+		dtos.put(dto);
+		json.put("dimensionDtos", dtos);
+		json.put("special_instruction", "Null");
+		System.out.println(json);
+		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/submit-inquiry";
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httppost.addHeader("Content-Type", "application/json");
+		httppost.setEntity(entity);
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        HashMap<String,String> map=new HashMap<>();
+        //map.put("vdff","fhjf");
+        StringBuffer result=new StringBuffer();
+        String status="";
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        }
+        String res=result.toString();
+        JSONObject jsonObject=new JSONObject(res);;
+        System.out.println(result);
+        System.out.println(jsonObject);
+        System.out.println(jsonObject.has("inquiry_id"));
+        if(jsonObject.has("inquiry_id")){
+        	status="Inquiry Submitted Successfully";
+        	
+        }	
+        else if(jsonObject.has("message")){
+        	status=jsonObject.getString("message");
+        }
+        else {
+        	status="Inquiry Submission Failed";
+        }
+        System.out.println(status);
+	}
+	static void inquiry_update_inquiry() throws Exception{
+		JSONObject json=new JSONObject();
+		json.put("company_id", "ICONN660");
+		json.put("shipper_person_id", "ICONN660");
+		json.put("trade_type", "Import");
+		json.put("mode", "FCL");
+		json.put("incoterms", "EXW");
+		json.put("pickup", "Asp Avenue");
+		json.put("pol", "CN SHA");//India
+		json.put("pod", "IN BLR");//US
+		json.put("delivery", "K.R. MARKET");
+		json.put("pickup_service", "Y");
+		json.put("origin_handling", "Y");
+		json.put("origin_cha", "Y");
+		json.put("delivery_service", "Y");
+		json.put("destination_handling", "Y");
+		json.put("destination_cha", "Y");
+		json.put("gross_weight", 4567);
+		json.put("gross_weight_unit", "KG");
+		json.put("commodity", "Machine");
+		json.put("cargo_type", "Non-HAZ");
+		json.put("expected_pickup_Date", "17/08/2020");
+		json.put("lcl_package_quantity", 0);
+		json.put("lcl_package_type", "Null");
+		json.put("fcl_container_quantity", 1);
+		json.put("fcl_container_type", "Dry");
+		json.put("fcl_container_size", "40");
+		json.put("fcl_container_stuffing", "CFS Stuffing");
+		
+		JSONArray dtos = new JSONArray();
+		
+		JSONObject dto = new JSONObject();
+		dto.put("length",45);
+		dto.put("width",56);
+		dto.put("height",67);
+		dto.put("quantity",2);
+		dto.put("unit","cm");
+		dto.put("air_load_type","No");
+		//System.out.println(dto);
+		//dtos.put(0,dto);
+		dtos.put(dto);
+		//System.out.println(dtos);
+		json.put("dimensionDtos", dtos);
+		
+		json.put("special_instruction", "Last instant inquiry");
+		//System.out.println(json);
+		
+		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
+		String inquiry_id="INS748414";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/update-inquiry/"+inquiry_id;
+		HttpPut httpput=new HttpPut(url);
+		httpput.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpput.addHeader("Content-Type", "application/json");
+		httpput.setEntity(entity);
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpput);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	static void inquiry_upload_msds_file() {
+		
+	}
+	static void inquiry_get_selected_instant_rate() throws Exception{
+		String inquiry_id="INS529553";
+		String company_id="ICONN660";
+		Integer instant_id=5876;
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/get-selected-instant-rate/"+inquiry_id+"?company_id="+company_id+"&instant_id="+instant_id;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		//httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        }
+        result.toString();
+        System.out.println(result);
+        JSONObject json=new JSONObject(result);
+        System.out.println(json);
+	}
+	static void find_instant_rate() throws Exception{
+		String inquiry_id="INS529553";
+		String company_id="ICONN660";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/find-instant-rate/"+inquiry_id+"?company_id="+company_id;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		//httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        	JSONArray j1=new JSONArray(line);
+     
+        	Object s=j1.getJSONObject(0).get("instant_id");
+        	int s1=j1.getJSONObject(0).getInt("instant_id");
+        }
+	}
+	static void inquiry_check_inquiry_status() throws Exception{
+		String inquiry_id="RFQ000726";
+		String company_id="ICONN660";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/check-inquiry-status/"+inquiry_id+"?company_id="+company_id;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        	JSONObject j=new JSONObject(line);
+        	if(j.has("success")) {
+        		String st=j.getString("success");
+        		String stt[]=st.split(" - ");
+        		System.out.println(stt[1]);
+        	}
+        }
+	}
+	static String inquiry_close() throws Exception{
+		String inquiry_id="RFQ000726";
+		String company_id="ICONN660";
+		String reason="hello";
+		try
+	    {
+	      reason =URLEncoder.encode(reason, "UTF-8");
+	    }
+	    catch (UnsupportedEncodingException uee)
+	    {
+	      throw new IllegalArgumentException(uee);
+	    }
+		System.out.println(reason);
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/close/"+inquiry_id+"?company_id="+company_id+"&feedback="+reason;
+		System.out.println(url);
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        	JSONObject j=new JSONObject(line);
+        	if(j.has("success")) {
+        		return j.getString("success");
+        	}
+        	else if(j.has("message")) {
+        		return j.getString("message");
+        	}
+        	else {
+        		return "failure";
+        	}
+        }
+        return "failure";
+	}
+	static void inquiry_convert_to_manual() throws Exception {
+		String inquiry_id="INS154399";
+		String company_id="ICONN660";
+		String feedback="Meri%20Marzi";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/convert-to-manual/"+inquiry_id+"?company_id="+company_id+"&feedback="+feedback;
+		System.out.println(url);
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	static void quotation_find_manual_quotation_by_inquiry() throws Exception{
+		String inquiry_id="RFQ000733";
+		String company_id="ICONN660";
+		String url="https://demo.api.boxnbiz.com/v1/quotation/find-manual-quotation-by-inquiry/"+inquiry_id+"?company_id="+company_id;
+ 
+		System.out.println(url);
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	static void booking_book_quotation() throws Exception{
+		String inquiry_id="INS206696";
+		String company_id="ICONN660";
+		String quotation_id="null";
+		int instant_id=5876;
+		String url="https://demo.api.boxnbiz.com/v1/booking/book-quotation?inquiryId="+inquiry_id+"&company_id="+company_id+"&quotationId="+quotation_id+"&instant_id="+instant_id;
+		System.out.println(url);
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httppost.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        	JSONObject j=new JSONObject(line);
+        	if(j.has("Booking Id")) {
+        		System.out.println("success");
+        	}
+        }
+	}
+	static void activity_submit_message() throws Exception{
+		JSONObject json=new JSONObject();
+		json.put("company_id", "ICONN660");
+		json.put("person_id", "ICONN660");
+		json.put("inquiry_id", "RFQ000699");
+		json.put("title", "Boxnbiz");
+		json.put("message", "Thanks for the RFQ, We will get back with the best quote shortly.");
+		String url="https://demo.api.boxnbiz.com/v1/activity/submit-message";
+		System.out.println(url);
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httppost.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	static void activity_get_inquiry_messages() throws Exception{
+		String inquiry_id="RFQ000699";
+		String company_id="ICONN660";
+		String url="https://demo.api.boxnbiz.com/v1/activity/get-inquiry-messages/"+inquiry_id+"?company_id="+company_id;
+		System.out.println(url);
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        while ((line=in.readLine())!=null){
+        	System.out.println(line);
+        }
+	}
+	public static void main(String [] args) throws Exception {
+		//login_get_token();//done
+		//inquiry_submit_inquiry();//done
+		inquiry_update_inquiry();//done
+		//inquiry_upload_msds_file();//required msd file
+		//inquiry_get_selected_instant_rate();//done
+		//find_instant_rate();//done
+		//inquiry_check_inquiry_status();//done
+		//inquiry_close();//done
+		//inquiry_convert_to_manual();//done
+		//quotation_find_manual_quotation_by_inquiry();//getting null values
+		//booking_book_quotation();//needs inquiry_id INS
+		//activity_submit_message();//getting client error
+		//activity_get_inquiry_messages();//done
+		//https://demo.api.boxnbiz.com/v1/inquiry/get-selected-instant-rate/INS154399?company_id=ICONN660&instant_id=5876
+		//https://demo.api.boxnbiz.com/v1/inquiry/get-selected-instant-rate/INS154399?company_id=ICONN660&instant_id=9272
+		String instantId=null;
+		if(!StringUtils.isEmpty(instantId)){	
+			System.out.println(0);
+		}
+	}
+	
+}

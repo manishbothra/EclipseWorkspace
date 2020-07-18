@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="com.connect2.ec.controller.SubmitInquiryDetails"/>
 <fullyQualifiedTypeName name="org.springframework.data.annotation.Id"/>
 <fullyQualifiedTypeName name="com.connect2.ec.controller.InquiryDetails"/>
+<fullyQualifiedTypeName name="com.connect2.ec.controller.BookingDetails"/>
+<fullyQualifiedTypeName name="java.net.URLEncoder"/>
 </qualifiedTypeNameHistroy>

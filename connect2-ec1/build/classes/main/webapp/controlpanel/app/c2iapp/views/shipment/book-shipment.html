@@ -1,0 +1,154 @@
+<div class="right_col" role="main">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Book Your Shipment</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<form class="x_panel" name="freightSearchform">
+			<div class="col-md-12">
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Origin Port</label>
+					<input class="form-control" placeholder="Enter the Origin Port" type="text" name="term" ng-model="freightForm.originPort" ui-autocomplete="originPlaceAutoComplete" required>
+
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Destination Port</label>
+					<input class="form-control" placeholder="Enter the Destination Port" type="text" name="term" ng-model="freightForm.destinationPort" ui-autocomplete="destPlacesAutoComplete" required>
+
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Container Type</label>
+					<select class="form-control" ng-model="freightForm.containterType" required>
+						<option value="">Select Container Type</option>
+						<option value="standard">Standard</option>
+						<option value="openTop">Open Top</option>
+						<option value="refrigerated">Refrigerated</option>
+						<option value="flatRack">Flat Rack</option>
+						<option value="isoTank">Open Top</option>
+					</select>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Container Size</label>
+					<select class="form-control" type="text" name="term" ng-model="freightForm.loadType" style="border-radius: 0px;" required>
+						<option value="">Select Container Size</option>
+						<option value="container20">20'</option>
+						<option value="container40">40'</option>
+						<option value="container40HC">40'HC</option>
+					</select>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Number of Container</label>
+					<input class="form-control" type="number" name="term" ng-model="freightForm.quantity" required>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Commodity</label>
+					<input class="form-control" placeholder="Enter the Commodity" type="text" name="term" ng-model="freightForm.commodity" ui-autocomplete="commodityAutoComplete" required>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<label>Sailing Date</label>
+					<p class="input-group">
+						<input type="text" class="form-control well well-sm" uib-datepicker-popup="dd/MM/yyyy" ng-model="freightForm.sailingDate" is-open="dateModal.dobPicker" datepicker-options="dateOptions" ng-click="openDateModal($event, 'dobPicker');" date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="false" required/>
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="openDateModal($event, 'dobPicker');"><i class="glyphicon glyphicon-calendar"></i></button>
+						</span>
+
+					</p>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<button type="submit" ng-click="getFreightRates(freightSearchform.$valid);">SEARCH</button>
+
+			</div>
+
+		</form>
+
+		<div class="tool x_panel col-md-6 col-xs-12" data-ng-cloak>
+			<div class="company-results">
+				<div class="row searchList" ng-repeat="freight in freightResultList">
+					<div class="col-md-4 col-sm-4 col-xs-12 first_column">
+						<div>
+							<h3><img ng-src="{{freight.shippingLine.logoUrl}}" alt="LOGO"/>
+								{{freight.shippingLine.name}}</h3>
+						</div>
+						<div class="card">
+							<div class="container">
+								<div class="col-md-2 icon">
+									<i class="fa fa-ship"></i>
+									<i style="padding: 6px;" class="fa fa-ellipsis-v"></i>
+									<i class="fa fa-anchor"></i>
+								</div>
+								<div class="col-md-10 text">
+									{{freight.originPort}} - {{freight.originPlace}}
+									<div style="padding: 14px;"></div>
+									{{freight.destinationPort}} - {{freight.destinationPlace}}
+								</div>
+							</div>
+						</div>
+						<div class="general"> <label> EXPECTED TRANSIT TIME</label><br>
+							<span>{{freight.minTime}} - {{freight.maxTime}} {{freight.timeUnit}}</span>
+						</div>
+
+					</div>
+					<div class="col-md-5 col-sm-5 col-xs-12 first_column">
+						<span class="text"><label>Rate Trend</label> </span>
+						<div class="card">
+							<div class="container">
+								<!-- <span class="key highlight">{{chartData.valueChart.title.toUpperCase()}}</span> -->
+								<canvas style="margin:10px" id="canvas-valueChart-{{freight.shippingLine.name}}"></canvas>
+								<!--
+								<div class="col-md-12 text">
+									<ul class="offring_list">
+										<li><i class="c fa fa-check"></i> No hidden charges</li>
+										<li><i class="c fa fa-check"></i> Dedicated booking manager </li>
+										<li><i class="c fa fa-check"></i> 100% invoice accuracy</li>
+										<li><i class="c fa fa-check"></i> Booking TAT of 2 hours</li>
+										<li><i class="c fa fa-check"></i> B/L release TAT after sailing date - 24 hours</li>
+										<li><i class="c fa fa-check"></i> Container milestones visibility &amp; tracking</li>
+									</ul>
+								</div>
+								-->
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12 third_column">
+
+						<label style="margin-left: 25px;">FREIGHT RATE</label>
+
+
+						<div class="rate"><span class="currency"></span> &nbsp;<span class="pricing"></span> &nbsp; &nbsp; &nbsp;Exclusive price </div>
+
+						<div class="card">
+							<div class="container sp">
+								<label>TOTAL LANDED COST</label>
+								<div>
+									<span class="currency">{{freight.minCurrency}} </span>&nbsp;<span class="pricing">{{freight.minAmount}}&nbsp;</span>
+									<a ng-click="showCostBreakDown(freight)" href=''>View Cost Breakdown </a>
+								</div>
+							</div>
+						</div>
+						<button type="button" ng-click="bookContainer(freight)" class="checkout_button btn btn-info">Book Now</button>
+
+						<div class="pay_later_text">Reserve your container now. <br>
+							You can pay later.
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

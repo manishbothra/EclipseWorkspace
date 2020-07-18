@@ -1,0 +1,555 @@
+[ {
+  "subProducts" : [ {
+    "subProducts" : [ "Brass Round Rod", "Brass Sheet", "Copper Cathodes", "Brass Pendulum", "Brass Ash", "Copper Flat" ],
+    "name" : "Copper & Brass Products"
+  }, {
+    "subProducts" : [ "Steel Sleeve", "Steel Case", "Stainless Steel Ingots", "Manganese Steel", "Stainless Steel Column", "Stainless Steel Risers" ],
+    "name" : "Steel & Stainless Steel Products"
+  }, {
+    "subProducts" : [ "Calcium Aluminium", "Alloy Steel Plates", "Alloy Ingot", "Ferro Silicon Calcium", "Copper Brazing Alloys", "Silicon Bronze" ],
+    "name" : "Iron & Copper Alloys"
+  }, {
+    "subProducts" : [ "Aluminium Composite Panels", "Niobium Wire", "Lead Ingots", "Checkered Plate", "Galvanized Coils", "Zinc" ],
+    "name" : "Metal & Metal Made Products"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Metals, Alloys & Minerals"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Cotton Dobby Fabric", "Yarn Dyed Fabrics", "Uniform Fabric", "Butta Fabric", "Satin Fabrics", "Burlap Fabric" ],
+    "name" : "Apparel Fabrics & Dress Materials"
+  }, {
+    "subProducts" : [ "Silk Velvet Fabric", "Art silk fabric", "Indian Dupion", "Mulberry Silk", "Crepe Silk", "Dupion Silk" ],
+    "name" : "Silk Apparel, Clothings & Fabrics"
+  }, {
+    "subProducts" : [ "Towel Sets", "Roll Towel", "Plain Dyed Towel", "Cotton Bath Towel", "Linen Napkin", "Printed Kitchen Towel" ],
+    "name" : "Towels, Napkins & Handkerchieves"
+  }, {
+    "subProducts" : [ "Fabric Glove", "Mittens", "Mens Knitted Glove", "Acrylic Knitted Glove", "Oven Gloves", "Cotton Knitted Glove" ],
+    "name" : "Gloves & Mittens"
+  } ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "name" : "Apparel & Garments"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Canned Pear", "Blueberry", "Raw Mango", "Mangoes", "Pineapple Powder", "Oranges" ],
+    "name" : "Fresh, Dried & Preserved Fruits"
+  }, {
+    "subProducts" : [ "Refined Groundnut Oil", "Grape Seed Oil", "Onion Oil", "Soya Oil", "Black Seed Oil", "Cumin Seed Oil" ],
+    "name" : "Edible Oil & Allied Products"
+  }, {
+    "subProducts" : [ "Black Pepper", "Thyme Leaves", "Clove Powder", "Asafoetida Powder", "Turmeric", "Mace Spice" ],
+    "name" : "Cooking Spices and Masala"
+  }, {
+    "subProducts" : [ "Wheat Pellet", "Soya Flour", "Coconut Powder", "Basmati Rice", "Native Potato Starch", "Nut Meal" ],
+    "name" : "Cereals & Food Grains"
+  } ],
+  "imageUrl" : "/global/images/product-categories/9.jpg",
+  "name" : "Food & Beverages"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Ceramic Bowls", "Ceramic Nozzle", "Ceramic Flower Vase", "Ceramic Plates", "Ceramic Crockery", "Ceramic Glass" ],
+    "name" : "Ceramic & Clay Decoratives"
+  }, {
+    "subProducts" : [ "Copper Artware", "Gong Bell", "Metal Balls", "Brass Chain", "Kuthu Vilakku", "Brass Bowl Set" ],
+    "name" : "Brass, Copper & Metal Handicrafts"
+  }, {
+    "subProducts" : [ "Paper Basket", "Fabric Jewelry Box", "Nested Boxes", "Presentation Boxes", "Velvet Boxes" ],
+    "name" : "Gifts, Crafts & Artifacts"
+  }, {
+    "subProducts" : [ "Artificial Flowers", "Artificial Fruit", "Paper Flower", "Plastic Flower" ],
+    "name" : "Artificial Plants & Foliage"
+  } ],
+  "imageUrl" : "/global/images/product-categories/16.jpg",
+  "name" : "Handicrafts & Decoratives"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Allura Red", "Lake Tartrazine", "Chrome Oxide Green", "Pigment Emulsion", "Rheological Additive", "Fluorescent Powder" ],
+    "name" : "Dyes & Color Additives"
+  }, {
+    "subProducts" : [ "Boron Trichloride", "Undecylenic Acid", "Laboratory Reagents", "Adipic Acid", "Dichlorophenol", "Monocalcium Phosphate" ],
+    "name" : "Chemical Reagents & Catalysts"
+  }, {
+    "subProducts" : [ "Spice Flavour", "Fruit Flavor", "Invert Sugar Syrup", "Vinegar", "Honey Flavor", "Guava Flavour" ],
+    "name" : "Flavours & Aromatics"
+  }, {
+    "subProducts" : [ "Glacial Acetic Acid", "Octanol", "Sodium Persulfate", "Safranin", "Aroma Chemicals", "Zinc Sulfide" ],
+    "name" : "Industrial Chemicals & Supplies"
+  } ],
+  "imageUrl" : "/global/images/product-categories/19.jpg",
+  "name" : "Chemicals, Dyes & Solvents"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Rotary Vane Vacuum Pump", "Rotary Piston Vacuum Pump", "Hand Pump Parts", "Pressure Water Pump", "Self Priming Centrifugal Pump", "Vacuum Pump Parts" ],
+    "name" : "Pumps, Pumping Machines & Spares"
+  }, {
+    "subProducts" : [ "Rubber Pads", "Rubber Bladder", "Eva Sheets", "Sponge Rubber", "Rubber Discs", "Latex Rubber" ],
+    "name" : "Rubber & Rubber Products"
+  }, {
+    "subProducts" : [ "Cotton Ropes", "Mild Steel Wire Rope", "Baler Twine", "HDPE Ropes", "Wire Rope Slings", "Twisted Rope" ],
+    "name" : "Engineering and Shipping Ropes"
+  }, {
+    "subProducts" : [ "Valve Boxes", "Instrument Valves", "Choke Manifold", "Sequence Valve", "2 Way Solenoid Valve", "Pressure Sustaining Valve" ],
+    "name" : "Industrial Valves & Valve Fittings"
+  } ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "name" : "Industrial Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Brass Wing Nut", "Brass Hex Nut", "Brass Nuts", "Stainless Steel Nut", "Steel Nuts", "Brass Lock Nuts" ],
+    "name" : "Alloy, Metal and Industrial Nuts"
+  }, {
+    "subProducts" : [ "Reverse Gears", "Spur Gears", "Gear Housings", "Counter Gear", "Flange Shaft", "Gear parts" ],
+    "name" : "Gearbox, Axle, Sprocket & Gear Parts"
+  }, {
+    "subProducts" : [ "Brass Castings", "Zinc Castings", "Ring Casting", "Steel Castings", "Bronze Castings", "Iron Castings" ],
+    "name" : "Die Casting & Investment Castings"
+  }, {
+    "subProducts" : [ "Stud Elbow", "Belt Fasteners", "End Ring", "Steel Rivets", "Ball Plunger", "Shoe Tack" ],
+    "name" : "Nails, Fasteners, Rivets & Shackles"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Mechanical Parts & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Motor Starters", "Starters", "Slip Ring Motor", "Synchronous Motor", "Hydraulic Actuators", "Three Phase Asynchronous Motor" ],
+    "name" : "Electric Motors and Components"
+  }, {
+    "subProducts" : [ "Flat Flex Cable", "Fiber Optic Patchcord", "PVC Cables", "Nickel Silver Wire", "RF Cable Assembly", "Solar Cable" ],
+    "name" : "Electrical Cables & Wires"
+  }, {
+    "subProducts" : [ "Ceramic Resistor", "SMD Capacitor", "Transformer Coil", "Tantalum Capacitors", "Power Choke", "PTC Resettable Fuse" ],
+    "name" : "Resistors & Other Passive Devices"
+  }, {
+    "subProducts" : [ "Cable Channel", "Collecting Electrode", "Terminal Blocks", "DOL Starter", "Mica Sheet", "E Cores" ],
+    "name" : "Electric Fittings & Components"
+  } ],
+  "imageUrl" : "/global/images/product-categories/4.jpg",
+  "name" : "Electronics & Electrical"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Beet Molasses", "Mushroom Spawn", "Rye Seed", "Neem Seed", "Black Sesame Seeds", "Chilli Seed" ],
+    "name" : "Seeds and Plantation Products"
+  }, {
+    "subProducts" : [ "Coconut Shell", "Coconut Fiber", "Walnut Shell", "Coconut Shell Cup", "Tamarind Gum", "Corrugation Gum Powder" ],
+    "name" : "Coir and Agro Products"
+  }, {
+    "subProducts" : [ "NPK Fertilizer", "Plant Growth Regulators", "Manganese EDTA", "Chelated Zinc", "Plant Food", "Humus" ],
+    "name" : "Fertilizers and Soil Additives"
+  }, {
+    "subProducts" : [ "Water Sprayers", "Agricultural Discs", "Drum Sieve", "Gravity Separator", "Manure Spreaders", "Hand Sprayer" ],
+    "name" : "Farming Tools, Equipment & Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/7.jpg",
+  "name" : "Agriculture & Farming"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Press Felts", "Antibacterial Fabric", "Tweed Fabric", "Acrylic Fabrics", "Air Mesh Fabric", "Jute Fabrics" ],
+    "name" : "Industrial Fabrics and Textiles"
+  }, {
+    "subProducts" : [ "Jute Carpets", "Cotton Rug", "Shag Carpet", "Silk Rugs", "Shag Rug", "Woven Durries" ],
+    "name" : "Carpets & Rugs"
+  }, {
+    "subProducts" : [ "Cotton Twill Fabric", "Poly Cotton", "Cotton Single Jersey", "Wool Polyester Fabric", "Cotton Dress Material", "Surgical Cotton" ],
+    "name" : "Cotton, Wool Textiles & Fabrics"
+  }, {
+    "subProducts" : [ "Polyester Cotton Yarn", "Polyester Spun Yarn", "Spun Polyester Dyed Yarn", "Organic Cotton Yarn", "Shoddy Yarn", "Nylon Fiber" ],
+    "name" : "Yarns & Threads"
+  } ],
+  "imageUrl" : "/global/images/product-categories/24.jpg",
+  "name" : "Textiles, Yarn & Fabrics"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Stone Tiles & Floorings"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Marble & Stone Artifacts"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Cobbles, Pebbles & Pavings"
+  }, {
+    "subProducts" : [ "Natural Stone", "Stone Slabs", "Artificial Stone", "Marble Block", "Marble Slabs", "Limestone" ],
+    "name" : "Granite, Marble, Sandstone & Others"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Marble, Granite & Stones"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Router, Cables & Networking Devices"
+  }, {
+    "subProducts" : [ "LCD Monitor", "Monitors", "Mini Computer Speaker", "LED Monitor", "Mobile Speaker" ],
+    "name" : "Computer Hardware & Peripherals"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Laptops, PC, Mainframes & Computers"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Computer and Mobile Softwares & Apps"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Computer & IT Solutions"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Aluminium Trays", "Plastic Plate", "Iron Trays" ],
+    "name" : "Dinnerware and Serving Utensils"
+  }, {
+    "subProducts" : [ "Electric Tea Kettle", "Plate Warmer", "Electric Deep Fryer", "Aluminium Vessels" ],
+    "name" : "Cookware and Cooking Utensils"
+  }, {
+    "subProducts" : [ "Stainless Steel Jar", "Stainless Steel Cans", "Glass Water Bottle", "Spice Jar", "Airtight Container", "Water Jars" ],
+    "name" : "Food Storage Boxes & Containers"
+  }, {
+    "subProducts" : [ "Paper Plate", "Paper Cups" ],
+    "name" : "Disposable Cutlery and Crockery"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Kitchen Utensils & Appliances"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Leather Gloves" ],
+    "name" : "Leather Jackets and Garments"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Animal Clothing & Accessories"
+  }, {
+    "subProducts" : [ "Leather Accessories" ],
+    "name" : "Leather Goods & Accessories"
+  }, {
+    "subProducts" : [ "Leather Bags" ],
+    "name" : "Leather Bags & Handbags"
+  } ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "name" : "Leather Products"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Torque Limiters", "Panel Instruments", "Tablet Hardness Tester" ],
+    "name" : "Testing & Measuring Equipments"
+  }, {
+    "subProducts" : [ "Molecular Sieves", "Filter Paper" ],
+    "name" : "Laboratory & Lab Equipment"
+  }, {
+    "subProducts" : [ "Machinery AC Drive", "Machine Interface", "Motor Starters", "Control Modules", "Control Drive", "Control Desk" ],
+    "name" : "Instrumentation & Control Equipments"
+  }, {
+    "subProducts" : [ "Accelerometer", "Panel Instruments", "Digital Panel Meter", "Gyroscope", "Continuous Workstation Monitor", "Measuring Machine" ],
+    "name" : "Measuring Equipments & Instruments"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Lab Instruments & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Car Covers", "Car Mat", "Car Stereo", "Power Inverter", "Shift Knob", "Gear Shift Knob" ],
+    "name" : "Automobile Interiors & Accessories"
+  }, {
+    "subProducts" : [ "Drag Links", "Brake Pipe", "Brake Fluid", "Brake Lining", "Brake Set", "Brake Rotor" ],
+    "name" : "Brakes & Braking Systems"
+  }, {
+    "subProducts" : [ "Clutch Repair Kit", "Pressure Plates", "Clutch Lever", "Clutch Coil", "Clutch Components", "Diaphragm Spring" ],
+    "name" : "Clutch, Clutch Parts & Accessories"
+  }, {
+    "subProducts" : [ "Chassis", "Car Chassis", "Bus Chassis", "Seat Assembly", "Seat Belt", "Parking Sensor" ],
+    "name" : "Automobile Body Coach Building"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Automobile, Parts & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Sliding Table", "Regulating Wheel", "Tool Cutter Grinder Machine", "Jig Mill", "Knife Grinders", "Milling Spindles" ],
+    "name" : "Milling & Grinding Tools"
+  }, {
+    "subProducts" : [ "CNC Lathe Machine", "Glass Blowing Lathe", "Fluted Roller Truing Machine", "Capstan Lathes", "Turret Lathes", "CNC Cutting Machine" ],
+    "name" : "CNC Machines, Lathes & Tools"
+  }, {
+    "subProducts" : [ "Hand Lever", "Pneumatic Hammers", "Pneumatic Breaker", "Hydraulic Flange Spreader", "Pneumatic Cloth Guider", "Flange Spreader" ],
+    "name" : "Hydraulic & Pneumatic Tools"
+  }, {
+    "subProducts" : [ "Hemming Machine", "Rotary Hook", "Home Sewing Machine", "Industrial Sewing Machine Parts", "Yarn Bobbins", "Stitching Machine" ],
+    "name" : "Sewing,Knitting& Embroidery Machine"
+  } ],
+  "imageUrl" : "/global/images/product-categories/11.jpg",
+  "name" : "Hand & Machine Tools"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Tyres", "Nylon Tyre", "Wheel Cap", "Steel Wheel Rim", "Motorcycle Wheels", "Trailer Wheel" ],
+    "name" : "Tyre, Tube & Flaps"
+  }, {
+    "subProducts" : [ "Solar Bicycle", "Bicycle" ],
+    "name" : "Kids, Racing Bicycles and Rickshaws"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Bicycle Spare Parts"
+  } ],
+  "imageUrl" : "/global/images/product-categories/5.jpg",
+  "name" : "Bicycle, Rickshaw & Spares"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Telecommunication Equipment & Parts"
+  }, {
+    "subProducts" : [ "Power Amplifiers", "Distribution Amplifier", "Loudspeaker", "Audio Power Amplifier", "Dynamic Microphone", "Integrated Amplifier" ],
+    "name" : "Audio Mixer, Recorder & Transmitter"
+  }, {
+    "subProducts" : [ "Steel Tower", "GPS Antenna" ],
+    "name" : "Antennas, Wifi & Communication Tower"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Telecom Equipment & Goods"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Drug Intermediates", "Sodium Methoxide Powder", "Chlorogenic Acid", "Sodium Carboxymethyl Cellulose", "Gelatin Capsules", "Ammonia Solution" ],
+    "name" : "Pharma Ingredients & Raw Materials"
+  }, {
+    "subProducts" : [ "Azelaic Acid", "Dolasetron Mesylate", "Benzoyl Peroxide", "Empty Gelatin Capsule", "Empty Capsules", "Orlistat Pellets" ],
+    "name" : "Common Disease Medicines"
+  }, {
+    "subProducts" : [ "Vial Washing Machine", "Tablet Punching Machine", "Sugar Coating Machine", "Pharmaceutical Machinery Parts", "Camphor Machine", "Tablet Printing Machine" ],
+    "name" : "Pharmaceutical Machinery & Equipment"
+  }, {
+    "subProducts" : [ "Sulfur Hexafluoride", "Ethylene Oxide Gas", "Hydrogen Chloride", "Coal Gas", "Liquid Nitrogen Gas", "Liquid Carbon Dioxide" ],
+    "name" : "Natural, Industrial & Medical Gases"
+  } ],
+  "imageUrl" : "/global/images/product-categories/15.jpg",
+  "name" : "Medical & Healthcare"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Garbage Bag Making Machine", "Automatic Assembly Machines", "Sheet Forming Machine", "Plate Making Machine", "Non Woven Bag Making Machine", "Glass Washing Machine" ],
+    "name" : "Machines & Equipments"
+  }, {
+    "subProducts" : [ "Hydraulic Intensifier", "Hydraulic Breaker", "Swing Clamp Cylinder", "Pipe Bender", "Pressure Intensifiers", "Piston Accumulator" ],
+    "name" : "Hydraulic & Pneumatic Machines"
+  }, {
+    "subProducts" : [ "Girder Crane", "EOT Cranes", "Step Pulley", "Wall Mounted Jib Crane", "Overhead Traveling Cranes", "Marine Cranes" ],
+    "name" : "Cranes, Forklift & Lifting Machines"
+  }, {
+    "subProducts" : [ "Printing Cylinders", "Sublimation Printing Machine", "Thermal Transfer Printers", "Zebra Barcode Printers", "Screen Printing Material", "Ferrule Printing Machine" ],
+    "name" : "Printing Machinery & Equipment"
+  } ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "name" : "Industrial Plants & Machinery"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Plastic Tags", "Hang Tags", "Identification Tags", "Adhesive Sticker", "Pencil Tag", "Bag Tag" ],
+    "name" : "Barcode, Stickers & Luggage Tags"
+  }, {
+    "subProducts" : [ "Art Paper Bag", "Paper Gift Bag", "Paper Bags", "Cardboard", "Tea Bag Paper", "Sticker Paper" ],
+    "name" : "Paper Bags, Gifts & Paper Products"
+  }, {
+    "subProducts" : [ "Invitation Box", "Printed Inlay Cards", "Visiting Cards", "Invitation Card", "Birthday Card", "Gift Cards" ],
+    "name" : "Greeting & Invitation Cards"
+  }, {
+    "subProducts" : [ "Laminated Paper Sheet", "Chromatography Paper", "Tissue Wrap", "MG Kraft Paper", "Metallic Paper", "Silicone Paper" ],
+    "name" : "Paper & Paper Made Products"
+  } ],
+  "imageUrl" : "/global/images/product-categories/26.jpg",
+  "name" : "Paper & Paper Products"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Velvet Throw", "Sateen Sheets", "Silk Bed Cover", "Jacquard Throw", "Polyester Blanket", "Embroidered Bedspread" ],
+    "name" : "Bed Linen & Bedspreads"
+  }, {
+    "subProducts" : [ "Jute Mats", "Hollow Mat", "Foot Mat", "Cotton Bath Mats", "Tea Mat", "Cutting Mat" ],
+    "name" : "Door Mats & Bath Mats"
+  }, {
+    "subProducts" : [ "Polar Blankets", "Fleece Blanket", "Flannel Blankets", "Polyester Blanket", "Mink Blankets", "Receiving Blanket" ],
+    "name" : "Blankets & Quilts"
+  }, {
+    "subProducts" : [ "Handloom Cushion Cover", "Silk Cushion Cover", "Throw Pillow", "Bolster Covers", "Chair Cushion", "Cotton Handloom Cushion Cover" ],
+    "name" : "Cushion & Cushion Covers"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Home Textile & Furnishing"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Shrink Wrap", "Laminated Packaging Film", "PVC Foil", "Metallized Polypropylene Film", "LDPE Film", "PVC Lamination Film" ],
+    "name" : "Packaging Films & Foils"
+  }, {
+    "subProducts" : [ "Plywood Boxes", "Printed Carton", "Fibreboard Boxes", "Corrugated Carton Box", "Tissue Box", "Printed Carton Box" ],
+    "name" : "Packaging Cartons"
+  }, {
+    "subProducts" : [ "Plastic Water Tank", "Water Storage Tanks", "Collapsible Containers", "Steel Barrels", "MS Drums", "Freight Containers" ],
+    "name" : "Storage Tanks, Drums & Containers"
+  }, {
+    "subProducts" : [ "Seal Cap", "Rubber Cork", "Aluminum Easy Open End", "Plastic Spout", "Lug Cap", "EPE Liner" ],
+    "name" : "Packaging Caps & Seals"
+  } ],
+  "imageUrl" : "/global/images/product-categories/17.jpg",
+  "name" : "Packaging Machines & Goods"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Scourer", "Phenyle", "Stainless Steel Scrubber" ],
+    "name" : "Cleaning Liquids & Wipes"
+  }, {
+    "subProducts" : [ "Steel Baskets", "Plastic Basin" ],
+    "name" : "Buckets, Mugs & Storage Bins"
+  }, {
+    "subProducts" : [ "Sandalwood Powder", "Lamp Oil", "Camphor Powder" ],
+    "name" : "Incense Sticks & Pooja Items"
+  }, {
+    "subProducts" : [ "Aluminium Bracket", "Aluminium Extrusion Sections", "Aluminum Section", "Aluminium Profiles", "Stainless Steel Angle", "Strut Profiles" ],
+    "name" : "Brackets, Holder & Hardware Fittings"
+  } ],
+  "imageUrl" : "/global/images/product-categories/1.jpg",
+  "name" : "Housewares & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Parsley Leaves", "Thyme Leaves" ],
+    "name" : "Natural and Pure Herbs"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Natural & Herbal Henna"
+  }, {
+    "subProducts" : [ "Wheat Grass Powder", "Herbal Supplements", "Garcinia Cambogia Extract Powder", "Amla Ginger Squash", "Barley Grass", "Anardana Powder" ],
+    "name" : "Ayurvedic & Herbal Health Supplement"
+  }, {
+    "subProducts" : [ "Wheat Grass Powder", "Garcinia Cambogia Extract Powder" ],
+    "name" : "Ayurvedic,Herbal Products & Medicine"
+  } ],
+  "imageUrl" : "/global/images/product-categories/10.jpg",
+  "name" : "Herbal & Ayurvedic Product"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Petroleum Jelly", "Lanolin" ],
+    "name" : "Personal Care & Cosmetic Products"
+  }, {
+    "subProducts" : [ "Baby Sheet" ],
+    "name" : "Child and Baby Care Products"
+  }, {
+    "subProducts" : [ "Hair Shampoo", "Hair Dryer", "Facial Tissues" ],
+    "name" : "Salon, Spa Kits & Equipments"
+  }, {
+    "subProducts" : [ "Lily Oil", "Organic Neem Oil", "Primrose Oil", "Rose Oil", "Perilla Seed Oil", "Mace Oil" ],
+    "name" : "Essential & Aromatic Oils"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Cosmetics & Personal Care"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Erasers", "Pencil Holder", "Correction Fluid" ],
+    "name" : "Pen, Pencil & Writing Supplies"
+  }, {
+    "subProducts" : [ "Drawing Board Clip", "Stretched Canvas", "Canvas Roll" ],
+    "name" : "Crayon, Painting Brush & Craft Tools"
+  }, {
+    "subProducts" : [ "Printed Envelope", "Paper Envelopes", "Printed Book" ],
+    "name" : "Files, Folders & Notebooks"
+  }, {
+    "subProducts" : [ "Tent Card", "Binding Strips", "Wooden Pen Holder", "Die Stamp", "Tape Cutter", "Drawing Board Clip" ],
+    "name" : "Office Stationery & Calculator"
+  } ],
+  "imageUrl" : "/global/images/product-categories/6.jpg",
+  "name" : "Books & Stationery"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ ],
+    "name" : "Precious Stones & Gemstone Jewelry"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Jewellery Making Tools & Machines"
+  }, {
+    "subProducts" : [ ],
+    "name" : "Artificial, Stone and Metal Earrings"
+  }, {
+    "subProducts" : [ "Synthetic Diamond" ],
+    "name" : "Diamonds & Diamond Jewels"
+  } ],
+  "imageUrl" : "/global/images/product-categories/14.jpg",
+  "name" : "Gems, Jewelry & Astrology"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Assembly Table" ],
+    "name" : "Office & Commercial Furniture"
+  }, {
+    "subProducts" : [ "Wall Box" ],
+    "name" : "Furniture Racks & Shelves"
+  }, {
+    "subProducts" : [ "Aluminium Door" ],
+    "name" : "Doors and Windows"
+  }, {
+    "subProducts" : [ "Round Table", "Cotton Pouf" ],
+    "name" : "Living Room & Plastic Furniture"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Furniture & Supplies"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Leather Belt" ],
+    "name" : "Fashion & Leather Belts"
+  }, {
+    "subProducts" : [ "Plastic Footwear", "Synthetic Footwear", "Leather Boots" ],
+    "name" : "Men, Women & Kids Footwear"
+  }, {
+    "subProducts" : [ "Bow Ties" ],
+    "name" : "Neckties, Bow Ties & Tie Accessories"
+  }, {
+    "subProducts" : [ "Polyester Button", "Plastic Eyelets", "Collar Stays", "Garment Accessories", "Textile Accessories", "Plastic Button" ],
+    "name" : "Cufflink, Buttons, Zippers & Buckles"
+  } ],
+  "imageUrl" : "/global/images/product-categories/22.jpg",
+  "name" : "Fashion Accessories & Gear"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Canvas Tent", "Fishing Nets", "Portable Tent", "Family Tent", "Indian Tent", "Tent Accessories" ],
+    "name" : "Camping, Fishing & Hunting Goods"
+  }, {
+    "subProducts" : [ "Calcium Hypochlorite", "Sodium Dichloroisocyanurate", "Sodium Bicarbonate", "Sodium Bisulfate", "Sodium Carbonate", "Sodium Hypochlorite" ],
+    "name" : "Swimming Pool & Water Sport Goods"
+  }, {
+    "subProducts" : [ "Toy Box" ],
+    "name" : "Inflatable Toys and Preschool Toys"
+  }, {
+    "subProducts" : [ "Swimwear" ],
+    "name" : "Sports Wear & Athletic Accessories"
+  } ],
+  "imageUrl" : "/global/images/product-categories/3.jpg",
+  "name" : "Sports Goods, Toys & Games"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "EAS Tag", "Parking Sensor" ],
+    "name" : "Security & Inspection Devices"
+  }, {
+    "subProducts" : [ "Electronic Card", "Security Card", "Magnetic Stripe Card", "EM Card", "Proximity Card Reader", "Proximity Cards" ],
+    "name" : "Biometrics & Access Control Devices"
+  }, {
+    "subProducts" : [ "Fire Blankets", "Fire Fighting Vehicles", "Alarm Panels" ],
+    "name" : "Fire Fighting & Prevention Products"
+  }, {
+    "subProducts" : [ "Camera Housing", "CCTV Equipments", "CCTV", "CCTV System", "Box IP Camera", "Color CCD Camera" ],
+    "name" : "CCTV, Surveillance Systems and Parts"
+  } ],
+  "imageUrl" : "/global/images/product-categories/25.jpg",
+  "name" : "Security, Safety System & Service"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Paper Gift Bag", "Plastic Case", "Cotton Gift Bag", "Paper Carry Bags", "Jute Shopping Bags", "Multiwall Paper Bags" ],
+    "name" : "Carry Bags and Multiutility Bags & Pouches"
+  }, {
+    "subProducts" : [ "Cotton Purse", "Jute Purse" ],
+    "name" : "Wallets & Purses"
+  }, {
+    "subProducts" : [ "Cloth Bags", "Jute Conference Bag", "Cotton Hand Bags", "Jute Handbag", "Cotton Pouch", "Jute Carry Bag" ],
+    "name" : "Cotton, Jute & Canvas Bags"
+  }, {
+    "subProducts" : [ "Handbags" ],
+    "name" : "Fashion & Designer Bags"
+  } ],
+  "imageUrl" : "/global/images/product-categories/12.jpg",
+  "name" : "Bags, Belts & Wallets"
+}, {
+  "subProducts" : [ {
+    "subProducts" : [ "Ropeway", "Hydraulic Car Lift", "Four Post Lift", "Lift Spare Part", "Pneumatic Lifts", "Chair Lift" ],
+    "name" : "Elevators & Escalators"
+  }, {
+    "subProducts" : [ "Awning Fabric", "Barrel Bolt", "Indicator Bolt", "Rack Bolt", "Surface Bolt", "Aluminium Tower Bolt" ],
+    "name" : "Door & Window, Hinges & Fittings"
+  }, {
+    "subProducts" : [ "Softwood", "Laminated Plywood", "Densified Wood", "Bamboo", "Bamboo Wood", "Bamboo Plywood" ],
+    "name" : "Wood, Plywood, Veneer & Laminates"
+  }, {
+    "subProducts" : [ "Thread Rolling Machine", "Edge Bending Machine", "Plate Bending Machine", "Seed Crushing Machine", "Stone Crusher", "Cone Crusher" ],
+    "name" : "Building & Construction Machines"
+  } ],
+  "imageUrl" : "/global/images/product-categories/23.jpg",
+  "name" : "Building & Construction"
+} ]

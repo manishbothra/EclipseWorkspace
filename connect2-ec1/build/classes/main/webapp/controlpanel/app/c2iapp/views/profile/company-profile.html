@@ -1,0 +1,412 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-building"></i> &nbsp;Business Profile</h1>
+			<a ng-href="/{{profileForm.name|spaceToDash}}/{{profileForm.id}}" target="_blank">Public profile </a>
+		</div>
+	</div>	
+				
+	<div class="row">
+		<div class="col-md-12">
+			<div data-ng-cloak>
+				<div class="x_panel" data-ng-cloak>
+					<div class="x_title">
+						<h2 ng-if="setupProfile">Setup your business profile</h2>
+						<h2 ng-if="!setupProfile">Update your business profile</h2>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<br/>
+						
+						<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+							<strong>Success! </strong> {{successMsg}}
+						</div>
+						<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+							<strong>Error! </strong> {{errorMessage}}
+						</div>
+					<div id="wizard" class="form_wizard wizard_horizontal" ng-show="!showResults">
+							  <ul class="wizard_steps">
+								<li>
+								  <a href="" ng-click="setSelectedStep('step1');" ng-class="{selected:selectedStep == 'step1', done: isStepDone('step1'), disabled: selectedStep != 'step1' && !isStepDone('step1')}">
+									<span class="step_no">1</span>
+									<span class="step_descr"><small>Basic Company Profile</small></span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step2');" ng-class="{selected:selectedStep == 'step2', done: isStepDone('step2'), disabled: selectedStep != 'step2' && !isStepDone('step2')}">
+									<span class="step_no">2</span>
+									<span class="step_descr"><small>Company Address </small>
+												  </span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step3');" ng-class="{selected:selectedStep == 'step3', done: isStepDone('step3'), disabled: selectedStep != 'step3' && !isStepDone('step3')}">
+									<span class="step_no">3</span>
+									<span class="step_descr"><small>Company Financial </small>
+									</span>
+								  </a>
+								</li>
+								<li>
+								  <a href="" ng-click="setSelectedStep('step4');" ng-class="{selected:selectedStep == 'step4', done: isStepDone('step4'), disabled: selectedStep != 'step4' && !isStepDone('step4')}">
+									<span class="step_no">4</span>
+									<span class="step_descr"><small>More Details </small>
+												  </span>
+								  </a>
+								</li>
+							  </ul>
+						<steps current-step="selectedStep">
+							<step name="step1">
+								<h1></h1>
+								<form name="companyProfileForm" ng-submit="updateProfile(companyProfileForm.$valid, companyProfileForm.$dirty)" class="form-horizontal form-label-left">
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Company Name</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter company name" ng-model="profileForm.name" required >
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Company Title</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Company Title" ng-model="profileForm.title" required></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Ownership Type</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select class="form-control" name="ownershipType" ng-model="selectedDropdownValues.selectedOwnershipType"
+												ng-options="ot as ot.label for ot in ownershipTypes" required>
+													<option value="">Select Ownership Type</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Legal Owner</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" maxlength="30" placeholder="Legal Owner" ng-model="profileForm.owner" ></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Company Short Description</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<textarea type="text" class="form-control" maxlength="500"  placeholder="Short Description" ng-model="profileForm.shortDescription" ></textarea>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Company Detailed Description</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<textarea type="text" class="form-control" maxlength="500"  placeholder="Detailed Description" ng-model="profileForm.detailDescription" ></textarea>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+									</div>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Country</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select class="form-control" name="country" ng-model="selectedDropdownValues.selectedCountry"
+												ng-options="country.name for country in allCountries" required>
+													<option value="">Select Country</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Main Spoken Language</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select class="form-control" name="mainLanguage" ng-model="profileForm.mainLanguage"
+												ng-options="ml for ml in mainLanguages">
+													<option value=''>Select Language</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Primary Business Type</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select class="form-control" name="primaryBusinessType" ng-model="selectedDropdownValues.selectedPrimaryBusinessType"
+												ng-options="pbt as pbt.label for pbt in primaryBusinessTypes">
+													<option value=''>Select Business Type</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Additional Businesses</label>
+											<div class="col-md-8 col-sm-8 col-xs-12 payment-options">
+												<label ng-repeat="adb in additionalBusinessTypes | filter:{value: '!' + selectedDropdownValues.selectedPrimaryBusinessType.value}">
+												  <input type="checkbox" ng-model="adb.selected" value="{{adb.value}}" /> {{adb.label}}<br/> 
+												</label>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">No. of Employees</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select class="form-control" name="number" ng-model="profileForm.number"
+												ng-options="emp for emp in noOfEmployees">
+													<option>Select No. of Employees</option>
+												</select>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Date of Establishment</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<p class="input-group">												
+													<input type="text" name="dobPicker" class="form-control datePicker-text" uib-datepicker-popup="dd/MM/yyyy" ng-model="profileForm.dateObj" is-open="dateModal.dobPicker" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-click="openDateModal($event, 'dobPicker');"  date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="false"/>
+													<span class="input-group-btn">
+														<button type="button" class="btn btn-default" ng-click="openDateModal($event, 'dobPicker');"><i class="glyphicon glyphicon-calendar"></i></button>
+													</span>
+												</p>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+									</div>
+									<div class="ln_solid col-xs-12"></div>
+									<div class="form-group">
+										<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">											
+											<button class="btn btn-primary" type="button" ng-click="goToPrevStep();">Previous</button>
+											<input class="btn btn-primary" type="button" ng-click="resetForm()" ng-disabled="busyGeneralInfo" value="Reset"/>
+											<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Submit"/>
+										</div>
+									</div>
+								</form>
+							</step>
+							<step name="step2">
+								<form name="companyAddressForm" ng-submit="updateCompanyAddress(companyAddressForm.$valid, companyAddressForm.$dirty)" class="form-horizontal form-label-left">
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Address Line 1</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Address Line 1" ng-model="addressForm.addressLine1" required>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Address Line 2</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Address Line 2" ng-model="addressForm.addressLine2"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>City</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter City" ng-model="addressForm.city" required></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group" ng-if="selectedDropdownValues.selectedCountry.country==='India'">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>State</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<select ng-if="!address.country || address.country == 'India' "  class="form-control" name="states" ng-model="selectedDropdownValues.selectedState"
+												ng-options="ot.name for ot in allStates['India']" required>
+													<option value="">Select State</option>
+												</select>
+												<input ng-if="address.country && address.country != 'India' " type="text" class="form-control" placeholder="Enter State" ng-model="addressForm.state" required></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Country</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" name="country" value="{{selectedDropdownValues.selectedCountry.country}} " disabled required>
+											
+												</input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12" input-reqd>Pincode</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Pincode" ng-model="addressForm.pincode" required></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>	
+									<div class="form-group">
+										<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">										
+										<button class="btn btn-primary" type="button" ng-click="goToPrevStep();">Previous</button>
+										<input class="btn btn-primary" type="button" ng-click="resetForm()" ng-disabled="busyGeneralInfo" value="Reset"/>
+										<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Submit"/>
+										</div>
+									</div>
+								</form>
+							</step>
+							<step name="step3">
+								<form name="companyFinancialForm" ng-submit="updateCompanyFinance(companyFinancialForm.$valid, companyFinancialForm.$dirty)" class="form-horizontal form-label-left">
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Annual Turnover</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Annual Turnover" ng-model="financeDataForm.annualTurnover">
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Authorized capital</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Authorized capital" ng-model="financeDataForm.authorizedCapital"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Paid up capital</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Paid up capital" ng-model="financeDataForm.paidUpCapital"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Net Worth</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Net Worth" ng-model="financeDataForm.netWorth"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Bank Name</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Bank Name" ng-model="financeDataForm.bankName"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">PAN Number</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter PAN Number" ng-model="financeDataForm.panNumber"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">GST Number</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter GST Number" ng-model="financeDataForm.gstNumber"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">TAN Number</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter TAN Number" ng-model="financeDataForm.tanNumber"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">VAT Number</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter VAT Number" ng-model="financeDataForm.vat"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">CST Number</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter CST Number" ng-model="financeDataForm.cstNumber"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>	
+									<div class="form-group">
+										<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">										
+										<button class="btn btn-primary" type="button" ng-click="goToPrevStep();">Previous</button>
+										<input class="btn btn-primary" type="button" ng-click="resetForm()" ng-disabled="busyGeneralInfo" value="Reset"/>
+										<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Submit"/>
+										</div>
+									</div>
+								</form>
+							</step>
+							<step name="step4">
+								<form name="companyAddDetailsForm" ng-submit="updateCompanyAddnDetails(companyAddDetailsForm.$valid, companyAddDetailsForm.$dirty)" class="form-horizontal form-label-left">
+									<div class="col-md-8 col-sm-12 col-xs-12">
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Import Export Code</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter Import Export Code" ng-model="additionalDataForm.iecode"></input>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">Shipment Modes</label>
+											<div class="col-md-8 col-sm-8 col-xs-12 payment-options">												
+												<label ng-repeat="po in shipmentOptions">
+												  <input type="checkbox" ng-model="po.selected" value="{{po.name}}" /> {{po.name}}<br/> 
+												</label>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+			
+										<div class="form-group">
+											  <label class="control-label col-md-4 col-sm-4 col-xs-12">Payment Options</label>
+											  <div class="col-sm-8 col-sm-8 col-xs-12 payment-options">
+													
+													<label ng-repeat="po in paymentOptions">
+													  <input type="checkbox" ng-model="po.selected" value="{{po.name}}" /> {{po.name}}<br/> 
+													</label>
+													<input type="text" placeholder="Enter other payment options" ng-if="isPaymentOptionSelected('Others')" class="form-control" data-ng-model="productForm.otherTradePaymentOptions" data-ng-maxlength=40>
+											  </div>
+											  <div class="clearfix"></div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-4 col-sm-4 col-xs-12">About Your Company</label>
+											<div class="col-md-8 col-sm-8 col-xs-12">
+												<textArea type="text" class="form-control" placeholder="Enter About your company" ng-model="additionalDataForm.companyAbout"> </textArea>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										
+										<div class="form-group" ng-repeat="adetail in additionalInfo">
+											<div class="control-label col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" placeholder="Enter title" ng-model="adetail.name"></input>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<textArea type="text" class="form-control" placeholder="Enter {{adetail.name}} details" ng-model="adetail.value"> </textArea>
+											</div>
+											<a class="col-md-2 col-sm-2 col-xs-2" href='' ng-click="removeMoreDetailsRow('basic', bAddInfo.name, $index)" style="color:red;"><i class="fa fa-minus-circle"></i> Remove</a>	
+											<div class="clearfix"></div>
+										</div>
+										<div class="form-group" style="margin:10px 10px 40px" >
+											<a href=''ng-click="addMoreDetailsRow('basic')"><i class="fa fa-plus-circle"></i> Add New </a>
+										</div>
+										<div class="clearfix"></div>
+									</div>	
+									<div class="clearfix"></div>									
+									<button class="btn btn-primary" type="button" ng-click="goToPrevStep();">Previous</button>
+									<input class="btn btn-success" type="submit" ng-show="companyAddDetailsForm.$dirty" ng-disabled="busyGeneralInfo" value="Submit"/>
+									<input class="btn btn-success" type="button"  ng-show="!companyAddDetailsForm.$dirty" ng-disabled="busyGeneralInfo" ng-click="finishBusinessSetup();" value="Done"/>
+								</form>
+							</step>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

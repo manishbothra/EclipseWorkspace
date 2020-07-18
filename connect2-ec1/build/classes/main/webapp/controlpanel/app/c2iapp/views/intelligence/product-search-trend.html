@@ -1,0 +1,60 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-bar-chart"></i>&nbsp;Product Search Trend</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+    <div class="x_panel"> 
+		<div class="x_content col-md-8 ">
+			<br/>
+			<div class="form-horizontal form-label-left">
+				<div class="form-group">
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						
+						<h4><input type="radio" id="rdoYp" ng-model="reportForm.productType" value="yourProducts"> <label for="rdoYp">Your Products</label></h4>
+						<select ng-disabled="reportForm.productType != 'yourProducts'" ng-model="productReport" ng-options="product as product.name for product in companyProductNames" ng-change="changeProduct()">
+						<option value="">---Select Product---</option>
+						</select>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="x_panel">
+		<div class="x_title title">
+		  <h2>Worldwide Interest - Over time</h2>
+		  <ul class="nav navbar-right panel_toolbox">
+			<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+			</li>
+		  </ul>
+		  <div class="clearfix"></div>
+		</div>
+		
+		<div class="row x_content">
+			<div id="timeseries"></div>
+		</div>
+		<div class="clearfix"></div>		
+	
+	</div>    
+	<div class="x_panel">	
+		<div class="x_title title">
+		  <h2>Worldwide Interest - By Region</h2>
+		  <ul class="nav navbar-right panel_toolbox">
+			<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+			</li>
+		  </ul>
+		  <div class="clearfix"></div>
+		</div>
+		<div class="row x_content">
+			<div id="geochart"></div>
+		</div>
+		
+	</div>    
+	<div class="clearfix"></div>
+	
+	<div id="embedableScripts"></div>
+</div>

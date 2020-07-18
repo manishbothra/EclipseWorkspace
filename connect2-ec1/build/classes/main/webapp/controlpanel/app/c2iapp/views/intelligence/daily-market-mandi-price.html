@@ -1,0 +1,193 @@
+<div class="right_col" role="main">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-line-chart"></i>&nbsp;Daily Market Price (Mandi Price)</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+
+	<div class="searchFilter">
+		<!-- Tab panes -->
+		<div class="container x_panel" data-ng-cloak>
+			<div class="row">
+				<div class="col-md-12" style="margin-bottom:15px;">
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						<label for="rdoNp">Commodity</label>
+						<input class="form-control" type="text" placeholder="Enter commodity name" name="term" ng-model="filterData.commodity" ui-autocomplete="myOption" data-ng-cloak>
+					</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<label>State</label>
+								<select ng-model="filterData.stateName" ng-change="changeState(filterData.stateName)"
+								class="form-control" rel="tooltip" title="{{(allowedFilters.region)?'' : filterDisableMessage1}}"
+								ng-options="state for state in ALL_INDIAN_STATES">
+									<option value="">Any</option>
+								</select>
+							</div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>From Date</label>
+							<div>
+								<p class="input-group">
+									<input type="text" class="form-control well well-sm" uib-datepicker-popup="dd/MM/yyyy" ng-model="filterData.fromDate" is-open="dateModal.dobPickerFrm" datepicker-options="dateOptions" ng-click="openDateModal($event, 'dobPickerFrm');"  date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="false"/>
+									<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="openDateModal($event, 'dobPickerFrm');"><i class="glyphicon glyphicon-calendar"></i></button>
+									</span>
+								</p>
+							</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>To Date</label>
+							<div>
+								<p class="input-group">
+									<input type="text" class="form-control well well-sm" uib-datepicker-popup="dd/MM/yyyy" ng-model="filterData.toDate" is-open="dateModal.dobPickerTo" datepicker-options="dateOptions" ng-click="openDateModal($event, 'dobPickerTo');"  date-disabled="disabled(date, mode)" close-text="Close" show-button-bar="false"/>
+									<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="openDateModal($event, 'dobPickerTo');"><i class="glyphicon glyphicon-calendar"></i></button>
+									</span>
+								</p>
+							</div>
+					</div>
+			</div>
+			<div class="col-md-12">
+					<div class="col-md-4 col-sm-6 col-xs-12">
+					  <label>District</label>
+						<select class="form-control" ng-disabled="!allDistrictNames || allDistrictNames.length==0" ng-model="filterData.districtName"  ng-options="district as district for district in allDistrictNames | orderBy" >
+							<option value="">--- Select a district ---</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<label>Market</label>
+						<select class="form-control" ng-disabled="!allMarketNames || allMarketNames.length==0" ng-model="filterData.marketName"  ng-options="market as market for market in allMarketNames | orderBy" >
+							<option value="">--- Select a market ---</option>
+						</select>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xs-12">
+					  	<label></label>
+							<div>
+		 						<button type="button" class="btn btn-primary" name="Submit" ng-click="filterSearch();">Submit</button>
+							</div>
+					</div>
+				</div>
+				</div>
+			</div>
+
+		</div>
+
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="buyer">
+
+	<div class="container x_panel"  data-ng-cloak >
+		<div class="x_title title">
+		  <h2>{{mainTitle}}</h2>
+		  <ul class="nav navbar-right panel_toolbox">
+			<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+			</li>
+		  </ul>
+		  <div class="clearfix"></div>
+		</div>
+		<div class="row x_content" ng-if="!productPrices || productPrices.length == 0">
+			<h2>No result found </h2>
+		</div>
+
+		<div class="row x_content" id="tableStats" style="height: 410px;overflow-y: scroll;" ng-if="productPrices && productPrices.length > 0">
+
+				<div class="col-md-12" ng-if="productPrices && productPrices.length > 0" data-ng-cloak>
+					<table class="table table-striped table-bordered">
+						<tr style="background-color:#454545;color:#fff;">
+							<th style="width:5%">S. No</th>
+							<th style="width:10%">Commodity</th>
+							<th style="width:10%">Variety</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortBySate', headerSortUp:sortBySate, headerSortDown:!sortBySate}" ng-click="sortList('productPrices', 'stateName', 'sortBySate')">State</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortByDist', headerSortUp:sortByDist, headerSortDown:!sortByDist}" ng-click="sortList('productPrices', 'districtName', 'sortByDist')">District</th>
+							<th style="width:10%">Market</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortByDate', headerSortUp:sortByDate, headerSortDown:!sortByDate}" ng-click="sortList('productPrices', 'arrivalDate', 'sortByDate')">Date</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortByMinPrice', headerSortUp:sortByMinPrice, headerSortDown:!sortByMinPrice}" ng-click="sortList('productPrices', 'modalPrice', 'sortByMinPrice')">Min Price</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortByMaxPrice', headerSortUp:sortByMaxPrice, headerSortDown:!sortByMaxPrice}" ng-click="sortList('productPrices', 'sortByMaxPrice', 'sortByMaxPrice')">Max Price</th>
+							<th style="width:10%" ng-class="{headerSort:selectedSorting !='sortByPrice', headerSortUp:sortByPrice, headerSortDown:!sortByPrice}" ng-click="sortList('productPrices', 'modalPrice', 'sortByPrice')">Modal Price</th>
+							<th style="width:5%">Unit</th>
+					  </tr>
+
+					  <tr ng-repeat="pro in productPrices | filter:qtyValueRangeFilter">
+							<td>{{$index+1}}</td>
+							<td>{{pro.commodity}}</td>
+							<td>{{pro.variety}}</td>
+							<td>{{pro.stateName}}</td>
+							<td>{{pro.districtName}}</td>
+							<td>{{pro.marketName}}</td>
+							<td>{{pro.arrivalDate}}</td>
+							<td>{{pro.minPrice}}</td>
+							<td>{{pro.maxPrice}}</td>
+							<td>{{pro.modalPrice}}</td>
+							<td>{{pro.unit || 'INR/Quintal'}}</td>
+						 </tr>
+					</table>
+				</div>
+		   </div>
+			</div>
+		</div>
+	   <div role="tabpanel" class="x_panel" id="demand">
+
+			<div class="x_title title">
+			  <h2>Infographics</h2>
+			  <ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+				</li>
+			  </ul>
+			  <div class="clearfix"></div>
+			</div>
+
+		   <div class="container x_content" id="tradeComparison">
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<div class="tradeGraph">
+							<nvd3 options='pieChartLP.options' data='pieChartLP.data' config="nvChartConfig" api="pieChartLP.api"></nvd3>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="tradeGraph">
+							<nvd3 options='pieChartHP.options' data='pieChartHP.data' config="nvChartConfig" api="pieChartHP.api"></nvd3>
+						</div>
+					</div>
+
+					 <div class="col-md-12 col-sm-12">
+						<div class="tradeGraph">
+							<div class="col-md-6 col-sm-12">
+								<label>Select a market</label>
+								<select style="height: 32px;" ng-model="selectedTrendChartMarket" ng-options="market as market for market in allMarketNames | orderBy" >
+									<option value=""> Select Market </option>
+								</select>
+							</div>
+							<nvd3 options='trendChart.options' data='trendChart.data' config="nvChartConfig" api="trendChart.api"></nvd3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--
+		<div role="tabpanel" class="x_panel" id="leads">
+			<div class="x_title title">
+			  <h2>World Wide Demand</h2>
+			  <ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+				</li>
+			  </ul>
+			  <div class="clearfix"></div>
+			</div>
+
+			<div class="col-md-12 col-sm-12 x_content">
+				<div class="tradeGraph">
+					<div id="chart_div1" google-chart chart="exportChartGeo" style="margin-top:50px;margin-bottom:25px">
+					</div>
+				</div>
+			</div>
+		 </div>
+-->
+
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

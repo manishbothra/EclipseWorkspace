@@ -1,0 +1,75 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-user"></i> &nbsp;Analytics</h1>
+		</div>
+	</div>	
+				
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Custom Tabs -->
+			<div>
+
+				<div class="box-body">
+					<div data-ng-cloak>
+						<div class="x_panel" data-ng-cloak>
+							<div class="x_title">
+								<h2>This Month</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div>
+									Total Visitors: {{stats.currentMonthVisitors}}
+								</div>
+								<div>
+									Total Page Views: {{stats.currentMonthPageViews}}
+								</div>
+								<div>
+									Top countries
+									<ul>
+										<li ng-repeat="(country,value) in stats.currentMonthCountriesStats">
+											<span style="text-transform: capitalize;font-weight: bold;">{{country}} :</span> <br> 
+											<div style= "margin-left:20px;float:left;" ng-repeat="data in value">
+												<span>{{data.key}}</span> <span style="font-weight:bold;"> {{data.intValue}}</span>
+											</div>
+										</li>	
+									
+									</ul>
+								</div>
+							</div>
+						
+						</div>
+						<div class="x_panel" data-ng-cloak>
+							<div class="x_title">
+								<h2>All Stats</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div>
+									Total Visitors: {{stats.totalVisitors}}
+								</div>
+								<div>
+									Total Page Views: {{stats.totalPageViews}}
+								</div>
+								<div>
+									Top countries
+									<ul>
+										<li ng-repeat="(country,value) in stats.totalCountriesStats">
+											<span style="text-transform: capitalize;font-weight: bold;">{{country}} :</span> <br> 
+											<div style= "margin-left:20px;float:left;" ng-repeat="data in value">
+												<span>{{data.key}}</span> <span style="font-weight:bold;"> {{data.intValue}}</span>
+											</div>
+										</li>	
+									
+									</ul>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

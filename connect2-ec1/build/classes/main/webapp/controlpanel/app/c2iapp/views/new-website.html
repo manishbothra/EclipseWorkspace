@@ -1,0 +1,119 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-globe"></i> &nbsp;Create your Global Presence with Holistic View</h1>
+		</div>
+	</div>	
+				
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Custom Tabs -->
+			<div>
+
+				<div class="box-body">
+					<div data-ng-cloak>
+						<div class="x_panel" data-ng-cloak>
+							<div class="x_content">
+								
+								<div class="alert alert-success" ng-if="successMsg && successMsg.length > 0">
+									<strong>Congratulations! </strong> {{successMsg}}
+								</div>
+								<div class="alert alert-danger" ng-if="errorMessage && errorMessage.length > 0">
+									<strong>Error! </strong> {{errorMessage}}
+								</div>
+								
+								<div id="wizard" class="form_wizard wizard_horizontal" ng-show="!showResults">
+									  <ul class="wizard_steps">
+										<li>
+										  <a href="" ng-click="setSelectedStep('step1');" ng-class="{selected:selectedStep == 'step1', done: isStepDone('step1'), disabled: selectedStep != 'step1' && !isStepDone('step1')}">
+											<span class="step_no">1</span>
+											<span class="step_descr"><small>Basic Details</small></span>
+										  </a>
+										</li>
+										<li>
+										  <a href="" ng-click="setSelectedStep('step2');" ng-class="{selected:selectedStep == 'step2', done: isStepDone('step2'), disabled: selectedStep != 'step2' && !isStepDone('step2')}">
+											<span class="step_no">2</span>
+											<span class="step_descr"><small>Choose Template </small>
+														  </span>
+										  </a>
+										</li>
+									  </ul>
+									
+									<div id="step1" ng-show="selectedStep == 'step1'">
+										<form name="newDomainForm" ng-submit="showTemplateStep('step1', 'step2', newDomainForm.$valid)" class="form-horizontal form-label-left">
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Domain Name</label>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter domain name" ng-model="domainForm.domainName" required><small>.connect2india.com</small>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Company Display Name</label>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" class="form-control" placeholder="Enter your last name" ng-model="domainForm.companyName" required></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+																				
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Contact</label>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<input type="text" class="form-control" maxlength="15" placeholder="Mobile" ng-model="domainForm.contactNos" ></input>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Address</label>
+												<div class="col-md-4 col-sm-6 col-xs-12">
+													<textarea type="text" class="form-control" maxlength="100"  placeholder="Address" ng-model="domainForm.fullAddress" ></textarea>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											
+											
+											
+											<div class="ln_solid"></div>
+											<div class="form-group">
+												<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+													<input class="btn btn-primary" type="button" ng-click="resetForm()" ng-disabled="busyGeneralInfo" value="Reset"/>
+													<input class="btn btn-success" type="submit" ng-disabled="busyGeneralInfo" value="Next"/>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div id="step2" ng-show="selectedStep == 'step2'">
+										<div class="form-group">
+											<h4>Choose Template </h4>
+											<ul>
+													<li class="template" ng-repeat="template in templates" ng-click="setSelectedTemplate(template);" ng-class="{selected: selectedTemplate.id == template.id}">
+														<img style="max-width:200px;" ng-src="{{template.thumb}}"/>
+													</li>
+												</ul>
+										</div>
+											
+										<div class="ln_solid"></div>
+										<div class="form-group">
+											<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+												<input class="btn btn-success" type="button" ng-click="createWebsite()" ng-disabled="busyGeneralInfo" value="Next"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+									<div ng-if="showResults && updateUrl && updateUrl.length > 0">
+										<div>
+											<a class="btn btn-primary" target="_blank" ng-href='{{updateUrl}}'>Update and Publish your global presence </a>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -3,6 +3,7 @@ package com.connect2.ec.service;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +17,7 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
@@ -28,10 +30,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import com.connect2.dao.User;
 import com.connect2.ec.adapter.ec.am.service.AmazonEcomService;
 import com.connect2.ec.adapter.ec.eb.service.EbayEcomService;
 import com.connect2.ec.adapter.ec.fk.FlipkartEcommService;
 import com.connect2.ec.constants.ECType;
+import com.connect2.ec.controller.BookingDetails;
 import com.connect2.ec.controller.InquiryDetails;
 import com.connect2.ec.dao.C2IEcommerceDao;
 import com.connect2.ec.domain.C2IEcDashboard;
@@ -43,10 +47,13 @@ import com.connect2.ec.domain.C2IEcSellerBrand;
 import com.connect2.ec.domain.C2IEcShipment;
 import com.connect2.ec.domain.C2IEcStore;
 import com.connect2.ec.domain.C2IEcStoreDocs;
+import com.connect2.utility.C2IUtils;
 
 @Service
 public class C2IEcommerceService {
-
+	private String companyId="ICONN660";
+	private String shipperPersonId="ICONN660";
+	private String boxnbizToken="eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs";
 	
 	private final Logger logger = LoggerFactory.getLogger(C2IEcommerceService.class);
 
@@ -447,52 +454,53 @@ public class C2IEcommerceService {
 	
 	//Boxnbiz API's Service
 	
-	public void inquiry_submit_inquiry(InquiryDetails  sid) throws Exception {
-		Map<String,String> ans=new HashMap<>();
+	public String submitInquiry(InquiryDetails  inquiryDetails) throws Exception {
+		String status="";
 		JSONObject json=new JSONObject();
-		json.put("company_id",sid.getCompany_id());
-		json.put("shipper_person_id",sid.getShipper_person_id());
-		json.put("trade_type",sid.getTrade_type());
-		json.put("mode", sid.getMode());
-		json.put("incoterms", sid.getIncoterms());
-		json.put("pickup", sid.getPickup());
-		json.put("pol", sid.getPickup());//India
-		json.put("pod", sid.getPod());//US
-		json.put("delivery", sid.getDelivery());
-		json.put("pickup_service", sid.getPickup_service());
-		json.put("origin_handling", sid.getOrigin_handling());
-		json.put("origin_cha", sid.getOrigin_cha());
-		json.put("delivery_service", sid.getDelivery_service());
-		json.put("destination_handling", sid.getDestination_handling());
-		json.put("destination_cha", sid.getDestination_cha());
-		json.put("gross_weight", sid.getGross_weight());
-		json.put("gross_weight_unit", sid.getGross_weight_unit());
-		json.put("commodity", sid.getCommodity());
-		json.put("cargo_type", sid.getCargo_type());
-		json.put("expected_pickup_Date", sid.getExpected_pickup_date());
-		json.put("lcl_package_quantity", sid.getLcl_package_quantity());
-		json.put("lcl_package_type", sid.getLcl_package_type());
-		json.put("fcl_container_quantity", sid.getFcl_container_quantity());
-		json.put("fcl_container_type", sid.getFcl_container_type());
-		json.put("fcl_container_size", sid.getFcl_container_size());
-		json.put("fcl_container_stuffing", sid.getFcl_container_stuffing());
+		json.put("company_id", companyId);
+		json.put("shipper_person_id",shipperPersonId);
+		json.put("trade_type",inquiryDetails.getTradeType());
+		json.put("mode", inquiryDetails.getMode());
+		json.put("incoterms", inquiryDetails.getIncoterms());
+		json.put("pickup", inquiryDetails.getPickup());
+		json.put("pol", inquiryDetails.getPol());
+		json.put("pod", inquiryDetails.getPod());
+		json.put("delivery", inquiryDetails.getDelivery());
+		json.put("pickup_service", inquiryDetails.getPickupService());
+		json.put("origin_handling", inquiryDetails.getOriginHandling());
+		json.put("origin_cha", inquiryDetails.getOriginCha());
+		json.put("delivery_service", inquiryDetails.getDeliveryService());
+		json.put("destination_handling", inquiryDetails.getDestinationHandling());
+		json.put("destination_cha", inquiryDetails.getDestinationCha());
+		json.put("gross_weight", inquiryDetails.getGrossWeight());
+		json.put("gross_weight_unit", inquiryDetails.getGrossWeightUnit());
+		json.put("commodity", inquiryDetails.getCommodity());
+		json.put("cargo_type", inquiryDetails.getCargoType());
+		json.put("expected_pickup_Date", inquiryDetails.getExpectedPickupDate());
+		json.put("lcl_package_quantity", inquiryDetails.getLclPackageQuantity());
+		json.put("lcl_package_type", inquiryDetails.getLclPackageType());
+		json.put("fcl_container_quantity", inquiryDetails.getFclContainerQuantity());
+		json.put("fcl_container_type", inquiryDetails.getFclContainerType());
+		json.put("fcl_container_size", inquiryDetails.getFclContainerSize());
+		json.put("fcl_container_stuffing", inquiryDetails.getFclContainerStuffing());
 		
 		JSONArray dtos = new JSONArray();
 		
 		JSONObject dto = new JSONObject();
-		dto.put("length", sid.getLength());
-		dto.put("width", sid.getWidth());
-		dto.put("height", sid.getHeight());
-		dto.put("quantity", sid.getQuantity());
-		dto.put("unit", sid.getUnit());
-		dto.put("air_load_type", sid.getAir_load_type());
+		dto.put("length", inquiryDetails.getLength());
+		dto.put("width", inquiryDetails.getWidth());
+		dto.put("height", inquiryDetails.getHeight());
+		dto.put("quantity", inquiryDetails.getQuantity());
+		dto.put("unit", inquiryDetails.getUnit());
+		dto.put("air_load_type", inquiryDetails.getAirLoadType());
 		dtos.put(dto);
 		json.put("dimensionDtos", dtos);
-		json.put("special_instruction", sid.getSpecial_instruction());
+		json.put("special_instruction", inquiryDetails.getSpecialInstruction());
+		//System.out.println(json);
 		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
 		String url="https://demo.api.boxnbiz.com/v1/inquiry/submit-inquiry";
 		HttpPost httppost=new HttpPost(url);
-		httppost.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		httppost.addHeader("Authorization", "Bearer "+boxnbizToken);
 		//httppost.addHeader("message",null);
 		httppost.addHeader("Content-Type", "application/json");
 		httppost.setEntity(entity);
@@ -500,76 +508,108 @@ public class C2IEcommerceService {
 		HttpResponse response=httpclient.execute(httppost);
 		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 		String line="";
+		StringBuffer result=new StringBuffer();
         while ((line=in.readLine())!=null){
-//        	line=line.substring(1,line.length()-1);
-        	System.out.println(line);
-        	JSONObject j1=new JSONObject(line);
-        	sid.setInquiry_id((String)j1.get("inquiry_id"));
-        	sid.setInquiry_type((String)j1.get("inquiry_type"));
-//        	String a[]=line.split(",");
-//        	for(int i=0;i<a.length;i++) {
-//        		String b[]=a[i].split(":");
-//        		ans.put(b[0].substring(1,b[0].length()-1),b[1].substring(1,b[1].length()-1));
-//        	}
+        	result.append(line.toString());
         }
-        c2iEcDao.insertInquiryDetails(sid);
-        //return ans;
+        JSONObject jsonObject=new JSONObject(result.toString());
+        if(jsonObject.has("inquiry_id")){
+        	status="Inquiry Submitted Successfully";
+        	inquiryDetails.setInquiryId(jsonObject.getString("inquiry_id"));
+        	if(inquiryDetails.getInquiryId().substring(0,3).equals("INS")) {
+               	String instantId=findInstantRate(inquiryDetails.getInquiryId());
+                inquiryDetails.setInstantId(instantId);
+            }
+        	c2iEcDao.insertInquiryDetails(inquiryDetails);
+        }	
+        else if(jsonObject.has("message")){
+        	status=jsonObject.getString("message");
+        }
+        else {
+        	status="Inquiry Submission Failed";
+        }
+        return status;
 	}
-	public InquiryDetails getInquiryDetails(int inquiry_details_id) throws SQLException{
-		return c2iEcDao.getInquiryDetails(inquiry_details_id);
+	public String findInstantRate(String inquiryId) throws Exception{
+		String instantId=null;
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/find-instant-rate/"+inquiryId;
+		url=url+"?company_id="+companyId;
+        HttpGet httpget=new HttpGet(url);
+        httpget.addHeader("Authorization", "Bearer "+boxnbizToken);
+        //httppost.addHeader("message",null);
+        //httpget.addHeader("Content-Type", "application/json");
+        DefaultHttpClient httpclient=new DefaultHttpClient();
+        HttpResponse response=httpclient.execute(httpget);
+        BufferedReader in= new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+           result.append(line.toString());
+           //System.out.println(line);
+                	
+        }
+        JSONArray jsonArray=new JSONArray(result.toString());
+        //System.out.println(jsonArray);
+        if(jsonArray.getJSONObject(0).has("instant_id")) {
+            instantId=Integer.toString(jsonArray.getJSONObject(0).getInt("instant_id"));
+        }
+		return instantId;
 	}
-	
-	public void updateInquiryDetails(InquiryDetails sid) throws Exception{
-		c2iEcDao.updateInquiryDetails(sid);
-		Map<String,String> ans=new HashMap<>();
-		//InquiryDetails sid=c2iEcDao.getInquiryDetails(id);
+	public List<InquiryDetails> getInquiry() throws SQLException{
+		return c2iEcDao.getInquiry();
+	}
+	public InquiryDetails getInquiryDetails(int inquiryDetialsId) throws SQLException{
+		return c2iEcDao.getInquiryDetails(inquiryDetialsId);
+	}
+	public String updateInquiryDetails(InquiryDetails inquiryDetails) throws Exception{
+		String status="";
 		JSONObject json=new JSONObject();
-		json.put("company_id",sid.getCompany_id());
-		json.put("shipper_person_id",sid.getShipper_person_id());
-		json.put("trade_type",sid.getTrade_type());
-		json.put("mode", sid.getMode());
-		json.put("incoterms", sid.getIncoterms());
-		json.put("pickup", sid.getPickup());
-		json.put("pol", sid.getPickup());//India
-		json.put("pod", sid.getPod());//US
-		json.put("delivery", sid.getDelivery());
-		json.put("pickup_service", sid.getPickup_service());
-		json.put("origin_handling", sid.getOrigin_handling());
-		json.put("origin_cha", sid.getOrigin_cha());
-		json.put("delivery_service", sid.getDelivery_service());
-		json.put("destination_handling", sid.getDestination_handling());
-		json.put("destination_cha", sid.getDestination_cha());
-		json.put("gross_weight", sid.getGross_weight());
-		json.put("gross_weight_unit", sid.getGross_weight_unit());
-		json.put("commodity", sid.getCommodity());
-		json.put("cargo_type", sid.getCargo_type());
-		json.put("expected_pickup_Date", sid.getExpected_pickup_date());
-		json.put("lcl_package_quantity", sid.getLcl_package_quantity());
-		json.put("lcl_package_type", sid.getLcl_package_type());
-		json.put("fcl_container_quantity", sid.getFcl_container_quantity());
-		json.put("fcl_container_type", sid.getFcl_container_type());
-		json.put("fcl_container_size", sid.getFcl_container_size());
-		json.put("fcl_container_stuffing", sid.getFcl_container_stuffing());
+		json.put("company_id", companyId);
+		json.put("shipper_person_id", shipperPersonId);
+		json.put("trade_type",inquiryDetails.getTradeType());
+		json.put("mode", inquiryDetails.getMode());
+		json.put("incoterms", inquiryDetails.getIncoterms());
+		json.put("pickup", inquiryDetails.getPickup());
+		json.put("pol", inquiryDetails.getPol());//India
+		json.put("pod", inquiryDetails.getPod());//US
+		json.put("delivery", inquiryDetails.getDelivery());
+		json.put("pickup_service", inquiryDetails.getPickupService());
+		json.put("origin_handling", inquiryDetails.getOriginHandling());
+		json.put("origin_cha", inquiryDetails.getOriginCha());
+		json.put("delivery_service", inquiryDetails.getDeliveryService());
+		json.put("destination_handling", inquiryDetails.getDestinationHandling());
+		json.put("destination_cha", inquiryDetails.getDestinationCha());
+		json.put("gross_weight", inquiryDetails.getGrossWeight());
+		json.put("gross_weight_unit", inquiryDetails.getGrossWeightUnit());
+		json.put("commodity", inquiryDetails.getCommodity());
+		json.put("cargo_type", inquiryDetails.getCargoType());
+		json.put("expected_pickup_Date", inquiryDetails.getExpectedPickupDate());
+		json.put("lcl_package_quantity", inquiryDetails.getLclPackageQuantity());
+		json.put("lcl_package_type", inquiryDetails.getLclPackageType());
+		json.put("fcl_container_quantity", inquiryDetails.getFclContainerQuantity());
+		json.put("fcl_container_type", inquiryDetails.getFclContainerType());
+		json.put("fcl_container_size", inquiryDetails.getFclContainerSize());
+		json.put("fcl_container_stuffing", inquiryDetails.getFclContainerStuffing());
 		
 		JSONArray dtos = new JSONArray();
 		
 		JSONObject dto = new JSONObject();
-		dto.put("length", sid.getLength());
-		dto.put("width", sid.getWidth());
-		dto.put("height", sid.getHeight());
-		dto.put("quantity", sid.getQuantity());
-		dto.put("unit", sid.getUnit());
-		dto.put("air_load_type", sid.getAir_load_type());
+		dto.put("length", inquiryDetails.getLength());
+		dto.put("width", inquiryDetails.getWidth());
+		dto.put("height", inquiryDetails.getHeight());
+		dto.put("quantity", inquiryDetails.getQuantity());
+		dto.put("unit", inquiryDetails.getUnit());
+		dto.put("air_load_type", inquiryDetails.getAirLoadType());
 		dtos.put(dto);
 		json.put("dimensionDtos", dtos);
-		json.put("special_instruction", sid.getSpecial_instruction());
-		
+		json.put("special_instruction", inquiryDetails.getSpecialInstruction());
+		System.out.println(json);
 		
 		
 		StringEntity entity=new StringEntity(json.toString(),  "UTF-8");
-		String url="https://demo.api.boxnbiz.com/v1/inquiry/update-inquiry/"+sid.getInquiry_id();
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/update-inquiry/"+inquiryDetails.getInquiryId();
 		HttpPut httpput=new HttpPut(url);
-		httpput.addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ5b2dlc2guZ2FyZ0Bjb25uZWN0MmluZGlhLmNvbSIsImlzcyI6InlvZ2VzaEAxMjMiLCJsb2dpblVzZXJJbmZvRHRvIjp7ImlkIjozMDYsInJvbGUiOiJzaGlwcGVyIiwiZW1wbG95ZWVfaWQiOm51bGwsInN1Yl9yb2xlIjpudWxsLCJkZXBhcnRtZW50IjpudWxsLCJkZXNpZ25hdGlvbiI6bnVsbCwicGFyZW50X2lkIjpudWxsLCJwZXJzb25faWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfaWQiOiJJQ09OTjY2MCIsImNvbXBhbnlfbmFtZSI6IklDT05ORUNUIEJVU0lORVNTIFBSSVZBVEUgTElNSVRFRCIsInBlcnNvbl9uYW1lIjoiWW9nZXNoIEdhcmciLCJlbWFpbF9pZCI6InlvZ2VzaC5nYXJnQGNvbm5lY3QyaW5kaWEuY29tIiwicHJvZmlsZV91cGRhdGVfc3RhdHVzIjoiMCIsInZlcmlmaWNhdGlvbl9jb2RlIjoiMjI4NzMxIiwidmVyaWZpY2F0aW9uX3N0YXR1cyI6Ik4iLCJtb2JpbGVfbm8iOiI4ODYwMTQ5ODM2IiwiYWN0aXZlIjoiWSIsInRva2VuIjpudWxsLCJtc2ciOm51bGx9LCJpYXQiOjE1OTE5NDIxMDB9.YxU3M21SHLivKqJ-JD8ktfr6pReFhNVE-LLCmbH3aJs");
+		httpput.addHeader("Authorization", "Bearer "+boxnbizToken);
 		//httppost.addHeader("message",null);
 		httpput.addHeader("Content-Type", "application/json");
 		httpput.setEntity(entity);
@@ -577,8 +617,158 @@ public class C2IEcommerceService {
 		HttpResponse response=httpclient.execute(httpput);
 		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
         String line="";
+        StringBuffer result=new StringBuffer();
         while ((line=in.readLine())!=null){
+        	result.append(line.toString());
         	System.out.println(line);
         }
+        JSONObject jsonObj=new JSONObject(result.toString());
+        System.out.println(jsonObj);
+        if(jsonObj.has("success")) {
+        	status="Inquiry Updated Successfully";
+        	c2iEcDao.updateInquiryDetails(inquiryDetails);
+        }
+        else if(jsonObj.has("message")) {
+        	status=jsonObj.getString("message");
+        }
+        else {
+        	status="Inquiry Update Failed";
+        }
+        return status;
+	}
+	public String bookQuotation(String inquiryId,int instantId) throws Exception {
+		String status="";
+		String quotationId=null;
+		String url="https://demo.api.boxnbiz.com/v1/booking/book-quotation";
+		url=url+"?inquiryId="+inquiryId+"&company_id="+companyId+"&quotationId="+quotationId+"&instant_id="+instantId;
+		HttpPost httppost=new HttpPost(url);
+		httppost.addHeader("Authorization", "Bearer "+boxnbizToken);
+		//httppost.addHeader("message",null);
+		httppost.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httppost);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        }
+        JSONObject json=new JSONObject(result.toString());
+    	if(json.has("Booking Id")) {
+    		BookingDetails bookingDetails=new BookingDetails();
+    		status="Inquiry Booked Successfully";
+    		bookingDetails.setBookingId(json.getString("Booking Id"));
+    		bookingDetails.setBookingType(json.getString("Booking Type"));
+    		bookingDetails.setQuotationId(json.getString("Quotation Id"));
+    		bookingDetails.setUserId(C2IUtils.getLoggedInUser().getUserId());
+    		bookingDetails.setInquiryId(json.getString("Inquiry Id"));
+    		c2iEcDao.saveBooking(bookingDetails);
+    		
+    	}
+    	else if(json.has("message")) {
+    		status=json.getString("message");
+    	}
+    	else {
+    		status="Quotation Booking Failed";
+    	}
+        return status;
+	}
+	public String closeInquiry(Map<String,String> map) throws Exception{
+		String inquiryId=map.get("inquiryId");
+		String reason="";
+		try
+	    {
+	      reason= URLEncoder.encode(map.get("message"), "UTF-8");
+	    }
+	    catch (Exception uee)
+	    {
+	      throw new IllegalArgumentException(uee);
+	    }
+		int inquiryDetailsId=Integer.parseInt(map.get("inquiryDetailsId"));
+		String status="";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/close/"+inquiryId;
+		url=url+"?company_id="+companyId+"&feedback="+reason;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer "+ boxnbizToken);
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        }
+        JSONObject json=new JSONObject(result.toString());
+    	if(json.has("success")){
+    		c2iEcDao.updateInquiryStatus(json.getString("success"), inquiryDetailsId);
+    		status=json.getString("success");
+    	}
+    	else if(json.has("message")) {
+    		status=json.getString("message");
+    	}
+    	else {
+    		status="failure";
+    	}
+        return status;
+	}
+	
+	public String checkStatus(String inquiryId,int inquiryDetailsId) throws Exception {
+		String status="failure";
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/check-inquiry-status/"+inquiryId;
+		url=url+"?company_id="+companyId;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer "+ boxnbizToken);
+		//httppost.addHeader("message",null);
+		httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        	
+        }
+        JSONObject json=new JSONObject(result.toString());
+    	if(json.has("success")) {
+    		status=json.getString("success");
+    		c2iEcDao.updateInquiryStatus(status, inquiryDetailsId);
+    	}
+        return status;
+	}
+	public Map<String,String> getRate(String inquiryId,int instantId) throws Exception{
+		Map<String,String> map=new HashMap<>();
+		String url="https://demo.api.boxnbiz.com/v1/inquiry/get-selected-instant-rate/"+inquiryId;
+		url=url+"?company_id="+companyId+"&instant_id="+instantId;
+		HttpGet httpget=new HttpGet(url);
+		httpget.addHeader("Authorization", "Bearer " +boxnbizToken);
+		//httppost.addHeader("message",null);
+		//httpget.addHeader("Content-Type", "application/json");
+		DefaultHttpClient httpclient=new DefaultHttpClient();
+		HttpResponse response=httpclient.execute(httpget);
+		BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line="";
+        StringBuffer result=new StringBuffer();
+        while ((line=in.readLine())!=null){
+        	result.append(line.toString());
+        }
+        JSONObject json=new JSONObject(result.toString());
+        if(json.has("quotation")) {
+	    	Double totalPrice=json.getJSONObject("quotation").getDouble("total_price");
+	    	map.put("Total Cost", Double.toString(totalPrice));
+	    	if(json.has("quotationCharges")) {
+		    	JSONArray jsonArray=json.getJSONArray("quotationCharges");
+		    	for(int i=0;i<jsonArray.length();i++) {
+		    		map.put((String)jsonArray.getJSONObject(i).get("charge_name"), Double.toString(jsonArray.getJSONObject(i).getDouble("total_INR")));
+		    		//System.out.println(jsonArray.getJSONObject(i).get("charge_name")+" "+jsonArray.getJSONObject(i).getDouble("total_INR"));
+		    	}
+	    	}
+        }
+        else {
+        	map.put("Instant Rate", "Not found");
+        }
+        return map;
 	}
 }

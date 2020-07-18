@@ -1,0 +1,131 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Global Export Duty Calculator</h1>
+			<p style="font-weight: 500;font-size: 14px;">Get Export duties, taxes and tariffs for products from any country in the world, all at one place.</p>
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-md-12 custom-calculator">
+			<form class="x_panel" name="customDutyForm">
+				<div class="container">
+					<section class="calculator-form-section">
+						<ul class="margins">
+							<li>
+								<div class="row">
+									
+									<div class="form-fields">
+										<label class="label">Country Of Export</label>
+										<select class="form-control" type="text" name="terma" ng-model="tools.globalExportDutyCalc.formData.country1" ng-change="changeTab()" style="border-radius: 0px;" required>
+										<option value="">Select Country</option>
+										<option ng-repeat="val in countries | orderBy" value="{{val}}">{{val}}</option>
+										</select>
+									</div>
+									
+									<div class="form-fields">
+									<label class="label">Product classification number</label>
+									<input class="form-control" type="text" name="terma" ng-model="tools.globalExportDutyCalc.formData.productCode" ui-autocomplete="productAutoComplete" required placeholder="Enter HS code">
+									<!-- <a style="float:right;" href="javascipt:void(0)" ng-click="openHSModal()" target="_self">Search Product in {{tools.customDutyCalc.formData.country1}} HS Classification</a> -->
+									</div>
+												
+									<div class="submit-button">
+										<button type="submit" class="form-submit-button"  ng-click="tools.globalExportDutyCalc.getCustomDuties(customDutyForm.$valid);">FIND</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+					
+					</section>
+					
+								
+				</div>
+					<p style="color:red;">{{cdMessage}}</p>
+			</form>
+			
+			<div class="x_panel calculator-result-section" ng-if="DutiesData && DutiesData.length > 0">
+				<h1>{{tools.globalExportDutyCalc.formData.country1}} Tariff</h1>
+				<!-- <h3>{{tools.globalExportDutyCalc.formData.country2}}&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;{{tools.globalCustomDutyCalc.formData.country1}}</h3> -->
+				<table border="1" class=" table table-bordered table-striped">
+
+					<tbody ng-repeat="pro in DutiesData">
+					
+						<tr>
+							<th>HS Code</th>
+							<th>{{pro.productCode}}</th>
+						</tr>
+	
+						<tr>
+							<th>Description</th>
+							<th>{{pro.productName}}</th>
+						</tr>
+	
+						<tr>
+							<th>Duty (%)</th>
+							<th>{{pro.basicDuty}}</th>
+						</tr>
+					
+					</tbody>
+					
+
+					<!-- <tr>
+						<th>Tariff</th>
+						<th>{{pro.tariff}}</th>
+					</tr> -->
+			
+				</table>
+			</div>
+				
+			
+						
+			<div class="x_panel calculator-second">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-3 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-cloud"></i></span>
+								<div>
+									<span class="s1">Updated Real-time Data</span>
+									<br>
+									<span class="s2">Trade Tariffs levied upon goods across national borders based on real-time trade data</span>
+								</div>
+							</li>
+						</div>
+
+						<div class="col-sm-4 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-star-o"></i></span>
+								<div>
+									<span class="s1">Anywhere to Anywhere</span>
+									<br>
+									<span class="s2">Export Duties for products being shipped to large geographical distances, across the world retrieved in near real time.</span>
+								</div>
+							</li>
+						</div>
+
+						<div class="col-sm-3 card">
+							<li>
+								<span style="float: left;"><i class="fa fa-bar-chart"></i></span>
+								<div>
+									<span class="s1">Wide Range of products</span>
+									<br>
+									<span class="s2">Get duties and taxes not only for specified HS Codes, but also for wide range of related products</span>
+								</div>
+							</li>
+						</div>
+					</div>
+
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+
+	
+</div>

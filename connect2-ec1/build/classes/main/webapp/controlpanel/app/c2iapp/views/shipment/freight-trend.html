@@ -1,0 +1,84 @@
+<div class="right_col" role="main">
+<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Book Your Shipment</h1>
+		</div>
+	</div>             
+	
+			<div class="row">
+				<form class="x_panel" name="freightTrendform">
+					<div class="col-md-12">					
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>Origin Port</label>
+							<input class="form-control" placeholder= "Enter the Origin Port" type="text" name="term" ng-model="freightForm.originPort" ui-autocomplete="originPlaceAutoComplete" required>
+							
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>Destination Port</label>
+							<input class="form-control" placeholder= "Enter the Destination Port" type="text" name="term" ng-model="freightForm.destinationPort" ui-autocomplete="destPlacesAutoComplete" required>					
+							
+						</div>
+					</div>
+					
+					<div class="col-md-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>Container Type</label>
+							<select class="form-control" ng-model="freightForm.containterType" required>
+								<option value="">Select Container Type</option>								
+								<option value="standard">Standard</option>
+								<option value="openTop">Open Top</option>
+								<option value="refrigerated">Refrigerated</option>
+								<option value="flatRack">Flat Rack</option>
+								<option value="isoTank">Open Top</option>
+							</select>
+						</div> 
+						
+						<div class="col-md-4 col-sm-6 col-xs-12">
+						   <label>Container Size</label>
+							<select class="form-control" type="text" name="term" ng-model="freightForm.loadType" style="border-radius: 0px;" required>
+								<option value="">Select Container Size</option>
+								<option value="container20">20'</option>
+								<option value="container40">40'</option>
+								<option value="container40HC">40'HC</option>
+							</select>					
+						</div>
+					</div>
+					
+					<div class="col-md-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							 <label>Commodity</label>
+							<input class="form-control" placeholder= "Enter the Commodity" type="text" name="term" ng-model="freightForm.commodity" ui-autocomplete="commodityAutoComplete" required>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<label>Duration</label>
+							<daterangepicker initRange="{{calendarDateRange}}" horizontal-position="right" callbackfn='dateRangeChanged(frmDate, toDate)'></daterangepicker>						
+						</div>
+					</div>
+					<div class="col-md-12">
+						<button type="submit"  ng-click="getFreightTrends(freightTrendform.$valid);">SEARCH</button>					
+					</div>
+					
+				</form>
+				
+				<div class="x_panel col-md-6 col-xs-12" data-ng-cloak>
+				
+					<div class="x_title">
+						<div class="clearfix"></div>
+						<h4>Freight Rate Trend</h4>
+						<div class="clearfix"></div>						
+					</div>
+					<div class="x_content">
+						<div class="col-md-10  col-xs-12 lineChartStyle1">
+							<ul class="separator1">
+								<canvas id="canvas-valueChart-trendData"></canvas>
+								<span class="key highlight">{{chartData.valueChart.title.toUpperCase()}}</span>
+							</ul>
+						</div>			
+					</div>			
+				</div>
+				
+				
+			</div>	
+				  
+		
+	</div>

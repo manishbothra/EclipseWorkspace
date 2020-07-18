@@ -1,0 +1,87 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Freight Rate Calculator</h1>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<form class="x_panel" name="freightform">
+				<table class=" table table-bordered table-striped">
+					
+				<tr>
+				<td>Quantity</td>
+				<td><input class="form-control" type="number" name="term" ng-model="tools.freightRateCalc.formData.quantity" required></td>
+				</tr>
+				
+				<tr>
+				<td>Container Size</td>
+				<td><select class="form-control" type="text" name="term" ng-model="tools.freightRateCalc.formData.loadType" style="border-radius: 0px;" required>
+				<option value="">Select Container Size</option>
+				<option value="container20">20'</option>
+				<option value="container40">40'</option>
+				<option value="container40HC">40'HC</option>
+				</select>
+				</td>
+				</tr>
+				
+				<tr>
+				<td>Origin</td>
+				<td><input class="form-control" type="text" name="term" ng-model="tools.freightRateCalc.formData.originPort" ui-autocomplete="originPlaceAutoComplete" required></td>
+				</tr>
+				
+				<tr>
+				<td>Destination</td>
+				<td><input class="form-control" type="text" name="term" ng-model="tools.freightRateCalc.formData.destinationPort" ui-autocomplete="destPlacesAutoComplete" required></td>
+				</tr>
+									
+				<tr>
+				<td colspan="4"><button type="submit"  ng-click="tools.freightRateCalc.getFreightRates(freightform.$valid);">FIND</button></td>
+				</tr>
+				
+								
+				</table>
+					<p style="color:red;">{{errMessage}}</p>
+			</form>
+			<div class="tool x_panel" data-ng-cloak>
+				<h3 style="text-align:center"><b>RATES</b></h3>
+					<!-- <div style="font-size:20px;">Product Code : {{tools.customDutyCalc.formData.code}}</div>
+					<div style="font-size:20px;">Product Description : {{tools.customDutyCalc.formData.productName}}</div><br/> -->
+					
+					<table border="1" class=" table table-bordered table-striped" ng-repeat="pro in tools.freightRateCalc.rates">
+            
+			            <tr>
+			            <th>Origin</th>
+			            <td>{{pro.originPlace}}</td>
+			            </tr>
+			            
+			            <tr>
+			            <th>Destination</th>
+			            <td>{{pro.destinationPlace}}</td>
+			            </tr>
+			            
+			            <tr>
+			            <th>Rate</th>
+			            <td>{{pro.minAmount}} - {{pro.maxAmount}} {{pro.minCurrency}}</td>
+			            </tr>
+			            
+			            <tr>
+			            <th>Time</th>
+			            <td>{{pro.minTime}} - {{pro.maxTime}} {{pro.timeUnit}}</td>
+			            </tr>
+			            
+			            <tr>
+			            <th>Comment</th>
+			            <td>{{pro.comment}}</td>
+			            </tr>
+			
+			        </table>
+
+				</div>
+		</div>
+	</div>
+</div>

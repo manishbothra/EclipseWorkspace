@@ -1,0 +1,39 @@
+<div class="modal-dialog">
+	<div class="modal-header" >
+			<h3 style="color:#333;">{{ speechHeaderText || 'Speak Now'}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="fileUploadModal">
+			
+				<form id="labnol" method="post" ng-submit="searchByVoice()">
+				  <div class="speech">
+					<div class="answer">
+						<div ng-repeat="qna in answeredQueries" >
+							<p ng-if="qna.question"><b>Q:{{qna.question}} </b> </p>
+							
+							<p ng-if="qna.question"><b>A:</b></p>
+							<p style="font-size:15px;color:#333" ng-if="qna.answer" ng-bind-html="qna.answer|as_trusted"></p>						
+						</div>
+						<!-- <p style="font-size:15px;color:#333" ng-if="speechResp.nextAction" ng-bind-html="speechResp.nextAction| as_trusted"> </p> -->
+					</div>
+					<div>
+						<input style="width: 40%;padding: 8px;border: 1px solid;border-radius: 3px;" type="text" ng-model="speechForm.searchText" name="q" id="transcript" placeholder="{{speechInputPlaceholder}}" />
+						<a ng-click="startDictation()" >
+							<img ng-if="speechStarted" ng-src="/controlpanel/assets/images/mic.gif" />
+							<img ng-if="!speechStarted" src="/controlpanel/assets/images/mic-static.gif" />
+						</a>
+						<button ng-if="showManualSubmitBtn" class="btn btn-primary">Submit </button>
+						<blink ng-show="analyzing">{{analyzingInfo}}</blink>
+					</div>
+				  </div>
+				</form>
+				
+		</div>
+    </div>
+    <div class="modal-footer">
+		<div>
+			<button type="button" class="btn btn-default" ng-click="modalOptions.closeModal()"  >Close</button>
+		</div>
+	
+	</div>
+</div>

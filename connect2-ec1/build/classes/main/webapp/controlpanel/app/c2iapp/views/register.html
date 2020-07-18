@@ -1,0 +1,187 @@
+<div class="right-panel2 rightpanel-register">
+<div class="login" style="background: rgba(121,131,183,0.75);height: 850px;">
+
+<div class="container" style="width: 1170px;">
+    <div class="row">
+      <div class="col-sm-6 rcpanel rcpanelleft1">
+
+        <div class="loginleft" style="margin: 100px 55px;">
+          <h2 style="color: white;font-size: 28px;">Sign up to C2I Global Trade Panel</h2>
+            <li class="w3">
+             <div style="width: 60px;">
+              <button class="icon"> <i class="fa fa-search"></i> </button>
+              </div>
+               <span class="w3-write">Verified Counterparts</span>
+                <br>
+               <span class="w3-write2">Genuine importers / exporters for your products</span> 
+             </li>
+
+             <li class="w3">
+              <div style="width: 60px;"> 
+                <button class="icon"> <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                 </button> 
+               </div>
+                <span class="w3-write">Worldwide Market Analysis</span> 
+                <br> 
+                <span class="w3-write2">Market demand and analysis for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-share"></i> </button>
+                </div>
+                  <span class="w3-write">Global Trade Resources</span>
+                  <br>
+                  <span class="w3-write2">Trade resources and tools for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+                </div>
+                <span class="w3-write">Arrange Export Orders</span>
+                 <br> 
+                <span class="w3-write2"> Support for executing your export / import orders</span>
+               </li>
+
+               <li class="w3">
+                <div style="width: 60px;">
+                 <button class="icon"> <i class="fa fa-check-square-o" aria-hidden="true"></i> </button>
+                </div>
+                 <span class="w3-write">Genuine Leads</span>
+                  <br>
+                 <span class="w3-write2">Buyer / Supplier leads specific to your products</span> 
+               </li>
+        </div>
+
+    </div>
+      <div class="col-sm-6 rcpanel rcpanelright">
+     
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+		
+		
+          <section class="login_content login_box" style="margin: 105px auto 0 auto;">
+			<div>
+				<img class="login-logo" style="margin-bottom:0px;" src="assets/images/logo.png"/> 
+				<h2>Connect2India Global Trade Panel</h2></div>
+				 <div class="separator"></div>
+				<div class="clearfix"></div>
+			
+            <form name="loginForm" ng-submit="createAccount(loginForm.$valid);" ng-if="showRegForm">
+				
+              <h2>Create Account</h2>
+              <div>
+                <input type="text" class="form-control" placeholder="Email Address" ng-model="regForm.email" required="" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Company Name" ng-model="regForm.companyName" required="" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Mobile" ng-model="regForm.mobile" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Confirm Password" ng-model="regForm.password"  required="" />
+              </div>
+			  <div class="error"> 
+				<p>{{registerMessage}}</p>
+			  </div>
+              <div>
+				<a class="reset_pass" href="#login">Already have an account?</a>
+                <input class="btn btn-primary loginBtn" type="submit" value="Create"></input>
+              </div>
+
+            </form>
+            
+            <form name="vfFrm" ng-submit="verifyAccount(vfFrm.$valid);" ng-if="showVerifyForm">
+        
+              <h2>Verify Your Account</h2>
+              <div>
+                <input type="text" class="form-control" placeholder="Enter Token" ng-model="vfForm.otp" required="" />
+              </div>
+		        <div class="error"> 
+		        <p>{{tokenMessage11}}</p>
+		        </div>
+              <div>
+        		<a href="" ng-click="initiateSignUp();">Back to Sign up </a>
+                <input class="btn btn-primary loginBtn" type="submit" value="Submit"></input>
+              </div>
+
+            </form>
+			
+          </section>
+              <div class="clearfix"></div>
+
+              <div class="separator1">
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  
+                  <p style="color: white;">©2018 All Rights Reserved.</p>
+                </div>
+              </div>
+        </div>
+</div>
+</div>
+
+   <div class="col-sm-6 rcpanel rcpanelleft2">
+
+        <div class="loginleft" style="margin: 100px 55px;">
+          <h2 style="color: white;font-size: 28px;">Sign up to C2I Global Trade Panel</h2>
+            <li class="w3">
+             <div style="width: 60px;">
+              <button class="icon"> <i class="fa fa-search"></i> </button>
+              </div>
+               <span class="w3-write">Verified Counterparts</span>
+                <br>
+               <span class="w3-write2">Genuine importers / exporters for your products</span> 
+             </li>
+
+             <li class="w3">
+              <div style="width: 60px;"> 
+                <button class="icon"> <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                 </button> 
+               </div>
+                <span class="w3-write">Worldwide Market Analysis</span> 
+                <br> 
+                <span class="w3-write2">Market demand and analysis for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-share"></i> </button>
+                </div>
+                  <span class="w3-write">Global Trade Resources</span>
+                  <br>
+                  <span class="w3-write2">Trade resources and tools for your products</span> 
+              </li>
+
+              <li class="w3"> 
+                <div style="width: 60px;"> 
+                  <button class="icon"> <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+                </div>
+                <span class="w3-write">Arrange Export Orders</span>
+                 <br> 
+                <span class="w3-write2"> Support for executing your export / import orders</span>
+               </li>
+
+               <li class="w3">
+                <div style="width: 60px;">
+                 <button class="icon"> <i class="fa fa-check-square-o" aria-hidden="true"></i> </button>
+                </div>
+                 <span class="w3-write">Genuine Leads</span>
+                  <br>
+                 <span class="w3-write2">Buyer / Supplier leads specific to your products</span> 
+               </li>
+        </div>
+
+    </div>
+
+
+
+
+</div>    
+      </div>
+    </div>
+    </div>

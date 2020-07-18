@@ -1,0 +1,70 @@
+<div class="right_col">
+	<div class="row ecom">
+		<div class="col-md-12 col-sm-12 col-xs-12 order-detail-wrapper">
+			<div class="order-detail-title">
+			<div class="order-header">Order Details</div><span class="order-header">Order Id: {{orderDetail.attributes.orderItems[0].orderId}}</span>
+			</div>
+			<div class="clearfix"></div>
+			<a class="btn btn-dark" href="#marketplaces/orders" style="margin:15px 0px 15px 0px;">Go back to list Orders</a>
+			<div class="row">
+				<div class="col-md-6 col-sm-12 col-xs-12" style="padding:0px 10px;">
+					<div class="order-summary-outer">
+					<h4>Order Summary</h4>
+					<div>
+						<p class="summary-inside">Ship By:</p>
+						<p class="summary-inside">Deliver By:</p>
+						<p class="summary-inside">Order Delivery Date:</p>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-12 col-xs-12" style="padding: 0px 10px 0px 10px;">
+					<div class="shipping-outer">
+						<div class="shipping" >
+							<p><strong>Ship To</strong></p>
+							<span style="text-align: left;">
+								Name: &nbsp; Rohit<br>
+								Address: &nbsp;address goes here<br>
+								.............<br>
+								..............<br> 
+							</span>
+						</div>
+						<div class="shipping">
+							<p>Contact No:</p>
+							<h5>8570906730</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="table-outer">
+			<table class="table table-responsive table-bordered table-hover dataTable">
+				<thead >
+					<tr>
+						<td>Status</td>
+						<td>Product Description</td>
+						<td>Additional Info</td>
+						<td>Quantity</td>
+						<td>Price</td>
+						<td>Order Total</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{orderDetail.attributes.orderItems[0].status}}</td>
+						<td>Puma Backpack<br> SKU: {{orderDetail.sku || '24234' }}</td>
+						<td>Order Id: {{orderDetail.attributes.orderItems[0].orderId}}</td>
+						<td>{{orderDetail.attributes.orderItems[0].quantity}}</td>
+						<td>{{orderDetail.attributes.orderItems[0].priceComponents.sellingPrice}}</td>
+						<td>Subtotal: 400<br>Shipping Charges:{{orderDetail.attributes.orderItems[0].priceComponents.shippingCharge}}<br>Total: {{orderDetail.attributes.orderItems[0].priceComponents.totalPrice}}</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			</div>
+			<div class="clearfix"></div>
+			<div class="cancel-btn-wrapper">
+				<a class="cancel-btn" ng-click="cancelOrder()">Cancel Order</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>	
+	</div>
+</div>

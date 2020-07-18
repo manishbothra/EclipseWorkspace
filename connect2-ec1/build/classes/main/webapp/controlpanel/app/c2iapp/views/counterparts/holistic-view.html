@@ -1,0 +1,391 @@
+<div class="right_col" role="main">
+
+	<section class="companyInfo">
+		<h1 class="page-header">{{company.name}}</h1>
+		<h3 style="font-size:15px;">{{company.country}}</h3>
+
+		<div class="company-info-section" id="informationGeneral">
+	<div class="container">
+		<div class="row" style="border: 1px solid #ddd;">
+			<div class="heading-background">
+				<h3>General Details</h3>
+			</div>
+			<div class="row left-section">
+				<div class="col-md-6 details">
+					<label>Company Name</label>
+					<p>{{company.name}}</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Ownership Type</label>
+					<p ng-if="company.country.toLowerCase()=='uk'"> LIMITED</p>
+					<p ng-if="company.country.toLowerCase()=='india' && company.ownershipType">{{company.ownershipType}} &nbsp;&nbsp;</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Primary Business type</label>
+					<p>  <span ng-if="company.country.toLowerCase()!='india'">{{company.company_sic || company.primaryBusinessType}}&nbsp;</span>
+                        <span ng-if="company.country.toLowerCase()=='india'">{{company.primaryBusinessType}}&nbsp;</span>
+					</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Additional Business</label>
+					<p ngif="companyData.country.toLowerCase()!='india'">
+						<span ng-repeat="b in company.additionalBusinessType">{{b }}|&nbsp;</span>&nbsp;
+					</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Registered Address</label>
+					<p>{{company.companyAddress.registered[0].displayAddress}}</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Main Language</label>
+					<p>English</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Corporate Identification Number (CIN)</label>
+					<p>{{company.cin}}&nbsp;</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Year of Establishment</label>
+					<p>{{company.date}}&nbsp;</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Age of Company</label>
+					<p>{{company.age}}&nbsp;</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>No. of Employees</label>
+					<p><span>{{company.number}}&nbsp;</span>
+					</p>
+				</div>
+				<div class="col-md-6 details">
+					<label>Primary Location</label>
+					<p>{{company.companyAddress.registered[0].city}} &nbsp;</p>
+				</div>
+				<div class="col-md-6 details" ngif="companyData.country.toLowerCase()=='india'">
+					<label>Date of Balance sheet</label>
+					<p>{{company.balanceSheetDate}}&nbsp;</p>
+				</div>
+				<div class="col-md-6 details" ngif="companyData.country.toLowerCase()=='india'">
+					<label>Date of Last Annual General Meeting</label>
+					<p>{{company.lastAgmDate}}&nbsp;</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="company-info-section" id="informationGeneral">
+	<div class="container">
+		<div class="row" style="border: 1px solid #ddd;">
+			<div class="heading-background">
+				<h3>Trade history</h3>
+			</div>
+			<div class="row left-section">
+				<div class="col-md-12 details">
+
+					<div class="rowHead">Trade data</div>
+
+      	<div ng-repeat="(key,value) in company.tradeProducts" ng-if="key!='tradeMap'">
+      		<h2>{{key}}</h2>
+      		<div ng-repeat="(key1,value1) in value" ng-init="index1=$index">
+      			<div class="panel-group" id="accordion-{{key}}-{{index1}}" role="tablist" aria-multiselectable="true">
+				  <div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingOne">
+				      <h4 class="panel-title">
+				        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne-{{key}}-{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+				          {{key1}}
+				        </a>
+				      </h4>
+				    </div>
+				    <div id="collapseOne-{{key}}-{{index1}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+				      <div class="panel-body">
+
+				      	<div>
+
+				      				<table class="table table-bordered table-responsive table-hover dataTable">
+										<thead>
+											<tr style="    background-color: #c6c4c4;color: black;">
+												<td>Sl No.</td>
+												<td>Product Code</td>
+												<td>Product Name</td>
+												<td>Description</td>
+												<td>Activity</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="(key2,value2) in value1" ng-init="index2=$index">
+												<td class="ng-binding">{{$index + 1}}</td>
+												<td class="ng-binding"><a data-toggle="modal" href='' data-target="#myModal-{{key}}-{{index1}}-{{index2 + 1}}">{{value2[0].product.mainCode}}</a></td>
+												<td class="ng-binding">{{value2[0].product.group}}</td>
+												<td class="ng-binding">{{value2[0].product.specification}}</td>
+												<td class="ng-binding">{{value2[0].activity}}</td>
+												<td><button style="display:none" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-{{key}}-{{index1}}-{{index2 + 1}}">
+													  Launch demo modal
+													</button>
+													<!-- Modal -->
+													<div class="modal fade" id="myModal-{{key}}-{{index1}}-{{index2 + 1}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+													  <div class="modal-dialog" role="document">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													        <h4 class="modal-title" id="myModalLabel">Trade history for {{value2[0].product.group}}</h4>
+													      </div>
+													      <div class="modal-body">
+													        <table class="table table-bordered table-responsive table-hover dataTable">
+													        	<thead>
+																								<tr style="background-color: #c6c4c4;color: black;">
+																									<td>Year</td>
+																									<td>Product Code</td>
+																									<td>Product Name</td>
+																									<td>Months</td>
+																								</tr>
+																							</thead>
+																							<tbody>
+																								<tr ng-repeat="val in value2">
+																									<td>{{val.duration.year}}</td>
+																									<td>{{val.product.code}}</td>
+																									<td>{{val.product.description}}</td>
+																									<td><span ng-repeat="month in val.duration.months">{{month}} </span></td>
+																								</tr>
+																							</tbody>
+													        </table>
+													      </div>
+													      <div class="modal-footer">
+													        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													      </div>
+													    </div>
+													  </div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+				      			</div>
+				      		</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+
+				      	</div>
+
+				      	<div>
+							<br/><br/>
+				      		<div class="rowHead">Year wise trade activities</div><br/>
+							<div class="tradeGraph" ng-show="displayTradeImportChart">
+								<nvd3 options='tradeChart.import.options' data='tradeChart.import.data'></nvd3>
+							</div>
+							<hr/>
+							<div class="tradeGraph" ng-show="displayTradeExportChart">
+								<nvd3 options='tradeChart.export.options' data='tradeChart.export.data'></nvd3>
+							</div>
+				      	</div>
+
+						<div ng-if="companyTradeHistory && companyTradeHistory.tradeHistory>">
+							<div class="rowHead">Recent trade data</div>
+					        <div class="tableBox" style="height: 300px;overflow: scroll;">
+					        	<table class="table table-bordered table-responsive table-hover dataTable">
+									<thead>
+										<tr style="    background-color: #c6c4c4;color: black;">
+											<td>Sl No.</td>
+											<td>Date</td>
+											<td>Product Code</td>
+											<td>Product Name</td>
+											<td>Value (INR)</td>
+											<td>Origin port</td>
+											<td>Destination port</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="tradeHis in companyTradeHistory.tradeHistory">
+											<td class="ng-binding">{{$index + 1}}</td>
+											<td class="ng-binding">{{tradeHis.tradeDate}}</td>
+											<td class="ng-binding">{{tradeHis.id}}</td>
+											<td class="ng-binding">{{tradeHis.name}}</td>
+											<td class="ng-binding">{{tradeHis.value}}</td>
+											<td class="ng-binding">{{tradeHis.oport}}</td>
+											<td class="ng-binding">{{tradeHis.dport}}</td>
+										</tr>
+									</tbody>
+								</table>
+					        </div>
+						</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+		<div class="company-info-section" id="informationGeneral">
+			<div class="container">
+				<div class="row" style="border: 1px solid #ddd;">
+					<div class="heading-background">
+						<h3>Products</h3>
+					</div>
+					<div class="row left-section">
+
+				<div class="owl-carousel owl-theme">
+				    <div class="item" ng-repeat="product in company.companyProductList">
+				    	<h4><div class="product">
+										<a> <span class="image">
+										<img class="product-image lazyload" alt="{{product.productName}}"
+										ng-src="{{product.defaultProductImage}}">
+										</span></a>
+										<p class="title">{{product.productName}}</p>
+								</div>
+						</h4>
+				    </div>
+				</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="company-info-section">
+			<div class="container">
+				<div class="heading-background">
+					<h3>Company Scores</h3>
+				</div>
+				<div  style="margin-top:5em;" ng-repeat="score in companyScores">
+					<h3> {{score.scoreName}} </h3>
+					<p> Score : {{score.category}} / 5 </p> <!-- {{score.score}} -->
+					<hr/>
+					<div ng-repeat="(key, scoreData) in score.details" ng-if="scoreData.length > 0">
+						<h3>{{key.toUpperCase()}} NEWS</h3>
+						<ul ng-repeat="data in scoreData">
+							<li>{{data.title}}</li>
+							<li>{{data.date}}</li>
+							<li> <a ng-href="{{data.url}}" target="_blank">{{data.url}}</a></li>
+						</ul>
+						<hr/>
+					</div>
+				</div>
+
+				<div style="margin-top:5em;" ng-repeat="bh in behaviors">
+					<h3 ng-if="behaviors && behaviors.length > 0">BEHAVIOUR & PATTERN OF IMPORT  </h3>
+					<p>Product: {{bh.Product}}</p>
+					<div><h3>Monthly Order Trend:</h3>
+						<table>
+							<tr ng-repeat="mot in bh['Monthly Order Trend']">
+								<td style="min-width:100px;">{{mot.key}}</td>
+								<td>{{mot.value}}</td>
+							</tr>
+						</table>
+					</div>
+					<div><h3>Monthly Price Trend:</h3>
+						<table>
+							<tr ng-repeat="mot in bh['Monthly Price Trend']">
+								<td style="min-width:100px;">{{mot.key}}</td>
+								<td>{{mot.value}} INR</td>
+							</tr>
+						</table>
+					</div>
+					<!-- <div><h3>Monthly Quantity Trend:</h3> -->
+						<!-- <table> -->
+							<!-- <tr ng-repeat="mot in bh['Monthly Quantity Trend']"> -->
+								<!-- <td style="min-width:100px;">{{mot.key}}</td> -->
+								<!-- <td>{{mot.value}}</td> -->
+							<!-- </tr> -->
+						<!-- </table> -->
+					<!-- </div> -->
+					<div>
+						<h3>Major Port:</h3>
+						<p>Name: {{bh['Major Port']['Name']}}</p>
+						<p>Engagement: {{bh['Major Port']['Engagement']}}</p>
+					</div>
+					<div>
+						<h3>Importing from Repeated Exporters:</h3>
+						<p>{{bh['Importing from Repeated Exporters']}}</p>
+					</div>
+				</div>
+				<div ng-if="otherScores" class="other-company-scores">
+					<div class="col-md-5 col-xs-12 scores">
+						<ul class="separator1">
+							<h2 class="key highlight">Sentiment Score </h2>
+							<li class="detail-row-spn" ng-repeat="(key, value) in otherScores.counterpartSentiment.scores">
+								<span class="key">{{key}}: </span><span class="text-black">{{value}}</span>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-5 col-xs-12 scores">
+						<ul class="separator1">
+							<h2 class="key highlight"> Prediction & Risk Score </h2>
+							<li class="detail-row-spn">
+								<span class="key">Predictive Score: </span><span class="text-black">{{otherScores.counterpartPrediction.predictiveScore}}</span>
+							</li>
+							<li class="detail-row-spn">
+								<span class="key">Expected response time:</span><span class="text-black">{{otherScores.counterpartPrediction.expectedResponseTime}}</span>
+							</li>
+							<li class="detail-row-spn">
+								<span class="key">360 degree risk score: </span><span class="text-black">{{otherScores.counterpartRisk.riskScore}}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="company-info-section">
+			<div class="container">
+				<div class="row" style="border: 1px solid #ddd;">
+					<div class="heading-background">
+						<h3>Website\Domain Information</h3>
+					</div>
+					<div ng-if="!whoisdata || whoisdata.length == 0">
+						<p>Websites and domain details of {{company.name}} will be updated soon. </p>
+						<hr/>
+					</div>
+					<div  style="padding: 12px;" ng-repeat="whd in whoisdata">
+						<span style="font-weight:bold"> {{$index + 1}}. {{whd['Domain Information']['Domain Name']}}</span>
+						<div >
+							<div ng-if="whd.isRaw" ng-bind-html="whd['Domain Information']|as_trusted"> </div>
+							<ul ng-if="!whd.isRaw" style="padding-left: 2em;padding-top: 1em;">
+								<li ng-repeat="(key, value) in whd">
+									<div><span style="font-weight:bold;">{{key.toUpperCase()}}:</span></div>
+									<ul >
+										<li ng-repeat="(keyinner, valueinner) in value">
+											<span>{{keyinner}}:</span>
+											<span>{{valueinner}}</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<hr/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="company-info-section">
+			<div class="container">
+				<div class="row" style="border: 1px solid #ddd;">
+					<div class="heading-background">
+						<h3>Contact info</h3>
+					</div>
+					<div class="row left-section">
+						<div class="col-md-6 details">
+							<label>Location</label>
+							<!-- <iframe width="450" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Opposite+Police+Quarters%2C+A.+V.+Apparao+Road+National+Highway%2C+Opposite+Police+Quarters%2C+Prakasam+Nagar%2C+%2CRajahmundry%2CAndhra+Pradesh%2CIndia%2C533103&amp;zoom=13&amp;maptype=roadmap&amp;key=AIzaSyDaDls-sTwGkVK4YKV9D4RPDnz1HLGvdKs" allowfullscreen=""> </iframe> -->
+							<iframe
+								  width="450"
+								  height="350"
+								  frameborder="0" style="border:0"
+								  ng-src="{{companyAddrMapUrl|as_trusted_url}}" allowfullscreen>
+							   </iframe>
+						</div>
+						<div class="col-md-6 details">
+							<label>Address</label>
+							<p>{{displayAddrStr}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

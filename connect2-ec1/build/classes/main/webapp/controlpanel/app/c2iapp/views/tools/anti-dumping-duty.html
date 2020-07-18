@@ -1,0 +1,76 @@
+
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-calculator"></i>&nbsp;Anti Dumping Duty Calculator</h1>
+			<p>The Customs duties automated tool allows you to obtain duties and taxes to be paid when a product is imported into another country. Fees are calculated based on the product's classification number.</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<form class="x_panel" name="dutyForm">
+				<table class=" table table-bordered table-striped">
+					
+					<tr>
+					<td>Product classification number</td>
+					<td><input class="form-control" type="text" name="terma" ng-model="tools.indianDumpingDutyCalc.formData.productcode" ui-autocomplete="dutyAutoOptions" required></td>
+					</tr>
+					
+										
+					<tr>
+					<td colspan="4"><button type="submit" class="btn btn-primary">FIND</button></td>
+					</tr>
+								
+				</table>
+					<p style="color:red;">{{errMessage}}</p>
+			</form>
+			<div class="tool x_panel"  ng-if="tools.indianDumpingDutyCalc.duties" data-ng-cloak>
+				<h3 style="text-align:center"><b>DUMPING DUTIES</b></h3>
+					<!-- <div style="font-size:20px;">Product Code : {{tools.customDutyCalc.formData.code}}</div>
+					<div style="font-size:20px;">Product Description : {{tools.customDutyCalc.formData.productName}}</div><br/> -->
+
+					<table border="1" class=" table table-bordered table-striped">
+            
+            <tr>
+            <th>HS Code</th>
+            <th>Name</th>
+            <th>Notn No</th>
+            <th>Notn Date</th>
+            <th>Notn Sl No</th>
+            <th>Item Sl No</th>
+            <th>Country Org</th>
+            <th>Country Con</th>
+            <th>Supplier Sl No</th>
+            <th>Producer Name</th>
+            <th>Exporter Name</th>
+            <th>Anti Dumping Duty</th>
+            <th>UQC</th>
+            <th>Currency</th>
+            </tr>
+            
+            <tr ng-repeat="pro in tools.indianDumpingDutyCalc.duties">
+                <td>{{pro.productCode}}</td>
+                <td>{{pro.productName}}</td>
+                <td>{{pro.notn_no}}</td>
+                <td>{{pro.notn_date}}</td>
+                <td>{{pro.notl_slno}}</td>
+                <td>{{pro.item_slno}}</td>
+                <td>{{pro.country_org}}</td>
+                <td>{{pro.country_con}}</td>
+                <td>{{pro.supplier_slno}}</td>
+                <td>{{pro.producer_name}}</td>
+                <td>{{pro.exporter_name}}</td>
+                <td>{{pro.duty}}</td>
+                <td>{{pro.uqc}}</td>
+                <td>{{pro.currency}}</td>
+            </tr>
+            
+        </table>
+
+				</div>
+		</div>
+	</div>
+</div>

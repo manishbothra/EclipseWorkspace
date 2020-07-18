@@ -1,0 +1,597 @@
+
+        <!-- page content -->
+<div class="right_col data_for_tea" role="main" style="overflow-x: hidden">
+		<div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header"><i class="fa fa-tachometer"></i> &nbsp;Dashboard</h1>
+            </div>
+		</div>
+		<div class="dashboard-orders">
+			<div class="row">
+				<div class="box-header with-border">
+					<h3>Export Orders</h3>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+				  <div class="info-box">
+					<span class="info-box-icon bg-aqua"><i class="fa fa-ship"></i></span>
+					<div class="info-box-content">
+					  <span class="info-box-text">Total Orders </span>
+					  <span class="info-box-number">{{dashboardStats.totalExportOrders}}</span>
+					</div>
+				  </div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+				  <div class="info-box">
+					<span class="info-box-icon bg-green"><i class="fa fa-check-circle"></i></span>
+					<div class="info-box-content">
+					  <span class="info-box-text">Completed Orders</span>
+					  <span class="info-box-number">{{dashboardStats.totalExportCompletedOrders}}</span>
+					</div>
+				  </div>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+				  <div class="info-box">
+					<span class="info-box-icon bg-red"><i class="fa fa-clock-o"></i></span>
+					<div class="info-box-content">
+					  <span class="info-box-text">Ongoing Orders</span>
+					  <span class="info-box-number">{{dashboardStats.totalExportOngoingOrders}}</span>
+					</div>
+				  </div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+				  <div class="info-box">
+					<span class="info-box-icon bg-yellow"><i class="fa fa-dollar"></i></span>
+					<div class="info-box-content">
+					  <span class="info-box-text">Total value exported</span>
+					  <span class="info-box-number">{{dashboardStats.totalExportValue}}</span>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+	  		<div class="row">
+	  			<div class="box-header with-border">
+	  				<h3>Import Orders</h3>
+	  			</div>
+	  			<div class="col-md-3 col-sm-6 col-xs-12">
+	  			  <div class="info-box">
+	  				<span class="info-box-icon bg-aqua"><i class="fa fa-anchor"></i></span>
+	  				<div class="info-box-content">
+	  				  <span class="info-box-text">Total Orders</span>
+	  				  <span class="info-box-number">{{dashboardStats.totalImportOrders}}</span>
+	  				</div>
+	  			  </div>
+	  			</div>
+	  			<div class="col-md-3 col-sm-6 col-xs-12">
+	  			  <div class="info-box">
+	  				<span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
+
+	  				<div class="info-box-content">
+	  				  <span class="info-box-text">Completed Orders</span>
+	  				  <span class="info-box-number">{{dashboardStats.totalImportCompletedOrders}}</span>
+	  				</div>
+	  			  </div>
+	  			</div>
+	  			<div class="clearfix visible-sm-block"></div>
+
+	  			<div class="col-md-3 col-sm-6 col-xs-12">
+	  			  <div class="info-box">
+	  				<span class="info-box-icon bg-red"><i class="fa fa-clock-o"></i></span>
+
+	  				<div class="info-box-content">
+	  				  <span class="info-box-text">Ongoing Orders</span>
+	  				  <span class="info-box-number">{{dashboardStats.totalImportOngoingOrders}}</span>
+	  				</div>
+	  			  </div>
+	  			</div>
+	  			<div class="col-md-3 col-sm-6 col-xs-12">
+	  			  <div class="info-box">
+	  				<span class="info-box-icon bg-yellow"><i class="fa fa-dollar"></i></span>
+
+	  				<div class="info-box-content">
+	  				  <span class="info-box-text">Total value imported</span>
+	  				  <span class="info-box-number">{{dashboardStats.totalImportValue}}</span>
+	  				</div>
+	  			  </div>
+	  			</div>
+	  		  </div>
+			  <a ng-if="loggedInUser.priority >= 4" href="#trade" class="btn btn-success">View Details </a>
+		</div>
+		<div class="dashboard-orders">
+	        <div class="row headingBox">
+				<div class="box-header with-border">
+	                <h3>Product insights</h3>
+	                <div class="col-xs-12 selectProduct">
+	                    <div class="col-md-8">
+	                        <select ng-model="reportForm.selectedProduct" ng-change="changeProductSelection()" ng-options="product as product.name for product in comppro" class="form-control select2 select2-hidden-accessible" style="font-size: 15px; width: 100%;    height: 35px; margin-bottom: 30px;" tabindex="-1" aria-hidden="true">
+	                            <option value="">---Select Product---</option>
+	                        </select>
+											</div>
+											<div class="col-md-4" style="font-size:14px;color:#333;padding:8px;" >
+												<i class="fa fa-plus"></i>
+	                        <a style="color:#333" href="#manage-products">Add New Product</a>
+	                    </div>
+						<div ng-if="!reportForm.selectedProduct.name || reportForm.selectedProduct.name.length<1 " class="col-md-8 productAutoComplete" style="margin: 0 0 0px; font-size: 12px; ">
+								<p>You don't have any product added.</p>
+						</div>
+	                </div>
+	            	<div class="clearfix"></div>
+	            </div>
+			</div>
+	        <div>
+	            <div class="row headingBox top" style="overflow-x: auto;">
+	                <div class="col-md-12">
+	                    <div class="box" style=" border-top: 3px solid #d2d6de">
+	                        <div class="box-header with-border">
+	                            <h3 ng-if="userCountry.toLowerCase()=='india'" class="box-title">Global importers insights for {{reportForm.selectedProduct.name}}</h3>
+								 <h3 ng-if="userCountry.toLowerCase()!='india'" class="box-title">Indian importers insights for {{reportForm.selectedProduct.name}}</h3>
+
+	                            <div class="box-tools pull-right">
+
+	                            </div>
+	                        </div><!-- /.box-header -->
+	                        <div class="box-body">
+	                            <div class="row">
+	                                <div class="col-md-8">
+	                                    <p class="text-center">
+	                                        <strong ng-if="userCountry.toLowerCase()=='india'">Importing nations worldwide</strong>
+											<strong ng-if="userCountry.toLowerCase()!='india'">Exporting nations worldwide</strong>
+	                                    </p>
+	                                    <div class="chart">
+	                                        <!-- Sales Chart Canvas -->
+	                                        <div id="chart_div1" google-chart chart="exportChartGeo" style="margin-top:50px;margin-bottom:25px">
+	                                        </div>
+	                                        <!--<div id="regions_div" style="width: 100%;"></div>-->
+	                                    </div><!-- /.chart-responsive -->
+	                                </div><!-- /.col -->
+	                                <div class="col-md-4">
+	                                    <p class="text-center">
+	                                        <strong ng-if="userCountry.toLowerCase()=='india'">Top importing Countries</strong>
+																					<strong ng-if="userCountry.toLowerCase()!='india'">Top exporting Countries</strong>
+	                                    </p>
+
+	                                    <div class="progress-group" ng-repeat="coun in productTopCountries | limitTo:5">
+	                                        <span class="progress-text">{{coun.country}}</span>
+	                                        <span class="progress-number"><b>{{coun.value}}M </b>USD</span>
+	                                        <div class="progress sm">
+																						<div class="progress-bar progress-bar-green" style="width: {{(coun.value/totalTradeStats.productExport)*100}}%"></div>
+	                                        </div>
+	                                    </div><!-- /.progress-group -->
+	                                    <div class="box-footer text-center">
+							                            <a ng-href="{{historicalDemandRef}}" class="uppercase">View Market Demand</a>
+							                        </div><!-- /.box-footer -->
+
+																				<div class="info-box bg-blue">
+															            <span class="info-box-icon"><i class="glyphicon glyphicon-export"></i></span>
+															            <div class="info-box-content">
+															              <span class="info-box-text">Export Value</span>
+															              <span class="info-box-number">{{totalTradeStats.productExport}} USD Million</span>
+
+															              <div class="progress">
+															                <div class="progress-bar" style="width: {{(totalTradeStats.productExport/totalTradeStats.totalExport)*100}}%"></div>
+															              </div>
+															              <span class="progress-description">
+															                    {{((totalTradeStats.productExport/totalTradeStats.totalExport)*100).toFixed(2)}}% of India's total Export of <strong>{{totalTradeStats.totalExport}} USD Million</strong>
+														                  </span>
+															            </div>
+															          </div>
+																				<div class="info-box bg-green">
+															            <span class="info-box-icon"><i class="glyphicon glyphicon-import"></i></span>
+															            <div class="info-box-content">
+															              <span class="info-box-text">Import Value</span>
+															              <span class="info-box-number">{{totalTradeStats.productImport}} USD Million</span>
+
+															              <div class="progress">
+															                <div class="progress-bar" style="width: {{(totalTradeStats.productImport/totalTradeStats.totalImport)*100}}%"></div>
+															              </div>
+															              <span class="progress-description">
+															                    {{((totalTradeStats.productImport/totalTradeStats.totalImport)*100).toFixed(2)}}% of India's total Export of <strong>{{totalTradeStats.totalImport}} USD Million</strong>
+														                  </span>
+															            </div>
+															          </div>
+
+	                                </div><!-- /.col -->
+	                            </div><!-- /.row -->
+	                        </div><!-- ./box-body -->
+	                        <div class="box-footer">
+	                            <!-- /.row -->
+	                        </div><!-- /.box-footer -->
+	                    </div><!-- /.box -->
+	                </div><!-- /.col -->
+	            </div>
+							<div class="row headingBox col-md-12 col-sm-12">
+								 <div class="">
+										 <div class="box box-primary" style="border-top:3px solid #0073b7;">
+												 <div class="box-header with-border" >
+														 <h3 class="box-title">Historical Trends</h3>
+														 <div class="box-tools pull-right">
+														 </div>
+												 </div>
+											<div class="tradeGraph col-md-8">
+												<div>
+													<label for="slCountryTrendHistorical">Country: </label>
+													<select id="slCountryTrendHistorical" style="height: 32px;width:auto;" ng-model="selectedTrendChart" ng-options="item as item for item in trendChartSelectableOptions" >
+													</select>
+												</div>
+
+												<nvd3 options='trendChart.options' data='trendChart.data' config="nvChartConfig" api="trendChart.api"></nvd3>
+											</div>
+
+											<!-- /.col -->
+											<div class="col-md-4">
+													<p class="text-center">
+															<strong>Last 6 Years {{selectedTradeType.toUpperCase()}} Trend <span ng-if="'ALL' != trendChart.data[0].key.toUpperCase() ">
+																 for {{ trendChart.data[0].key.toUpperCase()}}</span>
+															 </strong>
+													</p>
+
+													<div class="progress-group" ng-repeat="td in yearlyTrendSummary.data">
+															<span class="progress-text">{{td.x}}</span>
+															<span class="progress-number"><b>{{td.y}}M </b>USD</span>
+															<div class="progress sm">
+																<div class="progress-bar" style="width: {{(td.y/yearlyTrendSummary.max)*100}}%"></div>
+															</div>
+													</div>
+											</div>
+										</div>
+								</div>
+
+						</div>
+						<div class="row headingBox">
+						 <div class="col-md-12 col-sm-12">
+								 <div class="box box-primary" style="border-top:3px solid #dd4b39;">
+										 <div class="box-header with-border" >
+												 <h3 class="box-title">Monthwise Trends</h3>
+												 <div class="box-tools pull-right">
+												 </div>
+										 </div>
+									<div class="tradeGraph col-md-8">
+										<div>
+											<label for="slCountryMonthwiseTrendHistorical">Country: </label>
+											<select id="slCountryMonthwiseTrendHistorical" style="height: 32px;width:auto;" ng-model="selectedMonthwiseTrendChart" ng-options="item as item for item in monthwiseTrendChartSelectableOptions" >
+											</select>
+										</div>
+
+										<nvd3 options='monthwiseTrendChart.options' data='monthwiseTrendChart.data' config="nvChartConfig" api="monthwiseTrendChart.api"></nvd3>
+									</div>
+
+									<div class="col-md-4">
+											<p class="text-center">
+													<strong>Last 6 Months {{selectedTradeType.toUpperCase()}} Trends <span ng-if="'ALL' != trendChart.data[0].key.toUpperCase() ">
+														 for {{ monthwiseTrendChart.data[0].key.toUpperCase()}}</span>
+													 </strong>
+											</p>
+
+											<div class="progress-group" ng-repeat="td in monthwiseTrendSummary.data">
+													<span class="progress-text" style="text-transform: capitalize;">{{getMonthText(td.x)}}</span>
+													<span class="progress-number"><b>{{td.y}}M </b>USD</span>
+													<div class="progress sm">
+														<div class="progress-bar progress-bar-red" style="width: {{(td.y/monthwiseTrendSummary.max)*100}}%"></div>
+													</div>
+											</div>
+									</div>
+
+								</div>
+						</div>
+					</div>
+
+					<div class="row headingBox">
+							<div class="col-md-7 col-xs-12">
+									<div class="box" style="border-top:3px solid #00c0ef;">
+											<div class="box-header">
+													<h3 class="box-title">Duties and taxes</h3>
+											</div><!-- /.box-header -->
+											<div class="box-body no-padding">
+													<table class="table table-striped">
+															<tbody><tr>
+																	<th style="width: 10px">#</th>
+																	<th>Product Code</th>
+																	<th ng-if="userCountry.toLowerCase()=='india'">Product Name</th>
+								<th ng-if="userCountry.toLowerCase()!='india'">India Import duty</th>
+																	<th ng-if="userCountry.toLowerCase()=='india'" style="width: 40px">GST</th>
+								<th ng-if="userCountry.toLowerCase()!='india'" style="width: 40px">IGST</th>
+															</tr>
+
+															<tr ng-repeat="pro in productExportDuties" ng-if="userCountry.toLowerCase()=='india' && $index<5">
+																	<td class="count"></td>
+																	<td>{{pro.productCode}}</td>
+																	<td>{{pro.productName}}</td>
+																	<td>{{pro.igst}}</td>
+															</tr>
+							<tr  ng-repeat="value in productExportDuties" ng-if="userCountry.toLowerCase()!='india' && $index<5">
+																	<td class="count"></td>
+																	<td>{{value.productCode}}</td>
+																	<td>{{value.basicDuty}}</td>
+																	<td>{{value.igst}}</td>
+															</tr>
+
+															</tbody></table>
+											</div><!-- /.box-body -->
+											<!-- <div class="box-footer text-center">
+													<a class="uppercase">Export Duty Calculator</a>
+											</div> -->
+									</div>
+
+
+							</div>
+							<div class="col-md-5 col-xs-12">
+									<div class="box box-primary" style="border-top:3px solid #3c8dbc;">
+											<div class="box-header with-border">
+													<h3 class="box-title">Suggested Products</h3>
+													<div class="box-tools pull-right">
+
+													</div>
+											</div><!-- /.box-header -->
+											<div class="box-body">
+													<ul class="products-list product-list-in-box">
+															<li class="item" ng-repeat="pro in relatedProducts">
+
+																	<div class="product-info">
+																			<a class="product-title">{{pro}}</a>
+											<span class="product-description">
+
+											</span>
+																	</div>
+															</li><!-- /.item -->
+
+													</ul>
+											</div><!-- /.box-body -->
+											<!-- <div class="box-footer text-center">
+													<a class="uppercase">View All Products</a>
+											</div> --><!-- /.box-footer -->
+									</div>
+
+							</div>
+					</div>
+	            <div class="row headingBox">
+	                <div class="col-md-4 col-xs-12">
+	                    <div class="box box-primary" style="border-top:3px solid #dd4b39;">
+	                        <div class="box-header with-border" >
+	                            <h3 class="box-title">Downloaded Items</h3>
+	                            <div class="box-tools pull-right">
+
+	                            </div>
+	                        </div><!-- /.box-header -->
+	                        <div class="box-body">
+	                            <ul class="products-list product-list-in-box">
+	                                <li class="item">
+
+	                                    <div class="product-info">
+	                                        <a ng-href="{{currentDemandRef}}" class="product-title">Port Data<span class="label label-warning pull-right">{{dashboardStats.realTimeStats}} Rows</span></a>
+	                        <span class="product-description">
+	                          Rows of Indian export data
+	                        </span>
+	                                    </div>
+	                                </li><!-- /.item -->
+	                                <li class="item">
+
+	                                    <div class="product-info">
+	                                        <a ng-href="{{impSearchRef}}" class="product-title">Global Importers<span class="label label-warning pull-right">{{dashboardStats.totalImporters}}</span></a>
+											<span class="product-description">
+											  Worldwide importers of chosen products
+											</span>
+	                                    </div>
+	                                </li><!-- /.item -->
+	                            </ul>
+	                        </div><!-- /.box-body -->
+	                        <div class="box-footer text-center">
+	                            <a href="#/importers-purchased" class="uppercase">View Downloaded Stats</a>
+	                        </div><!-- /.box-footer -->
+	                    </div>
+
+	                </div>
+	                <div class="col-md-8">
+	                    <div class="row">
+	                        <!-- /.col -->
+
+	                        <div class="col-md-6" style="overflow-x: auto;">
+	                            <div class="box box-danger" style="border-top:3px solid #d2d6de; overflow-x: auto;">
+	                                <div class="box-header with-border">
+	                                    <h3 ng-if="userCountry.toLowerCase()=='india'" class="box-title">Global Importers</h3>
+										<h3 ng-if="userCountry.toLowerCase()!='india'" class="box-title">Indian Importers</h3>
+	                                    <div class="box-tools pull-right">
+
+
+	                                    </div>
+	                                </div><!-- /.box-header -->
+	                                <div class="box-body no-padding">
+	                                    <table class="table table-striped">
+	                                        <tbody><tr>
+	                                            <th style="width: 10px">#</th>
+	                                            <th >Importer Name</th>
+	                                            <th ng-if="userCountry.toLowerCase()=='india'" >Importer country</th>
+	                                        </tr>
+	                                        <tr ng-repeat="pro in productImporters">
+	                                            <td class="count"></td>
+	                                            <td>{{pro.name}}</td>
+	                                            <td  ng-if="userCountry.toLowerCase()=='india'">{{pro.country}}</td>
+	                                        </tr>
+
+	                                        </tbody></table>
+	                                </div><!-- /.box-body -->
+	                                <div class="box-footer text-center">
+	                                    <a ng-href="{{impSearchRef}}" class="uppercase">View All Available Importers</a>
+	                                </div><!-- /.box-footer -->
+	                            </div>
+	                        </div>
+
+	                        <div class="col-md-6">
+	                            <!-- USERS LIST -->
+	                            <div class="box box-danger" style="    border-top:3px solid #f39c12;">
+	                                <div class="box-header with-border">
+	                                    <h3 ng-if="userCountry.toLowerCase()=='india'" class="box-title">Port data</h3>
+										<h3 ng-if="userCountry.toLowerCase()!='india'" class="box-title">Port data</h3>
+										 <div class="box-tools pull-right">
+	                                        <!-- <span class="label label-danger">5 New Rows available</span> -->
+
+	                                    </div>
+	                                </div><!-- /.box-header -->
+	                                <div class="box-body no-padding" style="overflow-x:auto; max-height:250px; overflow-y:scroll;">
+	                                    <table class="table table-striped">
+	                                        <tbody><tr>
+	                                            <th style="width: 10px">#</th>
+	                                            <th>Product Name</th>
+	                                            <th>Date</th>
+	                                            <th style="width: 40px">Quantity</th>
+	                                            <th style="width: 40px">Value</th>
+	                                            <th>Origin port</th>
+	                                            <th style="width: 40px">Destination port</th>
+	                                        </tr>
+
+	                                        <tr ng-repeat="pro in productDemandStats">
+	                                            <td class="count"></td>
+	                                            <td>{{pro.name}}</td>
+	                                            <td>{{pro.tradeDate}}</td>
+	                                            <td>{{pro.qty}}</td>
+	                                            <td>{{pro.value}}</td>
+	                                            <td>{{pro.oport}}</td>
+	                                            <td>{{pro.dport}}</td>
+	                                        </tr>
+
+
+	                                        </tbody></table>
+	                                </div><!-- /.box-body -->
+	                                <div class="box-footer text-center">
+	                                    <a ng-href="{{currentDemandRef}}" class="uppercase">View All Rows</a>
+	                                </div><!-- /.box-footer -->
+	                            </div><!--/.box -->
+	                        </div><!-- /.col -->
+	                        <div class="col-md-6">
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+						<div class="row">
+					        <div class="col-md-3 col-sm-6 col-xs-12">
+					          <div class="info-box">
+					            <span class="info-box-icon bg-aqua"><i class="fa fa-cog"></i></span>
+
+					            <div class="info-box-content">
+					              <span class="info-box-text">Total Products</span>
+					              <span class="info-box-number">{{profileStatus.numberOfProducts}}</span>
+					            </div>
+					            <!-- /.info-box-content -->
+					          </div>
+					          <!-- /.info-box -->
+					        </div>
+					        <!-- /.col -->
+					        <div class="col-md-3 col-sm-6 col-xs-12">
+					          <div class="info-box">
+					            <span class="info-box-icon bg-red"><i class="fa fa-bar-chart"></i></span>
+
+					            <div class="info-box-content">
+					              <span class="info-box-text">Trade Intelligence Reports</span>
+					              <span class="info-box-number">8</span>
+					            </div>
+					            <!-- /.info-box-content -->
+					          </div>
+					          <!-- /.info-box -->
+					        </div>
+					        <!-- /.col -->
+
+					        <!-- fix for small devices only -->
+					        <div class="clearfix visible-sm-block"></div>
+
+					        <div class="col-md-3 col-sm-6 col-xs-12">
+					          <div class="info-box">
+					            <span class="info-box-icon bg-green"><i class="fa fa-calculator"></i></span>
+
+					            <div class="info-box-content">
+					              <span class="info-box-text">Trade Tools &  Utilities</span>
+					              <span class="info-box-number">17</span>
+					            </div>
+					            <!-- /.info-box-content -->
+					          </div>
+					          <!-- /.info-box -->
+					        </div>
+					        <!-- /.col -->
+					        <div class="col-md-3 col-sm-6 col-xs-12">
+					          <div class="info-box">
+					            <span class="info-box-icon bg-yellow"><i class="glyphicon glyphicon-user"></i></span>
+
+					            <div class="info-box-content">
+					              <span class="info-box-text">Profile Completion</span>
+					              <span class="info-box-number">{{profileStatus.profileCompletionPercentage}}%</span>
+					            </div>
+					            <!-- /.info-box-content -->
+					          </div>
+					          <!-- /.info-box -->
+					        </div>
+					        <!-- /.col -->
+					      </div>
+	            <div class="row recentActivities headingBox">
+	                <h2>Recent Activities <small></small></h2>
+	                <div class="col-md-12 col-sm-12 col-xs-12">
+	                    <div class="x_panel">
+	                        <div class="x_title">
+	                            <ul class="timeline">
+	                                <!-- timeline time label -->
+	                                <li class="time-label">
+													        <span class="bg-red">
+													        </span>
+	                                </li>
+	                                <li ng-repeat="act in recentActivities">
+	                                    <!-- timeline icon -->
+	                                    <i class="fa fa-envelope bg-blue"></i>
+	                                    <div class="timeline-item">
+	                                        <span class="time"><i class="fa fa-clock-o"></i>{{act.dateFormatted}}</span>
+
+	                                        <h3 class="timeline-header"><a href="#"></a>Connect2India</h3>
+
+	                                        <div class="timeline-body">
+	                                           {{act.source}}
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                            </ul>
+
+	                            <ul class="timeline">
+	                                <!-- timeline time label -->
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!--<div class="col-md-6 col-sm-6 col-xs-12">
+	                    <div class="x_panel" style="height: auto;">
+	                      <div class="x_title">
+	                        <h2>Subscription Package</h2>
+	                        <ul class="nav navbar-right panel_toolbox">
+	                          <li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+	                          </li>
+	                        </ul>
+	                        <div class="clearfix"></div>
+	                      </div>
+
+	                      <div class="x_content" style="display: block;">
+	                        <div class="row">
+
+	                          <div class="col-md-12">
+
+	                            &lt;!&ndash; price element &ndash;&gt;
+	                        <div class="col-md-10 col-sm-10 col-xs-12">
+	                          <div class="pricing">
+	                            <div class="title">
+	                              <h2>{{subscriptionPackage.planName || 'REGISTERED USER'}} <span style="background:transparent" ng-show="subscriptionPackage.planName">Subscription</span></h2>
+	                              <p>{{subscriptionPackage.planShortDesc}}</p>
+	                            </div>
+								<div style="margin-top: 10px;" ng-if="subscriptionPackage.planName != 'ENTERPRISE'">
+									<a class="btn btn-primary" href="/subscription/export-packages.html">Upgrade Package</a>
+								</div>
+	                          </div>
+	                        </div>
+	                        &lt;!&ndash; price element &ndash;&gt;
+
+	                &lt;!&ndash; price element &ndash;&gt;
+
+	                      </div>
+	                    </div>
+	                  </div>
+	                </div>
+	              </div>-->
+
+	            </div>
+	        </div>
+		</div>
+</div>

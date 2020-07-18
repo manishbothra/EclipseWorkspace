@@ -1,0 +1,255 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-line-chart"></i>&nbsp;{{pageTitle}}</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>
+
+	<div class="searchFilter">
+		<!-- Tab panes -->
+		<div class="container x_panel" data-ng-cloak>
+			<div class="row x_content">
+			
+				<div class="col-md-12">
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						
+						<h4><input type="radio" id="rdoYp" ng-model="reportForm.productType" value="yourProducts"> <label for="rdoYp">Your Products</label></h4>
+						<select ng-disabled="reportForm.productType != 'yourProducts'" ng-model="reportForm.selectedProduct" ng-options="product as product.name for product in comppro">
+						<option value="">---Select Product---</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						<h4><input type="radio" id="rdoNp" ng-model="reportForm.productType" value="newProduct"> 
+						<label for="rdoNp">Search for Other Products </label></h4>
+						<input ng-disabled="reportForm.productType != 'newProduct'" class="form-control" type="text" placeholder="Enter product name or HS code" name="term" ng-model="selectedProduct" ui-autocomplete="myOption" data-ng-cloak>
+					</div>
+					
+					<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						<h4><label for="rdoNp">Destination Country</label></h4>
+						<select ng-model="selectedCountry" ng-change="changeDataCountry(selectedCountry)" ng-options="cname as country.name for country in countries">
+						</select>
+					</div>
+					
+				</div>
+				<!--
+				<div class="col-md-4 col-sm-6 col-xs-12">
+				   <label>Country</label>
+					<select class="form-control" ng-model="country" ng-change="changeCountry(country)"
+						 ng-options="country.country for country in filterRanges.country | filter:filterLocation | orderBy:'country' track by country.id" ng-disabled="!allowedFilters.country || disableLocationFilter" rel="tooltip" title="{{(allowedFilters.country)?'' : filterDisableMessage1}}">
+							<option value="" ng-disabled="!allowedFilters.country">Any</option>
+							<option value={{country}} ng-repeat="country in filterRanges.country | filter:filterLocation" ng-disabled="!allowedFilters.country">
+								{{country.country}}
+						</option> 
+					</select>
+				</div>
+				-->
+				<div class="col-md-12">
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<label>Trade type</label>
+						<select name="" class="form-control" ng-model="type" ng-change="changeType(type)">
+						<option value="export">Export</option>
+						 <option value="import">Import</option>
+						</select>
+					</div> 
+					
+					<div class="col-md-4 col-sm-6 col-xs-12">
+					   <label>Origin Port</label>
+						<select class="form-control" ng-model="selectedOPort" ng-change="changePort('origin', selectedOPort)">
+							<option value="any" ng-disabled="!allowedFilters.originPort">Any Port</option>
+							
+							<option ng-disabled="!allowedFilters.originPort" value="{{op.trim()}}" ng-repeat="op in filterRanges.originPorts | orderBy">
+							{{op}}
+							</option>
+						</select>
+					</div>
+					
+					<div class="col-md-4 col-sm-6 col-xs-12">
+					   <label>Destination Port</label>
+						<select class="form-control" ng-model="selectedDPort" ng-change="changePort('destination', selectedDPort)">
+							<option value="any" ng-disabled="!allowedFilters.destinationPort">Any Port</option>
+							
+							<option ng-disabled="!allowedFilters.destinationPort" value="{{dp.trim()}}" ng-repeat="dp in filterRanges.destinationPorts | orderBy">
+							{{dp}}
+							</option>
+						</select>
+					</div>
+					
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<label>Duration</label>
+						<daterangepicker initRange="{{calendarDateRange}}" callbackfn='dateRangeChanged(frmDate, toDate)'></daterangepicker>
+						<!-- <select class="form-control" ng-model="selectedDuration" ng-change="changeDuration(selectedDuration)">
+							<option value="any" ng-disabled="!allowedFilters.duration">--- Select Duration ---</option>
+							
+							<option value="{{duration.value}}" ng-disabled="!allowedFilters.duration" ng-repeat="duration in filterRanges.durations">
+							{{duration.label}}
+							</option>
+						</select> -->
+					</div>
+					
+					<div class="col-md-4 col-sm-6 col-xs-12" ng-if="products && products.length > 0">
+						<label>Quantity</label>
+						<rzslider rz-slider-model="filterRanges['quantity'].minValue" rz-slider-high="filterRanges['quantity'].maxValue"
+						rz-slider-options="filterRanges['quantity'].options"></rzslider>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12" ng-if="products && products.length > 0">										
+						<label> Value</label>
+						<rzslider rz-slider-model="filterRanges['value'].minValue" rz-slider-high="filterRanges['value'].maxValue"
+						rz-slider-options="filterRanges['value'].options"></rzslider>									
+							
+					</div>
+					
+					<button class="btn btn-primary" ng-click="loadDemandReport()">Submit</button>
+				</div>
+			</div>	
+				  
+		</div>
+				
+	<div class="tab-content">
+		<div role="tabpanel" id="buyer">
+			
+			<div class="container x_panel"  data-ng-cloak ng-show="!products || products.length == 0">
+				<div class="x_title title">
+				  <h2>{{mainTitle}}</h2>
+				  <ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+					</li>
+				  </ul>
+				  <div class="clearfix"></div>
+				  <p> No records found. Please try another criteria or product </p>
+				</div>
+			</div>
+		<div class="container x_panel"  data-ng-cloak>
+			<div class="x_title title">
+			  <h2>{{mainTitle}}</h2>
+			  <ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+				</li>
+			  </ul>
+			  <div class="clearfix"></div>
+			</div>
+		
+		
+			<div class="row x_content" id="tableStats">
+			
+
+				<div class="col-md-12" data-ng-cloak>
+					<table class="table table-striped table-bordered">
+						 <tr style="background-color:#454545;color:#fff;">
+							<th>S. No</th>
+							<th ng-class="{headerSort:selectedSorting !='sortByDate', headerSortUp:sortByDate, headerSortDown:!sortByDate}" ng-click="sortList('products', 'tradeDate', 'sortByDate')">Date</th>
+							<th  ng-class="{headerSort:selectedSorting !='sortByName', headerSortUp:sortByName, headerSortDown:!sortByName}" ng-click="sortList('products', 'name', 'sortByName')">Product</th>
+							<th>Product Code</th>
+							<th  ng-class="{headerSort:selectedSorting !='sortByQty', headerSortUp:sortByQty, headerSortDown:!sortByQty}" ng-click="sortList('products', 'qty', 'sortByQty')">Quantity</th>
+							<th  ng-class="{headerSort:selectedSorting !='sortByValue', headerSortUp:sortByValue, headerSortDown:!sortByValue}" ng-click="sortList('products', 'value', 'sortByValue')">Value (USD in Million)</th>
+							<th  ng-class="{headerSort:selectedSorting !='sortByOPort', headerSortUp:sortByOPort, headerSortDown:!sortByOPort}" ng-click="sortList('products', 'oport', 'sortByOPort')" ng-show="showOPortHeader">Origin Port</th>
+							<th  ng-class="{headerSort:selectedSorting !='sortByDPort', headerSortUp:sortByDPort, headerSortDown:!sortByDPort}" ng-click="sortList('products', 'dport', 'sortByDPort')" ng-show="showDPortHeader">Destination Port</th>
+							<th>Bill Of Ladging</th>
+							<th>Vessel Name</th>
+							<th>Voyage No</th>
+							<th>Gross Weight</th>
+							<th>Volume</th>
+						  </tr>
+						 
+						   <tr ng-repeat="pro in products | filter:qtyValueRangeFilter">
+							<td>{{$index+1}}</td>
+							<td>{{pro.tradeDate}}</td>
+							<td>{{pro.description}}</td>
+							<td>{{pro.productCode}}</td>
+							<td>{{pro.quantity}}{{pro.quantityUnit}}</td>
+							<td>{{pro.declaredValue}}</td>
+							 
+							<td>
+								<a href='' ng-click="showData($event, 'oport', pro.originPort, searchCriteria.product)" target="_self">
+									{{pro.originPort}}
+								</a>
+							</td>
+							<td>
+								<a href='' ng-click="showData($event, 'dport', pro.destinationPort, searchCriteria.product)" target="_self">
+									{{pro.destinationPort}}
+								</a>
+							</td>
+							<td>{{pro.billOfLading}}</td>
+							<td>{{pro.vesselName}}</td>
+							<td>{{pro.voyageNo}}</td>
+							<td>{{pro.grossWeight}} {{pro.grossWeightUnit}}</td>
+							<td>{{pro.volume}}{{pro.volumeUnit}}</td>
+						  </tr>
+					</table>
+					
+					<pagination style="float: right;margin-top: -3px;" ng-hide="totalResults==0" boundary-links="true" max-size="4" total-items="totalResults" ng-model="currentPage" class="pagination-sm" items-per-page="{{pageSize}}" ng-change=changePage(currentPage)></pagination>   
+					
+					</div>
+			   </div>
+			</div>
+		</div>
+		
+		<!--
+		
+	   <div role="tabpanel" class="x_panel" id="demand" data-ng-cloak ng-if="products && products.length > 0">
+			
+			<div class="x_title title">
+			  <h2>{{pieChart.options.title.text}}</h2>
+			  <ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link" collapse-link ><i class="fa fa-chevron-up"></i></a>
+				</li>
+			  </ul>
+			  <div class="clearfix"></div>
+			</div>
+			
+			
+		   <div class="container x_content" id="tradeComparison">
+				
+				<div class="row">
+
+					<div class="col-md-12 col-sm-12">
+						<div class="tradeGraph">
+							<nvd3 options='pieChart.options' data='pieChart.data' config="nvChartConfig" api="pieChart.api"></nvd3>
+						</div>
+					</div>
+					
+					<div class="clearfix"></div>
+					<div class="col-md-12 x_title" style="margin-top:5em;">
+					  <h2>{{topPortChart.options.title.text}}</h2>
+					  <div class="clearfix"></div>
+					</div>
+					<div class="col-md-12 col-sm-12">
+						<div class="tradeGraph">
+							<nvd3 options='topPortChart.options' data='topPortChart.data' config="nvChartConfig" api="topPortChart.api"></nvd3>    
+						</div>
+					</div>
+					 <div class="col-md-12 col-sm-12">
+						<div class="col-md-12 x_title" style="margin-top:5em;">
+						  <h2>{{trendChart.options.title.text}}</h2>
+						  <div class="clearfix"></div>
+						</div>
+						<div class="tradeGraph">
+							<div class="col-xs-12 col-md-4">
+								<label style="font-weight: bold;">Product</label>
+								<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.product" ng-options="item as item.label for item in trendChartSelectableOptions.products" >							
+								</select>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<label style="font-weight: bold;">{{trendFilterSelectionLabel}}</label>
+								<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.oport" ng-options="item as item for item in trendChartSelectedOption.product.ports" >							
+								</select>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<label style="font-weight: bold;">Indicator</label>
+								<select style="height: 32px;margin-bottom:30px" ng-model="trendChartSelectedOption.key" ng-options="item as item for item in trendChartSelectableOptions.keys" >							
+								</select>
+							</div>
+							<br/>
+							<nvd3 options='trendChart.options' data='trendChart.data' config="nvChartConfig" api="trendChart.api"></nvd3>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		-->
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

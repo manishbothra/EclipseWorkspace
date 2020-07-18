@@ -1,69 +1,59 @@
 package com.connect2.ec.controller;
-
-
-
 public class InquiryDetails {
-	int inquiry_details_id;
-	String company_id;
-	String shipper_person_id;
-	String trade_type;
+	int inquiryDetailsId;
+	int userId;
+	String tradeType;
 	String mode;
 	String incoterms;
 	String pickup;
 	String pol;
 	String pod;
 	String delivery;
-	String pickup_service;
-	String origin_handling;
-	String origin_cha;
-	String delivery_service;
-	String destination_handling;
-	String destination_cha;
-	int gross_weight;
-	String gross_weight_unit;
+	String pickupService;
+	String originHandling;
+	String originCha;
+	String deliveryService;
+	String destinationHandling;
+	String destinationCha;
+	int grossWeight;
+	String grossWeightUnit;
 	String commodity;
-	String cargo_type;
-	String expected_pickup_date;
-	int lcl_package_quantity;
-	String lcl_package_type;
-	int fcl_container_quantity;
-	String fcl_container_type;
-	String fcl_container_size;
-	String fcl_container_stuffing;
+	String cargoType;
+	String expectedPickupDate;
+	int lclPackageQuantity;
+	String lclPackageType;
+	int fclContainerQuantity;
+	String fclContainerType;
+	String fclContainerSize;
+	String fclContainerStuffing;
 	int length;
 	int width;
 	int height;
 	int quantity;
 	String unit;
-	String air_load_type;
-	String special_instruction;
-	
-	String inquiry_id;
-	String inquiry_type;
-	
-	public int getInquiry_details_id() {
-		return inquiry_details_id;
+	String airLoadType;
+	String specialInstruction;
+	String inquiryId;
+	String instantId;
+	boolean bookingStatus;
+	String inquiryStatus;
+	public int getInquiryDetailsId() {
+		return inquiryDetailsId;
 	}
-	public void setInquiry_details_id(int inquiry_details_id) {
-		this.inquiry_details_id = inquiry_details_id;
+	public void setInquiryDetailsId(int inquiryDetailsId) {
+		this.inquiryDetailsId = inquiryDetailsId;
 	}
-	public String getCompany_id() {
-		return company_id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setCompany_id(String company_id) {
-		this.company_id = company_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	public String getShipper_person_id() {
-		return shipper_person_id;
+	public String getTradeType() {
+		return tradeType;
 	}
-	public void setShipper_person_id(String shipper_person_id) {
-		this.shipper_person_id = shipper_person_id;
-	}
-	public String getTrade_type() {
-		return trade_type;
-	}
-	public void setTrade_type(String trade_type) {
-		this.trade_type = trade_type;
+	public void setTradeType(String tradeType) {
+		this.tradeType = tradeType;
 	}
 	public String getMode() {
 		return mode;
@@ -101,53 +91,53 @@ public class InquiryDetails {
 	public void setDelivery(String delivery) {
 		this.delivery = delivery;
 	}
-	public String getPickup_service() {
-		return pickup_service;
+	public String getPickupService() {
+		return pickupService;
 	}
-	public void setPickup_service(String pickup_service) {
-		this.pickup_service = pickup_service;
+	public void setPickupService(String pickupService) {
+		this.pickupService = pickupService;
 	}
-	public String getOrigin_handling() {
-		return origin_handling;
+	public String getOriginHandling() {
+		return originHandling;
 	}
-	public void setOrigin_handling(String origin_handling) {
-		this.origin_handling = origin_handling;
+	public void setOriginHandling(String originHandling) {
+		this.originHandling = originHandling;
 	}
-	public String getOrigin_cha() {
-		return origin_cha;
+	public String getOriginCha() {
+		return originCha;
 	}
-	public void setOrigin_cha(String origin_cha) {
-		this.origin_cha = origin_cha;
+	public void setOriginCha(String originCha) {
+		this.originCha = originCha;
 	}
-	public String getDelivery_service() {
-		return delivery_service;
+	public String getDeliveryService() {
+		return deliveryService;
 	}
-	public void setDelivery_service(String delivery_service) {
-		this.delivery_service = delivery_service;
+	public void setDeliveryService(String deliveryService) {
+		this.deliveryService = deliveryService;
 	}
-	public String getDestination_handling() {
-		return destination_handling;
+	public String getDestinationHandling() {
+		return destinationHandling;
 	}
-	public void setDestination_handling(String destination_handling) {
-		this.destination_handling = destination_handling;
+	public void setDestinationHandling(String destinationHandling) {
+		this.destinationHandling = destinationHandling;
 	}
-	public String getDestination_cha() {
-		return destination_cha;
+	public String getDestinationCha() {
+		return destinationCha;
 	}
-	public void setDestination_cha(String destination_cha) {
-		this.destination_cha = destination_cha;
+	public void setDestinationCha(String destinationCha) {
+		this.destinationCha = destinationCha;
 	}
-	public int getGross_weight() {
-		return gross_weight;
+	public int getGrossWeight() {
+		return grossWeight;
 	}
-	public void setGross_weight(int gross_weight) {
-		this.gross_weight = gross_weight;
+	public void setGrossWeight(int grossWeight) {
+		this.grossWeight = grossWeight;
 	}
-	public String getGross_weight_unit() {
-		return gross_weight_unit;
+	public String getGrossWeightUnit() {
+		return grossWeightUnit;
 	}
-	public void setGross_weight_unit(String gross_weight_unit) {
-		this.gross_weight_unit = gross_weight_unit;
+	public void setGrossWeightUnit(String grossWeightUnit) {
+		this.grossWeightUnit = grossWeightUnit;
 	}
 	public String getCommodity() {
 		return commodity;
@@ -155,53 +145,53 @@ public class InquiryDetails {
 	public void setCommodity(String commodity) {
 		this.commodity = commodity;
 	}
-	public String getCargo_type() {
-		return cargo_type;
+	public String getCargoType() {
+		return cargoType;
 	}
-	public void setCargo_type(String cargo_type) {
-		this.cargo_type = cargo_type;
+	public void setCargoType(String cargoType) {
+		this.cargoType = cargoType;
 	}
-	public String getExpected_pickup_date() {
-		return expected_pickup_date;
+	public String getExpectedPickupDate() {
+		return expectedPickupDate;
 	}
-	public void setExpected_pickup_date(String expected_pickup_date) {
-		this.expected_pickup_date = expected_pickup_date;
+	public void setExpectedPickupDate(String expectedPickupDate) {
+		this.expectedPickupDate = expectedPickupDate;
 	}
-	public int getLcl_package_quantity() {
-		return lcl_package_quantity;
+	public int getLclPackageQuantity() {
+		return lclPackageQuantity;
 	}
-	public void setLcl_package_quantity(int lcl_package_quantity) {
-		this.lcl_package_quantity = lcl_package_quantity;
+	public void setLclPackageQuantity(int lclPackageQuantity) {
+		this.lclPackageQuantity = lclPackageQuantity;
 	}
-	public String getLcl_package_type() {
-		return lcl_package_type;
+	public String getLclPackageType() {
+		return lclPackageType;
 	}
-	public void setLcl_package_type(String lcl_package_type) {
-		this.lcl_package_type = lcl_package_type;
+	public void setLclPackageType(String lclPackageType) {
+		this.lclPackageType = lclPackageType;
 	}
-	public int getFcl_container_quantity() {
-		return fcl_container_quantity;
+	public int getFclContainerQuantity() {
+		return fclContainerQuantity;
 	}
-	public void setFcl_container_quantity(int fcl_container_quantity) {
-		this.fcl_container_quantity = fcl_container_quantity;
+	public void setFclContainerQuantity(int fclContainerQuantity) {
+		this.fclContainerQuantity = fclContainerQuantity;
 	}
-	public String getFcl_container_type() {
-		return fcl_container_type;
+	public String getFclContainerType() {
+		return fclContainerType;
 	}
-	public void setFcl_container_type(String fcl_container_type) {
-		this.fcl_container_type = fcl_container_type;
+	public void setFclContainerType(String fclContainerType) {
+		this.fclContainerType = fclContainerType;
 	}
-	public String getFcl_container_size() {
-		return fcl_container_size;
+	public String getFclContainerSize() {
+		return fclContainerSize;
 	}
-	public void setFcl_container_size(String fcl_container_size) {
-		this.fcl_container_size = fcl_container_size;
+	public void setFclContainerSize(String fclContainerSize) {
+		this.fclContainerSize = fclContainerSize;
 	}
-	public String getFcl_container_stuffing() {
-		return fcl_container_stuffing;
+	public String getFclContainerStuffing() {
+		return fclContainerStuffing;
 	}
-	public void setFcl_container_stuffing(String fcl_container_stuffing) {
-		this.fcl_container_stuffing = fcl_container_stuffing;
+	public void setFclContainerStuffing(String fclContainerStuffing) {
+		this.fclContainerStuffing = fclContainerStuffing;
 	}
 	public int getLength() {
 		return length;
@@ -233,29 +223,42 @@ public class InquiryDetails {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
-	public String getAir_load_type() {
-		return air_load_type;
+	public String getAirLoadType() {
+		return airLoadType;
 	}
-	public void setAir_load_type(String air_load_type) {
-		this.air_load_type = air_load_type;
+	public void setAirLoadType(String airLoadType) {
+		this.airLoadType = airLoadType;
 	}
-	public String getSpecial_instruction() {
-		return special_instruction;
+	public String getSpecialInstruction() {
+		return specialInstruction;
 	}
-	public void setSpecial_instruction(String special_instruction) {
-		this.special_instruction = special_instruction;
+	public void setSpecialInstruction(String specialInstruction) {
+		this.specialInstruction = specialInstruction;
 	}
-	public String getInquiry_id() {
-		return inquiry_id;
+	public String getInquiryId() {
+		return inquiryId;
 	}
-	public void setInquiry_id(String inquiry_id) {
-		this.inquiry_id = inquiry_id;
+	public void setInquiryId(String inquiryId) {
+		this.inquiryId = inquiryId;
 	}
-	public String getInquiry_type() {
-		return inquiry_type;
+	public String getInstantId() {
+		return instantId;
 	}
-	public void setInquiry_type(String inquiry_type) {
-		this.inquiry_type = inquiry_type;
+	public void setInstantId(String instantId) {
+		this.instantId = instantId;
 	}
+	public boolean isBookingStatus() {
+		return bookingStatus;
+	}
+	public void setBookingStatus(boolean bookingStatus) {
+		this.bookingStatus = bookingStatus;
+	}
+	public String getInquiryStatus() {
+		return inquiryStatus;
+	}
+	public void setInquiryStatus(String inquiryStatus) {
+		this.inquiryStatus = inquiryStatus;
+	}
+	
 	
 }

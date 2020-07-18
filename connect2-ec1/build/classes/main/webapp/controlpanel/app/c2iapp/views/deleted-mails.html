@@ -1,0 +1,101 @@
+<div class="right_col" role="main">
+  
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-trash"></i> &nbsp;Trash <span ng-if="newMailCounts > 0" class="badge bg-green">{{deletedItems.length}}</span></h1>
+		</div>
+	</div>
+  
+	<div class="clearfix"></div>
+
+	<div class="row">
+	  <div class="col-md-12">
+		<div class="x_panel">
+			<div class="clearfix"></div>
+		  <div class="x_content">
+			<div class="row">
+				<h2 ng-if="!deletedItems || deletedItems.length == 0"> No mail in trash! </h2>
+			  <div class="col-sm-3 mail_list_column">
+				<!-- <button id="compose" class="btn btn-sm btn-success btn-block" type="button">COMPOSE</button> -->
+				<a href="" ng-click="showMailContents(item.id)" ng-repeat="item in deletedItems">
+				  <div class="mail_list" ng-class="{active: isMailSelected(item.id)}">
+					<div class="left">
+					  <i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
+					</div>
+					<div class="right">
+					  <h3>{{item.sender}}<small>{{getFormattedTime(item.date)}}</small></h3>
+					  <p>{{item.subject}}</p>
+					</div>
+				  </div>
+				</a>
+				
+			  </div>
+			  <!-- /MAIL LIST -->
+
+			  <!-- CONTENT MAIL -->
+			  <div class="col-sm-9 mail_view">
+				<div class="inbox-body" ng-show="selectedMsg">
+				  <div class="mail_heading row">
+					<div class="col-md-8">
+					  <div class="btn-group">
+						<!--
+						<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-reply"></i> Reply</button>
+						<button class="btn btn-sm btn-default" type="button"  data-placement="top" data-toggle="tooltip" data-original-title="Forward"><i class="fa fa-share"></i></button>
+						<button class="btn btn-sm btn-default" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Print"><i class="fa fa-print"></i></button>
+						-->
+						<button  ng-click="moveToInbox(selectedMsg.id)"  class="btn btn-sm btn-default" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Trash"><i class="fa fa-envelop"></i>Move to Inbox</button>
+					  </div>
+					</div>
+					<div class="col-md-4 text-right">
+					  <p class="date"> {{getFormattedTime(selectedMsg.date)}}</p>
+					</div>
+					<div class="col-md-12">
+					  <h4>{{selectedMsg.subject}}</h4>
+					</div>
+				  </div>
+				  <div class="sender-info">
+					<div class="row">
+					  <div class="col-md-12">
+						<strong>{{selectedMsg.sender}}</strong>
+						<span>({{selectedMsg.senderEmailId}})</span> to
+						<strong>me</strong>
+						<a class="sender-dropdown"><i class="fa fa-chevron-down"></i></a>
+					  </div>
+					</div>
+				  </div>
+				  <div class="view-mail" ng-bind-html="selectedMsg.message | as_trusted">
+					
+				  </div>
+				  <div class="attachment">
+					<p>
+					  <span><i class="fa fa-paperclip"></i> {{selectedMsg.attachments.length}} attachments — </span>
+					</p>
+					<ul>
+					  <li ng-repeat="att in selectedMsg.attachments">
+						<a href="" class="atch-thumb">
+						  <i class="fa fa-paperclip"></i>
+							<div class="file-name">
+							  {{att.documentName}}
+							</div>
+							<span>{{att.documentDisplaySize}}</span>
+						</a>
+						
+					  </li>
+					</ul>
+				  </div>
+				  <div class="btn-group">
+					<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-reply"></i> Reply</button>
+					<button class="btn btn-sm btn-default" type="button"  data-placement="top" data-toggle="tooltip" data-original-title="Forward"><i class="fa fa-share"></i></button>
+					<button class="btn btn-sm btn-default" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Print"><i class="fa fa-print"></i></button>
+					<button class="btn btn-sm btn-default" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Trash"><i class="fa fa-trash-o"></i></button>
+				  </div>
+				</div>
+
+			  </div>
+			  <!-- /CONTENT MAIL -->
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>

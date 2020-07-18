@@ -1,0 +1,441 @@
+.page-header{margin:10px 0 20px}
+.autocomplete{width:100%;position:relative}
+.autocomplete input{font-size:1.2em;width:100%;padding:.4em}
+.autocomplete ul{position:absolute;left:0;width:100%;border-left:1px solid #888;border-right:1px solid #888;border-bottom:1px solid #888;z-index:9999999;background:#fff}
+.autocomplete li{text-align:left;list-style:none;width:100%;padding:.4em;background-color:#fff}
+.autocomplete li.active{width:100%;background-color:#4bf}
+.autocomplete .highlight{background-color:#E2E2E2}
+.autocomplete li.active .highlight{background:#666;color:#fff}
+#dateRangePicker{float:right;width:100%;margin-bottom:10px}
+#dateRangePicker input{width:91%}
+#dateRangePicker i{float:right;font-size:20px}
+.progressDialog{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.5);z-index:99999;opacity:1;background-image:url(loading.svg);background-position:center center;background-repeat:no-repeat;-webkit-transition:opacity 400ms ease-in;-moz-transition:opacity 400ms ease-in;transition:opacity 400ms ease-in;pointer-events:auto}
+.progressDialog div{width:100%;position:absolute;text-align:center;font-size:2em;color:#f5f5f5;top:58%;margin-top:1em}
+/*! jQuery UI - v1.11.4 - 2015-09-10
+* http://jqueryui.com
+* Includes: core.css, draggable.css, resizable.css, selectable.css, sortable.css, autocomplete.css, menu.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=gloss_wave&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=highlight_soft&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=glass&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=glass&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=highlight_soft&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=diagonals_thick&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=diagonals_thick&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=flat&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px
+* Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
+.ui-autocomplete{position:absolute;top:0;left:0;cursor:default;z-index:30}
+.ui-menu{list-style:none;padding:0;margin:0;display:block}
+.ui-menu .ui-menu{position:absolute}
+.ui-menu .ui-menu-item{font-size:12px;position:relative;margin:0;padding:3px 1em 3px .4em;cursor:pointer;min-height:0;list-style-image:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)}
+.ui-menu .ui-menu-divider{margin:5px 0;height:0;font-size:0;line-height:0;border-width:1px 0 0 0}
+.ui-menu .ui-state-focus,.ui-menu .ui-state-active{margin:-1px}
+.ui-menu-icons{position:relative}
+.ui-menu-icons .ui-menu-item{padding-left:2em}
+.ui-menu .ui-icon{position:absolute;top:0;bottom:0;left:.2em;margin:auto 0}
+.ui-menu .ui-menu-icon{left:auto;right:0}
+.ui-widget{font-family:Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;font-size:1.1em;z-index:9999999999999999999999}
+.ui-widget .ui-widget{font-size:1em}
+.ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button{font-family:Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;font-size:1em}
+.ui-widget-content{border:1px solid #ddd;background:#eee url(https://cdn.connect2india.com/global/images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;color:#333}
+.ui-widget-content a{color:#333}
+.ui-widget-header{border:1px solid #e78f08;color:#fff;font-weight:700}
+hr.style-two{border:0;height:1px;margin:0;background-image:linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,.75),rgba(0,0,0,0))}
+.autocomplete-btn{float:right;margin-bottom:3px}
+.ui-menu .ui-menu-item:hover{background-color:#add8e6}
+.ui-helper-hidden-accessible{display:none}
+.panel-info .active{background-color:#286090;color:#fff;border-color:#bce8f1}
+.huge{font-size:40px}
+.panel-green{border-color:#5cb85c}
+.panel-green>.panel-heading{border-color:#5cb85c;color:#fff;background-color:#5cb85c}
+.panel-green>a{color:#5cb85c}
+.panel-green>a:hover{color:#3d8b3d}
+.panel-red{border-color:#d9534f}
+.panel-red>.panel-heading{border-color:#d9534f;color:#fff;background-color:#d9534f}
+.panel-red>a{color:#d9534f}
+.panel-red>a:hover{color:#b52b27}
+.panel-yellow{border-color:#f0ad4e}
+.panel-yellow>.panel-heading{border-color:#f0ad4e;color:#fff;background-color:#f0ad4e}
+.panel-yellow>a{color:#f0ad4e}
+.panel-yellow>a:hover{color:#df8a13}
+select{margin-bottom:10px;padding:7px 10px;width:100%}
+.dataTable .table-header{background-color:#454545;color:#fff}
+.nav_title img{width:40px;height:40px;border-radius:52%}
+.right-panel2{background:url(https://cdn.connect2india.com/global/images/top-bg3.png);width:100%;height:850px;background-repeat:no-repeat;color:#666;background-size:cover;background-position:50% 65%}
+.realTimeDemad{margin-bottom:5em;margin-top:3em}
+.chartDiv{width:60%;margin-left:25%;padding-bottom:2em}
+.lineChartStyle{width:'90%'}
+.lineChartStyle h4{text-align:center}
+.chartDiv .clearfix{margin-bottom:5em}
+.reportHeader{text-align:center;font-size:2.5em}
+.productAutoComplete input{display:inline;float:left}
+.productAutoComplete h4{float:left;margin-right:.5em}
+.productAutoComplete{margin-bottom:.2em}
+.dataTable .btn{width:100%}
+.dataTable .active td{background:#fff!important}
+.img-circle.profile_img{width:56%;background:#fff;margin-left:21%;z-index:1000;position:inherit;margin-top:32px;border:1px solid rgba(52,73,94,.44);padding:4px}
+.tool{background:#fff;padding:64px 20px}
+.tool h1{font-size:2em;color:red;text-align:left;margin-bottom:25px}
+.tool p{font-size:16px;color:#666;text-align:left;line-height:1.6em;margin-bottom:40px}
+.toolBoxes{padding:0 10px}
+.toolBoxes .innerBox{border:1px solid #000;padding:8px 5px;min-height:180px}
+.toolBoxes .innerBox h3{font-size:16px;font-weight:700;text-align:left;margint-bottom:20px}
+.toolBoxes .innerBox p{font-size:14px;text-align:left;margin-bottom:10px}
+.toolBoxes .innerBox input{boeder:1px solid grey;width:80%;margin-bottom:30px}
+.toolBoxes .innerBox a{color:#fff;width:30%;padding:5px 15px;margin-bottom:25px;text-align:center}
+.tool table button{background:red;color:#fff;border-radius:0;width:30%;padding:10px;box-shadow:none}
+.tool table tr th{font-weight:700;text-align:center;background:#3e3e3e;color:#fff}
+.tool table tr td{color:#3e3e3e}
+.tool table tr td input.disabled{background:lightgrey}
+.websiteBox{margin-top:3em}
+.websiteBox a{background:green;color:#fff;padding:21px}
+.login-logo{width:30px}
+.login_wrapper{right:50px;margin:0 auto;margin-top:0;max-width:350px;position:relative}
+.login_content{padding:80px 0 0}
+.productHighlights{text-align:center}
+.productHighlights h1{margin-bottom:32px;font-size:3.5em;text-transform:uppercase}
+.productHighlights h4{margin-bottom:16px;font-size:16px}
+.productHighlights p{font-family:open_sansbold;font-size:20px;font-weight:700}
+.error{text-align:left;color:red}
+.blurryText1{font-size:12px;color:red;cursor:pointer;margin-left:5px}
+.tbl-report-detailed{max-width:100%;max-height:500px;overflow-x:scroll;clear:both}
+.register{background:url(https://cdn.connect2india.com/global/images/sub-bg-22.jpg) no-repeat top center;background-size:cover;padding:62px;padding-left:100px;padding-top:20px;font-family:'Open Sans',sans-serif}
+.register .phone{padding-left:100px}
+.register .phone i{padding-right:10px;color:#fff;font-size:35px;position:absolute;left:0;top:5px}
+.orderDetails{margin-left:20px}
+.orderDetails div{margin-bottom:10px}
+.register h2{font-size:30px;line-height:50px;color:#fff;text-align:left;margin-bottom:40px}
+.register h1{font-size:34px;line-height:50px;color:#fff;text-align:left}
+.register h3{font-size:28px;color:#fff;text-align:left;margin-top:17px;margin-bottom:40px}
+.register a{padding:13px 40px;-webkit-transition:box-shadow 500ms;transition:box-shadow 500ms;background:#dc4f29;font-family:open_sansregular;font-size:16px;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}
+.register a:hover{background:#dc4f29;color:#fff;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23)}
+.register .call{background:url(https://cdn.connect2india.com/global/images/telephone.png) no-repeat top center;height:50px;width:50px}
+.register h4{color:#fff;font-size:24px;font-family:'Open Sans',sans-serif}
+.register .contactBox{padding-left:50px;position:relative}
+.pinfo{padding:5%;min-height:400px;margin-bottom:20px}
+.info-inner{background:#fff;padding:2%;position:relative;border:1px solid #dae2ee}
+.info-left{margin-right:50px}
+.info-payment{border:1px solid #ccc;min-height:250px}
+.info-payment .prow{margin-top:17px;min-height:47px}
+.info-payment .paytmbtn{margin-bottom:17px}
+.info-payment{border:1px solid #ccc;min-height:200px}
+.info-payment .prow{margin-top:17px;min-height:100px}
+.orderInfo{margin-top:20px;text-align:center;margin-top:20px}
+.orderInfo table{text-align:left;max-width:458px;margin:auto}
+.orderInfo td{min-width:140px}
+.positive{color:green}
+.negative{color:red}
+.orderInfo p{font-size:18px}
+.orderInfo .addInfo{font-size:15px}
+.mail_list.active{background:#ddd}
+.nav-md .container.body .right_col{padding:10px 20px 70px}
+.headerSortUp{background:url(https://cdn.connect2india.com/global/images/arrow_up.png) no-repeat 99%;cursor:pointer;background-size:1.5em}
+.headerSortDown{background:url(https://cdn.connect2india.com/global/images/arrow_down.png) no-repeat 99%;cursor:pointer;background-size:1.5em}
+.headerSort{background:url(https://cdn.connect2india.com/global/images/sort.png) no-repeat 99%;cursor:pointer;background-size:1.5em}
+.panel_toolbox{min-width:10px}
+.datePicker-text{background:#fff}
+.template{max-width:220px}
+.template.selected{border:3px solid #90ee90}
+.login_box{padding:40px;border:1px solid #d5d5d5;background:#f9f9f9;width:380px;display:block;margin:145px auto 0 auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;box-shadow:0 0 2px #dadada,inset 0 -3px 0 #e6e6e6}
+.login_content div .reset_pass{float:left!important}
+.login_box .loginBtn{float:right!important}
+.site_title{font-size:18px}
+.main_menu .fa{font-size:16px;width:24px}
+.main_menu .active a span.fa{margin-right:1px}
+.nav>li>a{padding:13px 9px 12px}
+select:disabled{background-color:#eee}
+.pricing .title{height:70px;padding:27px 0 0}
+.profile_pic{width:30%;float:left}
+.img-circle.profile_img{margin-left:14%}
+.nav.child_menu>li>a[disabled]{color:grey}
+.nav.child_menu>li>a[disabled]:hover{color:grey}
+.upgradeReqdSpn{border-radius:50%;border:1px solid;padding:3px;background:red;color:#fff}
+.headingBox{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif}
+.headingBox{margin-top:10px}
+.headingBox h2{font-size:18px;color:#333;margin-bottom:20px;margin-left:10px}
+.headingBox .box.box-solid{border:none;background-color:#fff}
+.headingBox div.box{border:none;background-color:#fff;height:initial;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.boxAdminLte{height:initial!important;background-color:#fff!important;font-size:20px;border:none!important}
+.small-box>.small-box-footer{font-size:22px!important}
+.selectProduct{max-width:500px;margin:auto;font-size:25px}
+.progress-description,.info-box-text{font-size:20px}
+.products-list .product-info{margin-left:5px!important}
+.btn.btn-flat{font-size:22px}
+.progress-description,.info-box-text{white-space:initial!important}
+.dl-horizontal dt{white-space:initial!important;width:260px}
+.dl-horizontal dd{margin-left:280px}
+.div.box{margin:15px 0}
+.headingBox .small-box h3{font-size:38px!important}
+.headingBox .small-box p{font-size:15px!important}
+.headingBox .small-box a{font-size:14px!important}
+.headingBox.top .chart{height:493px}
+.headingBox .box-body{color:#333}
+.headingBox .box-body p{font-size:14px}
+.headingBox .box-body strong{font-weight:700}
+.headingBox{font-size:14px}
+.nav.child_menu li li a:hover,.nav.child_menu li li a.active{color:#000}
+.nav_menu{background:#172D44}
+.top_nav li a i{color:#fff;margin-top:8px;font-size:19px}
+.nav.navbar-nav>li>a{color:#fff!important}
+.top_nav .nav>li>a:focus,.top_nav .nav>li>a:hover,.top_nav .nav .open>a,.top_nav .nav .open>a:focus,.top_nav .nav .open>a:hover{background:#73879C}
+.img-circle.profile_img{padding:0;width:66%}
+.sidebar-footer{padding:14px 0 0 0}
+h1.page-header{color:#172D44}
+.cbContent{min-height:160px}
+.selectProductCategories{padding:5px;height:auto;background-color:#dae2ed;margin-bottom:2em}
+.selectProductCategories select{min-height:280px;padding-top:20px}
+.selectProductCategories select option{height:25px}
+.productCategorySelectionText{font-weight:400;padding-bottom:20px;color:#333}
+.productCategorySelectionText .title{font-weight:700}
+.required-field{color:red}
+.payment-options input[type=checkbox]{width:20px;height:20px;margin:5px}
+.payment-options label{margin-right:12px}
+.product-config .split-div-left{padding-left:0}
+.product-config .split-div-right{padding-right:0}
+.product-additional-info{margin-bottom:10px}
+.ui-autocomplete{max-height:500px!important;max-width:1000px!important;overflow-y:scroll!important}
+.cp-subscription-pop-menu{margin-top:0;padding-right:22px;padding:18px 5px 20px 22px;background-color:#2a3f54;color:#fff;font-size:10px}
+.cp-subscription-pop-menu .plan-name{font-size:15px}
+.cp-subscription-pop-menu a{float:right;font-size:12px;margin-top:30px;color:#ccc;padding:0!important;width:auto!important}
+.cp-subscription-pop-menu a:hover{color:#fff}
+.scrollbar{height:100px;overflow-y:scroll;overflow-x:hidden}
+.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
+.pagination>li{display:inline}
+.pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd}
+.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}
+.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{color:#23527c;background-color:#eee;border-color:#ddd}
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:2;color:#fff;cursor:default;background-color:#337ab7;border-color:#337ab7}
+.pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}
+.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px}
+.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-top-left-radius:6px;border-bottom-left-radius:6px}
+.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}
+.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px}
+.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-top-left-radius:3px;border-bottom-left-radius:3px}
+.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}
+.pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}
+.pager li{display:inline}
+.pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px}
+.pager li>a:focus,.pager li>a:hover{text-decoration:none;background-color:#eee}
+.pager .next>a,.pager .next>span{float:right}
+.pager .previous>a,.pager .previous>span{float:left}
+.pager .disabled>a,.pager .disabled>a:focus,.pager .disabled>a:hover,.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}
+.text-editor .vc_column-inner{max-height:400px;overflow-y:scroll}
+.login .w3{list-style:none;padding:17px 0;border-bottom:0 solid #ddd}
+.login .w3 .icon{margin-top:0;border-radius:25px;border:0;opacity:1;width:50px;height:50px;line-height:45px;font-size:18px;color:#3c8dbc;cursor:default;background-color:#fff;float:left;margin-right:16px}
+.login .w3 .w3-write{color:#fff;font-size:18px;font-weight:400}
+.login .w3 .w3-write2{font-size:15px;color:#e2e2e2}
+.right-panel2 .rcpanelleft2{display:none}
+.company-results .searchList{background:#fff;box-shadow:0 12px 21px rgba(0,0,0,.1);margin-bottom:15px;padding:5px 24px 20px 20px;margin-right:0;border-bottom:2px solid #ccc;border:1px solid #ccc;position:relative}
+.company-results .searchList .cardBtn{position:absolute;right:0;top:0}
+.company-results .searchList .cardBtn button{min-width:115px;padding:11px;margin:0}
+.company-results .searchList h3{color:#004B91}
+.company-results .searchList ul li{list-style:none;margin-bottom:5px}
+.company-results .searchList ul{padding-left:5px}
+.company-results .searchList ul.separator1{min-height:140px}
+.company-results .searchList .details div.cont:nth-child(n){border-right:1px solid #ccc}
+.company-results .searchList .details div:last-child{border-right:none}
+.company-results .searchList span.key{color:#999}
+.company-results .searchList span.highlight{background-color:#004B91;color:#fff;padding:1px 4px;margin-bottom:20px}
+.active-trade .price-trend{max-height:400px;overflow:scroll;margin-bottom:30px}
+.text-black{color:#333!important}
+.company-results .searchList .vl{border-right:2px solid #ccc;height:50px}
+.custom-calculator{overflow:hidden;background-size:cover;background-position:center;background-attachment:fixed;height:auto;text-align:center;color:#fff;padding-top:10px}
+.custom-calculator h3{font-size:27px;letter-spacing:1.5px;font-weight:400}
+.custom-calculator h3 i{font-size:20px}
+.custom-calculator h1{font-size:40px;letter-spacing:2px}
+.custom-calculator span{font-size:16px;color:#333;font-weight:600}
+.custom-calculator hr{width:50%}
+.calculator-form-section{position:relative;margin-top:10px;font-size:14px}
+.calculator-form-section .margins{padding:45px 45px 3px;text-align:-webkit-center}
+.calculator-form-section .margins li{display:block}
+.calculator-form-section .margins form{width:100%;position:relative}
+.calculator-form-section .margins .form-fields{padding-left:1%!important;width:27%!important;position:relative;vertical-align:top;display:table-cell}
+.calculator-form-section .margins .form-fields .form-text-fields{padding:0}
+.calculator-form-section .label{text-align:left;color:#333;text-transform:uppercase;font-size:14px;font-weight:600;white-space:nowrap;margin:0 0 8px;display:block}
+.calculator-form-section .form-control{width:100%;border-radius:3px;background-color:#fcfcfc;color:#333;border:1px solid #cfcfcf;height:55px!important;font-size:15px;padding:0 20px;display:inline-block}
+.calculator-form-section .submit-button{padding-left:1%!important;width:25%!important;position:relative;vertical-align:middle;display:table-cell;padding-top:10px}
+.calculator-form-section .form-submit-button{height:55px;line-height:55px;display:inline-block;width:100%;text-align:center;border:none;background-color:#ec6729;color:#fff;text-transform:uppercase;border-radius:3px;cursor:pointer;font-size:14px;font-weight:400}
+.calculator-form-section .margins .form-fields a{font-size:16px;text-decoration:underline}
+.calculator-form-section .searchhs a{padding-left:6px;font-size:15px;font-weight:600;text-decoration:underline;color:#fff}
+.calculator-result-section{color:#333}
+.calculator-result-section .result-data{background:#f7f7f7;width:750px;margin:auto;margin-top:60px;margin-bottom:60px}
+.calculator-result-section .result-data p{background:#f7f7f7;padding-top:10px}
+.calculator-result-section .result-data .table-responsive{overflow-x:inherit;margin-bottom:0!important}
+.calculator-result-section .result-data .table{margin-bottom:0!important}
+.calculator-result-section table{font-size:16px}
+.calculator-result-section table th{font-weight:400}
+.calculator-result-section .table-responsive h1{text-align:center;margin-bottom:20px;font-size:28px;text-transform:uppercase}
+.calculator-second{background:#fff;margin-top:40px}
+.calculator-second h2{margin-bottom:20px;font-size:33px}
+.calculator-second p{font-size:17px;line-height:27px;margin-bottom:58px}
+.calculator-second li{list-style:none}
+.calculator-second i{color:#007aab;font-size:30px}
+.calculator-second .s1{font-weight:800;font-size:24px}
+.calculator-second .s2{margin-top:10px;display:block;line-height:25px;font-weight:400}
+.calculator-second .card{padding:20px;min-height:195px;margin:10px}
+.trade-finance{margin-top:30px}
+.trade-finance .steps .action{margin-top:20px}
+.trade-finance .steps .action button{min-width:100px}
+.trade-finance .steps .concent{margin-top:20px;color:#333}
+.trade-finance .steps .concent label{margin-top:20px;color:#333;font-weight:500}
+.right_col.finance h1,label,td{font-family:Roboto,sans-serif!important}
+.cp{padding:0 0}
+.finFeatures{border-left:1px solid #ccc;padding-left:24px;margin-left:28px;margin-top:11px}
+.finFeatures .steps{margin:40px 20px}
+.finFeatures .boxStart{margin-top:40px}
+.x_content .finFeatures h4{font-size:25px;font-weight:500;margin-bottom:5px}
+.finFeatures .indBox{position:relative;border-radius:5px}
+.finFeatures .indBox .icon{float:left;width:25%;margin-top:5px}
+.finFeatures .indBox .icon2{float:left;width:11%;margin-top:5px}
+.finFeatures .indBox .content{float:left;width:75%;padding:0;padding-left:10px;min-height:auto}
+.finFeatures .boxes{margin-bottom:15px}
+.finFeatures .indBox i{color:#d21e2b;border-radius:10px;padding:10px;font-size:38px}
+.first_column{padding-top:10px;border-right:1px solid #ccc}
+.second_column{padding:42px 40px;border-right-style:1px solid #ccc}
+.third_column{padding-top:10px}
+div.card{min-width:250px;box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);text-align:center;margin:25px}
+.first_column .icon{line-height:20px;font-size:16px;padding:24px 0 0 20px;display:grid;color:#00ced1}
+.first_column .text{line-height:20px;font-size:16px;padding:20px 10px;text-align:left}
+.first_column .general{padding-top:30px;font-size:16px;margin-left:25px}
+.card .text ul li .c{color:#66cdaa}
+.card .text .offring_list{list-style:none;line-height:25px;margin-left:-10px}
+.third_column .checkout_button{border-radius:25px!important;margin-top:12px;font-size:20px;font-weight:700;width:190px;margin:10px 0 0 60px}
+.third_column .sp{padding:20px;text-align:initial;margin-left:10px}
+.third_column .sp .currency{color:#000;font-weight:700;font-size:16px}
+.third_column .sp .pricing{color:#000;font-weight:700;font-size:24px}
+.third_column .email_text{font-size:18px;color:#00c0ef;cursor:pointer}
+.third_column .rate{padding:20px 0 0 25px;color:#fa7921;font-weight:700}
+.third_column .rate .currency{color:#fa7921}
+.third_column .rate .pri{color:#fa7921;font-weight:700;font-size:24px}
+.x_panel .third_column .pay_later_text{margin-left:50px;line-height:22px}
+.limiter{width:100%;margin:0 auto}
+.container-table100{width:100%;min-height:100vh;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px 10px}
+.wrap-table100{width:960px;border-radius:10px;overflow:hidden}
+.table{width:100%;display:table;margin:0}
+.t-row{display:table-row;background:#fff}
+.t-row.header{color:#fff;background:#172D44}
+.cell{display:table-cell}
+.t-row .cell{font-size:15px;color:#666;line-height:1.2;font-weight:unset!important;padding-top:20px;padding-bottom:20px;border-bottom:1px solid #f2f2f2}
+.t-row.header .cell{font-size:18px;color:#fff;line-height:1.2;font-weight:unset!important;padding-top:19px;padding-bottom:19px}
+.t-row .cell:nth-child(1){width:450px;padding-left:40px}
+.t-row .cell:nth-child(2){width:160px}
+.t-row .cell:nth-child(3){width:250px}
+.t-row .cell:nth-child(4){width:190px}
+.table,.t-row{width:100%!important}
+.export-now .po-list{border: 1px solid #ccc;padding: 20px;margin-bottom: 10px;}
+.export-now .po-list span{font-weight: bold;}
+.export-now .po-list a.btn{background: #1abb9c;color: white;}
+.export-now .wiz-nav-btns{margin: 20px 0px 0px 0px;border-top: 1px solid #ccc;padding-top: 10px;}
+.dashboard-orders{border:1px solid #ccc;padding: 10px;margin-bottom: 10px;}
+.document-card{box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);text-align:center;padding: 5px;margin:7px;word-break: break-all;border-radius: 5px;min-height: 235px;}
+.document-card .doc-icon{position: absolute;top: 0;left: 3px;font-size: 27px;color: orange;}
+.document-card h2 {margin-left: 40px;font-size: 16px; color:#333;}
+.document-card a.download {position: absolute;bottom: 0;right: 0;left: 0;margin: 10px 10px 10px 10px;color: #000; background: transparent;}
+
+.companyInfo{}
+.company-info-section{/*border-bottom: 3px solid #d7d9dc;*/padding-top: 40px;}
+.company-info-section .container{max-width: 1180px;margin-left: auto;margin-right: auto;}
+.company-info-section .heading-background h3{font-size: 20px;background: #454545; color: #fff; padding: 8px 0px 8px 53px; margin-top: 0px;}
+.company-info-section .row{width: 100%; padding:0px}
+.company-info-section .company-profile{ font-size: 15px;font-weight: 300;line-height: 22px;margin: 0px;padding: 10px 0px;}
+.company-info-section .left-section{margin-right: 10.2631578947%;padding-left:20px;}
+.company-info-section .details{border-bottom: 1px solid #dfdfdf;padding: 8px 50px;font: 16px;}
+.company-info-section .details label{font-weight: bold;font-size: 16px;color: rgba(0,0,0,0.7);}
+.company-info-section .left-section .details p{ font-size: 15px;color: #636363; margin: 0px;}
+.company-info-section .right-section .details p{ font-size: 15px;color: #636363; margin: 0px;}
+.company-info-section .right-section.right-section-form{float:right;}
+.company-info-section .right-section #sendMessageButton{background: #3f51b5; color: #fff; border-radius:0px;padding: 10px 20px;}
+.company-info-section .contact-header{font-size: 22px;margin-bottom: 15px;font-weight: 200;color: #323d4d;}
+.company-info-section .contact-header h2{font-size: 28px;}
+.company-info-section .address-title{font-size: 20px;color: #737373;font-weight: 300;padding-bottom: 22px;}
+.company-info-section .address-block a{color: #3775d0;text-decoration: none;}
+.company-info-section .address-block img{width: 100%;}
+.company-info-section .address-block2{padding-top: 18px;line-height:24px;font-size: 16px;color:#636363;}
+.company-info-section .address-block2 a{color: #3775d0;text-decoration: none;}
+.company-info-section .rounded{border-radius: 0.25rem !important;margin-bottom: 0 !important;max-width: 100%;height: auto;}
+.company-info-section .product-desc{margin-top: 0;margin-bottom: 1rem;display: inline-block;line-height: 1.8;}
+.company-info-section .send-inquiry{color: #fff;background-color: #436eee; border-color: #436eee;margin-top: 10px;font-size: 16px;line-height: 1.5;border-radius: 0.25rem;}
+.company-info-section .send-inquiry:hover{background-color: #436eee; border-color: #436eee;}
+.company-info-section a{text-decoration: none;}
+.company-info-section .table-container .default-table{width: 100%;font-size: 14px;border-collapse: collapse;border-spacing: 0;margin-bottom: 30px;margin-top: 30px;}
+.company-info-section .default-table thead{border-top: solid 1px #d9d9d9;border-bottom: solid 1px #d9d9d9;width: 100%;line-height: 33px;background: #eaf3ff;}
+.company-info-section .default-table thead th{line-height: 33px;font-size: 16px;text-align: left;font-weight:bold;color: #454545;padding-left: 10px;padding-right: 19px;}
+.company-info-section .default-table .odd{background: white;}
+.company-info-section .default-table .even{background: #f4f4f4;}
+.company-info-section .default-table td{padding-top: 14px;padding-bottom: 12px;color: #454545;text-align: left;line-height: 21px;padding-left: 10px;padding-right: 10px;}
+
+
+.product-section .product {    text-align: center;    padding: 20px 10px;    border: 1px solid #e8e8e8;}
+.product-section .product a {    color: #4a4a4a;    text-decoration: none;    background: transparent;}
+.product-section .product img {    width: 90%;    display: inline-block!important;}
+.product-section .product .title {    font-size: 16px;    max-width: 260px;    margin: 0px auto auto auto;    color: #333;    padding-top: 15px;}
+.product-section .product .row {    padding-top: 20px;    padding-left: 30px;    padding-right: 30px;}
+
+.company-info-section .owl-nav button{font-size: 50px !important;    margin: 0 30px !important;}
+.company-info-section .owl-dots{display: none !important}
+
+.company-info-section .panel-heading{background-color: #454545;    color: white;}
+.rowHead{margin: 20px;  margin-bottom:10px;margin-left:0;font-size: 20px;    color: #88bad6;}
+
+.other-company-scores .scores{border-right: 1px solid #ccc;border-radius: 3px;}
+.other-company-scores .scores li{line-height: 24px;}
+
+/** RESPONSIVE STYLES **/
+@media (max-width:768px){.t-row{border-bottom:1px solid #f2f2f2;padding-bottom:18px;padding-top:30px;padding-right:15px;margin:0}
+.t-row .cell{border:none;padding-left:30px;padding-top:16px;padding-bottom:16px}
+.t-row .cell:nth-child(1){padding-left:30px}
+.t-row .cell{font-size:18px;color:#555;line-height:1.2;font-weight:unset!important}
+.table,.t-row,.cell{width:100%!important}
+}
+@media (max-width:1180px){.login_wrapper{right:0}
+.login .container{width:100%!important}
+.company-results .searchList .details div:nth-child(n){border-right:1px solid #ccc}
+.company-results .searchList .details div:last-child{border-right:none}
+}
+
+@media (max-width:999px){.company-results .searchList .details div:nth-child(n){border-right:none}
+.company-results .searchList .details div:nth-child(2n+1){border-right:1px solid #ccc}
+.finFeatures{border-left:none;border-top:1px solid #ccc;padding-left:0;margin-left:0;margin-top:20px}
+.finFeatures .indBox .icon2 {width: auto;}
+
+@media (max-width:775px){.right-panel2 .rcpanelleft1{display:none}
+.right-panel2 .rcpanelleft2{display:block}
+.registration_form{display:none}
+.right-panel2 .rcpanel{width:94%}
+.login_box{margin:48px auto 0 auto}
+.login_form{position:static}
+.right-panel2{background:url(https://cdn.connect2india.com/global/images/top-bg3.png);width:100%;height:1292px;background-repeat:no-repeat;color:#666;background-size:cover;background-position:50% 65%}
+.right-panel2 .login{height:1292px!important}
+.company-results .searchList ul.separator1{border-right:none;clear:both;border-bottom:1px solid #ccc;margin-bottom:10px}
+.company-results .searchList .details div:nth-child(n){border-right:none}
+}
+@media (max-width:403px){.login .w3 .icon{margin-bottom:50px}
+.loginleft{margin:62px 18px!important}
+}
+@media (max-width:528px){.rightpanel-register{background:url(https://cdn.connect2india.com/global/images/top-bg3.png);height:1500px;background-repeat:no-repeat;color:#666;background-size:cover;background-position:50% 65%}
+.rightpanel-register .login{height:1500px!important}
+.company-results .searchList ul.separator1{border-right:none;clear:both}
+}
+@media (max-width:340px){.right-panel2 .login{width:382px!important}
+.right-panel2{background:url(https://cdn.connect2india.com/global/images/top-bg3.png);width:382px!important;height:1292px;background-repeat:no-repeat;color:#666;background-size:cover;background-position:50% 65%}
+.rightpanel-register{background:url(https://cdn.connect2india.com/global/images/top-bg3.png);height:1600px;background-repeat:no-repeat;color:#666;background-size:cover;background-position:50% 65%}
+.rightpanel-register .login{height:1600px!important}
+}
+@media (min-width:2000px){.right-panel2{zoom:125%}
+}
+@media (max-width:1205px){.daterangepicker .ranges ul{display:-webkit-inline-box!important}
+.daterangepicker .ranges ul{display:contents!important}
+}
+@media(max-width:768px){.first_column{border-right-style:none;border-bottom-style:1px solid #ccc}
+}
+@media (min-width:768px) and (max-width:991.98px){div.card{width:200px}
+.x_panel .checkout_button{margin:0 0 0 32px}
+.x_panel .third_column .pay_later_text{margin-left:35px;line-height:20px;font-size:11px}
+.x_panel .btnsch{position:relative;top:30px;left:70px}
+}
+@media (min-width:992px) and (max-width:1199.98px){div.card{width:200px}
+.x_panel .checkout_button{margin:0 0 0 35px}
+.x_panel .third_column .pay_later_text{margin-left:35px;line-height:20px;font-size:11px}
+}
+@media screen and (max-width:768px){.table{display:block}
+}
+@media screen and (max-width:768px){.t-row{display:block}
+.t-row.header{padding:0;height:0}
+.t-row.header .cell{display:none}
+.t-row .cell:before{font-family:Poppins-Bold;font-size:12px;color:gray;line-height:1.2;text-transform:uppercase;font-weight:unset!important;margin-bottom:13px;content:attr(data-title);min-width:98px;display:block}
+}
+@media screen and (max-width:768px){.cell{display:block}
+}

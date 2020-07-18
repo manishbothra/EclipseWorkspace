@@ -1,0 +1,60 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><i class="fa fa-users"></i>&nbsp;Recent Global Opportunities</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+	</div>	
+	<div class="row">
+		<div class="col-md-12">
+			<!-- Custom Tabs -->
+			<div class="nav-tabs-custom">
+				<div class="tab-content">
+
+					<div class="tab-pane active">
+						<div class="row">
+							<div class="col-md-12 productAutoComplete">
+								<ang-accordion one-at-a-time="true" icon-position="right" close-icon-class="fa fa-chevron-right" open-icon-class="fa fa-chevron-down">
+									<collapsible-item item-title="{{getLeadListTitle($index, lead)}}" initially-open="false" ng-repeat="lead in allLeads">
+										<table class="table table-bordered table-responsive table-hover dataTable" >
+											<thead>
+												<tr class="table-header"> 
+													<td>Lead Name</td>
+													<td>Company Name</td>
+													<td>Date</td>
+													<td>Phone</td>
+													<td>Email</td>
+													<td>Description</td>
+												</tr>
+											</thead>
+											<tr> 
+												<td>{{lead.leadName || lead.leadCompanyName}}</td>
+												<td>{{lead.leadCompanyName}}</td>
+												<td>{{lead.dateFormatted}}</td>
+												<td>{{lead.leadPhoneNo}}</td>
+												<td>{{lead.leadEmail}}</td>
+												<td ng-bind-html="lead.leadDescription| as_trusted"></td>
+											</tr>
+										</table>
+									</collapsible-item>      
+								</ang-accordion>
+								
+							</div>
+
+							<div class="col-sm-12 realTimeDemad" data-ng-if="!allLeads || allLeads.length == 0">
+								<div class="col-md-12">
+									<div>
+										<p>No Recent Global Opportunity is available at this moment.</p>
+									</div>
+
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

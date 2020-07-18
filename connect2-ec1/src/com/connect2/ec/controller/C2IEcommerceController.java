@@ -1,4 +1,4 @@
-package main.java.com.connect2.ec.controller;
+package com.connect2.ec.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -516,28 +518,94 @@ public class C2IEcommerceController{
 	}
 	
 	//Boxnbiz API's
-	@RequestMapping("/inqury/submit-inquiry")
-	public Map<String,String> inquiry_submit_inquiry(@RequestBody InquiryDetails sid) throws Exception{
+	@RequestMapping("/submit-inquiry")
+	public Map<String,String> submitInquiry(@RequestBody InquiryDetails inquiryDetails) throws Exception{
 		Map<String,String> map=new HashMap<>();
-		User user=new User();
-		sid.setCompany_id("ICONN660");
-		sid.setShipper_person_id("ICONN660");
-		c2iEcService.inquiry_submit_inquiry(sid);
-		map.put("success","Your details have been submitted successfully");
+		String status=c2iEcService.submitInquiry(inquiryDetails);
+		map.put("success", status);
 		return map;
+	}
+	
+	
+	@RequestMapping("/get-inquiry")
+	public List<InquiryDetails> getInquiry() throws Exception{
+		return c2iEcService.getInquiry();
+	}
+	@RequestMapping("/get-inquiry-details/{inquiryDetailsId}")
+	public InquiryDetails getInquiryDetails(@PathVariable("inquiryDetailsId") int inquiryDetailsId) throws Exception{
+		return c2iEcService.getInquiryDetails(inquiryDetailsId);
+	}
+	@RequestMapping("/update-inquiry-details")
+	public Map<String,String> updateInquiryDetails(@RequestBody InquiryDetails inquiryDetails) throws Exception{
+		Map<String,String> map=new HashMap<>();
+		String status=c2iEcService.updateInquiryDetails(inquiryDetails);
+		map.put("success", status);
+		return map;
+	}
+	
+	@RequestMapping("/book-quotation/{inquiryId}/{instantId}")
+	public Map<String,String> book_quotation(@PathVariable("inquiryId") String inquiryId,
+											 @PathVariable("instantId") String instantId) throws Exception{
+		Map<String,String> map=new HashMap<>();
+		if(!StringUtils.isEmpty(instantId)){	
+			System.out.println(instantId.length());
+			String status=c2iEcService.bookQuotation(inquiryId,Integer.parseInt(instantId));
+			map.put("success", status);
+			
+		}
+		else {
+			map.put("success", "Booking not allowed for this inquiry");
+		}
+		return map;
+	}
+	
+	@RequestMapping("/close-inquiry")
+	public Map<String,String> closeInquiry(@RequestBody Map<String,String> map) throws Exception{
+		Map<String,String> result=new HashMap<>();
+		if(map.containsKey("inquiryId") && map.containsKey("message")) {
+			String status=c2iEcService.closeInquiry(map);
+			result.put("success",status);
+		}
+		return result;
+	}
+	
+	@RequestMapping("/check-status/{inquiryId}/{inquiryDetailsId}")
+	public Map<String,String> checkStatus(@PathVariable("inquiryId") String inquiryId,
+										  @PathVariable("inquiryDetailsId") int inquiryDetailsId) throws Exception{
+		Map<String,String> map=new HashMap<>();
+		String status=c2iEcService.checkStatus(inquiryId, inquiryDetailsId);
+		map.put("status",status);
+		return map;
+	}
+	
+	@RequestMapping("/get-rate/{inquiryId}/{instantId}")
+	public Map<String,String> getRate(@PathVariable("inquiryId") String inquiryId,
+									  @PathVariable("instantId") String instantId) throws Exception{
+		
+		return c2iEcService.getRate(inquiryId, Integer.parseInt(instantId));
 		
 	}
 	
 	
-	@RequestMapping("/inquiry/get-inquiry")//
-	public InquiryDetails getInquiryDetails(@RequestBody int inquiry_details_id) throws Exception{
-		return c2iEcService.getInquiryDetails(inquiry_details_id);
-	}
-	@RequestMapping("inquiry/update-inquiry")
-	public Map<String,String> updateInquiryDetails(@RequestBody InquiryDetails sid) throws Exception{
-		Map<String,String> map=new HashMap<>();
-		c2iEcService.updateInquiryDetails(sid);
-		map.put("success", "Data has been updated successfully");
-		return map;
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

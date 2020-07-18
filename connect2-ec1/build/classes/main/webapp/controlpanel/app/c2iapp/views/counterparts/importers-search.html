@@ -1,0 +1,415 @@
+<div class="right_col" role="main">
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header" ng-if="userCountry.toLowerCase()=='india'">Search Global Importers</h1>
+			<h1 class="page-header" ng-if="userCountry.toLowerCase()!='india'">Search Indian Importers</h1>
+		</div>
+	</div>	
+	<div class="row" ng-show="checkoutStep != 'cart'">
+		<div class="col-md-12">
+			<!-- Custom Tabs -->
+			<div class="nav-tabs-custom">
+				<div class="tab-content">
+
+					<div class="tab-pane active" id="tab_gallery">
+						<div class="row">
+							<div class="col-md-4 col-sm-6 col-xs-12  productAutoComplete1">
+						
+								<h4><input type="radio" id="rdoYp" ng-model="searchForm.productType" value="yourProducts"> <label for="rdoYp">Your Products</label></h4>
+								<select ng-disabled="searchForm.productType != 'yourProducts'" ng-model="searchForm.selectedProduct1" ng-options="product as product.name for product in comppro">
+								<option value="">---Select Product---</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12  productAutoComplete1">
+								<h4><input type="radio" id="rdoNp" ng-model="searchForm.productType" value="newProduct"> 
+								<label for="rdoNp">Search for Other Products </label></h4>
+								<input  ng-disabled="searchForm.productType != 'newProduct'" class="form-control" type="text" placeholder="Enter product name" name="term" ng-model="selectedProductLabel" ui-autocomplete="myOption">
+								<div ng-hide="searchForm.productType != 'newProduct'" >
+									<span style="float:left">For Example: </span>
+									<a style="float:left" href='' ng-click="changeProduct(sampleProduct, true)" ng-repeat="sampleProduct in sampleSeachProducts">
+										<span ng-if="!$last">{{sampleProduct.name}}, </span>
+										<span ng-if="$last">{{sampleProduct.name}} </span>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-6 col-xs-12  productAutoComplete1">
+								<h4><label></label></h4>
+								<input style="min-width: 100px" class="btn btn-primary" ng-disabled="!selectedProductLabel || selectedProductLabel <=2" type="button" ng-click="changeProduct(selectedProductLabel)" value="Search">
+							</div>
+					
+					</div>
+				</div>
+									<!-- start of 1st tab  -->
+	
+    <div role="tabpanel" class="tab-pane fade in active" id="buyer">
+    <div class="row" style="padding:10px 0;">
+        <div class="col-md-12">
+                 <div class="col-md-3 " data-ng-cloak>
+                    <h4 class="filterhead">Overseas buyers</h4><!--<span><input placeholder="Search For Countries" type="text"></span>-->
+                    <ul class=" list-unstyled scrollbar " id="style-2" rel="tooltip" title="{{(allowedFilters.locations)?'' : filterDisableMessage1}}">
+                         <div class="force-overflow">
+                        <li ng-repeat="loc in overseasFilterData.tab1.locations | filter:{type:'country'} | filter:{country:'!India'}">
+                        <label><input type="checkbox" ng-disabled="!allowedFilters.locations" ng-model="loc.selectedValue" ng-change="setTabLocation(loc, loc.selectedValue)"> {{loc.name}}	({{loc.count}})</label>
+                        </li>
+                       </div>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="filterhead">Company Detail</h4>
+                    <ul class="list-unstyled" data-ng-cloak>
+                        <li rel="tooltip" title="{{(allowedFilters.companyAge)?'' : filterDisableMessage}}">
+                        <select ng-model="ageRange.tab1" ng-change="changeCompanyAge(ageRange.tab1)" style="margin-top: 10px;">
+                            <option value="any" ng-disabled="!allowedFilters.companyAge">Company Age</option>
+                            <option value="any" ng-disabled="!allowedFilters.companyAge">Any Age</option>
+                            <option value="0,0" ng-disabled="!allowedFilters.companyAge">Less than 1 year</option>
+                            <option value="1,5" ng-disabled="!allowedFilters.companyAge">1 to 5 year</option>
+                            <option value="6,20" ng-disabled="!allowedFilters.companyAge">5 to 20 years</option>
+                            <option value="21,1000" ng-disabled="!allowedFilters.companyAge">20 years+</option>
+
+                        </select>
+						</li>
+                        <li rel="tooltip" title="{{(allowedFilters.companyType)?'' : filterDisableMessage1}}">
+						<select ng-model="companyType.tab1" ng-change="changeCompanyType(companyType.tab1)" style="margin-top: 10px;">
+                           <option value="any" ng-disabled="!allowedFilters.companyType">Company type</option>
+                            <option value="any" ng-disabled="!allowedFilters.companyType">Any</option>
+                            <option value="Private" ng-disabled="!allowedFilters.companyType">Private limited</option>
+                            <option value="Public" ng-disabled="!allowedFilters.companyType">Public limited</option>
+                            <option value="Proprietorship" ng-disabled="!allowedFilters.companyType">Proprietorship</option>
+                            <option value="One Person Company" ng-disabled="!allowedFilters.companyType">One Person Company</option>
+
+                        </select>
+						</li>
+                       
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="filterhead">Available Information</h4>
+                    <ul class="list-unstyled">
+                       
+                        <li rel="tooltip" title="{{(allowedFilters.annualTurnover)?'' : filterDisableMessage}}">
+                        <label><input type="checkbox" ng-model="filterData.tab1.hasRegistrationDetails" ng-disabled="!allowedFilters.annualTurnover" > Registration details</label>
+                        </li>
+                        <!-- <li rel="tooltip" title="{{(allowedFilters.annualTurnover)?'' : filterDisableMessage}}">
+                        <label><input type="checkbox" ng-model="filterData.tab1.hasContactDetails" ng-disabled="!allowedFilters.annualTurnover"> Contact details</label>
+                        </li> -->
+                        <li rel="tooltip" title="{{(allowedFilters.annualTurnover)?'' : filterDisableMessage}}">
+                        <label><input type="checkbox" ng-model="filterData.tab1.hasTradeDetails" ng-disabled="!allowedFilters.annualTurnover"> Trade details</label>
+                        </li>
+                        <li rel="tooltip" title="{{(allowedFilters.trade)?'' : filterDisableMessage}}">
+							<label><input type="checkbox" ng-model="filterData.tab1.hasShipmentDetails" ng-disabled="!allowedFilters.trade"> Shipment Details</label>
+                        </li>
+                    </ul>
+                </div>
+				 <div class="col-md-3">
+                    <h4 class="filterhead"> Trade Origin Country</h4>
+                    <ul class="list-unstyled">  
+						<li>
+							<label style="margin-left:0px;"><input type="radio" ng-model="filterData.tab1.tradeLocation" value="Overseas"> Any Country</label>
+						</li> 
+						<li>
+							<label style="margin-left:0px;"><input type="radio" ng-model="filterData.tab1.tradeLocation" value="India"> India</label>
+						</li>
+					</ul>
+                </div>	
+        </div>
+		</div>
+    </div>
+    
+    <div role="tabpanel" class="tab-pane fade in active" id="buyer">
+    <div class="row" style="padding:10px 0;">
+        <div class="col-md-12">
+                 <div class="col-md-3">
+                    <h4 class="filterhead"> Products</h4>
+                    <ul class="list-unstyled scrollbar">
+						<li  ng-repeat="product in filterRanges.tab1.products">
+						<label class="checkbox category treeLabel">
+								<input type="checkbox" class="l1chk" ng-change="productTreeOnSelect(product)" ng-model="product.selected">
+							</label>
+							<a class="" title="{{product.hscode}} - {{product.name}}" href='' ng-click="toggleProductClass($index, '', '')">
+								<span class="title"> {{product.hscode}} - {{product.name|limitTo:40}} </span><span ng-if="product.name.length > 40">...</span><span class="count">{{product.count}}</span>
+							</a>
+							<a class="fold" href="" ></a>
+							<ul class="childFilter l2Filter" ng-style="p{{$index}}l{{$index}}Display">
+								<li  ng-repeat="level1 in product.children">
+									<label class="checkbox category treeLabel">
+										<input type="checkbox" ng-change="productTreeOnSelect(level1)" ng-model="level1.selected"  class="l2chk">
+									</label>
+									<a class="" title="{{level1.hscode}} - {{level1.name}}" href="" ng-click="toggleProductClass($index, $index, '')">
+										<span class="title"> {{level1.hscode}} - {{level1.name|limitTo:40}}  </span><span ng-if="product.name.length > 40">...</span> <span class="count">{{level1.count}}</span>
+									</a>
+									<a class="fold" href="" ng-click="toggleProductClass($index, $index, '')"></a>
+									<ul class="childFilter l3Filter" ng-style="p{{$index}}{{$index}}l{{$index}}{{$index}}Display">
+										<li  ng-repeat="level2 in level1.children">
+											<label class="checkbox category treeLabel">
+												<input type="checkbox" ng-change="productTreeOnSelect(level2)" ng-model="level2.selected"  class="l3chk">
+											</label>
+											<a class="" title="{{level2.hscode}} - {{level2.name}}" href="" ng-click="toggleProductClass($index, $index, $index)">
+												<span class="title"> {{level2.hscode}} - {{level2.name|limitTo:40}} </span><span ng-if="product.name.length > 40">...</span><span class="count">{{level2.count}}</span>
+											</a>
+											<a class="fold" href="" ng-click="toggleProductClass($index, $index, $index)"></a>
+											<ul class="childFilter l4Filter" ng-style="p{{$index}}{{$index}}{{$index}}l{{$index}}{{$index}}{{$index}}Display">
+												<li  ng-repeat="level3 in level2.children">
+													<label class="checkbox category treeLabel">
+														<input type="checkbox" ng-change="productTreeOnSelect(level3)" ng-model="level3.selected"  class="l3chk">
+													</label>
+													<a class="" title="{{level3.hscode}} - {{level3.name}}">
+														<span class="title"> {{level3.hscode}} - {{level3.name|limitTo:40}} </span><span ng-if="product.name.length > 40">...</span><span class="count">{{level3.count}}</span>
+													</a>
+												</li>
+											</ul>
+											
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+                </div>
+                <div class="col-md-3">
+                	<h4 class="filterhead"> Sort By :</h4>
+                    <div class="form-group" style="float:right;margin-right:15px;">
+                       <select ng-model="sortPref.tab1" ng-change="changeSorting(sortPref.tab1)"  name="" class="form-control" id="getSort" data-toggle="tooltip" data-placement="top"  > <!--ng-click="getSort()"-->
+	                       <option value="relevance">Sort By :</option>
+	                       <option value="{{sort.value}}" ng-repeat="sort in sortOptions"> {{sort.label}}</option>
+                       </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                    <!-- <form class="form-inline"> -->
+                        <div ng-hide="totalresult==0" class="form-group" style="float:right; margin-right:25px;">
+                              <label for="result">Results per page: </label>
+                              <select class="form-control" ng-model="result2" ng-options="c for c in sort" ng-change=changePageSize(result2)  >
+                              </select>
+                        </div>
+
+                       
+                   <!-- </form> -->
+                </div>
+				
+        </div>
+		</div>
+    </div>
+	<!-- end of 1st tab -->
+
+					<div class="col-sm-12 realTimeDemad" data-ng-if="userCountry.toLowerCase()=='india' && globalImporters && globalImporters.length > 0">
+						<h2 class="reportHeader">Global importers of {{titleProduct}} <span ng-show="totalresult==1">({{totalresult}} Buyer)&nbsp;</span><span ng-show="totalresult>1">({{totalresult}} Buyers)&nbsp;</span></h2>
+						<!-- page and sort-->
+						 <div class="col-md-5" data-ng-cloak>
+                                     
+
+                              </div>
+						<!-- end -->
+						<div class="col-md-6" style="float:right;" data-ng-cloak>
+							<form class="form-inline">
+								<div ng-hide="totalresult==0" class="form-group" style="float:right; margin-right:25px;margin-top: 15px;">
+									<a class="btn btn-primary" style="margin-bottom:5px;max-width:280px;float:right;" ng-click="downloadAll()">
+										<span><i class="glyphicon glyphicon-shopping-cart" style="color:white;padding-left:0px;padding-top: 0px;"></i></span>
+										<span style="margin-left:30px;font-size: 15px;">{{downloadButtonText}} </span>
+									</a>
+									<!-- <div style="float:right;font-weight:bold">
+										 @ 50% discount <span style="text-decoration: line-through;">250 INR</span> 125 INR / Importer
+									</div> -->
+									<div class="clearfix"></div>
+									<p style="font-size:17px;">* The full importer name will be shown only when you buy these records.</p>
+								</div>
+							</form>
+						</div>
+						
+						<table class="table table-bordered table-responsive table-hover dataTable">
+							<thead>
+							<tr role="row" class="table-header">
+								<th>Sl. No.</th>
+								<th style="min-width:200px;">Name</th>
+								<th>Address</th>
+								<th>Product</th>
+								<th>HS Code</th>
+								<th>Country</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr role="row" class="odd"ng-repeat="comp in globalImporters">
+								<td>{{$index+1}}</td>
+								<td ng-if="!comp.masked">{{comp.name}}</td>
+								<td ng-if="comp.masked" style="color: #333;" ng-mouseover="onHoverBlurText(comp)" ng-mouseleave="onMouseLeaveBlurText(comp)">{{comp.name}} <span class="blurryText1" >
+									{{comp.blurText || '******'}}</span></td>
+								<td>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine1}},</span>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine2}},</span>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine3}},</span>
+									<span ng-if="comp.address.city">{{comp.address.city}},</span>
+									<span ng-if="comp.address.state">{{comp.address.state}},</span>
+									<span ng-if="comp.address.pincode">{{comp.address.pincode}},</span>
+								</td>
+								<td>{{comp.product}}</td>
+								<td>{{comp.productCode}}</td>
+								<td><b>{{comp.country}}</b></td>
+								<td><a ng-if="!comp.masked" class="btn btn-success" target="_blank" ng-href="/global/{{comp.name | spaceToDash}}/{{comp.id}}">View Profile</a></td>
+							</tr>
+							</tbody>
+						</table>
+						 
+                          <div class="col-md-6" data-ng-cloak>
+                             
+                               <pagination boundary-links="true" max-size="4" total-items="totalresult" ng-model="currentpage1" class="pagination-sm" items-per-page="result2" ng-change=changePage(currentpage1)></pagination>
+                               <!-- <p class="resultdisplay" ng-show="notAuthStatus.tab1.restrict">{{notAuthStatus.tab1.msg}}</p> -->
+      
+                          </div>
+                              
+					</div>
+					
+					<div class="col-sm-12 realTimeDemad" data-ng-if="userCountry.toLowerCase()!='india' && indianImporters && indianImporters.length > 0">
+						<h2 class="reportHeader">Indian importers of {{titleProduct}}</h2>
+						<div class="col-md-6" style="float:right;" data-ng-cloak>
+							<!-- <form class="form-inline">
+								<div ng-hide="totalresult==0" class="form-group" style="float:right; margin-right:25px;margin-top: 15px;">
+									<a class="btn btn-primary" style="margin-bottom:5px;max-width:280px;float:right;" ng-click="downloadAll()">
+										<span><i class="glyphicon glyphicon-shopping-cart" style="color:white;padding-left:0px;padding-top: 0px;"></i></span>
+										<span style="margin-left:30px;font-size: 15px;">{{downloadButtonText}}</span>
+									</a>
+									<div class="clearfix"></div>
+									<p style="font-size:17px;">* The full importer name will be shown only when you buy these records.</p>
+								</div>
+							</form> -->
+						</div>
+						
+						<table class="table table-bordered table-responsive table-hover dataTable">
+							<thead>
+							<tr role="row" class="table-header">
+								<th>Sl. No.</th>
+								<th style="min-width:200px;">Name</th>
+								<th>Address</th>
+								<th>Product</th>
+								<th>HS Code</th>
+								<th>Country</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr role="row" class="odd" ng-repeat="comp in indianImporters">
+								<td>{{$index+1}}</td>
+								<td >{{comp.name}}</td>
+								<td ng-if="comp.masked" style="color: #333;" ng-mouseover="onHoverBlurText(comp)" ng-mouseleave="onMouseLeaveBlurText(comp)">{{comp.name}} <span class="blurryText1" >
+									{{comp.blurText || '******'}}</span></td>
+								<td>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine1}},</span>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine2}},</span>
+									<span ng-if="comp.address.addressLine1">{{comp.address.addressLine3}},</span>
+									<span ng-if="comp.address.city">{{comp.address.city}},</span>
+									<span ng-if="comp.address.state">{{comp.address.state}},</span>
+									<span ng-if="comp.address.pincode">{{comp.address.pincode}},</span>
+								</td>
+								<td>{{comp.product}}</td>
+								<td>{{comp.productCode}}</td>
+								<td><b>{{comp.country}}</b></td>
+								<td><a ng-if="!comp.masked" class="btn btn-success" target="_blank" ng-href="/{{comp.name | spaceToDash}}/{{comp.id}}">View Profile</a></td>
+							</tr>
+							
+							</tbody>
+						</table>
+					</div>
+                          <div ng-if="userCountry.toLowerCase()=='india'">
+					  <div class="col-md-12" data-ng-if="!globalImporters || globalImporters.length == 0">
+						<div>
+							<p>No overseas importers found for this product. Try searching for other products from above searchbox.</p>
+						</div>
+
+					  </div>
+					</div>
+					<div ng-if="userCountry.toLowerCase()!='india'">
+					  <div class="col-md-12" data-ng-if="!indianImporters || indianImporters.length == 0">
+						<div>
+							<p>No indian importers found for this product. Try searching for other products from above searchbox.</p>
+						</div>
+
+					  </div>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+	<div ng-show="checkoutStep === 'cart'">
+		<div class="pinfo">
+		
+			<div class="alert alert-success ng-hide">
+				<h4 ng-bind-html="successMsg|as_trusted"></h4>
+			</div>
+		<div class="info-inner " >
+			<div class="info-left">
+				<div class="orderInfo">
+					<h1>
+						Thank you for your order.
+					</h1>
+					<br/>
+					<p>Here is your order details:</p>
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td>Details</td>
+								<td ><strong>{{orderDetails}}</strong>
+									<br/>
+									(Importer Name, Importer Country, Importer Address, HS Code, Product Name)
+								</td>
+							</tr>
+							<tr>
+								<td>Amount</td>
+								<td><b>{{ getCartPrice() | currency: ' INR ' }}</b></td>
+							</tr>
+						</tbody>
+					</table>
+					
+					
+					<hr>
+					<p class="addInfo">*You will be able to immediately download the importer data after the payment. We will also send one copy to your registered email address.</p>
+					
+					<br>
+					<div class="agreement">
+						<input type="checkbox" id="chkAgreement" ng-model="agreementSigned" ng-change="agreementChecked(agreementSigned)">
+						<label for="chkAgreement">I have read and agree to the <a target="_blank" href="https://connect2india.com/Terms_Of_Use.html">terms and conditions</a></label>
+					</div>
+					<br>
+					
+					 <div ng-show="errMsg.length > 0" class="alert alert-danger">
+						<h4 ng-bind-html="errMsg|as_trusted"></h4>
+					</div>
+					
+					<button type="button" style="max-width:100px; margin-bottom:10px;" class="btn btn-primary" ng-click="closeCart();">Back</button>
+					<button type="button" style="max-width:240px; margin-bottom:10px;" class="btn btn-success" ng-click="submitPaymentRequest();">Proceed to Payment</button>
+					
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+
+
+			<div ng-bind-html="myText" class="ccavenueResponse ng-binding"></div>
+		</div>
+	</div>
+		<div class="clearfix"></div>
+		<div class="register" style="">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12 phone">
+					<!--<h2>Not ready to subscribe?<br>Create a free account instead</h2>-->
+					<h1>Have any query?</h1>
+					<div class="row">
+						
+						<div class="contactBox col-md-6  col-sm-12">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<h4>78-76-75-9999</h4>
+						</div>
+						<div class="contactBox col-md-6  col-sm-12">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<h4>info@connect2india.com</h4>
+						</div>
+					   </div>
+					<!--<a target='_self' href="javascript:void(0)" data-toggle="modal" data-target="#letMeIn">9811-9811</a>-->
+					<!--<a target='_self' href="javascript:void(0)" data-toggle="modal" data-target="#letMeIn">Create a free account</a>-->
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
